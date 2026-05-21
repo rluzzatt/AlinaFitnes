@@ -1,11 +1,11 @@
-# Alina Fitness
+# אלינה פיטנס
 
-Landing page for Alina Fitness, a personal training brand focused on strength, shape, and confidence.
+עמוד נחיתה בעברית עבור אלינה אבידור, מאמנת כושר אישית לאימוני כוח, חיטוב והתמדה.
 
-## Preview
+## הרצה מקומית
 
 ```bash
 npm start
 ```
 
-Then open `http://127.0.0.1:4173/`.
+ואז לפתוח `http://127.0.0.1:4173/`.
