@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10100f" />
     <meta
       name="description"
       content="אלינה פיטנס - אימוני כושר אישיים לנשים וגברים, אונליין או פרונטלי, עם דגש על כוח, חיטוב והתמדה."
@@ -19,7 +20,7 @@
   <body>
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="עמוד הבית של אלינה פיטנס">
-        <span class="brand-mark">AF</span>
+        <span class="brand-mark" aria-hidden="true"></span>
         <span>
           <strong>אלינה פיטנס</strong>
           <small>@mamalina_2412</small>
@@ -30,81 +31,130 @@
         <span></span>
       </button>
       <nav class="site-nav" data-nav>
-        <a href="#training">אימונים</a>
-        <a href="#photos">תמונות</a>
-        <a href="#contact">יצירת קשר</a>
+        <a href="#method">השיטה</a>
+        <a href="#programs">מסלולים</a>
+        <a href="#proof">אנרגיה</a>
+        <a href="#contact">מתחילים</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-media" role="img" aria-label="אלינה אחרי מרוץ עם מדליה"></div>
-        <div class="hero-shade"></div>
-        <div class="hero-content">
-          <p class="eyebrow">כושר אישי · כוח · חיטוב · התמדה</p>
-          <h1>אימונים אישיים עם אלינה</h1>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+
+        <div class="hero-content reveal">
+          <p class="eyebrow">אימונים אישיים · כוח · חיטוב · התמדה</p>
+          <h1 id="hero-title">אלינה פיטנס</h1>
           <p class="hero-copy">
-            ליווי כושר לנשים וגברים שרוצים להתחזק, להתחטב ולהיכנס לשגרה ברורה שאפשר להתמיד בה.
+            אימון שמרגיש אישי מהרגע הראשון: חד, אנרגטי, מותאם לגוף שלך, ועם קצב שמחזיק אותך בתנועה גם אחרי שהמוטיבציה יורדת.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#contact">לתיאום אימון</a>
-            <a class="button glass" href="https://www.instagram.com/mamalina_2412/" target="_blank" rel="noreferrer">
+            <a class="button secondary" href="https://www.instagram.com/mamalina_2412/" target="_blank" rel="noreferrer">
               אינסטגרם
             </a>
           </div>
         </div>
+
+        <aside class="hero-panel reveal" aria-label="נתוני אימון">
+          <span>Built for consistency</span>
+          <strong>כוח אמיתי מתחיל בשגרה שאפשר לעמוד בה.</strong>
+          <div class="pulse-line" aria-hidden="true"></div>
+        </aside>
+
+        <div class="hero-word" aria-hidden="true">ALINA</div>
       </section>
 
-      <section class="intro section" id="training">
-        <div class="section-heading">
-          <p class="eyebrow dark">מה מקבלים</p>
-          <h2>פשוט, אישי, ומכוון תוצאות.</h2>
+      <section class="ticker" aria-label="דגשים באימון">
+        <div>
+          <span>טכניקה</span>
+          <span>כוח</span>
+          <span>חיטוב</span>
+          <span>ביטחון</span>
+          <span>התמדה</span>
+          <span>אנרגיה</span>
+          <span>טכניקה</span>
+          <span>כוח</span>
+          <span>חיטוב</span>
+          <span>ביטחון</span>
+        </div>
+      </section>
+
+      <section class="section method" id="method">
+        <div class="section-heading reveal">
+          <p class="eyebrow dark">השיטה</p>
+          <h2>לא עוד תוכנית מדף. תהליך שמגיב אליך.</h2>
+        </div>
+        <div class="method-grid">
+          <article class="method-card reveal">
+            <span>01</span>
+            <h3>אבחון מדויק</h3>
+            <p>מבינים איפה את או אתה נמצאים היום, מה המטרה, ומה באמת ישתלב בחיים בלי להפוך אותם לפרויקט מסובך.</p>
+          </article>
+          <article class="method-card reveal">
+            <span>02</span>
+            <h3>אימון חכם</h3>
+            <p>עבודה על כוח, יציבה וטכניקה עם התאמה לקצב שלך, כדי שכל חזרה תרגיש מכוונת ולא אקראית.</p>
+          </article>
+          <article class="method-card reveal">
+            <span>03</span>
+            <h3>קצב שמחזיק</h3>
+            <p>מסגרת ברורה, מעקב וליווי שמחזירים אותך למסלול גם בימים עמוסים, בלי דרמה ובלי רגשות אשמה.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section programs" id="programs">
+        <div class="program-copy reveal">
+          <p class="eyebrow dark">מסלולים</p>
+          <h2>בחרו את הדרך שמתאימה לחיים שלכם.</h2>
           <p>
-            בלי עומס של הבטחות ובלי תוכניות מסובכות. אלינה בונה אימון שמתאים לרמה, למטרה ולחיים שלך.
+            פרונטלי, אונליין או קבוצה קטנה. אותו סטנדרט של יחס אישי, דיוק, ותנועה שמרגישה אפשרית לאורך זמן.
           </p>
         </div>
-        <div class="training-grid">
-          <article>
-            <span>01</span>
+        <div class="program-stack">
+          <article class="program-card reveal">
+            <span>Personal</span>
             <h3>אימון אישי</h3>
-            <p>עבודה מדויקת על כוח, טכניקה, יציבה וחיטוב, עם התאמה לקצב שלך.</p>
+            <p>למי שרוצה יחס צמוד, תיקוני טכניקה, ותוכנית שנבנית סביב הגוף, המטרה והלו״ז.</p>
           </article>
-          <article>
-            <span>02</span>
+          <article class="program-card featured reveal">
+            <span>Online</span>
             <h3>ליווי אונליין</h3>
             <p>תוכנית ברורה, מעקב והכוונה גם כשמתאמנים מהבית או מחדר הכושר.</p>
           </article>
-          <article>
-            <span>03</span>
+          <article class="program-card reveal">
+            <span>Small group</span>
             <h3>קבוצה קטנה</h3>
-            <p>אנרגיה של קבוצה עם יחס אישי, תיקונים ומסגרת שמחזיקה אותך בתנועה.</p>
+            <p>אנרגיה של ביחד, עם מקום לראות כל מתאמנת ומתאמן ולשמור על ביצוע נכון.</p>
           </article>
         </div>
       </section>
 
-      <section class="photos section" id="photos">
-        <div class="photo-copy">
-          <p class="eyebrow dark">מהאינסטגרם</p>
-          <h2>הדרך של אלינה, בגובה העיניים.</h2>
-          <p>
-            תמונות מהפרופיל ומהפוסט ששלחת, כדי שהאתר ירגיש אישי יותר ופחות כמו תבנית כללית.
-          </p>
+      <section class="proof" id="proof">
+        <div class="proof-photo reveal">
+          <img src="./assets/images/alina-marathon.jpg" alt="אלינה מחייכת אחרי מרוץ עם מדליה" />
         </div>
-        <div class="photo-grid">
-          <figure class="photo-main">
-            <img src="./assets/images/alina-marathon.jpg" alt="אלינה אחרי מרוץ עם מדליה" />
-          </figure>
-          <figure>
-            <img src="./assets/images/alina-profile.jpg" alt="תמונת פרופיל של אלינה" />
-          </figure>
-          <a class="instagram-tile" href="https://www.instagram.com/p/DGnyDoKIRZv/" target="_blank" rel="noreferrer">
-            <span>לראות עוד באינסטגרם</span>
-            <strong>@mamalina_2412</strong>
+        <div class="proof-copy reveal">
+          <p class="eyebrow">מהאינסטגרם</p>
+          <h2>חיוך של אחרי מאמץ. בדיוק האנרגיה שמביאה לאימון.</h2>
+          <p>
+            האתר שם את אלינה בפרונט: לא תמונת סטוק, לא הבטחה ריקה, אלא תחושה אמיתית של תנועה, התקדמות ונוכחות.
+          </p>
+          <div class="proof-stats">
+            <span><strong>1:1</strong> יחס אישי</span>
+            <span><strong>3</strong> מסלולי אימון</span>
+            <span><strong>100%</strong> קצב מותאם</span>
+          </div>
+          <a class="button secondary dark" href="https://www.instagram.com/p/DGnyDoKIRZv/" target="_blank" rel="noreferrer">
+            לראות פוסט
           </a>
         </div>
       </section>
 
-      <section class="contact section" id="contact">
+      <section class="contact section reveal" id="contact">
         <div>
           <p class="eyebrow">מתחילים</p>
           <h2>רוצה לבדוק אם זה מתאים לך?</h2>
