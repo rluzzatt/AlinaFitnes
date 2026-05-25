@@ -331,6 +331,114 @@ h2 {
   filter: blur(0.5px);
 }
 
+.featured-reel {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1fr);
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.reel-media {
+  position: relative;
+  min-height: 680px;
+  overflow: hidden;
+  color: var(--white);
+  background: var(--ink);
+  isolation: isolate;
+}
+
+.reel-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent 34%, rgba(17, 16, 15, 0.5));
+}
+
+.reel-media img {
+  object-position: center;
+  filter: saturate(0.92) contrast(0.96);
+  transition: transform 700ms ease, filter 700ms ease;
+}
+
+.reel-media:hover img {
+  filter: saturate(1.08) contrast(1.02);
+  transform: scale(1.045);
+}
+
+.play-mark {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 88px;
+  height: 88px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 253, 248, 0.66);
+  border-radius: 50%;
+  background: rgba(17, 16, 15, 0.26);
+  backdrop-filter: blur(10px);
+  transform: translate(-50%, -50%);
+}
+
+.play-mark::before {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-left: 6px;
+  border-block: 15px solid transparent;
+  border-left: 24px solid var(--white);
+}
+
+.reel-copy {
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 4vw, 54px);
+  background: rgba(255, 253, 248, 0.52);
+}
+
+.reel-copy span,
+.reel-copy a {
+  display: block;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.reel-copy h2 {
+  margin-bottom: 24px;
+}
+
+.reel-copy p {
+  max-width: 520px;
+  color: var(--muted);
+  direction: ltr;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.reel-copy a {
+  --button-x: 0px;
+  --button-y: 0px;
+  width: fit-content;
+  margin-top: 18px;
+  padding: 13px 18px;
+  color: var(--ink);
+  background: var(--acid);
+  transform: translate3d(var(--button-x), var(--button-y), 0);
+  transition: transform 180ms ease;
+}
+
+.reel-copy a:hover {
+  transform: translate3d(var(--button-x), calc(var(--button-y) - 4px), 0);
+}
+
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -795,6 +903,7 @@ html.js-motion .reveal.is-visible {
   }
 
   .case-intro,
+  .featured-reel,
   .split,
   .program-heading,
   .instagram-heading,
@@ -812,6 +921,21 @@ html.js-motion .reveal.is-visible {
 
   .image-statement {
     height: 520px;
+  }
+
+  .reel-media,
+  .reel-copy {
+    min-height: 520px;
+  }
+
+  .reel-copy {
+    justify-content: flex-start;
+    padding: 28px 20px;
+  }
+
+  .play-mark {
+    width: 76px;
+    height: 76px;
   }
 
   .split {
