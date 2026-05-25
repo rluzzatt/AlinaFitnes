@@ -601,7 +601,7 @@ html.js-motion .reveal.is-visible {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1180px), (pointer: coarse) {
   .site-chrome {
     height: 72px;
     grid-template-columns: 56px 1fr 56px;
@@ -678,16 +678,17 @@ html.js-motion .reveal.is-visible {
 
   .hero {
     padding: 72px 12px 12px;
+    min-height: 100svh;
   }
 
   .hero-frame {
-    height: calc(100vh - 84px);
-    min-height: 620px;
+    height: calc(100svh - 84px);
+    min-height: 0;
   }
 
   .hero-copy-strip {
     top: 44%;
-    font-size: clamp(2.6rem, 15vw, 5rem);
+    font-size: clamp(2.6rem, 12vw, 5rem);
   }
 
   .hero-meta {
@@ -697,13 +698,17 @@ html.js-motion .reveal.is-visible {
   }
 
   .hero-meta h1 {
-    font-size: clamp(4.6rem, 21vw, 6.5rem);
+    font-size: clamp(4.2rem, 16vw, 6.5rem);
   }
 
   .section,
   .image-statement,
   .billboard {
     width: calc(100% - 24px);
+  }
+
+  .section {
+    padding-inline: 0;
   }
 
   .case-intro,
@@ -718,7 +723,7 @@ html.js-motion .reveal.is-visible {
   }
 
   h2 {
-    font-size: clamp(3rem, 14vw, 5rem);
+    font-size: clamp(2.85rem, 11vw, 5rem);
   }
 
   .image-statement {
