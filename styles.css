@@ -73,10 +73,10 @@ img {
   gap: 18px;
   padding: 0 12px;
   color: var(--ink);
-  font-family: "Courier New", Courier, monospace;
+  font-family: Heebo, system-ui, sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   mix-blend-mode: normal;
 }
 
@@ -99,10 +99,6 @@ img {
   gap: 28px;
 }
 
-.desktop-nav a:first-child::before {
-  content: "• ";
-}
-
 .chrome-title {
   justify-self: center;
   text-align: center;
@@ -118,10 +114,10 @@ img {
   position: fixed;
   z-index: 45;
   color: var(--ink);
-  font-family: "Courier New", Courier, monospace;
+  font-family: Heebo, system-ui, sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   pointer-events: none;
 }
 
@@ -186,11 +182,13 @@ main {
   gap: 4vw;
   width: max-content;
   color: rgba(255, 253, 248, 0.82);
-  direction: ltr;
+  direction: rtl;
+  font-family: "Noto Serif Hebrew", Georgia, serif;
   font-size: clamp(2.8rem, 7vw, 7.2rem);
-  font-weight: 400;
+  font-weight: 900;
   line-height: 1;
   white-space: nowrap;
+  text-shadow: 0 18px 60px rgba(17, 16, 15, 0.36);
   transform: translateX(-50%);
   animation: drift-type 22s linear infinite;
 }
@@ -208,7 +206,7 @@ main {
 .hero-meta p,
 .hero-meta a {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Heebo, system-ui, sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -249,7 +247,7 @@ main {
 .contact span {
   display: block;
   margin-bottom: 18px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Heebo, system-ui, sans-serif;
   font-size: 0.86rem;
   font-weight: 700;
   color: var(--muted);
@@ -288,10 +286,9 @@ h2 {
 .case-facts dt {
   margin-bottom: 12px;
   color: var(--muted);
-  font-family: "Courier New", Courier, monospace;
+  font-family: Heebo, system-ui, sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 .case-facts dd {
@@ -348,7 +345,7 @@ h2 {
 .reel-copy span,
 .reel-copy a {
   display: block;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Heebo, system-ui, sans-serif;
   font-size: 0.86rem;
   font-weight: 700;
   color: var(--muted);
@@ -361,8 +358,8 @@ h2 {
 .reel-copy p {
   max-width: 520px;
   color: var(--muted);
-  direction: ltr;
-  font-family: "Courier New", Courier, monospace;
+  direction: rtl;
+  font-family: Heebo, system-ui, sans-serif;
   font-size: 1.02rem;
   font-weight: 700;
   line-height: 1.55;
@@ -426,13 +423,14 @@ h2 {
   padding: 18px;
   color: var(--ink);
   background: rgba(255, 253, 248, 0.9);
+  text-align: right;
 }
 
 .phone-ui span,
 .phone-ui small {
   display: block;
-  direction: ltr;
-  font-family: "Courier New", Courier, monospace;
+  direction: rtl;
+  font-family: Heebo, system-ui, sans-serif;
   font-weight: 700;
 }
 
@@ -542,7 +540,7 @@ h2 {
 .instagram-heading span,
 .instagram-shot span {
   display: block;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Heebo, system-ui, sans-serif;
   font-size: 0.86rem;
   font-weight: 700;
   color: var(--muted);
@@ -587,7 +585,7 @@ h2 {
   right: 18px;
   bottom: 16px;
   color: rgba(255, 253, 248, 0.82);
-  direction: ltr;
+  direction: rtl;
 }
 
 .shot-tall {
@@ -659,11 +657,11 @@ h2 {
   justify-content: center;
   margin-top: 30px;
   padding: 24px 28px;
-  direction: ltr;
+  direction: rtl;
   border: 1px solid var(--ink);
   color: var(--ink);
   background: var(--acid);
-  font-family: "Courier New", Courier, monospace;
+  font-family: Heebo, system-ui, sans-serif;
   font-size: clamp(1.2rem, 3vw, 2.1rem);
   font-weight: 700;
   transform: translate3d(var(--button-x), var(--button-y), 0);
