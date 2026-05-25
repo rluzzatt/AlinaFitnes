@@ -31,7 +31,6 @@ if (header && nav && navToggle) {
 }
 
 const revealItems = document.querySelectorAll(".reveal");
-const counters = document.querySelectorAll("[data-counter]");
 
 const revealVisibleItems = () => {
   revealItems.forEach((item) => {
@@ -43,57 +42,9 @@ const revealVisibleItems = () => {
   });
 };
 
-const setCounterFinalValue = (counter) => {
-  const suffix = counter.dataset.suffix || "";
-  counter.textContent = `${counter.dataset.counter || counter.textContent}${suffix}`;
-  counter.dataset.counted = "true";
-};
-
-const animateCounter = (counter) => {
-  if (counter.dataset.counted === "true") {
-    return;
-  }
-
-  const target = Number(counter.dataset.counter);
-
-  if (!Number.isFinite(target) || !window.requestAnimationFrame || !window.performance) {
-    setCounterFinalValue(counter);
-    return;
-  }
-
-  counter.dataset.counted = "true";
-  const suffix = counter.dataset.suffix || "";
-  const start = performance.now();
-  const duration = 1200;
-
-  const tick = (time) => {
-    const progress = Math.min((time - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-
-    counter.textContent = `${Math.round(target * eased)}${suffix}`;
-
-    if (progress < 1) {
-      window.requestAnimationFrame(tick);
-    }
-  };
-
-  window.requestAnimationFrame(tick);
-};
-
-const activateVisibleCounters = () => {
-  counters.forEach((counter) => {
-    const rect = counter.getBoundingClientRect();
-
-    if (rect.top < window.innerHeight * 0.84 && rect.bottom > 0) {
-      reduceMotion ? setCounterFinalValue(counter) : animateCounter(counter);
-    }
-  });
-};
-
 const syncScroll = () => {
   root.style.setProperty("--scroll", String(window.scrollY));
   revealVisibleItems();
-  activateVisibleCounters();
 };
 
 window.addEventListener("scroll", syncScroll, { passive: true });

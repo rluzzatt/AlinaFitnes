@@ -140,7 +140,7 @@ img {
 }
 
 main {
-  padding-bottom: 120px;
+  padding-bottom: 48px;
 }
 
 .hero {
@@ -235,15 +235,14 @@ main {
 .case-intro {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
-  gap: 48px;
-  padding: 88px 0 70px;
+  gap: 32px;
+  padding: 56px 0 44px;
 }
 
 .intro-title span,
 .type-card span,
 .program-heading span,
 .program span,
-.billboard-text span,
 .contact span {
   display: block;
   margin-bottom: 18px;
@@ -262,8 +261,8 @@ p {
 h2 {
   margin-bottom: 0;
   font-family: "Noto Serif Hebrew", Georgia, serif;
-  font-size: clamp(3rem, 7vw, 7.2rem);
-  line-height: 0.92;
+  font-size: clamp(2.25rem, 4.8vw, 5.2rem);
+  line-height: 0.96;
   letter-spacing: 0;
   text-wrap: balance;
 }
@@ -301,12 +300,13 @@ h2 {
   display: grid;
   grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1fr);
   gap: 12px;
-  padding-top: 0;
+  padding-top: 8px;
 }
 
 .reel-media {
   position: relative;
-  min-height: 680px;
+  height: 520px;
+  min-height: 0;
   overflow: hidden;
   color: var(--white);
   background: var(--ink);
@@ -334,7 +334,7 @@ h2 {
 }
 
 .reel-copy {
-  min-height: 680px;
+  min-height: 520px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -367,95 +367,32 @@ h2 {
 
 .split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 12px;
-  padding-top: 12px;
+  padding-top: 52px;
 }
 
-.phone-card,
 .type-card {
-  min-height: 620px;
+  min-height: 420px;
   overflow: hidden;
   background: rgba(255, 253, 248, 0.52);
 }
 
-.phone-card,
 .program {
   transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
   transition: transform 220ms ease, box-shadow 220ms ease;
   will-change: transform;
 }
 
-.phone-card:hover,
 .program:hover {
   box-shadow: 0 28px 70px rgba(17, 16, 15, 0.16);
-}
-
-.phone-card {
-  display: grid;
-  place-items: center;
-  background:
-    linear-gradient(90deg, rgba(255, 253, 248, 0.28) 1px, transparent 1px) 0 0 / 25% 25%,
-    var(--blue);
-}
-
-.phone-shell {
-  position: relative;
-  width: min(310px, 72%);
-  aspect-ratio: 0.52;
-  overflow: hidden;
-  border: 14px solid var(--ink);
-  border-radius: 34px;
-  background: var(--ink);
-  box-shadow: 0 22px 68px rgba(17, 16, 15, 0.28);
-}
-
-.phone-shell img {
-  opacity: 0.56;
-  object-position: center 20%;
-}
-
-.phone-ui {
-  position: absolute;
-  right: 18px;
-  bottom: 22px;
-  left: 18px;
-  padding: 18px;
-  color: var(--ink);
-  background: rgba(255, 253, 248, 0.9);
-  text-align: right;
-}
-
-.phone-ui span,
-.phone-ui small {
-  display: block;
-  direction: rtl;
-  font-family: Heebo, system-ui, sans-serif;
-  font-weight: 700;
-}
-
-.phone-ui strong {
-  display: block;
-  direction: ltr;
-  margin: 8px 0;
-  font-size: clamp(3.2rem, 6vw, 5rem);
-  line-height: 0.9;
-}
-
-.chart {
-  height: 86px;
-  margin-top: 16px;
-  background:
-    linear-gradient(140deg, transparent 0 9%, var(--ink) 9% 10%, transparent 10% 25%, var(--ink) 25% 26%, transparent 26% 42%, var(--ink) 42% 43%, transparent 43%),
-    linear-gradient(180deg, transparent 52%, rgba(17, 16, 15, 0.18) 52%);
-  clip-path: polygon(0 72%, 12% 66%, 21% 40%, 33% 58%, 45% 28%, 58% 45%, 72% 18%, 88% 34%, 100% 12%, 100% 100%, 0 100%);
 }
 
 .type-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: clamp(28px, 4vw, 46px);
+  padding: clamp(28px, 4vw, 44px);
 }
 
 .type-card p,
@@ -467,13 +404,13 @@ h2 {
 }
 
 .programs {
-  padding-top: 96px;
+  padding-top: 56px;
 }
 
 .program-heading {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
-  gap: 40px;
+  gap: 28px;
   align-items: end;
   margin-bottom: 22px;
 }
@@ -489,7 +426,7 @@ h2 {
 }
 
 .program {
-  min-height: 360px;
+  min-height: 240px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -522,13 +459,13 @@ h2 {
 }
 
 .instagram-spread {
-  padding-top: 104px;
+  padding-top: 64px;
 }
 
 .instagram-heading {
   display: grid;
   grid-template-columns: minmax(0, 0.75fr) minmax(0, 1fr);
-  gap: 40px;
+  gap: 28px;
   align-items: end;
   margin-bottom: 22px;
 }
@@ -548,8 +485,8 @@ h2 {
 
 .instagram-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.72fr 0.72fr;
-  grid-auto-rows: 260px;
+  grid-template-columns: 1.1fr 0.85fr 0.85fr;
+  grid-auto-rows: 220px;
   gap: 12px;
 }
 
@@ -604,44 +541,12 @@ h2 {
   object-position: center 42%;
 }
 
-.billboard {
-  position: relative;
-  width: min(1044px, calc(100% - 18.4vw));
-  height: min(65vw, 720px);
-  min-height: 520px;
-  margin: 108px auto 0;
-  overflow: hidden;
-  background: var(--ink);
-}
-
-.billboard img {
-  filter: brightness(0.66) saturate(0.92);
-  object-position: center 18%;
-  transform: scale(1.04);
-}
-
-.billboard-text {
-  position: absolute;
-  right: 38px;
-  bottom: 38px;
-  left: 38px;
-  color: var(--white);
-}
-
-.billboard-text span {
-  color: rgba(255, 253, 248, 0.72);
-}
-
-.billboard-text h2 {
-  max-width: 760px;
-}
-
 .contact {
-  min-height: 78vh;
+  min-height: 54vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 110px;
+  padding-top: 52px;
 }
 
 .contact h2 {
@@ -819,8 +724,7 @@ html.js-motion .reveal.is-visible {
     font-size: clamp(4.2rem, 16vw, 6.5rem);
   }
 
-  .section,
-  .billboard {
+  .section {
     width: calc(100% - 24px);
   }
 
@@ -838,16 +742,20 @@ html.js-motion .reveal.is-visible {
   }
 
   .case-intro {
-    padding-top: 70px;
+    padding-top: 44px;
+    padding-bottom: 34px;
   }
 
   h2 {
-    font-size: clamp(2.85rem, 11vw, 5rem);
+    font-size: clamp(2.05rem, 8.6vw, 3.8rem);
   }
 
-  .reel-media,
+  .reel-media {
+    height: 360px;
+  }
+
   .reel-copy {
-    min-height: 520px;
+    min-height: auto;
   }
 
   .reel-copy {
@@ -856,12 +764,11 @@ html.js-motion .reveal.is-visible {
   }
 
   .split {
-    padding-top: 12px;
+    padding-top: 44px;
   }
 
-  .phone-card,
   .type-card {
-    min-height: 520px;
+    min-height: auto;
   }
 
   .program-heading h2 {
@@ -874,7 +781,7 @@ html.js-motion .reveal.is-visible {
 
   .instagram-grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: 360px;
+    grid-auto-rows: 240px;
   }
 
   .shot-tall,
@@ -884,18 +791,7 @@ html.js-motion .reveal.is-visible {
   }
 
   .program {
-    min-height: 280px;
-  }
-
-  .billboard {
-    min-height: 620px;
-    margin-top: 70px;
-  }
-
-  .billboard-text {
-    right: 22px;
-    bottom: 28px;
-    left: 22px;
+    min-height: 200px;
   }
 }
 
