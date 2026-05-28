@@ -32,10 +32,11 @@ if (header && nav && navToggle) {
 }
 
 const revealItems = document.querySelectorAll(".reveal");
+let revealVisibleItems = () => {};
 
-if (reduceMotion || !("IntersectionObserver" in window)) {
+if (reduceMotion) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
-} else {
+} else if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
@@ -54,14 +55,30 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealVisibleItems = () => {
+    revealItems.forEach((item) => {
+      if (item.classList.contains("is-visible")) {
+        return;
+      }
+
+      const rect = item.getBoundingClientRect();
+
+      if (rect.top < window.innerHeight * 0.86 && rect.bottom > 0) {
+        item.classList.add("is-visible");
+      }
+    });
+  };
 }
 
 const syncScroll = () => {
   root.style.setProperty("--scroll", String(window.scrollY));
+  revealVisibleItems();
 };
 
 window.addEventListener("scroll", syncScroll, { passive: true });
 window.addEventListener("resize", syncScroll);
+window.setTimeout(syncScroll, 180);
 syncScroll();
 
 if (!reduceMotion && finePointer && window.requestAnimationFrame) {

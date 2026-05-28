@@ -267,6 +267,12 @@ html.js-motion .hero-cta {
   animation-delay: 460ms;
 }
 
+html.js-motion .hero-cta.whatsapp-button {
+  animation:
+    hero-enter 980ms cubic-bezier(0.19, 1, 0.22, 1) 460ms both,
+    whatsapp-attention 4s ease-in-out 1.8s infinite;
+}
+
 .section {
   width: min(1044px, calc(100% - 18.4vw));
   margin-inline: auto;
