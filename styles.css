@@ -248,30 +248,32 @@ main {
 .hero-copy-strip {
   position: absolute;
   z-index: 4;
-  inset: 38% auto auto 50%;
-  display: flex;
-  gap: clamp(18px, 3vw, 42px);
-  width: max-content;
+  inset: 34% auto auto 50%;
+  display: grid;
+  width: min(840px, calc(100% - 44px));
+  min-height: clamp(92px, 11vw, 148px);
+  place-items: center;
   color: var(--white);
   direction: rtl;
   font-family: "Noto Serif Hebrew", Georgia, serif;
-  font-size: clamp(2.45rem, 6vw, 6.4rem);
+  font-size: clamp(2.4rem, 5.8vw, 6.2rem);
   font-weight: 900;
   line-height: 0.94;
-  white-space: nowrap;
+  text-align: center;
   text-shadow:
     0 2px 0 rgba(17, 16, 15, 0.58),
     0 20px 54px rgba(17, 16, 15, 0.72),
     0 0 30px rgba(255, 253, 248, 0.22);
   transform: translateX(-50%);
-  animation: drift-type 22s linear infinite;
   -webkit-text-stroke: 1px rgba(17, 16, 15, 0.42);
 }
 
 .hero-copy-strip span {
   position: relative;
-  display: block;
-  padding: 0.12em 0.2em 0.18em;
+  grid-area: 1 / 1;
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.16em 0.24em 0.2em;
   border: 1px solid rgba(255, 253, 248, 0.24);
   border-radius: 6px;
   background:
@@ -281,6 +283,17 @@ main {
     inset 0 1px 0 rgba(255, 253, 248, 0.18),
     0 24px 80px rgba(17, 16, 15, 0.46);
   backdrop-filter: blur(10px) saturate(1.2);
+  opacity: 0;
+  transform: translateY(32px) scale(0.94);
+  animation: hero-phrase-cycle 9s cubic-bezier(0.19, 1, 0.22, 1) infinite;
+}
+
+.hero-copy-strip span:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.hero-copy-strip span:nth-child(3) {
+  animation-delay: 6s;
 }
 
 .hero-copy-strip span::after {
@@ -883,16 +896,6 @@ html.js-motion .reveal.is-visible {
   }
 }
 
-@keyframes drift-type {
-  from {
-    transform: translateX(-38%);
-  }
-
-  to {
-    transform: translateX(-62%);
-  }
-}
-
 @keyframes hero-enter {
   from {
     opacity: 0;
@@ -902,6 +905,22 @@ html.js-motion .reveal.is-visible {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes hero-phrase-cycle {
+  0%,
+  30% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+
+  38%,
+  100% {
+    opacity: 0;
+    transform: translateY(-28px) scale(0.97);
+    filter: blur(7px);
   }
 }
 
@@ -975,6 +994,16 @@ html.js-motion .reveal.is-visible {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.001ms !important;
+  }
+
+  .hero-copy-strip span {
+    animation: none !important;
+    opacity: 0;
+    transform: none;
+  }
+
+  .hero-copy-strip span:first-child {
+    opacity: 1;
   }
 }
 
@@ -1064,9 +1093,10 @@ html.js-motion .reveal.is-visible {
   }
 
   .hero-copy-strip {
-    top: 42%;
-    gap: 14px;
-    font-size: clamp(2.05rem, 10vw, 4.4rem);
+    top: 34%;
+    width: calc(100% - 28px);
+    min-height: clamp(86px, 24vw, 124px);
+    font-size: clamp(1.95rem, 9vw, 4rem);
   }
 
   .hero-copy-strip span {
