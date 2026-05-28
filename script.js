@@ -34,6 +34,10 @@ if (header && nav && navToggle) {
 const revealItems = document.querySelectorAll(".reveal");
 let revealVisibleItems = () => {};
 
+revealItems.forEach((item, index) => {
+  item.style.setProperty("--reveal-delay", `${Math.min(index * 65, 260)}ms`);
+});
+
 if (reduceMotion) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 } else if ("IntersectionObserver" in window) {
@@ -72,7 +76,12 @@ if (reduceMotion) {
 }
 
 const syncScroll = () => {
-  root.style.setProperty("--scroll", String(window.scrollY));
+  const scrollTop = window.scrollY;
+  const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+
+  root.style.setProperty("--scroll", String(scrollTop));
+  root.style.setProperty("--page-progress", String(Math.min(scrollTop / maxScroll, 1)));
+  document.body.classList.toggle("is-scrolled", scrollTop > 24);
   revealVisibleItems();
 };
 
