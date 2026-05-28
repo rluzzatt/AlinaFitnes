@@ -29,6 +29,18 @@ if (header && nav && navToggle) {
       closeNav();
     }
   });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeNav();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!header.contains(event.target)) {
+      closeNav();
+    }
+  });
 }
 
 const revealItems = document.querySelectorAll(".reveal");
