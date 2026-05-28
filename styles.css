@@ -9,9 +9,9 @@
   --blue: #9dc6d2;
   --shadow: 0 32px 80px rgba(17, 16, 15, 0.18);
   --scroll: 0;
-  --reveal-distance: 34px;
-  --reveal-duration: 760ms;
-  --hero-enter-distance: 20px;
+  --reveal-distance: 48px;
+  --reveal-duration: 940ms;
+  --hero-enter-distance: 32px;
   --button-x: 0px;
   --button-y: 0px;
   --card-lift: 0px;
@@ -248,7 +248,7 @@ html.js-motion .hero-subtitle,
 html.js-motion .hero-title,
 html.js-motion .hero-cta {
   opacity: 0;
-  animation: hero-enter 760ms cubic-bezier(0.19, 1, 0.22, 1) both;
+  animation: hero-enter 980ms cubic-bezier(0.19, 1, 0.22, 1) both;
 }
 
 html.js-motion .hero-image {
@@ -462,8 +462,8 @@ h2 {
   }
 
   .hero-meta a:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 14px 30px rgba(17, 16, 15, 0.16);
+    transform: translateY(-3px) scale(1.025);
+    box-shadow: 0 16px 34px rgba(17, 16, 15, 0.18);
   }
 
   .contact-link:hover {
@@ -653,7 +653,7 @@ h2 {
   font-size: clamp(1.2rem, 3vw, 2.1rem);
   font-weight: 700;
   transform: translate3d(var(--button-x), var(--button-y), 0);
-  animation: whatsapp-attention 4.8s ease-in-out 1.4s infinite;
+  animation: whatsapp-attention 4s ease-in-out 1.2s infinite;
   transition:
     transform 180ms ease,
     filter 180ms ease,
@@ -729,11 +729,11 @@ html.js-motion .reveal.is-visible {
   }
 
   78% {
-    box-shadow: 0 0 0 8px rgba(227, 255, 49, 0.2);
+    box-shadow: 0 0 0 10px rgba(227, 255, 49, 0.28);
   }
 
   90% {
-    box-shadow: 0 0 0 14px rgba(227, 255, 49, 0);
+    box-shadow: 0 0 0 18px rgba(227, 255, 49, 0);
   }
 }
 
