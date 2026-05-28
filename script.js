@@ -3,6 +3,7 @@ const header = document.querySelector("[data-header]");
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
 if (!reduceMotion) {
   root.classList.add("js-motion");
@@ -32,27 +33,38 @@ if (header && nav && navToggle) {
 
 const revealItems = document.querySelectorAll(".reveal");
 
-const revealVisibleItems = () => {
-  revealItems.forEach((item) => {
-    const rect = item.getBoundingClientRect();
+if (reduceMotion || !("IntersectionObserver" in window)) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
 
-    if (rect.top < window.innerHeight * 0.9 && rect.bottom > 0) {
-      item.classList.add("is-visible");
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      rootMargin: "0px 0px -12% 0px",
+      threshold: 0.14,
     }
-  });
-};
+  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+}
 
 const syncScroll = () => {
   root.style.setProperty("--scroll", String(window.scrollY));
-  revealVisibleItems();
 };
 
 window.addEventListener("scroll", syncScroll, { passive: true });
 window.addEventListener("resize", syncScroll);
-window.setTimeout(syncScroll, 180);
 syncScroll();
 
-if (!reduceMotion && window.requestAnimationFrame) {
+if (!reduceMotion && finePointer && window.requestAnimationFrame) {
   document.querySelectorAll("[data-magnetic]").forEach((target) => {
     target.addEventListener("pointermove", (event) => {
       const rect = target.getBoundingClientRect();

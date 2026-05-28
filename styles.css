@@ -9,8 +9,12 @@
   --blue: #9dc6d2;
   --shadow: 0 32px 80px rgba(17, 16, 15, 0.18);
   --scroll: 0;
+  --reveal-distance: 34px;
+  --reveal-duration: 760ms;
+  --hero-enter-distance: 20px;
   --button-x: 0px;
   --button-y: 0px;
+  --card-lift: 0px;
   --tilt-x: 0deg;
   --tilt-y: 0deg;
 }
@@ -225,6 +229,42 @@ main {
   padding: 10px 16px;
   color: var(--ink);
   background: var(--acid);
+  transition:
+    transform 180ms ease,
+    filter 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.hero-image,
+.hero-subtitle,
+.hero-title,
+.hero-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html.js-motion .hero-image,
+html.js-motion .hero-subtitle,
+html.js-motion .hero-title,
+html.js-motion .hero-cta {
+  opacity: 0;
+  animation: hero-enter 760ms cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
+html.js-motion .hero-image {
+  animation-delay: 80ms;
+}
+
+html.js-motion .hero-subtitle {
+  animation-delay: 220ms;
+}
+
+html.js-motion .hero-title {
+  animation-delay: 330ms;
+}
+
+html.js-motion .hero-cta {
+  animation-delay: 460ms;
 }
 
 .section {
@@ -378,14 +418,57 @@ h2 {
   background: rgba(255, 253, 248, 0.52);
 }
 
+.case-facts,
+.reel-media,
+.reel-copy,
+.type-card,
+.program,
+.instagram-shot {
+  --card-lift: 0px;
+  transform: translateY(var(--card-lift));
+  transition:
+    transform 240ms ease,
+    box-shadow 240ms ease,
+    filter 240ms ease;
+}
+
 .program {
-  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  transform:
+    translateY(var(--card-lift))
+    perspective(900px)
+    rotateX(var(--tilt-x))
+    rotateY(var(--tilt-y));
   will-change: transform;
 }
 
-.program:hover {
-  box-shadow: 0 28px 70px rgba(17, 16, 15, 0.16);
+@media (hover: hover) and (pointer: fine) {
+  .case-facts:hover,
+  .reel-media:hover,
+  .reel-copy:hover,
+  .type-card:hover,
+  .instagram-shot:hover {
+    --card-lift: -6px;
+    box-shadow: 0 24px 62px rgba(17, 16, 15, 0.13);
+  }
+
+  .program:hover {
+    --card-lift: -7px;
+    box-shadow: 0 28px 70px rgba(17, 16, 15, 0.16);
+  }
+
+  .hero-meta a:hover,
+  .contact-link:hover {
+    filter: brightness(1.04);
+  }
+
+  .hero-meta a:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(17, 16, 15, 0.16);
+  }
+
+  .contact-link:hover {
+    transform: translate3d(var(--button-x), calc(var(--button-y) - 4px), 0) scale(1.015);
+  }
 }
 
 .type-card {
@@ -570,27 +653,40 @@ h2 {
   font-size: clamp(1.2rem, 3vw, 2.1rem);
   font-weight: 700;
   transform: translate3d(var(--button-x), var(--button-y), 0);
-  transition: transform 180ms ease;
-}
-
-.contact-link:hover {
-  transform: translate3d(var(--button-x), calc(var(--button-y) - 4px), 0);
+  animation: whatsapp-attention 4.8s ease-in-out 1.4s infinite;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .reveal {
+  --reveal-y: 0px;
   opacity: 1;
-  transform: none;
+  transform: translate3d(0, calc(var(--reveal-y) + var(--card-lift, 0px)), 0);
 }
 
 html.js-motion .reveal {
   opacity: 0;
-  transform: translateY(44px);
-  transition: opacity 760ms ease, transform 860ms cubic-bezier(0.19, 1, 0.22, 1);
+  --reveal-y: var(--reveal-distance);
+  transition:
+    opacity var(--reveal-duration) ease,
+    transform 860ms cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 240ms ease,
+    filter 240ms ease;
 }
 
 html.js-motion .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  --reveal-y: 0px;
+}
+
+.program.reveal {
+  transform:
+    translateY(calc(var(--reveal-y) + var(--card-lift)))
+    perspective(900px)
+    rotateX(var(--tilt-x))
+    rotateY(var(--tilt-y));
 }
 
 @keyframes wipe {
@@ -610,6 +706,34 @@ html.js-motion .reveal.is-visible {
 
   to {
     transform: translateX(-62%);
+  }
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--hero-enter-distance));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes whatsapp-attention {
+  0%,
+  68%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(227, 255, 49, 0);
+  }
+
+  78% {
+    box-shadow: 0 0 0 8px rgba(227, 255, 49, 0.2);
+  }
+
+  90% {
+    box-shadow: 0 0 0 14px rgba(227, 255, 49, 0);
   }
 }
 
