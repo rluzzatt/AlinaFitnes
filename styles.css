@@ -12,8 +12,8 @@
   --page-progress: 0;
   --reveal-distance: 70px;
   --reveal-scale: 0.94;
-  --reveal-blur: 10px;
-  --reveal-duration: 1100ms;
+  --reveal-blur: 6px;
+  --reveal-duration: 720ms;
   --hero-enter-distance: 46px;
   --button-x: 0px;
   --button-y: 0px;
@@ -864,7 +864,7 @@ html.js-motion .reveal {
   transition:
     opacity var(--reveal-duration) ease,
     transform var(--reveal-duration) cubic-bezier(0.19, 1, 0.22, 1),
-    filter 820ms ease,
+    filter 260ms ease-out,
     box-shadow 240ms ease;
   transition-delay: var(--reveal-delay);
 }
