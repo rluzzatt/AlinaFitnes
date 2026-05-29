@@ -78,6 +78,18 @@ img {
   transform: translateY(0);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .scroll-progress {
   position: fixed;
   z-index: 120;
@@ -161,6 +173,7 @@ body.is-scrolled .site-header {
   align-items: center;
   justify-content: center;
   justify-self: start;
+  gap: 10px;
   padding: 0 14px;
   border: 2px solid var(--accent-dark);
   border-radius: 0;
@@ -175,32 +188,21 @@ body.is-scrolled .site-header {
     transform 180ms ease;
 }
 
+.header-cta svg,
+.mobile-whatsapp-link svg,
+.footer-social svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .nav-toggle,
 .mobile-nav {
   display: none;
-}
-
-.floating-contact {
-  position: fixed;
-  z-index: 95;
-  left: 18px;
-  bottom: 18px;
-  display: grid;
-  gap: 8px;
-}
-
-.floating-contact a {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 14px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: var(--white);
-  background: rgba(5, 5, 5, 0.88);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
-  font-size: 0.92rem;
-  font-weight: 800;
 }
 
 main {
@@ -299,11 +301,6 @@ h2 {
   color: var(--black);
   background: var(--accent);
   box-shadow: 0 16px 44px rgba(183, 159, 135, 0.42);
-}
-
-.button-dark {
-  color: var(--white);
-  background: var(--black);
 }
 
 .quick-menu {
@@ -406,6 +403,18 @@ h2 {
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
 }
 
+.track-heading {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 14px;
+  padding: clamp(28px, 4vw, 46px) clamp(30px, 5vw, 62px);
+  border-bottom: 1px solid var(--line);
+}
+
+.track-heading h2 {
+  font-size: clamp(2.2rem, 4.2vw, 4.8rem);
+}
+
 .track-card-dark {
   background: var(--black);
   color: var(--white);
@@ -460,15 +469,6 @@ h2 {
   stroke-width: 2;
 }
 
-.breath-visual span {
-  position: absolute;
-  right: 34px;
-  bottom: 32px;
-  color: var(--logo-cream);
-  font-size: 1.08rem;
-  font-weight: 800;
-}
-
 .track-content {
   display: flex;
   flex-direction: column;
@@ -477,19 +477,18 @@ h2 {
   padding: clamp(30px, 5vw, 62px);
 }
 
-.track-content span {
+.track-heading span {
   color: var(--accent-dark);
   font-size: 0.92rem;
   font-weight: 900;
 }
 
-.track-card-dark .track-content span {
+.track-card-dark .track-heading span {
   color: var(--logo-tan);
 }
 
 .track-content p,
-.law-panel p,
-.contact-band p {
+.law-panel p {
   margin: 0;
   color: var(--muted);
   font-size: 1.1rem;
@@ -531,6 +530,7 @@ h2 {
   grid-template-columns: 1fr;
   gap: 26px;
   align-items: start;
+  padding-bottom: clamp(64px, 9vw, 108px);
 }
 
 .testimonials-copy h2 {
@@ -562,30 +562,6 @@ h2 {
   color: var(--accent-dark);
   font-size: 1rem;
   font-weight: 900;
-}
-
-.contact-band {
-  padding-bottom: 88px;
-}
-
-.contact-band-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 28px;
-  align-items: center;
-  padding: clamp(34px, 5vw, 66px);
-  background: var(--accent);
-  color: var(--white);
-}
-
-.contact-band h2,
-.contact-band p {
-  color: var(--white);
-}
-
-.contact-band h2 {
-  margin-bottom: 12px;
-  font-size: clamp(2rem, 4vw, 4.4rem);
 }
 
 .site-footer {
@@ -632,6 +608,25 @@ h2 {
   font-weight: 900;
 }
 
+.footer-social {
+  align-items: center;
+}
+
+.footer-social a {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(5, 5, 5, 0.16);
+  color: var(--ink);
+  background: var(--white);
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
 .reveal {
   opacity: 1;
   transform: translateY(0);
@@ -662,8 +657,7 @@ html.js-motion .reveal.is-visible {
     transform: translateY(-2px);
   }
 
-  .button:hover,
-  .floating-contact a:hover {
+  .button:hover {
     transform: translate3d(var(--button-x), calc(var(--button-y) - 3px), 0);
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
   }
@@ -675,8 +669,12 @@ html.js-motion .reveal.is-visible {
     transform: translateY(-3px);
   }
 
+  .footer-social a:hover,
   .site-footer a:hover {
-    color: var(--accent-dark);
+    color: var(--white);
+    border-color: var(--accent-dark);
+    background: var(--accent-dark);
+    transform: translateY(-2px);
   }
 }
 
@@ -788,6 +786,10 @@ html.js-motion .reveal.is-visible {
     border-bottom: 0;
   }
 
+  .mobile-nav .mobile-whatsapp-link {
+    justify-content: center;
+  }
+
   .hero {
     min-height: 92svh;
     padding-top: 94px;
@@ -798,7 +800,6 @@ html.js-motion .reveal.is-visible {
   .track-card,
   .law-panel,
   .testimonials,
-  .contact-band-inner,
   .site-footer {
     grid-template-columns: 1fr;
   }
@@ -820,8 +821,7 @@ html.js-motion .reveal.is-visible {
     grid-template-columns: 1fr;
   }
 
-  .law-panel .button,
-  .contact-band .button {
+  .law-panel .button {
     justify-self: stretch;
   }
 
@@ -833,18 +833,6 @@ html.js-motion .reveal.is-visible {
 @media (max-width: 560px) {
   :root {
     --content: calc(100% - 20px);
-  }
-
-  .floating-contact {
-    right: 10px;
-    left: 10px;
-    bottom: 10px;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .floating-contact a {
-    padding: 0 10px;
-    font-size: 0.84rem;
   }
 
   .hero {
@@ -884,18 +872,13 @@ html.js-motion .reveal.is-visible {
   .intro-copy,
   .track-content p,
   .law-panel p,
-  .testimonial p,
-  .contact-band p {
+  .testimonial p {
     font-size: 1rem;
   }
 
   .track-content,
-  .law-panel,
-  .contact-band-inner {
+  .track-heading,
+  .law-panel {
     padding: 28px 20px;
-  }
-
-  .contact-band {
-    padding-bottom: 104px;
   }
 }
