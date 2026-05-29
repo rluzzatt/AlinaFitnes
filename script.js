@@ -44,7 +44,19 @@ if (header && nav && navToggle) {
 }
 
 const revealItems = document.querySelectorAll(".reveal");
-let revealVisibleItems = () => {};
+const revealVisibleItems = () => {
+  revealItems.forEach((item) => {
+    if (item.classList.contains("is-visible")) {
+      return;
+    }
+
+    const rect = item.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight * 0.9 && rect.bottom > window.innerHeight * -0.25) {
+      item.classList.add("is-visible");
+    }
+  });
+};
 
 revealItems.forEach((item, index) => {
   item.style.setProperty("--reveal-delay", `${Math.min(index * 65, 260)}ms`);
@@ -71,20 +83,6 @@ if (reduceMotion) {
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
-} else {
-  revealVisibleItems = () => {
-    revealItems.forEach((item) => {
-      if (item.classList.contains("is-visible")) {
-        return;
-      }
-
-      const rect = item.getBoundingClientRect();
-
-      if (rect.top < window.innerHeight * 0.86 && rect.bottom > 0) {
-        item.classList.add("is-visible");
-      }
-    });
-  };
 }
 
 const syncScroll = () => {
