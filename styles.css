@@ -579,10 +579,7 @@ h2 {
 
 .site-footer {
   width: var(--content);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
-  align-items: center;
+  display: block;
   margin: 0 auto 34px;
   padding-top: 28px;
   border-top: 1px solid var(--line);
@@ -617,26 +614,25 @@ h2 {
 
 .site-footer nav {
   display: flex;
-  gap: 18px;
+  gap: 14px;
   font-weight: 700;
 }
 
 .footer-social {
+  margin-top: 12px;
   align-items: center;
 }
 
 .footer-social a {
-  width: 46px;
-  height: 46px;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(5, 5, 5, 0.16);
+  border: 0;
   color: var(--ink);
-  background: var(--white);
+  background: transparent;
   transition:
     color 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease,
     transform 180ms ease;
 }
 
@@ -684,9 +680,7 @@ html.js-motion .reveal.is-visible {
 
   .footer-social a:hover,
   .site-footer a:hover {
-    color: var(--white);
-    border-color: var(--accent-dark);
-    background: var(--accent-dark);
+    color: var(--accent-dark);
     transform: translateY(-2px);
   }
 }
