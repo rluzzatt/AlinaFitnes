@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-07T15:41:01.442Z",
+  "generatedAt": "2026-09-07T15:53:42.643Z",
   "title": "Design System: MamAlina Center — Signature",
   "extensions": {
     "colorMeta": {
@@ -134,7 +134,7 @@
   ],
   "narrative": {
     "northStar": "Signature",
-    "overview": "Alina’s heart-hand portrait and direct service title welcome visitors. The introduction explicitly offers strength training and breathing sessions independently, followed by the logo with the name below. Three space photos are professionally cleaned up; only the space tour remains.",
+    "overview": "The strength tab uses Alina’s training photograph; the breathing tab uses her heart-hand portrait. The portrait appears only once and About is text-only. The services remain explicitly independent, the introduction logo has its name below, and one studio tour remains.",
     "keyCharacteristics": [
       "Editorial AI edits of supplied Alina photography, with semantic text in its own space.",
       "White, graphite and logo-derived taupe fields.",

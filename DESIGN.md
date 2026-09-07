@@ -1,6 +1,6 @@
 ---
 name: MamAlina Center — Signature
-description: Alina’s heart portrait, clear independent services and faceted brand geometry.
+description: Alina’s training and heart portraits, clear independent services and faceted brand geometry.
 colors:
   paper: "#ffffff"
   ink: "#121416"
@@ -74,7 +74,7 @@ components:
 
 **Creative North Star: "Signature"**
 
-The user approved `.impeccable/mocks/comp-C.png` on 2026-09-07, then supplied phone screenshots rejecting the overlapping fitness/breathing composition and asked for stronger AI photo work. The current opening retains Signature typography, white navigation, graphite/taupe identity and real source material, but supersedes the masked-photo and intersecting-triangle layout. The latest user refinement makes the heart-hand portrait the main photograph, names the selected service directly, and explicitly explains that the two services can be chosen independently.
+The user approved `.impeccable/mocks/comp-C.png` on 2026-09-07, then supplied phone screenshots rejecting the overlapping fitness/breathing composition and asked for stronger AI photo work. The current opening retains Signature typography, white navigation, graphite/taupe identity and real source material, but supersedes the masked-photo and intersecting-triangle layout. The latest user refinement pairs the training photograph with strength and the heart-hand portrait with breathing, names the selected service directly, and explicitly explains that the two services can be chosen independently.
 
 The website remains Hebrew RTL and static. Strength training and the breathing clinic are independent offerings. Product truth lives in `PRODUCT.md`; the homepage's detailed arrangement and approved composition live in `.impeccable/surfaces/index-html.md`.
 
@@ -103,7 +103,7 @@ The header is sticky at 94px, then 82px below 1100px, 76px below 800px and 74px 
 
 The service selector sits directly below the header at every width. It has two equal columns, an 8px gap, rectangular bordered controls at least 54px tall, and a taupe selected state. Labels use normal-width Noto Hebrew, 18px on desktop and 15–18px on phones, with 1.5 line height. It has its own stacking context and no decorative element covers its hit area.
 
-The opening is a two-column portrait and message composition capped at 1440px. Strength uses alina-portrait-editorial.webp on graphite; breathing uses breathing-clinic-retouched.webp on warm paper. Only the selected photograph is exposed. At 800px and below, the image and message stack in normal flow. The image is square on phones, with a 600px height cap on tablets and a crop that keeps Alina’s head and heart gesture visible. Title, description and action never overlap the photo. The old photographic mask and intersecting planes remain retired.
+The opening is a two-column portrait and message composition capped at 1440px. Strength uses alina-training-editorial.webp on graphite; breathing uses alina-portrait-editorial.webp on warm paper. Only the selected photograph is exposed. At 800px and below, the image and message stack in normal flow. The image is square on phones, with a 600px height cap on tablets and a crop that keeps Alina’s head and heart gesture visible. Title, description and action never overlap the photo. The old photographic mask and intersecting planes remain retired.
 
 The page continues through a white introduction headed מצאו את המרחב שלכם, with concise descriptions of each service and an explicit statement that no combination is required. The faceted logo has MamAlina Center centered beneath it; on phones this lockup follows the copy. Then come Alina’s story, independent program sections, testimonials and contact. The full-width training reel is removed. Desktop sections alternate two columns, while phones stack. Section spacing and the existing responsive navigation/contact bar remain unchanged.
 
@@ -117,7 +117,7 @@ Controls and major surfaces are rectangular. Faceted SVG linework belongs to the
 
 ## Components
 
-- **Coach and spaces:** the existing AI-edited heart portrait is now both the main and About photograph. Three new built-in Imagegen retouches clean studio floors, equipment marks and incidental clinic clutter, retaining the real spaces and materials. Current space images end in -retouched.webp. Originals and earlier derivatives remain separate. Exact prompts and output paths are in `.impeccable/photo-cleanup-prompts.md`; the earlier portrait prompt remains in editorial-photo-prompts.md.
+- **Coach and spaces:** the existing AI-edited training image belongs to the strength tab; the heart-hand portrait belongs to breathing and appears only once. About is text-only, with its heading beside the copy on desktop and above it on phones. Three new built-in Imagegen retouches clean studio floors, equipment marks and incidental clinic clutter, retaining the real spaces and materials. Current space images end in -retouched.webp. Originals and earlier derivatives remain separate. Exact prompts and output paths are in `.impeccable/photo-cleanup-prompts.md`; the earlier portrait prompt remains in editorial-photo-prompts.md.
 
 - **Brand:** the faithfully traced `mamalina-mark.svg` with the exact live name MamAlina Center. The original supplied `mamalina-center-logo.jpg` remains the authority.
 - **Contact controls:** rectangular anchors with a directional or WhatsApp SVG icon. All WhatsApp URLs go directly to `https://wa.me/972532831333`, with no prefilled text. Telephone links use `tel:+972532831333`.
@@ -140,4 +140,4 @@ Focus uses a 3px current-color outline with 6px offset. State transitions use `c
 - Don't reintroduce the superseded overlapping hero planes or unrequested card patterns.
 - Don't autoplay video or require motion to understand the page.
 
-The original independent review remains historical. The latest implementing-agent refinement check is `.impeccable/welcome-review.md`, covering the revised opening, independent service copy, stacked logo, one remaining film and three photo retouches. These are desktop Chromium checks, not a physical-phone or Safari test.
+The original independent review remains historical. The latest image-placement refinement is `.impeccable/service-photo-review.md`; the broader refinement check is `.impeccable/welcome-review.md`, covering the revised opening, independent service copy, stacked logo, one remaining film and three photo retouches. These are desktop Chromium checks, not a physical-phone or Safari test.
