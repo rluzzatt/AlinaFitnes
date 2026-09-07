@@ -38,3 +38,7 @@ Phone adaptation preserves the giant wordmark and layered photo, puts the headli
 ## Photograph update
 
 The user supplied four new photos on 2026-09-07. The coach introduction uses the heart-hand portrait; strength uses a 1.35:1 two-photo studio composition; breathing features the real clinic photograph above a compact version of the existing geometric motif. The approved Signature opening remains the composition authority.
+
+## Mobile and media refinement
+
+The user subsequently requested two supplied studio videos, a fix for clipped mobile service choices, and brighter photographs. Below 600px, the service rail now precedes the hero stage visually and sits directly below the header, with normal-width Hebrew labels and 70px targets. Desktop retains its lower rail. The four later photographs use separately saved Imagegen lighting enhancements, with all source JPEGs retained. The original hero image/mask pair is unchanged. A two-column studio video gallery below the strength imagery stacks on phones; each film has a real extracted poster, duration, native player and direct-link recovery. Playback begins only on request and pauses other films.

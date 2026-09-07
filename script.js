@@ -118,13 +118,20 @@ const syncHashMode = () => {
 setMode(location.hash === "#breath" ? "breath" : "strength", false);
 window.addEventListener("hashchange", syncHashMode);
 
-// Only load the real training reel when a visitor presses play. Native controls stay available.
-const video = document.querySelector("[data-video]");
-const filmCover = document.querySelector("[data-film-cover]");
-const filmError = document.querySelector("[data-video-error]");
-document
-  .querySelector("[data-film-play]")
-  .addEventListener("click", async (event) => {
+// Each film loads on request. Play one at a time and retain native controls.
+const videos = [...document.querySelectorAll("[data-video]")];
+const videoObserver = "IntersectionObserver" in window
+  ? new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) entry.target.pause();
+      });
+    })
+  : null;
+document.querySelectorAll("[data-film]").forEach((film) => {
+  const video = film.querySelector("[data-video]");
+  const filmCover = film.querySelector("[data-film-cover]");
+  const filmError = film.querySelector("[data-video-error]");
+  film.querySelector("[data-film-play]").addEventListener("click", async (event) => {
     event.preventDefault();
     filmCover.hidden = true;
     video.hidden = false;
@@ -137,15 +144,16 @@ document
       if (video.error) filmError.hidden = false;
     }
   });
-video.addEventListener("error", () => {
-  filmError.hidden = false;
+  const showError = () => { filmError.hidden = false; };
+  video.addEventListener("error", showError);
+  video.querySelector("source")?.addEventListener("error", showError);
+  video.addEventListener("play", () => {
+    videos.forEach((other) => { if (other !== video) other.pause(); });
+  });
+  videoObserver?.observe(video);
 });
-if ("IntersectionObserver" in window)
-  new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) video.pause();
-  }).observe(video);
 document.addEventListener("visibilitychange", () => {
-  if (document.hidden) video.pause();
+  if (document.hidden) videos.forEach((video) => video.pause());
 });
 
 // The faceted breathing artwork only moves on screen and follows live motion preferences.

@@ -101,7 +101,7 @@ The large brand wordmark deliberately exceeds the usual heading ceiling to repro
 
 The header is sticky at 94px, then 82px below 1100px, 76px below 800px and 74px below 600px. Navigation becomes a keyboard-accessible disclosure below 800px. Page gutters use the token above and become 24px on phones, 20px at the smallest breakpoint.
 
-The hero is a unified image stage above a two-option rail. The original photograph and masked foreground use identical size, crop position and brightness. `alina-hero-mask.svg` is traced in the original 1400×1050 coordinate system and must never be paired with another photo. Live MAMALINA lettering occupies the layer between them. The headline sits lower right; the contact action sits inside a lower-left faceted plane.
+The hero is a unified image stage with a two-option rail below on desktop. On phones (600px and below), the rail sits immediately under the header, above the photo, so both services remain visible regardless of the hero's minimum height or browser chrome. Its labels use normal-width Noto Hebrew, a 1.5 line height, 16–20px type and at least 70px touch targets; the selected service has a graphite field and taupe underline. The original photograph and masked foreground use identical size, crop position and brightness. `alina-hero-mask.svg` is traced in the original 1400×1050 coordinate system and must never be paired with another photo. Live MAMALINA lettering occupies the layer between them. The headline sits lower right; the contact action sits inside a lower-left faceted plane.
 
 Phone layouts preserve the image, wordmark, headline, contact action and both service choices. The hero service paragraph is exactly 140px wide and physically aligned left with `margin-right:auto; margin-left:0`, while its Hebrew stays right-aligned. This keeps its text inside the diagonal plane at 390px and 320px; do not widen it without visual verification.
 
@@ -117,13 +117,13 @@ Controls and major surfaces are rectangular. Faceted SVG linework and triangular
 
 ## Components
 
-- **Coach and spaces:** the new heart-hand portrait introduces Alina. The strength section uses two original studio photos in a 1.35:1 image grid with an 8px gap. The breathing section leads with the real clinic photograph; a compact branded breathing motif and its existing pause control sit below it. On phones the clinic photo preserves a 4:3 frame. Images are local, unmodified JPEGs with explicit dimensions and descriptive Hebrew alt text.
+- **Coach and spaces:** the heart-hand portrait introduces Alina. The strength section uses two studio photos in a 1.35:1 image grid with an 8px gap. The breathing section leads with the clinic photograph; a compact branded breathing motif and its existing pause control sit below it. On phones the clinic photo preserves a 4:3 frame. At the user's request, these four photographs now use brighter Imagegen edits, compressed as local `*-enhanced.webp` files with explicit dimensions and descriptive Hebrew alt text. The supplied JPEGs remain alongside them. The original masked hero is outside this enhancement set. Prompts and constraints are recorded in `.impeccable/photo-enhancement-prompts.md`.
 
 - **Brand:** the faithfully traced `mamalina-mark.svg` with the exact live name MamAlina Center. The original supplied `mamalina-center-logo.jpg` remains the authority.
 - **Contact controls:** rectangular anchors with a directional or WhatsApp SVG icon. All WhatsApp URLs go directly to `https://wa.me/972532831333`, with no prefilled text. Telephone links use `tel:+972532831333`.
 - **Service rail:** native links to the two service sections without JavaScript. Enhancement supplies button semantics, pressed state, pointer/Space activation, matching hero copy and a polite status announcement. Both service sections remain independently readable.
 - **Navigation:** supports initial focus, Escape, leaving the menu with Tab, outside clicks and recovery when resized to desktop. A skip link reaches the main content.
-- **Training video:** the actual local reel loads and plays only after activation. Native controls and a direct-file fallback remain available. It pauses when offscreen or the page becomes hidden; it never resumes automatically.
+- **Videos:** the original training reel and two supplied studio tours load and play only after activation. The studio tours sit together below the strength photos, with real extracted posters, titles and durations. Their gallery has two columns on desktop and one on phones; 4:3 players contain the entire portrait video without cropping playback. Native controls, fullscreen and direct-file fallbacks remain available. Only one film plays at a time. Films pause offscreen or when the page becomes hidden, and never resume automatically. MP4 fast-start metadata improves startup while preserving the supplied audio/video streams.
 - **Breathing artwork:** geometric scale and rotation only while visible and the page is active. Pause/resume and live reduced-motion preference changes are supported.
 - **Mobile contact bar:** appears after the opening contact action has passed; hides while an inline WhatsApp action or the final contact section is visible, or the menu is open. Bottom padding includes the safe area.
 
@@ -131,7 +131,7 @@ Focus uses a 3px current-color outline with 6px offset. State transitions use `c
 
 ## Do's and Don'ts
 
-- Do preserve original photographic pixels and matching image/mask transforms.
+- Do preserve original photographic pixels and matching image/mask transforms in the Signature hero; keep original source photos alongside any user-requested enhanced derivatives.
 - Do keep strength and breathing as separate choices.
 - Do retain Hebrew RTL semantics, real contact details and supplied factual content.
 - Do keep live UI text and controls outside raster assets.

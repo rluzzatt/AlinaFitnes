@@ -42,6 +42,8 @@ Static Hebrew RTL website at https://rluzzatt.github.io/AlinaFitnes/. Contact is
 
 - Four new photographs supplied directly by Alina through the user on 2026-09-07: her smiling heart-hand portrait, two views of the training studio, and the wood-lined breathing clinic. Their unmodified project copies are `alina-portrait-heart.jpg`, `studio-training-space.jpg`, `studio-strength-equipment.jpg`, and `breathing-clinic.jpg` under `assets/images/`. Use them for the coach introduction and service environments.
 
+- The user then requested photo enhancement and supplied two additional studio-tour videos. The page uses `*-enhanced.webp` derivatives of those four photos; source JPEGs remain available. The videos are `assets/videos/studio-space-tour.mp4` (24 seconds) and `studio-equipment-tour.mp4` (12 seconds), both placed in the strength section. Preserve the user's real environment and identity when editing media.
+
 - Existing service descriptions and three attributed testimonials in index.html. Preserve supplied content without adding new claims; their provenance has not been independently verified.
 - Local training and running photography under assets/images/, including Alina's face and actual training environment.
 - Local reel under assets/videos/alina-andi-reel.mp4; inspect its content before using it.

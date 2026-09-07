@@ -47,7 +47,7 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20260907-photos" />
+    <link rel="stylesheet" href="./styles.css?v=20260907-media" />
   </head>
   <body>
     <!-- THESIS: Signature puts the real coach inside the brand lettering, on a unified photographic stage.
@@ -284,7 +284,7 @@
       <section class="about section" id="about" aria-labelledby="about-title">
         <figure class="about-photo">
           <img
-            src="./assets/images/alina-portrait-heart.jpg"
+            src="./assets/images/alina-portrait-heart-enhanced.webp"
             alt="אלינה מחייכת ויוצרת לב עם הידיים בסטודיו"
             width="960"
             height="1280"
@@ -345,7 +345,7 @@
         <div class="program-photo studio-photos">
           <figure>
             <img
-              src="./assets/images/studio-strength-equipment.jpg"
+              src="./assets/images/studio-strength-equipment-enhanced.webp"
               alt="משקולות, ארגזי קפיצה ומכשירי אימון בסטודיו של אלינה"
               width="960"
               height="1280"
@@ -355,7 +355,7 @@
           </figure>
           <figure>
             <img
-              src="./assets/images/studio-training-space.jpg"
+              src="./assets/images/studio-training-space-enhanced.webp"
               alt="מרחב האימון המקורה עם רצפת המזרנים בסטודיו"
               width="960"
               height="1280"
@@ -363,6 +363,39 @@
               decoding="async"
             />
           </figure>
+        </div>
+        <div class="studio-films" aria-labelledby="studio-films-title">
+          <h3 id="studio-films-title">מבט לתוך הסטודיו.</h3>
+          <div class="studio-film-grid">
+            <figure class="training-film studio-film" data-film>
+              <div class="film-cover" data-film-cover>
+                <img src="./assets/images/studio-space-tour-poster.jpg" alt="מרחב האימון — תמונה מתוך הסרטון" width="464" height="832" loading="lazy" decoding="async" />
+                <a class="film-play" href="./assets/videos/studio-space-tour.mp4" aria-label="צפייה בסרטון: מרחב האימון" data-film-play>
+                  <span class="play-disc"><svg class="icon" aria-hidden="true"><use href="#icon-play" /></svg></span>
+                </a>
+              </div>
+              <video controls playsinline preload="none" poster="./assets/images/studio-space-tour-poster.jpg" aria-label="מרחב האימון" data-video hidden>
+                <source src="./assets/videos/studio-space-tour.mp4" type="video/mp4" />
+                <a href="./assets/videos/studio-space-tour.mp4">צפייה בסרטון: מרחב האימון</a>
+              </video>
+              <p class="video-fallback" data-video-error hidden>הסרטון לא נטען. <a href="./assets/videos/studio-space-tour.mp4">פתחו את הסרטון ישירות</a>.</p>
+              <figcaption><span>מרחב האימון</span><span>24 שניות</span></figcaption>
+            </figure>
+            <figure class="training-film studio-film" data-film>
+              <div class="film-cover" data-film-cover>
+                <img src="./assets/images/studio-equipment-tour-poster.jpg" alt="הציוד בסטודיו — תמונה מתוך הסרטון" width="576" height="768" loading="lazy" decoding="async" />
+                <a class="film-play" href="./assets/videos/studio-equipment-tour.mp4" aria-label="צפייה בסרטון: הציוד בסטודיו" data-film-play>
+                  <span class="play-disc"><svg class="icon" aria-hidden="true"><use href="#icon-play" /></svg></span>
+                </a>
+              </div>
+              <video controls playsinline preload="none" poster="./assets/images/studio-equipment-tour-poster.jpg" aria-label="הציוד בסטודיו" data-video hidden>
+                <source src="./assets/videos/studio-equipment-tour.mp4" type="video/mp4" />
+                <a href="./assets/videos/studio-equipment-tour.mp4">צפייה בסרטון: הציוד בסטודיו</a>
+              </video>
+              <p class="video-fallback" data-video-error hidden>הסרטון לא נטען. <a href="./assets/videos/studio-equipment-tour.mp4">פתחו את הסרטון ישירות</a>.</p>
+              <figcaption><span>הציוד בסטודיו</span><span>12 שניות</span></figcaption>
+            </figure>
+          </div>
         </div>
       </section>
       <section
@@ -395,7 +428,7 @@
         <div class="breath-art" data-breath-art>
           <figure class="clinic-photo">
             <img
-              src="./assets/images/breathing-clinic.jpg"
+              src="./assets/images/breathing-clinic-enhanced.webp"
               alt="קליניקת הנשימה של אלינה: חדר עץ עם כורסאות ומזרן למפגש אישי"
               width="1280"
               height="960"
@@ -536,6 +569,6 @@
           <use href="#icon-whatsapp" /></svg></span
     ></a>
     <span class="sr-only" role="status" data-mode-status></span>
-    <script src="./script.js?v=20260907-signature" defer></script>
+    <script src="./script.js?v=20260907-media" defer></script>
   </body>
 </html>

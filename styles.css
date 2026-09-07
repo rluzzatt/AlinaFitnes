@@ -411,7 +411,7 @@ h3 {
 }
 .mode-switch {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   min-height: 86px;
   background: #0c0e0f;
 }
@@ -640,17 +640,33 @@ h3 {
   }
   .mode-switch {
     min-height: 70px;
+    order: -1;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
   }
   .mode-option {
-    font-size: 24px;
-    padding: 22px 10px;
+    font-family: "Noto Hebrew", sans-serif;
+    font-weight: 750;
+    font-size: clamp(16px, 4.2vw, 20px);
+    line-height: 1.5;
+    text-align: center;
+    padding: 16px 12px;
+    min-height: 70px;
     gap: 0;
+  }
+  .mode-option.is-active {
+    background: #242120;
+  }
+  .mode-option:focus-visible {
+    outline-offset: -5px;
   }
   .mode-option .icon {
     display: none;
   }
   .mode-option:after {
-    bottom: 12px;
+    bottom: 8px;
     width: 55%;
   }
   h2 {
@@ -780,6 +796,59 @@ h3 {
 }
 .video-fallback a {
   text-decoration: underline;
+}
+.studio-films {
+  grid-column: 1 / -1;
+  padding: 65px var(--gutter) 80px;
+}
+.studio-films h3 {
+  margin: 0 0 32px;
+  font-size: clamp(32px, 4vw, 48px);
+}
+.studio-film-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+.studio-film {
+  margin: 0;
+  min-width: 0;
+  background: transparent;
+}
+.studio-film .film-cover,
+.studio-film video {
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
+.studio-film .film-cover > img {
+  filter: none;
+  object-position: center;
+}
+.studio-film .film-play {
+  background: rgba(0, 0, 0, 0.12);
+}
+.studio-film .play-disc {
+  width: 76px;
+  height: 76px;
+  background: rgba(12, 14, 15, 0.7);
+}
+.studio-film .play-disc .icon {
+  width: 30px;
+  height: 30px;
+}
+.studio-film figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding-top: 16px;
+  font-weight: 600;
+}
+.studio-film figcaption span:last-child {
+  color: #ddd8d4;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
 }
 .about {
   display: grid;
@@ -1386,6 +1455,13 @@ h3 {
   .film-cover {
     height: 310px;
   }
+  .studio-films {
+    padding: 45px 24px 60px;
+  }
+  .studio-film-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
   .film-cover > img {
     object-position: 47% center;
   }
@@ -1560,9 +1636,6 @@ h3 {
   }
   .hero h1 {
     font-size: 40px;
-  }
-  .mode-option {
-    font-size: 21px;
   }
   .brand img {
     width: 44px;

@@ -1,6 +1,6 @@
 # Asset manifest
 
-The approved Signature composition uses original photography, a supplied brand mark, and live semantic typography and controls. No photograph of Alina is regenerated or retouched.
+The approved Signature composition uses supplied photography, a supplied brand mark, and live semantic typography and controls. The masked hero keeps its original photographic pixels. The four later photographs have separate Imagegen enhancement derivatives explicitly requested by the user; source JPEGs are retained.
 
 | Medium               | Asset                                                                                                                  | Use and constraint                                                                                                                                                                                                                                                                                                                                                          |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -17,7 +17,7 @@ The mark trace is geometry derived from the supplied raster, whose photographed/
 
 ## New Alina photographs — 2026-09-07
 
-The user supplied four original JPEGs. All were copied without pixel edits; CSS handles their responsive display crops.
+The user supplied four original JPEGs. The following source copies are retained; the current page uses their matching `-enhanced.webp` derivatives. CSS handles responsive display crops.
 
 | Asset                                         | Dimensions | Current use                                                      |
 | --------------------------------------------- | ---------- | ---------------------------------------------------------------- |
@@ -27,3 +27,20 @@ The user supplied four original JPEGs. All were copied without pixel edits; CSS 
 | `assets/images/breathing-clinic.jpg`          | 1280 × 960 | Real clinic environment above the compact breathing motif.       |
 
 The portrait replaces the running photo in the introduction; the two studio photos replace the former single exercise image in the strength section. The original hero photo and matched mask still form the Signature opening.
+
+## Photo enhancement and studio videos — 2026-09-07
+
+The user requested brighter photographs and supplied two additional WhatsApp videos. The four `*-enhanced.webp` assets were produced with the built-in Imagegen edit tool, then resized and encoded for delivery. Requested edits: natural exposure, shadow recovery, balanced white balance and clarity; preserve the person, spaces and composition. See `photo-enhancement-prompts.md` for the full prompts. The generated PNG originals remain in the generation archive; the project serves the WebP derivatives.
+
+| Asset | Dimensions / duration | Use |
+| --- | --- | --- |
+| `assets/images/alina-portrait-heart-enhanced.webp` | 960 × 1280 | Brighter coach portrait |
+| `assets/images/studio-training-space-enhanced.webp` | 960 × 1280 | Brighter open studio |
+| `assets/images/studio-strength-equipment-enhanced.webp` | 960 × 1280 | Clearer equipment view |
+| `assets/images/breathing-clinic-enhanced.webp` | 1280 × 960 | Balanced warm clinic light |
+| `assets/videos/studio-space-tour.mp4` | 464 × 832, 24.13 seconds | Tour from training floor into equipment area; supplied filename ended in `(1).mp4` |
+| `assets/videos/studio-equipment-tour.mp4` | displayed 576 × 768, 12.48 seconds | Tour of weights and training equipment; supplied filename had no numeric suffix |
+| `assets/images/studio-space-tour-poster.jpg` | 464 × 832 | Original video frame at 2 seconds |
+| `assets/images/studio-equipment-tour-poster.jpg` | 576 × 768 | Original video frame at 1 second |
+
+Video streams and audio are copied unchanged into fast-start MP4 containers. Playback respects the second source's rotation metadata. Both studio tours belong to strength; they do not depict the breathing clinic.
