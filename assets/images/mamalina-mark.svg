@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="945" height="850" viewBox="174 88 945 850" fill="none">
+  <title>MamAlina Center faceted heart mark</title>
+  <desc>Native vector trace of the supplied MamAlina Center logo. The source heart outline, facet intersections, and heavier MA monogram are preserved.</desc>
+  <g stroke="#af9987" stroke-linejoin="miter" stroke-linecap="butt">
+    <g stroke-width="4.5">
+      <!-- Eight-vertex heart outline. -->
+      <path d="M181 334 311 149 501 95 646 271 790 95 978 149 1111 334 645 929 Z"/>
+      <!-- Upper-left facets. -->
+      <path d="M181 334H434L501 95 346 334 311 149 465 404"/>
+      <path d="M501 95 479 179 608 324"/>
+      <path d="M346 334 465 658"/>
+      <!-- Upper-right facets. -->
+      <path d="M1111 334H855L790 95 945 334 978 149 829 403"/>
+      <path d="M790 95 813 179 679 325"/>
+      <path d="M945 334 829 660"/>
+      <!-- The valley and the lower gemstone facets. -->
+      <path d="M646 271 573 382M646 271 660 486M646 271 728 394"/>
+      <path d="M181 334 603 814 645 929 684 822 1111 334"/>
+      <path d="M531 610 645 929 765 582"/>
+    </g>
+    <!-- The heavier strokes form the existing MA monogram. -->
+    <g stroke-width="10">
+      <path d="M465 658V256L660 486 829 252V660"/>
+      <path d="M528 332 534 735"/>
+      <path d="M545 645 829 252"/>
+      <path d="M769 336 761 730"/>
+      <path d="M639 518H765M606 565H765"/>
+    </g>
+  </g>
+</svg>
