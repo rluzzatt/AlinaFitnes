@@ -55,15 +55,15 @@ const hero = document.querySelector(".hero");
 const modeOptions = [...document.querySelectorAll("[data-mode-option]")];
 const modeCopy = {
   strength: {
-    title: ["לנשום עמוק.", "להרים חזק."],
-    description: ["סטודיו לאימוני כוח", "וקליניקת נשימה", "כפר סאלד"],
-    action: "בואו נדבר בוואטסאפ",
+    title: ["אימוני כוח", "עם אלינה."],
+    description: ["סטודיו לנשים ולגברים.", "אימונים שמותאמים לרמה ולמטרות שלכם."],
+    action: "לתיאום אימון כוח",
     status: "תצוגת אימוני כוח",
   },
   breath: {
-    title: ["לעצור לרגע.", "לנשום עמוק."],
-    description: ["קליניקת נשימה", "וריברסינג", "כפר סאלד"],
-    action: "נדבר על נשימה",
+    title: ["נשימה", "וריברסינג."],
+    description: ["קליניקה למפגשי נשימה אישיים.", "מקום לעצור ולהתמקד בעצמכם, בקצב שלכם."],
+    action: "נדבר על מפגש נשימה",
     status: "תצוגת נשימה וריברסינג",
   },
 };

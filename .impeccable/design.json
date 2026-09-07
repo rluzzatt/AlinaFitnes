@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-07T15:17:04.092Z",
+  "generatedAt": "2026-09-07T15:41:01.442Z",
   "title": "Design System: MamAlina Center — Signature",
   "extensions": {
     "colorMeta": {
@@ -33,7 +33,7 @@
     "typographyMeta": {
       "wordmark": {
         "displayName": "Signature lettering",
-        "purpose": "Tall live Latin wordmarks, including the layered hero."
+        "purpose": "Decorative closing Latin wordmark; the opening uses a direct Hebrew service heading."
       },
       "display": {
         "displayName": "Condensed Hebrew",
@@ -52,11 +52,6 @@
         "purpose": "State transitions."
       },
       {
-        "name": "mode-plane",
-        "value": ".9s",
-        "purpose": "Faceted hero mode transition."
-      },
-      {
         "name": "breath",
         "value": "8s ease-in-out infinite",
         "purpose": "Visible breathing geometry scale."
@@ -69,8 +64,8 @@
     ],
     "breakpoints": [
       {
-        "name": "large-wordmark-cap",
-        "value": "1800px"
+        "name": "hero-cap",
+        "value": "1440px"
       },
       {
         "name": "compact-desktop",
@@ -118,9 +113,9 @@
     {
       "name": "Service mode",
       "kind": "custom",
-      "description": "Pressed service mode with a taupe active rule; semantic links exist before enhancement.",
+      "description": "Bordered service button with a taupe pressed state; semantic links exist before enhancement.",
       "html": "<button class=\"ds-mode\" type=\"button\" aria-pressed=\"true\" dir=\"rtl\">אימוני כוח</button>",
-      "css": ".ds-mode{position:relative;background:#0c0e0f;color:#fff;border:0;padding:22px 28px;min-width:240px;font:900 30px/1.2 \"Noto Display\",sans-serif;cursor:pointer}.ds-mode:after{content:\"\";position:absolute;bottom:12px;left:30%;width:40%;height:1px;background:var(--taupe,#af9987)}.ds-mode:hover{color:#c8b9ad}.ds-mode:focus-visible{outline:3px solid currentColor;outline-offset:6px}"
+      "css": ".ds-mode{background:#c8b9ad;color:#121416;border:1px solid #786150;padding:12px 16px;min-height:54px;font:750 18px/1.5 \"Noto Hebrew\",sans-serif;cursor:pointer}.ds-mode:focus-visible{outline:3px solid currentColor;outline-offset:-5px}"
     },
     {
       "name": "Text link",
@@ -139,7 +134,7 @@
   ],
   "narrative": {
     "northStar": "Signature",
-    "overview": "Signature typography and supplied photographic subjects in two complete service views: graphite strength, warm-paper breathing, with unclipped title and contact content in normal flow.",
+    "overview": "Alina’s heart-hand portrait and direct service title welcome visitors. The introduction explicitly offers strength training and breathing sessions independently, followed by the logo with the name below. Three space photos are professionally cleaned up; only the space tour remains.",
     "keyCharacteristics": [
       "Editorial AI edits of supplied Alina photography, with semantic text in its own space.",
       "White, graphite and logo-derived taupe fields.",
@@ -156,8 +151,8 @@
     ],
     "donts": [
       "Don't substitute the generated mockup's face, gym, claims or text for real business evidence.",
-      "Don't reintroduce the superseded split-hero identity or unrequested card patterns.",
-      "Don't autoplay video or require motion to understand the page."
+      "Don't autoplay video or require motion to understand the page.",
+      "Do not restore the combined slogan, overlapping hero planes or the two removed videos."
     ]
   }
 }
