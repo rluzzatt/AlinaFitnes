@@ -71,6 +71,9 @@ const setMode = (mode, announce = true) => {
   const copy = modeCopy[mode];
   if (!copy) return;
   hero.dataset.mode = mode;
+  hero.querySelectorAll("[data-hero-image]").forEach((image) => {
+    image.hidden = image.dataset.heroImage !== mode;
+  });
   hero
     .querySelectorAll("h1 span")
     .forEach((span, index) => (span.textContent = copy.title[index]));
@@ -94,7 +97,7 @@ const setMode = (mode, announce = true) => {
 };
 modeOptions.forEach((option) => {
   option.setAttribute("role", "button");
-  option.setAttribute("aria-controls", "hero-title");
+  option.setAttribute("aria-controls", "hero-stage");
   option.addEventListener("click", (event) => {
     event.preventDefault();
     setMode(option.dataset.modeOption);

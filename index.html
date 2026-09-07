@@ -47,13 +47,13 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20260907-media" />
+    <link rel="stylesheet" href="./styles.css?v=20260907-editorial" />
   </head>
   <body>
-    <!-- THESIS: Signature puts the real coach inside the brand lettering, on a unified photographic stage.
+    <!-- THESIS: Signature pairs oversized athletic lettering with distinct strength and breathing photographs.
   OWN-WORLD: White, graphite, logo taupe; compressed athletic type, faceted seams and rectangular controls.
   STORY: Recognize Alina, discover two independent services, start a direct conversation.
-  FIRST VIEWPORT: White navigation above a full-width photograph. Giant MAMALINA behind Alina, Hebrew headline lower right, contact action in a lower-left taupe triangle; two-mode black rail below.
+  FIRST VIEWPORT: White navigation and two clear service controls; live MAMALINA, a complete service photograph and flowing title/contact block.
   FORM: Kinetic sports broadcasting, seventh grounded direction, seed 398670b6; Signature comp-C approved 2026-09-07.
   FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->
     <svg
@@ -150,72 +150,25 @@
         aria-labelledby="hero-title"
         data-mode="strength"
       >
-        <div class="hero-stage">
-          <img
-            class="hero-photo"
-            src="./assets/images/alina-hero-reel.jpg"
-            alt="אלינה מרימה מוט באימון כוח"
-            width="1400"
-            height="1050"
-            fetchpriority="high"
-          />
-          <div class="hero-wordmark" lang="en" dir="ltr" aria-hidden="true">
-            MAMALINA
-          </div>
-          <div class="hero-foreground" aria-hidden="true"></div>
-          <div class="hero-shade" aria-hidden="true"></div>
-          <div class="hero-breath-plane" aria-hidden="true">
-            <svg
-              class="plane-fill"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-            >
-              <path d="M0 0H100V100H0Z" fill="#c8b9ad" /></svg
-            ><img
-              src="./assets/images/mamalina-mark.svg"
-              alt=""
-              width="400"
-              height="365"
-            />
-          </div>
-          <h1 id="hero-title">
-            <span>לנשום עמוק.</span><span>להרים חזק.</span>
-          </h1>
-          <div class="hero-wedge" aria-hidden="true">
-            <svg viewBox="0 0 600 500" preserveAspectRatio="none">
-              <path d="M0 0 600 500H0Z" fill="#c8b9ad" stroke="none" />
-              <use href="#facet" />
-            </svg>
-          </div>
-          <div class="hero-contact">
-            <p>
-              סטודיו לאימוני כוח<br />וקליניקת נשימה<br /><span>כפר סאלד</span>
-            </p>
-            <a
-              class="button button-taupe"
-              href="https://wa.me/972532831333"
-              target="_blank"
-              rel="noreferrer"
-              data-primary-contact
-              >בואו נדבר בוואטסאפ<svg class="icon" aria-hidden="true">
-                <use href="#icon-arrow" /></svg
-            ></a>
-          </div>
-        </div>
         <div class="mode-switch" aria-label="בחרו מרחב" data-mode-switch>
-          <a
-            href="#strength"
-            class="mode-option is-active"
-            data-mode-option="strength"
-            ><span>אימוני כוח</span
-            ><svg class="icon" aria-hidden="true">
-              <use href="#icon-arrow" /></svg
-          ></a>
-          <a href="#breath" class="mode-option" data-mode-option="breath"
-            ><span>נשימה וריברסינג</span
-            ><svg class="icon" aria-hidden="true">
-              <use href="#icon-arrow" /></svg
-          ></a>
+          <a href="#strength" class="mode-option is-active" data-mode-option="strength"><span>אימוני כוח</span></a>
+          <a href="#breath" class="mode-option" data-mode-option="breath"><span>נשימה וריברסינג</span></a>
+        </div>
+        <div class="hero-stage" id="hero-stage">
+          <div class="hero-visual">
+            <div class="hero-wordmark" lang="en" dir="ltr" aria-hidden="true">MAMALINA</div>
+            <div class="hero-picture">
+              <img class="hero-photo" src="./assets/images/alina-training-editorial.webp" alt="אלינה מרימה מוט באימון כוח" width="1400" height="1050" fetchpriority="high" data-hero-image="strength" />
+              <img class="hero-photo" src="./assets/images/breathing-clinic-editorial.webp" alt="קליניקת הנשימה של אלינה באור רך" width="1280" height="960" fetchpriority="low" data-hero-image="breath" hidden />
+            </div>
+          </div>
+          <div class="hero-message">
+            <h1 id="hero-title"><span>לנשום עמוק.</span><span>להרים חזק.</span></h1>
+            <div class="hero-contact">
+              <p>סטודיו לאימוני כוח<br />וקליניקת נשימה<br />כפר סאלד</p>
+              <a class="button button-taupe" href="https://wa.me/972532831333" target="_blank" rel="noreferrer" data-primary-contact>בואו נדבר בוואטסאפ<svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
+            </div>
+          </div>
         </div>
       </section>
       <section class="intro section" id="studio" aria-labelledby="studio-title">
@@ -284,7 +237,7 @@
       <section class="about section" id="about" aria-labelledby="about-title">
         <figure class="about-photo">
           <img
-            src="./assets/images/alina-portrait-heart-enhanced.webp"
+            src="./assets/images/alina-portrait-editorial.webp"
             alt="אלינה מחייכת ויוצרת לב עם הידיים בסטודיו"
             width="960"
             height="1280"
@@ -345,7 +298,7 @@
         <div class="program-photo studio-photos">
           <figure>
             <img
-              src="./assets/images/studio-strength-equipment-enhanced.webp"
+              src="./assets/images/studio-equipment-editorial.webp"
               alt="משקולות, ארגזי קפיצה ומכשירי אימון בסטודיו של אלינה"
               width="960"
               height="1280"
@@ -355,7 +308,7 @@
           </figure>
           <figure>
             <img
-              src="./assets/images/studio-training-space-enhanced.webp"
+              src="./assets/images/studio-space-editorial.webp"
               alt="מרחב האימון המקורה עם רצפת המזרנים בסטודיו"
               width="960"
               height="1280"
@@ -428,7 +381,7 @@
         <div class="breath-art" data-breath-art>
           <figure class="clinic-photo">
             <img
-              src="./assets/images/breathing-clinic-enhanced.webp"
+              src="./assets/images/breathing-clinic-editorial.webp"
               alt="קליניקת הנשימה של אלינה: חדר עץ עם כורסאות ומזרן למפגש אישי"
               width="1280"
               height="960"
@@ -569,6 +522,6 @@
           <use href="#icon-whatsapp" /></svg></span
     ></a>
     <span class="sr-only" role="status" data-mode-status></span>
-    <script src="./script.js?v=20260907-media" defer></script>
+    <script src="./script.js?v=20260907-editorial" defer></script>
   </body>
 </html>

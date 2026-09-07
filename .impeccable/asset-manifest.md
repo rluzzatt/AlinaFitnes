@@ -1,6 +1,8 @@
 # Asset manifest
 
-The approved Signature composition uses supplied photography, a supplied brand mark, and live semantic typography and controls. The masked hero keeps its original photographic pixels. The four later photographs have separate Imagegen enhancement derivatives explicitly requested by the user; source JPEGs are retained.
+The current Signature refinement uses five editorial Imagegen edits of supplied photographs, a supplied brand mark, and live semantic typography and controls. The former masked hero and first-pass enhancements are retained as source/history, not used for the current opening. The user explicitly requested stronger AI photo work and a new composition between service modes after reviewing phone screenshots.
+
+The earlier inventory and update sections below record provenance. The latest usage map is at the end of this file.
 
 | Medium               | Asset                                                                                                                  | Use and constraint                                                                                                                                                                                                                                                                                                                                                          |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -44,3 +46,15 @@ The user requested brighter photographs and supplied two additional WhatsApp vid
 | `assets/images/studio-equipment-tour-poster.jpg` | 576 × 768 | Original video frame at 1 second |
 
 Video streams and audio are copied unchanged into fast-start MP4 containers. Playback respects the second source's rotation metadata. Both studio tours belong to strength; they do not depict the breathing clinic.
+
+## Current editorial assets and service views — 2026-09-07
+
+| Current asset | Size | Placement |
+| --- | --- | --- |
+| `assets/images/alina-training-editorial.webp` | 1400 × 1050 | Strength hero; AI detail restoration and fitness editorial lighting from `alina-hero-reel.jpg` |
+| `assets/images/alina-portrait-editorial.webp` | 960 × 1280 | Closer coach portrait with soft background depth |
+| `assets/images/studio-space-editorial.webp` | 960 × 1280 | Open studio photo with directional light |
+| `assets/images/studio-equipment-editorial.webp` | 960 × 1280 | Equipment photo with richer contrast and controlled color |
+| `assets/images/breathing-clinic-editorial.webp` | 1280 × 960 | Breathing hero and clinic section; warm, softly lit room |
+
+Exact built-in Imagegen prompts and output links: `editorial-photo-prompts.md`. All source photos and previous edits remain available. The three real videos and their real-frame posters are unchanged. Do not pair the retired source mask with an AI-edited photograph. The current hero uses no mask or intersecting triangle; each mode has its own complete photo and flowing message block.

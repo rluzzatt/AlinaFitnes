@@ -5,40 +5,26 @@ primary_target: "index.html"
 related_targets: ["styles.css", "script.js"]
 ---
 
-# Signature homepage
+# Signature homepage — distinct service views
 
-Mode: Persuade. User approved Signature explicitly on 2026-09-07: “Signature is my choice”. Approved comp: `.impeccable/mocks/comp-C.png`. Seed `398670b6`, seventh grounded direction, kinetic sports broadcasting. This continues the previous session's decision, not a new exploration.
+Mode: Persuade. The user selected Signature on 2026-09-07, then supplied phone screenshots and rejected the overlapping composition between service modes. This later instruction supersedes the mock's photographic mask, intersecting taupe triangles and absolute-positioned hero copy. Keep the established brand, fonts, supplied business copy and all lower-page services.
 
-Visitors should recognize Alina and her two separate services, then contact her directly. Strength is the initial mode; breathing remains independently reachable by navigation and mode switching. Preserve existing factual copy, contact details and testimonials. No generated gym, people, claims, or mockup typos become evidence.
+## Current opening
 
-## Direction and grammar
+White navigation, two clear rectangular service controls on white, a giant live MAMALINA strip, one substantial photograph, and a separate message/contact block. Strength has the AI-restored real training image on graphite. Breathing has the AI-edited real clinic image on warm paper. A switch changes the image, surface and service copy together, keeping the same geometry; never leave the workout photograph showing behind breathing.
 
-White header, expansive dark real training photograph, huge condensed MAMALINA lettering behind Alina, lower-right Hebrew headline, a taupe triangle entering from lower left with a rectangular contact button. A black two-mode rail sits directly below. Next: large white introduction with headline right and faceted heart left; a full-width monochrome video invitation; coach introduction; detailed separate services, existing stories, decisive contact close. Navigation and controls stay semantic Hebrew RTL.
+On phones, title and contact content follow the image in normal flow, and the action spans the available width. No text or photo is cut by a polygon. Both tabs are visible beneath the header in the supplied phone/browser proportions. Decorative lettering cannot receive pointer events; the selector stays above it in the stacking order. Both controls remain service links without JavaScript and gain pressed-button semantics with JavaScript.
 
-Sharp rectangular controls, precise thin faceted seams, no card shells or shadows. Anton supplies tall compressed Latin lettering; condensed heavy Noto Sans Hebrew supplies the Hebrew display ramp. Body uses the same family at normal width. Large headings 48–96px; hero brand lettering deliberately exceeds the generic cap to reproduce the chosen comp. White, graphite and the supplied logo's taupe are the complete palette. The foreground photo is unchanged source pixels isolated with a geometric mask; typography remains live HTML.
+## Photos and lower page
 
-## Fidelity inventory
+Built-in Imagegen produced five stronger editorial treatments from the original training frame, heart-hand portrait, two studio views and clinic photograph. The portraits preserve Alina's identity and the space photographs remain grounded in the actual facility. Sources, retained earlier outputs and current WebP derivatives are separate; prompts are in editorial-photo-prompts.md.
 
-| Ingredient / commitment                                                         | Medium                                                          |
-| ------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| White header, brand on right, four nav links, black WhatsApp action left        | Semantic HTML/CSS; supplied logo and faithfully traced SVG mark |
-| Full-width photo stage, coach centered and nearly full height                   | Existing `alina-hero-reel.jpg`                                  |
-| Oversized MAMALINA behind head, spanning ~90% of width                          | Self-hosted Anton; identical photo layer with SVG mask          |
-| Right headline, two heavy condensed lines                                       | Semantic heading, Noto Sans Hebrew condensed 900                |
-| Taupe plane spans ~50% width and ~50% height, diagonal rising to left edge      | CSS polygon with crisp SVG facet lines                          |
-| Primary CTA in lower-left plane, solid taupe rectangle and directional arrow    | Semantic anchor and stroked SVG                                 |
-| Black service rail, two text buttons with active taupe rule                     | Progressively enhanced tabs; anchors without JS                 |
-| White second fold: large right headline, huge left faceted heart                | Semantic copy; traced SVG logo geometry                         |
-| Wide monochrome training video with centered play control and caption           | Original photo and local MP4; native video controls on play     |
-| Alina intro: real photograph on right, personal copy/contact on left            | User-supplied heart-hand portrait and semantic content          |
-| Separate service details, breathing motif, original testimonials, final contact | Semantic HTML/CSS/SVG; no invented content                      |
+The page continues through the introduction and faceted heart mark, original real training film, coach story, strength details and paired studio photographs, two supplied studio-tour videos, the separate breathing section and compact motion control, existing testimonials and direct contact. All three videos load only after activation, retain native controls/direct links and pause each other. No autoplay. The gallery stacks on phones.
 
-Phone adaptation preserves the giant wordmark and layered photo, puts the headline lower right, then the taupe contact plane and both service options within easy reach. No layout requires hover. Mode changes are a single short composition transition; ambient breathing can be paused and honors reduced motion. No autoplay video. All services and contact links work without JavaScript.
+## Visual grammar
 
-## Photograph update
+Anton wordmarks; heavy condensed Noto Sans Hebrew headings and normal-width Noto body/control labels. White, graphite and logo-derived taupe. Rectangular controls, no card shells or shadows. Faceted geometry is reserved for the actual brand mark and breathing motif. Real supplied factual content, direct WhatsApp and telephone contact, keyboard accessibility and reduced-motion support remain binding.
 
-The user supplied four new photos on 2026-09-07. The coach introduction uses the heart-hand portrait; strength uses a 1.35:1 two-photo studio composition; breathing features the real clinic photograph above a compact version of the existing geometric motif. The approved Signature opening remains the composition authority.
+## Evidence
 
-## Mobile and media refinement
-
-The user subsequently requested two supplied studio videos, a fix for clipped mobile service choices, and brighter photographs. Below 600px, the service rail now precedes the hero stage visually and sits directly below the header, with normal-width Hebrew labels and 70px targets. Desktop retains its lower rail. The four later photographs use separately saved Imagegen lighting enhancements, with all source JPEGs retained. The original hero image/mask pair is unchanged. A two-column studio video gallery below the strength imagery stacks on phones; each film has a real extracted poster, duration, native player and direct-link recovery. Playback begins only on request and pauses other films.
+The former selected composition remains archived as .impeccable/mocks/comp-C.png; it records the design's origin, not authority to restore a later-rejected mobile layout. Latest QA: .impeccable/editorial-review.md and ignored .qa/editorial-* evidence.

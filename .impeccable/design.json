@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-07T08:23:37.3750458Z",
+  "generatedAt": "2026-09-07T15:17:04.092Z",
   "title": "Design System: MamAlina Center — Signature",
   "extensions": {
     "colorMeta": {
@@ -139,20 +139,20 @@
   ],
   "narrative": {
     "northStar": "Signature",
-    "overview": "White navigation frames a photographic stage, with oversized live lettering behind the real coach. The supplied faceted heart/MA mark gives the page its diagonal seams and geometric motion.",
+    "overview": "Signature typography and supplied photographic subjects in two complete service views: graphite strength, warm-paper breathing, with unclipped title and contact content in normal flow.",
     "keyCharacteristics": [
-      "Original Alina photography layered with semantic text.",
+      "Editorial AI edits of supplied Alina photography, with semantic text in its own space.",
       "White, graphite and logo-derived taupe fields.",
       "Heavy compressed display type and sharp rectangular actions.",
       "Faceted geometry, deliberate changes of scale and generous section spacing."
     ],
     "rules": [],
     "dos": [
-      "Do preserve original photographic pixels and matching image/mask transforms.",
+      "Retain original source media alongside user-requested AI derivatives; do not pair the retired source mask with an edited photograph.",
       "Do keep strength and breathing as separate choices.",
       "Do retain Hebrew RTL semantics, real contact details and supplied factual content.",
       "Do keep live UI text and controls outside raster assets.",
-      "Do inspect mobile copy against actual diagonal boundaries; an automated contrast scan cannot establish geometric containment."
+      "Keep title and contact copy in normal flow and inspect both service views for overlap and steady switching."
     ],
     "donts": [
       "Don't substitute the generated mockup's face, gym, claims or text for real business evidence.",

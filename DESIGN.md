@@ -14,13 +14,13 @@ colors:
 typography:
   wordmark:
     fontFamily: "Anton, sans-serif"
-    fontSize: "22.2vw"
+    fontSize: "clamp(72px, 20.6vw, 300px)"
     fontWeight: 400
-    lineHeight: 1.1
+    lineHeight: 1.08
     letterSpacing: "-0.025em"
   display:
     fontFamily: "Noto Display, Noto Hebrew, sans-serif"
-    fontSize: "clamp(4.4rem, 7.5vw, 7.1rem)"
+    fontSize: "clamp(48px, 6.1vw, 82px)"
     fontWeight: 900
     lineHeight: 1.02
     letterSpacing: "-0.025em"
@@ -74,50 +74,50 @@ components:
 
 **Creative North Star: "Signature"**
 
-The user approved `.impeccable/mocks/comp-C.png` on 2026-09-07. This system replaces the previous tan/ink split-screen refinement. White navigation frames a photographic stage, with oversized live lettering behind the real coach. The supplied faceted heart/MA mark gives the page its diagonal seams and geometric motion.
+The user approved `.impeccable/mocks/comp-C.png` on 2026-09-07, then supplied phone screenshots rejecting the overlapping fitness/breathing composition and asked for stronger AI photo work. The current opening retains Signature typography, white navigation, graphite/taupe identity and real source material, but supersedes the masked-photo and intersecting-triangle layout. It now has two complete photographic service views.
 
 The website remains Hebrew RTL and static. Strength training and the breathing clinic are independent offerings. Product truth lives in `PRODUCT.md`; the homepage's detailed arrangement and approved composition live in `.impeccable/surfaces/index-html.md`.
 
 **Key Characteristics:**
 
-- Original Alina photography layered with semantic text.
+- AI editorial edits of supplied Alina photographs, with semantic text in its own space.
 - White, graphite and logo-derived taupe fields.
 - Heavy compressed display type and sharp rectangular actions.
 - Faceted geometry, deliberate changes of scale and generous section spacing.
 
 ## Colors
 
-Taupe is the contact and brand accent. `paper` carries the introduction, personal story, testimonials and footer; `ink` carries the photographic opening, strength section and contact close. `taupe-light` fills the hero's faceted plane. `breathing-surface` distinguishes the breathing section. `taupe-dark` supplies readable brand text and hover states; `line` separates stories. `closing-lettering` keeps the decorative closing wordmark legible against ink.
+Taupe is the contact and brand accent. `paper` carries navigation, the service selector, introduction, personal story, testimonials and footer; `ink` carries the strength opening, strength section and contact close. `taupe-light` marks the selected service. The breathing opening uses #e7ddd4 with ink text, while `breathing-surface` distinguishes its detailed service section. `taupe-dark` supplies readable brand text, selected borders and hover states; `line` separates stories.
 
-The CSS custom properties in `styles.css` are the implementation source of truth. Hero plane fills also occur in inline SVG and must be updated together with their matching token.
+The CSS custom properties in `styles.css` are the implementation source of truth. The hero defines local `--hero-surface` and `--hero-text` tokens according to the selected service.
 
 ## Typography
 
 All fonts are self-hosted under `assets/fonts/`, with OFL licenses. Anton provides the tall Latin wordmarks. `Noto Display` is the static condensed 900-weight Noto Sans Hebrew file; `Noto Hebrew` is the variable body family. All use `font-display: swap`.
 
-The large brand wordmark deliberately exceeds the usual heading ceiling to reproduce the selected composition. The hero title uses two lines, with `scaleX(.82)` anchored at the right on desktop. Mobile removes that scale and uses `clamp(44px, 12.5vw, 65px)`, falling to 42px at 360px. Section-specific headline sizes are defined in the CSS; the closing headline reaches 7.5rem. Body copy uses readable normal-width Hebrew, generally 15–23px depending on section and viewport. Program body copy is limited to 50ch. Headings use balanced wrapping and -0.025em tracking.
+The large brand wordmark deliberately exceeds the usual heading ceiling, using `clamp(72px, 20.6vw, 300px)` and a 1.08 line height. It occupies a separate strip above the photograph; never let it obscure Alina or intercept controls (`pointer-events:none`). The two-line hero title uses `clamp(48px, 6.1vw, 82px)`, becoming `clamp(42px, 11.5vw, 60px)` on phones. Body copy uses normal-width Hebrew. Program copy is limited to 50ch. Headings use balanced wrapping and -0.025em tracking.
 
 ## Layout
 
 The header is sticky at 94px, then 82px below 1100px, 76px below 800px and 74px below 600px. Navigation becomes a keyboard-accessible disclosure below 800px. Page gutters use the token above and become 24px on phones, 20px at the smallest breakpoint.
 
-The hero is a unified image stage with a two-option rail below on desktop. On phones (600px and below), the rail sits immediately under the header, above the photo, so both services remain visible regardless of the hero's minimum height or browser chrome. Its labels use normal-width Noto Hebrew, a 1.5 line height, 16–20px type and at least 70px touch targets; the selected service has a graphite field and taupe underline. The original photograph and masked foreground use identical size, crop position and brightness. `alina-hero-mask.svg` is traced in the original 1400×1050 coordinate system and must never be paired with another photo. Live MAMALINA lettering occupies the layer between them. The headline sits lower right; the contact action sits inside a lower-left faceted plane.
+The service selector sits directly below the header at every width. It has two equal columns, an 8px gap, rectangular bordered controls at least 54px tall, and a taupe selected state. Labels use normal-width Noto Hebrew, 18px on desktop and 15–18px on phones, with 1.5 line height. It is above the decorative wordmark in the stacking order so large font hit areas cannot intercept clicks.
 
-Phone layouts preserve the image, wordmark, headline, contact action and both service choices. The hero service paragraph is exactly 140px wide and physically aligned left with `margin-right:auto; margin-left:0`, while its Hebrew stays right-aligned. This keeps its text inside the diagonal plane at 390px and 320px; do not widen it without visual verification.
+Each hero view consists of a live MAMALINA strip, one photograph and an unclipped message block. Strength uses `alina-training-editorial.webp` on graphite; breathing uses `breathing-clinic-editorial.webp` on warm paper. Only the selected image is exposed. The image viewport stays the same size across modes: 360–580px on desktop and 310–460px on phones. The title, description and action sit below it in normal document flow; on phones they stack with a full-width action. Repeated switching preserves the component height. The old 140px diagonal-containment rule and photographic mask are superseded; their assets remain archived.
 
-The page continues through the white service introduction and large heart, full-width monochrome video invitation, coach story, independent program sections, testimonials and contact close. Desktop uses alternating two-column compositions; phones stack their content. Breakpoints are 1800px (large wordmark cap), 1100px, 800px, 600px and 360px. Section padding is generally 100px, then 75px and 60px. The contact close reserves space for its large decorative lettering and the footer accommodates the phone contact bar.
+The page continues through the white service introduction and large heart, full-width monochrome video invitation, coach story, independent program sections, testimonials and contact close. Desktop uses alternating two-column compositions; phones stack their content. Breakpoints are 1100px, 800px, 600px and 360px; the opening is capped at 1800px wide. Section padding is generally 100px, then 75px and 60px. The contact close reserves space for its large decorative lettering and the footer accommodates the phone contact bar.
 
 ## Elevation & Depth
 
-The interface has no shadow system. Depth comes from the real image, foreground mask, lettering and faceted planes. A dark photographic overlay supports white text. Sticky navigation and the mobile contact bar use solid surfaces and restrained separators.
+The interface has no shadow system. Depth comes from editorial photographic lighting, scale and contrasting solid surfaces. Sticky navigation and the mobile contact bar use solid backgrounds and restrained separators. No hero text is placed over a photograph or clipped by a polygon.
 
 ## Shapes
 
-Controls and major surfaces are rectangular. Faceted SVG linework and triangular clipping derive from the supplied logo. The circular video play control is a purposeful exception. Keep icon paths in one consistent 1.6px stroke system. Do not add rounded card shells or decorative glow.
+Controls and major surfaces are rectangular. Faceted SVG linework belongs to the supplied logo and breathing motif. The circular video play control is a purposeful exception. Keep icon paths in one consistent 1.6px stroke system. Do not add rounded card shells or decorative glow.
 
 ## Components
 
-- **Coach and spaces:** the heart-hand portrait introduces Alina. The strength section uses two studio photos in a 1.35:1 image grid with an 8px gap. The breathing section leads with the clinic photograph; a compact branded breathing motif and its existing pause control sit below it. On phones the clinic photo preserves a 4:3 frame. At the user's request, these four photographs now use brighter Imagegen edits, compressed as local `*-enhanced.webp` files with explicit dimensions and descriptive Hebrew alt text. The supplied JPEGs remain alongside them. The original masked hero is outside this enhancement set. Prompts and constraints are recorded in `.impeccable/photo-enhancement-prompts.md`.
+- **Coach and spaces:** five supplied photographs now use a stronger built-in Imagegen editorial treatment: the restored training frame, tighter heart-hand portrait, two studio views and warm clinic image. Source JPEGs and first-pass enhancements remain in the repository; current files end in `-editorial.webp`. The portrait retains the head and hand gesture. The studio grid stays 1.35:1 with an 8px gap; the clinic photo stays above the compact breathing motif. Source files, output links and exact prompts are recorded in `.impeccable/editorial-photo-prompts.md`.
 
 - **Brand:** the faithfully traced `mamalina-mark.svg` with the exact live name MamAlina Center. The original supplied `mamalina-center-logo.jpg` remains the authority.
 - **Contact controls:** rectangular anchors with a directional or WhatsApp SVG icon. All WhatsApp URLs go directly to `https://wa.me/972532831333`, with no prefilled text. Telephone links use `tel:+972532831333`.
@@ -131,13 +131,13 @@ Focus uses a 3px current-color outline with 6px offset. State transitions use `c
 
 ## Do's and Don'ts
 
-- Do preserve original photographic pixels and matching image/mask transforms in the Signature hero; keep original source photos alongside any user-requested enhanced derivatives.
+- Do retain original media alongside user-requested AI derivatives, preserving identity and the actual studio. Never reuse the retired original mask with an edited photograph.
 - Do keep strength and breathing as separate choices.
 - Do retain Hebrew RTL semantics, real contact details and supplied factual content.
 - Do keep live UI text and controls outside raster assets.
-- Do inspect mobile copy against actual diagonal boundaries; an automated contrast scan cannot establish geometric containment.
+- Do keep title and contact copy in normal flow, inspect both service views and preserve steady geometry while switching.
 - Don't substitute the generated mockup's face, gym, claims or text for real business evidence.
 - Don't reintroduce the superseded split-hero identity or unrequested card patterns.
 - Don't autoplay video or require motion to understand the page.
 
-The independent finish review passed after the mobile paragraph correction. Seven viewport widths and keyboard, motion, video, contact and no-JavaScript checks passed; recorded axe scans returned zero violations. See `.impeccable/finish-review.md` for the verdict and evidence scope.
+The original composition has its historical independent review in `.impeccable/finish-review.md`. The current correction is documented separately in `.impeccable/editorial-review.md`; it passed both modes at nine viewport sizes, repeated switching, enlarged labels, keyboard/menu actions, all three video players, no-JavaScript paths and four axe scans. These are desktop browser checks, not a physical phone or Safari test.
