@@ -872,6 +872,23 @@ h3 {
   object-fit: cover;
   object-position: center 44%;
 }
+.studio-photos {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 8px;
+  direction: ltr;
+}
+.studio-photos figure {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.studio-photos img {
+  position: absolute;
+  inset: 0;
+  object-position: center;
+}
 .program-points {
   list-style: none;
   margin: 30px 0;
@@ -916,9 +933,45 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 45px;
+  padding: 0;
   min-width: 0;
   direction: rtl;
+}
+.clinic-photo {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: 350px;
+  margin: 0;
+  overflow: hidden;
+}
+.clinic-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.breath-moment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  width: 100%;
+  padding: 32px 24px;
+}
+.breath-moment .breath-geometry {
+  flex: 0 0 112px;
+  width: 112px;
+}
+.breath-caption .breath-word {
+  display: block;
+  margin: 0;
+}
+.breath-caption .motion-toggle {
+  margin: 4px 0 0;
+  padding-inline: 0;
 }
 .breath-geometry {
   position: relative;
@@ -1213,7 +1266,7 @@ h3 {
     font-size: 60px;
   }
   .breath-art {
-    padding: 60px 30px;
+    padding: 0;
   }
   .testimonials {
     gap: 7%;
@@ -1273,7 +1326,7 @@ h3 {
     gap: 20px;
   }
   .breath-art {
-    padding: 50px 28px;
+    padding: 0;
   }
   .testimonials {
     grid-template-columns: 1fr;
@@ -1404,7 +1457,20 @@ h3 {
   .breath-art {
     grid-column: 1;
     grid-row: 2;
-    padding: 10px 45px 50px;
+    padding: 0;
+  }
+  .clinic-photo {
+    flex: none;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+  .breath-moment {
+    gap: 20px;
+    padding: 24px;
+  }
+  .breath-moment .breath-geometry {
+    flex-basis: 88px;
+    width: 88px;
   }
   .breath-geometry {
     max-width: 320px;

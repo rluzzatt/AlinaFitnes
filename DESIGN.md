@@ -117,6 +117,8 @@ Controls and major surfaces are rectangular. Faceted SVG linework and triangular
 
 ## Components
 
+- **Coach and spaces:** the new heart-hand portrait introduces Alina. The strength section uses two original studio photos in a 1.35:1 image grid with an 8px gap. The breathing section leads with the real clinic photograph; a compact branded breathing motif and its existing pause control sit below it. On phones the clinic photo preserves a 4:3 frame. Images are local, unmodified JPEGs with explicit dimensions and descriptive Hebrew alt text.
+
 - **Brand:** the faithfully traced `mamalina-mark.svg` with the exact live name MamAlina Center. The original supplied `mamalina-center-logo.jpg` remains the authority.
 - **Contact controls:** rectangular anchors with a directional or WhatsApp SVG icon. All WhatsApp URLs go directly to `https://wa.me/972532831333`, with no prefilled text. Telephone links use `tel:+972532831333`.
 - **Service rail:** native links to the two service sections without JavaScript. Enhancement supplies button semantics, pressed state, pointer/Space activation, matching hero copy and a polite status announcement. Both service sections remain independently readable.

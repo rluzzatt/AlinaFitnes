@@ -23,7 +23,11 @@ Sharp rectangular controls, precise thin faceted seams, no card shells or shadow
 | Black service rail, two text buttons with active taupe rule                     | Progressively enhanced tabs; anchors without JS                 |
 | White second fold: large right headline, huge left faceted heart                | Semantic copy; traced SVG logo geometry                         |
 | Wide monochrome training video with centered play control and caption           | Original photo and local MP4; native video controls on play     |
-| Alina intro: real photograph on right, personal copy/contact on left            | Original marathon photo and semantic content                    |
+| Alina intro: real photograph on right, personal copy/contact on left            | User-supplied heart-hand portrait and semantic content          |
 | Separate service details, breathing motif, original testimonials, final contact | Semantic HTML/CSS/SVG; no invented content                      |
 
 Phone adaptation preserves the giant wordmark and layered photo, puts the headline lower right, then the taupe contact plane and both service options within easy reach. No layout requires hover. Mode changes are a single short composition transition; ambient breathing can be paused and honors reduced motion. No autoplay video. All services and contact links work without JavaScript.
+
+## Photograph update
+
+The user supplied four new photos on 2026-09-07. The coach introduction uses the heart-hand portrait; strength uses a 1.35:1 two-photo studio composition; breathing features the real clinic photograph above a compact version of the existing geometric motif. The approved Signature opening remains the composition authority.

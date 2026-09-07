@@ -47,7 +47,7 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20260907-signature" />
+    <link rel="stylesheet" href="./styles.css?v=20260907-photos" />
   </head>
   <body>
     <!-- THESIS: Signature puts the real coach inside the brand lettering, on a unified photographic stage.
@@ -284,10 +284,10 @@
       <section class="about section" id="about" aria-labelledby="about-title">
         <figure class="about-photo">
           <img
-            src="./assets/images/alina-marathon.jpg"
-            alt="אלינה מחייכת עם מדליה לאחר ריצה"
-            width="1080"
-            height="1350"
+            src="./assets/images/alina-portrait-heart.jpg"
+            alt="אלינה מחייכת ויוצרת לב עם הידיים בסטודיו"
+            width="960"
+            height="1280"
             loading="lazy"
             decoding="async"
           />
@@ -342,16 +342,28 @@
               <use href="#icon-arrow" /></svg
           ></a>
         </div>
-        <figure class="program-photo">
-          <img
-            src="./assets/images/alina-strength-clean.jpg"
-            alt="אלינה מדגימה תרגיל כוח עם משקולות בסטודיו"
-            width="1290"
-            height="1540"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
+        <div class="program-photo studio-photos">
+          <figure>
+            <img
+              src="./assets/images/studio-strength-equipment.jpg"
+              alt="משקולות, ארגזי קפיצה ומכשירי אימון בסטודיו של אלינה"
+              width="960"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <img
+              src="./assets/images/studio-training-space.jpg"
+              alt="מרחב האימון המקורה עם רצפת המזרנים בסטודיו"
+              width="960"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
       </section>
       <section
         class="program program-breath"
@@ -381,28 +393,43 @@
           ></a>
         </div>
         <div class="breath-art" data-breath-art>
-          <div class="breath-geometry" aria-hidden="true">
+          <figure class="clinic-photo">
             <img
-              src="./assets/images/mamalina-mark.svg"
-              alt=""
-              width="945"
-              height="850"
+              src="./assets/images/breathing-clinic.jpg"
+              alt="קליניקת הנשימה של אלינה: חדר עץ עם כורסאות ומזרן למפגש אישי"
+              width="1280"
+              height="960"
               loading="lazy"
-            /><svg viewBox="0 0 440 440">
-              <path d="M220 8 432 220 220 432 8 220Z" />
-            </svg>
+              decoding="async"
+            />
+          </figure>
+          <div class="breath-moment">
+            <div class="breath-geometry" aria-hidden="true">
+              <img
+                src="./assets/images/mamalina-mark.svg"
+                alt=""
+                width="945"
+                height="850"
+                loading="lazy"
+              /><svg viewBox="0 0 440 440">
+                <path d="M220 8 432 220 220 432 8 220Z" />
+              </svg>
+            </div>
+            <div class="breath-caption">
+              <span class="breath-word" aria-hidden="true">פשוט. לנשום.</span>
+              <button
+                class="motion-toggle"
+                type="button"
+                data-motion-toggle
+                aria-pressed="false"
+                hidden
+              >
+                <svg class="icon" aria-hidden="true">
+                  <use href="#icon-pause" /></svg
+                ><span data-motion-label>השהיית התנועה</span>
+              </button>
+            </div>
           </div>
-          <span class="breath-word" aria-hidden="true">פשוט. לנשום.</span>
-          <button
-            class="motion-toggle"
-            type="button"
-            data-motion-toggle
-            aria-pressed="false"
-            hidden
-          >
-            <svg class="icon" aria-hidden="true"><use href="#icon-pause" /></svg
-            ><span data-motion-label>השהיית התנועה</span>
-          </button>
         </div>
       </section>
       <section

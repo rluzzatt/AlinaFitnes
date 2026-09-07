@@ -14,3 +14,16 @@ The approved Signature composition uses original photography, a supplied brand m
 | Semantic UI          | Live Hebrew headings, service tabs, links and buttons; live MAMALINA backdrop                                          | Do not bake navigation, service text, contact actions, or the wordmark backdrop into a bitmap. Keep Hebrew reading order and keyboard access.                                                                                                                                                                                                                               |
 
 The mark trace is geometry derived from the supplied raster, whose photographed/compressed line color varies slightly. The approved flat taupe is used consistently. The foreground mask must not be reused with another photo or a different crop transform.
+
+## New Alina photographs — 2026-09-07
+
+The user supplied four original JPEGs. All were copied without pixel edits; CSS handles their responsive display crops.
+
+| Asset                                         | Dimensions | Current use                                                      |
+| --------------------------------------------- | ---------- | ---------------------------------------------------------------- |
+| `assets/images/alina-portrait-heart.jpg`      | 960 × 1280 | Coach introduction; smiling portrait with hands forming a heart. |
+| `assets/images/studio-strength-equipment.jpg` | 960 × 1280 | Larger half of the strength section's two-photo composition.     |
+| `assets/images/studio-training-space.jpg`     | 960 × 1280 | Companion studio-space view in the strength section.             |
+| `assets/images/breathing-clinic.jpg`          | 1280 × 960 | Real clinic environment above the compact breathing motif.       |
+
+The portrait replaces the running photo in the introduction; the two studio photos replace the former single exercise image in the strength section. The original hero photo and matched mask still form the Signature opening.
