@@ -312,6 +312,36 @@ h3 {
   :root {
     --header-height: 76px;
   }
+  :root.is-header-compact {
+    --header-height: 64px;
+  }
+  .site-header {
+    transition: height 0.2s var(--ease);
+  }
+  .site-header .brand img {
+    transition: width 0.2s var(--ease), height 0.2s var(--ease);
+  }
+  .site-header .brand span {
+    transition: font-size 0.2s var(--ease);
+  }
+  .site-header .nav-toggle span,
+  .site-header .header-cta .icon {
+    transition: width 0.2s var(--ease), height 0.2s var(--ease);
+  }
+  .is-header-compact .site-header .brand img {
+    width: 44px;
+    height: 44px;
+  }
+  .is-header-compact .site-header .brand span {
+    font-size: 14px;
+  }
+  .is-header-compact .nav-toggle span {
+    width: 21px;
+  }
+  .is-header-compact .site-header .header-cta .icon {
+    width: 18px;
+    height: 18px;
+  }
   .desktop-nav {
     display: none;
   }
@@ -354,6 +384,10 @@ h3 {
   .header-cta .icon {
     width: 24px;
     height: 24px;
+  }
+  .is-header-compact .site-header .header-cta .icon {
+    width: 20px;
+    height: 20px;
   }
   h2 {
     font-size: 48px;
@@ -1068,7 +1102,7 @@ h3 {
   }
   .about {
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 28px;
   }
   .about > h2 {
     font-size: 54px;
@@ -1296,6 +1330,11 @@ h3 {
   margin: 0 0 28px;
 }
 .homepage-hero .hero-contact p { margin-bottom: 0; }
+.homepage-hero .hero-contact .hero-support {
+  margin-top: 12px;
+  max-width: 32ch;
+  line-height: 1.65;
+}
 .service-hero { --hero-heading-size: clamp(40px, 4.5vw, 64px); grid-column: 1 / -1; min-width: 0; }
 .service-choices {
   display: grid;

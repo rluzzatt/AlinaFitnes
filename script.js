@@ -146,19 +146,27 @@ function updateContactBar() {
     inlineVisible;
 }
 let scrollQueued = false;
+function updateHeader() {
+  const root = document.documentElement;
+  // Separate thresholds prevent shrinking the header from toggling it back.
+  const threshold = root.classList.contains("is-header-compact") ? 24 : 100;
+  root.classList.toggle("is-header-compact", mobileNavigation.matches && scrollY > threshold);
+}
 const queueContactUpdate = () => {
   if (scrollQueued) return;
   scrollQueued = true;
   requestAnimationFrame(() => {
+    updateHeader();
     updateContactBar();
     scrollQueued = false;
   });
 };
 window.addEventListener("scroll", queueContactUpdate, { passive: true });
 window.addEventListener("resize", queueContactUpdate);
-window.addEventListener("load", updateContactBar);
-window.addEventListener("pageshow", updateContactBar);
+window.addEventListener("load", queueContactUpdate);
+window.addEventListener("pageshow", queueContactUpdate);
 document.fonts.ready.then(updateContactBar);
+updateHeader();
 updateContactBar();
 
 const sectionLinks = [...document.querySelectorAll(".desktop-nav a")];
