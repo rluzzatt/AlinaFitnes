@@ -1,0 +1,7 @@
+# Editorial chapter boundaries — 2026-09-08
+
+User direction: full-width chapter resets, not cards or photo-only transitions. About's existing heading and statement move together into a dark opening, followed by white longer copy. No repeated text or added portrait; the current neutral portrait stays in the main hero. About body measure is 700px maximum with existing text styles.
+
+The existing Strength hero message precedes its own photo on mobile through the shared grid's item order; desktop stays unchanged. Breathwork's category/headline/statement move into a beige full-width opening before the existing image and body. No duplicate headings or new CTA. White testimonials and dark contact remain; stacked testimonial percentage gaps become 40px, removing compounded heading margins. Existing photos, real client quotes, Instagram, header, font/palette and JavaScript unchanged.
+
+Five Chromium widths 320/393/600/800/1440 passed: no text/horizontal overflow, full-width About/Breath openings, mobile strength title before image, warm breathwork heading before image, expected section colors, long page retained. Main-content axe scans at 393/1440 clear. Whole-page desktop and chapter mobile screenshots inspected. All main copy in order and images preserved against 1f9bad5; unaffected header/hero/offerings/strength/testimonials/contact/footer DOM identical. Physical phones/Safari not tested.
