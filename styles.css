@@ -463,6 +463,13 @@ h3 {
   margin: 0 0 32px;
   font-size: clamp(32px, 4vw, 48px);
 }
+.studio-intro {
+  max-width: 55ch;
+  margin-bottom: 32px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #ddd8d4;
+}
 .studio-film-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -545,7 +552,7 @@ h3 {
   max-width: 750px;
 }
 .program h2 {
-  font-size: clamp(3.3rem, 6.5vw, 6rem);
+  font-size: clamp(40px, 4.5vw, 64px);
   margin-bottom: 24px;
 }
 .program .large-copy {
@@ -751,7 +758,7 @@ h3 {
   padding-bottom: 120px;
 }
 .testimonials h2 {
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: clamp(36px, 4vw, 56px);
 }
 .story {
   margin: 0;
@@ -763,6 +770,13 @@ h3 {
 .story footer {
   font-size: 13px;
   font-weight: 750;
+}
+.story-service {
+  display: inline-block;
+  margin-inline-start: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
 }
 .story-featured {
   padding-bottom: 40px;
@@ -898,8 +912,8 @@ h3 {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 15px 24px calc(15px + env(safe-area-inset-bottom));
-  min-height: 58px;
+  padding: 10px 20px calc(10px + env(safe-area-inset-bottom));
+  min-height: 48px;
   background: var(--ink);
   color: white;
   border-top: 1px solid #ffffff40;
@@ -944,9 +958,6 @@ h3 {
   .program-copy > p:not(.large-copy) {
     font-size: 15px;
   }
-  .program h2 {
-    font-size: 60px;
-  }
   .breath-art {
     padding: 0;
   }
@@ -976,9 +987,6 @@ h3 {
     gap: 6%;
   }
   .about > h2 {
-    font-size: 50px;
-  }
-  .program h2 {
     font-size: 50px;
   }
   .program-copy {
@@ -1079,9 +1087,6 @@ h3 {
     padding: 60px 24px;
     max-width: none;
   }
-  .program h2 {
-    font-size: 58px;
-  }
   .program-copy .large-copy {
     font-size: 28px;
   }
@@ -1134,7 +1139,6 @@ h3 {
     margin-top: 10px;
   }
   .testimonials h2 {
-    font-size: 48px;
     margin-bottom: 30px;
   }
   .testimonials h2 br {
@@ -1279,7 +1283,7 @@ h3 {
   margin: 0 0 24px;
 }
 .hero .hero-title {
-  font-size: clamp(54px, 6.4vw, 92px);
+  font-size: var(--hero-heading-size, clamp(54px, 6.4vw, 92px));
   line-height: 1.06;
   margin: 0 0 28px;
 }
@@ -1292,7 +1296,7 @@ h3 {
   margin: 0 0 28px;
 }
 .homepage-hero .hero-contact p { margin-bottom: 0; }
-.service-hero { grid-column: 1 / -1; min-width: 0; }
+.service-hero { --hero-heading-size: clamp(40px, 4.5vw, 64px); grid-column: 1 / -1; min-width: 0; }
 .service-choices {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -1340,7 +1344,8 @@ h3 {
   .homepage-hero .hero-photo { object-position: center 30%; }
   .hero-message { display: block; padding: 28px 24px 32px; }
   .hero-location { font-size: 13px; margin-bottom: 16px; }
-  .hero .hero-title { max-width: none; font-size: clamp(42px, 11.5vw, 60px); margin: 0 0 20px; }
+  .hero .hero-title { max-width: none; font-size: var(--hero-heading-size, clamp(42px, 11.5vw, 60px)); margin: 0 0 20px; }
   .hero-contact p { font-size: 16px; margin-bottom: 20px; }
   .hero-contact .button { width: 100%; min-height: 54px; font-size: 14px; }
+  .service-card { padding: 20px; gap: 20px; }
 }

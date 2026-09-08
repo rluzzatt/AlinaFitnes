@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-08T04:28:45.824Z",
+  "generatedAt": "2026-09-08T04:59:15.338Z",
   "title": "Design System: MamAlina Center — Signature",
   "extensions": {
     "colorMeta": {
@@ -127,7 +127,7 @@
   ],
   "narrative": {
     "northStar": "Signature",
-    "overview": "Neutral MamAlina hero with a shorter phone portrait; two equally weighted service cards with matching 8:5 existing photos and dark CTAs; then the updated personal Alina introduction. The repeated service-introduction block is removed. Header, sticky WhatsApp and lower sections remain unchanged.",
+    "overview": "Intentionally long brand journey: neutral portrait, equal service cards, Alina’s own voice, technique and confidence, studio gallery/video, age-inclusive breathwork, late testimonials and final CTA. Retain all sections/media/routes; reduce repeated copy, repeated location labels and secondary heading/sticky-bar dominance.",
     "keyCharacteristics": [
       "Editorial AI edits of supplied Alina photography, with semantic text in its own space.",
       "White, graphite and logo-derived taupe fields.",

@@ -5,22 +5,26 @@ primary_target: "index.html"
 related_targets: ["styles.css", "script.js"]
 ---
 
-# Signature homepage — one brand, two equal services
+# Signature homepage — long-scroll brand journey
 
-Latest scope, 2026-09-08: refine only the neutral homepage hero, equal service cards and Alina introduction. Keep the header, sticky WhatsApp CTA/JavaScript, and all lower service sections unchanged. Remove the redundant מצאו את המרחב שלכם section completely. This supersedes all earlier top tabs and service-mode assignments.
+Latest user direction, 2026-09-08: preserve the intentionally long homepage and existing visual identity. Improve narrative depth and pacing, not page brevity. No tabs, new design system, new routes or removal of major sections. Existing header, logo, photography and animations remain.
 
-## Homepage top
+## Opening and Alina
 
-Headline: כוח לגוף. מרחב לנשימה. Supporting text: MamAlina Center בכפר סאלד. אימוני כוח ומפגשי נשימה וריברסינג, לנשים ולגברים. Use the existing welcoming heart-hand portrait as Alina’s brand photograph, once only. The existing hero-stage/message/picture layout is reused with a beige surface. RTL message precedes the image on desktop and appears above it on mobile.
+Keep the neutral portrait and headline כוח לגוף. / מרחב לנשימה. Supporting text: MamAlina Center / אימוני כוח ומפגשי נשימה וריברסינג. The brand has no repeated location or adult-gender qualifier. The two illustrated service cards retain exact text/images, equal dimensions, 8:5 ratios and dark CTAs. Two desktop columns, stacked on phones. Phone internal padding and gap are 20px; the 8:7 phone portrait is retained.
 
-Immediately follow with two service cards sharing identical dimensions, typography, border/surface, padding and dark CTA styling. Strength: אימוני כוח / בונים כוח, לומדים טכניקה ומתקדמים בקצב שלכם. / גלו את אימוני הכוח. Breathing: נשימה וריברסינג / עוצרים, נושמים ויוצרים מרחב לעבודה פנימית. / גלו את עולם הנשימה. They link to #strength and #breath. Above 800px use two equal columns; below, equal-height stacked rows. Neither is featured or selected. Each card has an existing photograph using the same 8:5 ratio, object-fit, spacing and visual size: training for strength, retouched clinic for breathing. On phones the homepage portrait uses an 8:7 frame, 12.5% shorter than its former square; preserve the face and heart gesture.
+אני אלינה follows prominently. Preserve her own concepts of אמונות מגבילות, טמפלטים ישנים and אוטומט, her interest in people and their discoveries, and the two distinct ways she works. Keep כאן לא מקטינים את עצמכם. / כאן בונים כוח אמיתי. Do not replace the voice with generic wellness copy.
 
-No tabs or mode JavaScript. Native links work without JavaScript and do not replace the homepage content. Existing header markup remains unchanged. The mobile contact bar stays hidden through the two opening choices.
+## Depth, experience, proof and conversion
 
-## Preserved sections
+Strength remains a substantial black section with the barbell photo and current anchor. Its deeper copy explains movement, precision, personal adaptation, gradual progression and confidence, with the existing three value rows. One paired studio gallery and the original 24-second tour remain. The video has a brief experience-oriented introduction beneath מבט לתוך הסטודיו.
 
-The repeated service introduction and its logo lockup are removed. The text-only אני אלינה section immediately follows the two cards, retaining its prominent opening line and using the exact four new paragraphs supplied by the user. Its existing layout and contact action remain. All program details, cleaned studio/clinic photographs, single 24-second space tour, testimonials, contact and footer are unchanged. Insert the preserved training photograph and אימוני כוח / עם אלינה hero with its existing description/action at the start of #strength. Keep the original strength content beneath it. No new photo generation, new services or other lower-page redesign.
+The beige breathwork section retains מרחב לנשום and its release/shifting-pace idea. Copy explains personal attention, slowing down, breath and emotional/mental process adapted to the person and age; adults, children and babies may be served. No medical claims or promises. The clinic photograph and existing breathing animation remain.
 
-## Design and evidence
+The three original quotes follow both service experiences, under מה מרגישים כשעובדים אחרת, with small plain service labels. Do not invent endorsements. Final CTA and footer remain: השינוי מתחיל בהחלטה; existing invitation, WhatsApp, telephone, Instagram and logo. Current location appears once in contact only.
 
-Reuse Signature’s Noto typography, white/ink/beige palette, gutters, existing rectangular buttons and RTL arrow. The two requested service cards are the only new card component. Latest verification: intro-cards-review.md; previous brand-home verification: brand-home-review.md and ignored .qa/brand-* evidence. Historical comps and prior reviews must not restore superseded tabs or masked hero planes.
+## Rhythm and implementation
+
+Reuse existing components, palette, Noto fonts, rectangular actions, spacing and RTL. Service headings are 40–64px and proof 36–56px, below hero/major brand/final CTA scale. No duplicated CSS overrides. Sticky WhatsApp retains existing JavaScript and suppression logic with a 48px footprint before safe-area padding. All sections, images, video and service anchors are retained. The repeated מצאו את המרחב שלכם introduction remains removed from an earlier refinement.
+
+Latest verification: journey-review.md and ignored .qa/journey-* evidence. Older briefs/reviews do not override this long-scroll direction.

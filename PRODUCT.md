@@ -8,7 +8,7 @@ web
 
 ## Users
 
-The existing site addresses Hebrew-speaking women and men considering strength training in Kfar Szold, including beginners and experienced trainees. It separately addresses people interested in Alina's breathing and rebirthing clinic. These audiences are inferred from the existing business copy; the current task changes the presentation rather than the underlying services.
+The existing site addresses Hebrew-speaking women and men considering strength training in Kfar Szold, including beginners and experienced trainees. It separately addresses people interested in Alina's breathing and rebirthing work; the user clarified that this may include adults, children and babies, with individually adapted work and no medical claims. These audiences are inferred from the existing business copy; the current task changes the presentation rather than the underlying services.
 
 ## Product Purpose
 
@@ -49,6 +49,10 @@ Static Hebrew RTL website at https://rluzzatt.github.io/AlinaFitnes/. Contact is
 - Local reel under assets/videos/alina-andi-reel.mp4; inspect its content before using it.
 - A new authoritative logo was supplied during the redesign: `.codex-remote-attachments/01a077db-d19c-7c83-a954-e72b150ef7c6/83ae871a-515d-485d-9239-78a62afda7a4/1-Photo-1.jpg`. Copy it into project assets before consuming it. Supersedes the old MamAlina Instagram logo.
 - No verified prices, certifications, client counts, performance statistics, or awards were supplied.
+
+## Latest Homepage Direction — 2026-09-08
+
+Intentionally preserve the long-scroll experience. Each section adds a reason to understand or choose the center: brand, Alina, technique/confidence, real studio, age-inclusive breathwork, existing proof, direct conversion. Keep all major sections, current photographs, video, routes and animations. Use location only in contact, and preserve Alina’s distinctive language. Secondary headings and the mobile WhatsApp footprint are slightly quieter; service choices remain equal.
 
 ## Product Principles
 

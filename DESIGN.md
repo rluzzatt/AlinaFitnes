@@ -74,7 +74,7 @@ components:
 
 **Creative North Star: "Signature"**
 
-The user approved `.impeccable/mocks/comp-C.png` on 2026-09-07, then supplied phone screenshots rejecting the overlapping fitness/breathing composition and asked for stronger AI photo work. The current opening retains Signature typography, white navigation, graphite/taupe identity and real source material. The latest 2026-09-08 refinement presents MamAlina Center first, with the neutral heart-hand portrait and two equal service cards. The former strength hero is relocated to #strength; existing lower sections are preserved.
+The user approved `.impeccable/mocks/comp-C.png` on 2026-09-07, then supplied phone screenshots rejecting the overlapping fitness/breathing composition and asked for stronger AI photo work. The current opening retains Signature typography, white navigation, graphite/taupe identity and real source material. The latest 2026-09-08 refinement preserves the intentionally long brand journey: neutral hero, equal service worlds, Alina’s voice, deeper strength explanation, real studio experience, age-inclusive breathwork, late proof and final conversion. No major section is removed.
 
 The website remains Hebrew RTL and static. Strength training and the breathing clinic are independent offerings. Product truth lives in `PRODUCT.md`; the homepage's detailed arrangement and approved composition live in `.impeccable/surfaces/index-html.md`.
 
@@ -95,13 +95,13 @@ The CSS custom properties in `styles.css` are the implementation source of truth
 
 All fonts are self-hosted under `assets/fonts/`, with OFL licenses. Anton provides the tall Latin wordmarks. `Noto Display` is the static condensed 900-weight Noto Sans Hebrew file; `Noto Hebrew` is the variable body family. All use `font-display: swap`.
 
-The homepage title is כוח לגוף. / מרחב לנשימה. The relocated strength hero retains אימוני כוח / עם אלינה as an H2 using the same hero-title class. Display sizes remain clamp(54px, 6.4vw, 92px), becoming clamp(42px, 11.5vw, 60px) on phones. Anton remains in the decorative closing wordmark. Body copy uses normal-width Hebrew, and headings retain balanced wrapping with -0.025em tracking.
+The homepage title is כוח לגוף. / מרחב לנשימה. The relocated strength hero retains אימוני כוח / עם אלינה as an H2 using the same hero-title class. Display sizes remain clamp(54px, 6.4vw, 92px), becoming clamp(42px, 11.5vw, 60px) on phones. Service headings use 40–64px and testimonial heading 36–56px to create a secondary scale. Anton remains in the decorative closing wordmark. Body copy uses normal-width Hebrew, and headings retain balanced wrapping with -0.025em tracking.
 
 ## Layout
 
 The header is sticky at 94px, then 82px below 1100px, 76px below 800px and 74px below 600px. Navigation becomes a keyboard-accessible disclosure below 800px. Page gutters use the token above and become 24px on phones, 20px at the smallest breakpoint.
 
-The homepage has no selector or service state. Immediately after the neutral hero, two equally weighted cards link directly to #strength and #breath. Both use the same service-card class, typography, paper surface, line border, padding and button-dark action. Grid rows are equal height; above 800px there are two equal columns, and below they stack. CTA icons point left in RTL. Both cards use the same 8:5 image frame, spacing and object-fit: the existing training and retouched clinic photographs. Their CTA text is גלו את אימוני הכוח and גלו את עולם הנשימה.
+The homepage has no selector or service state. Immediately after the neutral hero, two equally weighted cards link directly to #strength and #breath. Both use the same service-card class, typography, paper surface, line border, padding and button-dark action. Grid rows are equal height; above 800px there are two equal columns, and below they stack. CTA icons point left in RTL. Both cards use the same 8:5 image frame, spacing and object-fit: the existing training and retouched clinic photographs. Their CTA text is גלו את אימוני הכוח and גלו את עולם הנשימה. Phone internal padding and gap are 20px.
 
 The neutral opening reuses the two-column hero-stage capped at 1440px, with the brand message first in RTL and alina-portrait-editorial.webp beside it on warm beige. At 800px and below the message and photo stack in that order. At 600px and below, only the homepage portrait is reduced to an 8:7 frame, with a 30% vertical focal position. The preserved strength hero uses the same layout and title class on graphite at the beginning of #strength, with alina-training-editorial.webp and its existing action. The old tabs, mode code, photographic mask and intersecting planes are removed.
 
@@ -125,7 +125,7 @@ Controls and major surfaces are rectangular. Faceted SVG linework belongs to the
 - **Navigation:** supports initial focus, Escape, leaving the menu with Tab, outside clicks and recovery when resized to desktop. A skip link reaches the main content.
 - **Video:** only the 24-second מרחב האימון tour remains on the page. The user-requested removals are רגע מתוך האימון and הציוד בסטודיו; their files remain archived and are not requested or linked by the page. The single tour is centered in a column up to 800px, loads on activation, keeps native controls and a direct-file fallback, contains the entire portrait frame, and pauses offscreen or when the page becomes hidden. No autoplay.
 - **Breathing artwork:** geometric scale and rotation only while visible and the page is active. Pause/resume and live reduced-motion preference changes are supported.
-- **Mobile contact bar:** appears after both opening service choices have passed; hides while an inline WhatsApp action or the final contact section is visible, or the menu is open. Bottom padding includes the safe area.
+- **Mobile contact bar:** appears after both opening service choices have passed; hides while an inline WhatsApp action or the final contact section is visible, or the menu is open. The mobile bar is 48px before safe-area padding; its existing delayed/suppressed display behavior is preserved.
 
 Focus uses a 3px current-color outline with 6px offset. State transitions use `cubic-bezier(.16,1,.3,1)`, generally 0.2–0.9s. Reduced motion removes meaningful animation and smooth scrolling. Content and direct actions remain available without JavaScript.
 
@@ -140,4 +140,4 @@ Focus uses a 3px current-color outline with 6px offset. State transitions use `c
 - Don't reintroduce the superseded overlapping hero planes or unrequested card patterns.
 - Don't autoplay video or require motion to understand the page.
 
-The original independent review remains historical. The latest top/intro refinement is `.impeccable/intro-cards-review.md`; the previous brand-opening refinement is `.impeccable/brand-home-review.md`; the previous image-placement refinement is `.impeccable/service-photo-review.md`; the broader refinement check is `.impeccable/welcome-review.md`, covering the revised opening, independent service copy, stacked logo, one remaining film and three photo retouches. These are desktop Chromium checks, not a physical-phone or Safari test.
+The original independent review remains historical. The latest narrative/pacing refinement is `.impeccable/journey-review.md`; the previous top/intro refinement is `.impeccable/intro-cards-review.md`; the previous brand-opening refinement is `.impeccable/brand-home-review.md`; the previous image-placement refinement is `.impeccable/service-photo-review.md`; the broader refinement check is `.impeccable/welcome-review.md`, covering the revised opening, independent service copy, stacked logo, one remaining film and three photo retouches. These are desktop Chromium checks, not a physical-phone or Safari test.
