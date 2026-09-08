@@ -675,7 +675,13 @@ h3 {
 .program-breath > .program-copy {
   direction: rtl;
   grid-column: 2;
-  grid-row: 1;
+  grid-row: 1 / span 2;
+}
+.program-breath .program-copy > .breath-category {
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.5;
+  margin-bottom: 16px;
 }
 .program-breath .program-points li {
   border-color: #a6988c;
@@ -686,7 +692,7 @@ h3 {
 .breath-art {
   position: relative;
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -697,7 +703,8 @@ h3 {
 }
 .clinic-photo {
   position: relative;
-  flex: 1;
+  grid-column: 1;
+  grid-row: 1;
   width: 100%;
   min-height: 350px;
   margin: 0;
@@ -1157,15 +1164,15 @@ h3 {
   }
   .program-breath > .program-copy {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 2;
+    padding-top: 36px;
   }
   .breath-art {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 3;
     padding: 0;
   }
   .clinic-photo {
-    flex: none;
     min-height: 0;
     aspect-ratio: 4 / 3;
   }

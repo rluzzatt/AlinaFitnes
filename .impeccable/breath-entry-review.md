@@ -1,0 +1,7 @@
+# Breathwork entry — 2026-09-08
+
+Only the beginning/transition of the existing breathwork section changed. Moved its existing clinic figure out of the artwork wrapper to lead the section; no image duplication or replacement. Mobile order: full-width 4:3 room photograph → small נשימה וריברסינג category → existing headline and statement → unchanged body/values/CTA → existing breathing motif. The label is explicitly requested by the user. Existing beige and dark contrast, typography, header, service anchors and long-scroll content remain.
+
+Desktop retains photo beside copy and the motif below the photograph. Grid placement replaces the former nested image layout, keeping motion observation attached to the artwork. No JavaScript changes.
+
+Checks: 320/393/600/800/1440 Chromium widths; no horizontal overflow, mobile photo width equals viewport, correct photo/label/title/copy/motif order, one clinic figure in section, unchanged CTA. Breathwork-scoped axe scans at 393/1440 clear. A page-wide scan with the sticky WhatsApp visible reported its existing out-of-landmark region warning; the unrelated sticky markup was not changed. Reduced-motion hides its control as before; switching motion back on and pausing passed. Transition/mobile/desktop screenshots inspected. DOM outside breathwork except CSS cache key and all original breathwork copy verified unchanged against 1b2ed2e. No physical-phone or Safari testing.

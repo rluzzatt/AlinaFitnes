@@ -31,4 +31,4 @@ Hero gains only מקום אישי ומדויק להתחזק, לנשום ולעב
 
 Latest correction preserves distinct service worlds. The barbell introduction stays dark with its exact heading/copy. The following explanation is white with dark text and begins לומדים לעבוד נכון. as the primary heading, followed by the smaller מגלים כמה אתם חזקים. Remove only the duplicated אימוני כוח. heading. Do not globally reduce type or alter the compact header behavior.
 
-Latest verification: offerings-review.md and ignored .qa/offerings-* evidence. Only the offerings section changed in this pass. Older briefs/reviews do not override this direction.
+Breathwork entry now begins with the existing clinic photo in DOM order. On phones it is edge-to-edge at 4:3, then the small explicit נשימה וריברסינג label, existing מרחב לנשום. heading and supporting statement/body. Desktop keeps the photo/copy split; the original breathing motif remains below the photo (after copy on mobile). No extra CTA or duplicate photo. Latest verification: breath-entry-review.md and ignored .qa/breath-entry-* evidence. Older briefs/reviews do not override this direction.
