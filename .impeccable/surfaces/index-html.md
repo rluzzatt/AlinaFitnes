@@ -21,7 +21,7 @@ Strength remains a substantial black section with the barbell photo and current 
 
 The beige breathwork section retains מרחב לנשום and its release/shifting-pace idea. Copy explains personal attention, slowing down, breath and emotional/mental process adapted to the person and age; adults, children and babies may be served. No medical claims or promises. The clinic photograph and existing breathing animation remain.
 
-The three original quotes follow both service experiences, under מה מרגישים כשעובדים אחרת, with small plain service labels. Do not invent endorsements. Final headline: רוצים לנסות? Supporting copy: כוח, נשימה או פשוט לא בטוחים מה מתאים — שלחו הודעה. Strength buttons use לשיעור ניסיון, breathwork uses למפגש נשימה, and general buttons use שלחו לי הודעה. Keep exploration labels unchanged. WhatsApp, telephone, Instagram and logo remain. Current location appears once in contact only.
+The user-supplied real strength testimonials follow both service experiences, under מה מרגישים כשעובדים אחרת, with small אימוני כוח labels. Hagar Shamir Buchritz is featured, followed by Noa Benisho and Lilach Dushi; Ayala Lapidot closes with the short pull quote. Keep exact Hebrew names and supplied quote text. The earlier three testimonials were placeholders and must not be restored. Do not invent endorsements. Final headline: רוצים לנסות? Supporting copy: כוח, נשימה או פשוט לא בטוחים מה מתאים — שלחו הודעה. Strength buttons use לשיעור ניסיון, breathwork uses למפגש נשימה, and general buttons use שלחו לי הודעה. Keep exploration labels unchanged. WhatsApp, telephone and logo remain; Instagram links to the supplied mamalinacenter profile URL. Current location appears once in contact only.
 
 ## Rhythm and implementation
 

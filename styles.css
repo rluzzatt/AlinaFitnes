@@ -846,6 +846,15 @@ h3 {
   grid-template-columns: 1fr 1fr;
   gap: 45px;
 }
+.story-pull {
+  margin-top: 48px;
+}
+.story-pull p {
+  font-family: "Noto Display", sans-serif;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.35;
+  margin-bottom: 16px;
+}
 .contact {
   background: var(--ink);
   color: white;
