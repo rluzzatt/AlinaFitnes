@@ -29,7 +29,7 @@ Static Hebrew RTL website at https://rluzzatt.github.io/AlinaFitnes/. Contact is
 - No booking backend, published prices, class timetable, or membership checkout exists.
 - The user requested a complete makeover and rethinking, explicitly asking for a different, impressive result inspired by leading workout websites.
 - Prior task authorization to commit and push the finished work to GitHub persists.
-- The user explicitly approved the Signature composition on 2026-09-07. The latest homepage is brand-first with two exactly equal service choices, without a selected service or tabs. The barbell hero belongs inside the existing strength section. Header and all other section content are preserved.
+- The user explicitly approved the Signature composition on 2026-09-07. The latest homepage is brand-first with two exactly equal service choices, without a selected service or tabs. The barbell hero belongs inside the existing strength section. The latest top/intro refinement adds equal 8:5 card photographs, reduces the phone portrait height, removes the repeated service introduction, and uses the exact new Alina body copy. Header, sticky WhatsApp CTA/JavaScript and all lower service sections are preserved.
 
 ## Brand Commitments
 

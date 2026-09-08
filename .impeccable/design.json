@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-08T02:52:54.246Z",
+  "generatedAt": "2026-09-08T04:28:45.824Z",
   "title": "Design System: MamAlina Center — Signature",
   "extensions": {
     "colorMeta": {
@@ -127,7 +127,7 @@
   ],
   "narrative": {
     "northStar": "Signature",
-    "overview": "MamAlina Center first: a neutral heart-hand portrait and brand headline, immediately followed by two equally weighted service cards. Existing hero typography/layout and dark CTAs are reused. The former barbell hero moves into #strength; header and all other section content are preserved.",
+    "overview": "Neutral MamAlina hero with a shorter phone portrait; two equally weighted service cards with matching 8:5 existing photos and dark CTAs; then the updated personal Alina introduction. The repeated service-introduction block is removed. Header, sticky WhatsApp and lower sections remain unchanged.",
     "keyCharacteristics": [
       "Editorial AI edits of supplied Alina photography, with semantic text in its own space.",
       "White, graphite and logo-derived taupe fields.",
