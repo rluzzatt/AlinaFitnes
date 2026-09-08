@@ -7,7 +7,7 @@
     <title>MamAlina Center | אימוני כוח וקליניקת נשימה בכפר סאלד</title>
     <meta
       name="description"
-      content="אימוני כוח עם אלינה בכפר סאלד, ולצדם קליניקה נפרדת לנשימה וריברסינג. בחרו את השירות שמתאים לכם — אין צורך לשלב ביניהם."
+      content="MamAlina Center בכפר סאלד. שני מרחבים. שתי דרכים לעבוד עם עצמכם: אימוני כוח ונשימה וריברסינג."
     />
     <link rel="canonical" href="https://rluzzatt.github.io/AlinaFitnes/" />
     <link
@@ -27,11 +27,11 @@
     />
     <meta
       property="og:image"
-      content="https://rluzzatt.github.io/AlinaFitnes/assets/images/alina-training-editorial.webp"
+      content="https://rluzzatt.github.io/AlinaFitnes/assets/images/alina-portrait-editorial.webp"
     />
-    <meta property="og:image:width" content="1400" />
-    <meta property="og:image:height" content="1050" />
-    <meta property="og:image:alt" content="אלינה באימון כוח עם מוט ומשקולות" />
+    <meta property="og:image:width" content="960" />
+    <meta property="og:image:height" content="1280" />
+    <meta property="og:image:alt" content="אלינה — MamAlina Center" />
     <meta property="og:url" content="https://rluzzatt.github.io/AlinaFitnes/" />
     <link
       rel="preload"
@@ -47,13 +47,13 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20260907-service-photos" />
+    <link rel="stylesheet" href="./styles.css?v=20260908-brand-home" />
   </head>
   <body>
-    <!-- THESIS: Signature pairs Alina's strength photo with training and her heart-hand portrait with breathing, two independent services.
+    <!-- THESIS: MamAlina Center first, followed by two equally weighted independent service choices.
   OWN-WORLD: White, graphite, logo taupe; compressed athletic type, faceted seams and rectangular controls.
   STORY: Recognize Alina, discover two independent services, start a direct conversation.
-  FIRST VIEWPORT: White navigation and two clear service controls; Alina's portrait beside a service-specific title and contact, stacked in normal flow on mobile.
+  FIRST VIEWPORT: Unchanged navigation, neutral brand headline and Alina's welcoming portrait; two equal service cards immediately follow.
   FORM: Kinetic sports broadcasting, seventh grounded direction, seed 398670b6; Signature comp-C approved 2026-09-07.
   FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->
     <svg
@@ -144,32 +144,32 @@
       </nav>
     </header>
     <main id="main" tabindex="-1">
-      <section
-        class="hero"
-        id="top"
-        aria-labelledby="hero-title"
-        data-mode="strength"
-      >
-        <div class="mode-switch" aria-label="בחרו מרחב" data-mode-switch>
-          <a href="#strength" class="mode-option is-active" data-mode-option="strength"><span>אימוני כוח</span></a>
-          <a href="#breath" class="mode-option" data-mode-option="breath"><span>נשימה וריברסינג</span></a>
-        </div>
-        <div class="hero-stage" id="hero-stage">
+      <section class="hero homepage-hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-stage">
+          <div class="hero-message">
+            <h1 class="hero-title" id="hero-title"><span>כוח לגוף.</span><span>מרחב לנשימה.</span></h1>
+            <div class="hero-contact">
+              <p><bdi lang="en">MamAlina Center</bdi> בכפר סאלד.<br />שני מרחבים. שתי דרכים לעבוד עם עצמכם.</p>
+            </div>
+          </div>
           <div class="hero-visual">
             <div class="hero-picture">
-              <img class="hero-photo" src="./assets/images/alina-training-editorial.webp" alt="אלינה באימון כוח עם מוט ומשקולות" width="1400" height="1050" fetchpriority="high" data-hero-image="strength" />
-              <img class="hero-photo" src="./assets/images/alina-portrait-editorial.webp" alt="אלינה מחייכת ויוצרת לב עם הידיים" width="960" height="1280" fetchpriority="low" data-hero-image="breath" hidden />
-            </div>
-          </div>
-          <div class="hero-message">
-            <p class="hero-location"><bdi lang="en">MamAlina Center</bdi> · כפר סאלד</p>
-            <h1 id="hero-title"><span>אימוני כוח</span><span>עם אלינה.</span></h1>
-            <div class="hero-contact">
-              <p>סטודיו לנשים ולגברים.<br />אימונים שמותאמים לרמה ולמטרות שלכם.</p>
-              <a class="button button-taupe" href="https://wa.me/972532831333" target="_blank" rel="noreferrer" data-primary-contact>לתיאום אימון כוח<svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
+              <img class="hero-photo" src="./assets/images/alina-portrait-editorial.webp" alt="אלינה מחייכת ויוצרת לב עם הידיים" width="960" height="1280" fetchpriority="high" />
             </div>
           </div>
         </div>
+      </section>
+      <section class="service-choices section" aria-label="בחרו את המרחב שלכם">
+        <article class="service-card" aria-labelledby="strength-card-title">
+          <h2 id="strength-card-title">אימוני כוח</h2>
+          <p>בונים כוח, לומדים טכניקה ומתקדמים בקצב שלכם.</p>
+          <a class="button button-dark" href="#strength">לאימוני כוח<svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
+        </article>
+        <article class="service-card" aria-labelledby="breath-card-title">
+          <h2 id="breath-card-title">נשימה וריברסינג</h2>
+          <p>עוצרים, נושמים ויוצרים מרחב לעבודה פנימית.</p>
+          <a class="button button-dark" href="#breath">לנשימה וריברסינג<svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
+        </article>
       </section>
       <section class="intro section" id="studio" aria-labelledby="studio-title">
         <div class="intro-copy">
@@ -217,6 +217,23 @@
         id="strength"
         aria-labelledby="strength-title"
       >
+        <div class="hero service-hero" aria-labelledby="strength-hero-title">
+          <div class="hero-stage">
+            <div class="hero-visual">
+              <div class="hero-picture">
+                <img class="hero-photo" src="./assets/images/alina-training-editorial.webp" alt="אלינה באימון כוח עם מוט ומשקולות" width="1400" height="1050" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="hero-message">
+              <p class="hero-location"><bdi lang="en">MamAlina Center</bdi> · כפר סאלד</p>
+              <h2 class="hero-title" id="strength-hero-title"><span>אימוני כוח</span><span>עם אלינה.</span></h2>
+              <div class="hero-contact">
+                <p>סטודיו לנשים ולגברים.<br />אימונים שמותאמים לרמה ולמטרות שלכם.</p>
+                <a class="button button-taupe" href="https://wa.me/972532831333" target="_blank" rel="noreferrer" data-primary-contact>לתיאום אימון כוח<svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="program-copy">
           <h2 id="strength-title">אימוני כוח.</h2>
           <p class="large-copy">לומדים לעבוד נכון.<br />מגלים כמה אתם חזקים.</p>
@@ -451,7 +468,6 @@
         >בוואטסאפ<svg class="icon" aria-hidden="true">
           <use href="#icon-whatsapp" /></svg></span
     ></a>
-    <span class="sr-only" role="status" data-mode-status></span>
-    <script src="./script.js?v=20260907-welcome" defer></script>
+    <script src="./script.js?v=20260908-brand-home" defer></script>
   </body>
 </html>

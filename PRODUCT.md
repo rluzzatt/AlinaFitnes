@@ -29,7 +29,7 @@ Static Hebrew RTL website at https://rluzzatt.github.io/AlinaFitnes/. Contact is
 - No booking backend, published prices, class timetable, or membership checkout exists.
 - The user requested a complete makeover and rethinking, explicitly asking for a different, impressive result inspired by leading workout websites.
 - Prior task authorization to commit and push the finished work to GitHub persists.
-- The user explicitly approved the Signature composition on 2026-09-07. Strength is the initial homepage mode; breathing is separately accessible through the mode switch and navigation.
+- The user explicitly approved the Signature composition on 2026-09-07. The latest homepage is brand-first with two exactly equal service choices, without a selected service or tabs. The barbell hero belongs inside the existing strength section. Header and all other section content are preserved.
 
 ## Brand Commitments
 
@@ -42,7 +42,7 @@ Static Hebrew RTL website at https://rluzzatt.github.io/AlinaFitnes/. Contact is
 
 - Four new photographs supplied directly by Alina through the user on 2026-09-07: her smiling heart-hand portrait, two views of the training studio, and the wood-lined breathing clinic. Their unmodified project copies are `alina-portrait-heart.jpg`, `studio-training-space.jpg`, `studio-strength-equipment.jpg`, and `breathing-clinic.jpg` under `assets/images/`. Use them for the coach introduction and service environments.
 
-- Latest explicit refinement: use the training photo in the strength tab and heart-hand portrait in the breathing tab, removing the duplicate portrait from About; remove the combined breathing/lifting slogan; explain both services clearly and independently before the About section; put the business name below the introduction logo; remove the training reel and equipment tour from the page. Only the 24-second studio-space-tour.mp4 remains. Three new -retouched.webp space photos clean floors, equipment marks and incidental clutter. Preserve the actual facility, Alina’s identity, original source media and all existing factual content after the introduction.
+- Latest explicit refinement: use the welcoming heart-hand portrait for a neutral brand homepage with two equal service cards, and relocate the existing barbell hero into the strength section; keep About text-only; remove the combined breathing/lifting slogan; explain both services clearly and independently before the About section; put the business name below the introduction logo; remove the training reel and equipment tour from the page. Only the 24-second studio-space-tour.mp4 remains. Three new -retouched.webp space photos clean floors, equipment marks and incidental clutter. Preserve the actual facility, Alina’s identity, original source media and all existing factual content after the introduction.
 
 - Existing service descriptions and three attributed testimonials in index.html. Preserve supplied content without adding new claims; their provenance has not been independently verified.
 - Local training and running photography under assets/images/, including Alina's face and actual training environment.

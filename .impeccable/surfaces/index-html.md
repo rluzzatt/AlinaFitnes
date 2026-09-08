@@ -5,22 +5,22 @@ primary_target: "index.html"
 related_targets: ["styles.css", "script.js"]
 ---
 
-# Signature homepage — service photographs and independent services
+# Signature homepage — one brand, two equal services
 
-Mode: Persuade. The user selected Signature on 2026-09-07 and subsequently superseded the overlapping hero and combined slogan. The latest instruction is authoritative: use Alina’s training photo for strength and her heart-hand portrait for breathing, with no repeated portrait in About, remove the breathing/lifting slogan, clarify independent services before אני אלינה, place the name below the introduction logo, remove the training reel and equipment tour, and professionally clean up the space photographs.
+Latest scope, 2026-09-08: replace only the service-specific homepage opening with a neutral brand hero and two equal service cards. Keep the header and all existing lower sections as-is, except relocating the existing barbell hero to the start of #strength. This supersedes all earlier top tabs and service-mode assignments.
 
-## Current opening
+## Homepage top
 
-White navigation and two equal rectangular service controls. A real Alina service photograph on the right and service-specific title/contact on graphite on the left; below 800px they stack in normal flow. Strength title: אימוני כוח / עם אלינה. Breathing title: נשימה / וריברסינג, paired with the heart-hand portrait on warm paper. The portrait keeps the full head and heart gesture in view. The opening is capped at 1440px. No giant brand strip, intersecting planes, clipping masks or text over the photo.
+Headline: כוח לגוף. מרחב לנשימה. Supporting text: MamAlina Center בכפר סאלד. שני מרחבים. שתי דרכים לעבוד עם עצמכם. Use the existing welcoming heart-hand portrait as Alina’s brand photograph, once only. The existing hero-stage/message/picture layout is reused with a beige surface. RTL message precedes the image on desktop and appears above it on mobile.
 
-The white introduction names both services separately and explicitly states that visitors can attend only strength training or only breathing sessions. Two links lead to their respective details. The faceted heart has MamAlina Center centered below it; the entire brand lockup follows the introduction copy on phones. Both selector controls remain service links without JavaScript and gain pressed-button semantics with it.
+Immediately follow with two service cards sharing identical dimensions, typography, border/surface, padding and dark CTA styling. Strength: אימוני כוח / בונים כוח, לומדים טכניקה ומתקדמים בקצב שלכם. / לאימוני כוח. Breathing: נשימה וריברסינג / עוצרים, נושמים ויוצרים מרחב לעבודה פנימית. / לנשימה וריברסינג. They link to #strength and #breath. Above 800px use two equal columns; below, equal-height stacked rows. Neither is featured or selected.
 
-## Photos and lower page
+No tabs or mode JavaScript. Native links work without JavaScript and do not replace the homepage content. Existing header markup remains unchanged. The mobile contact bar stays hidden through the two opening choices.
 
-Use alina-training-editorial.webp for strength and alina-portrait-editorial.webp for breathing. The heart portrait appears exactly once. About is text-only: heading beside copy on desktop, stacked on phones. The three current space photographs end in -retouched.webp; built-in Imagegen cleaned floors, equipment marks and incidental clutter while preserving recognizable facilities and materials. Exact prompts and output maps: photo-cleanup-prompts.md. Original and previous derivative files remain archived.
+## Preserved sections
 
-After the introduction comes אני אלינה, the strength details and paired studio photos, just the 24-second מרחב האימון tour centered at up to 800px, the separate clinic section, existing testimonials and direct contact. The removed training reel and equipment tour must not be linked or loaded. Video remains opt-in, with native controls, direct fallback and offscreen pause.
+The original introduction and stacked logo, text-only About, all program details, cleaned studio/clinic photographs, single 24-second space tour, testimonials, contact and footer are unchanged. Insert the preserved training photograph and אימוני כוח / עם אלינה hero with its existing description/action at the start of #strength. Keep the original strength content beneath it. No new photo generation, new services or other lower-page redesign.
 
-## Visual grammar and evidence
+## Design and evidence
 
-Retain Signature’s heavy condensed Hebrew headings, normal-width body/control text, white/graphite/taupe palette, rectangular controls and faceted brand geometry. No new claims, contact details, card shells or shadows. Keyboard access and reduced motion remain supported. The original comp-C is historical, not authority to restore later-rejected composition. Latest photo-placement verification: service-photo-review.md; broader verification: welcome-review.md and ignored .qa/welcome-* evidence.
+Reuse Signature’s Noto typography, white/ink/beige palette, gutters, existing rectangular buttons and RTL arrow. The two requested service cards are the only new card component. Latest verification: brand-home-review.md and ignored .qa/brand-* evidence. Historical comps and prior reviews must not restore superseded tabs or masked hero planes.

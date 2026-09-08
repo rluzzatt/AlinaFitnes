@@ -1,6 +1,6 @@
 # Current media refinement — 2026-09-07
 
-The strength hero is alina-training-editorial.webp; the breathing hero is alina-portrait-editorial.webp. The heart portrait occurs once only; About has no photograph. Current space photos: studio-space-retouched.webp (960×1280, 208,776 bytes), studio-equipment-retouched.webp (960×1280, 218,528 bytes), breathing-clinic-retouched.webp (1280×960, 190,534 bytes). Exact prompts and generated PNG paths are in photo-cleanup-prompts.md. Only studio-space-tour.mp4 is exposed on the site; the training reel and equipment tour are archived and unlinked. Earlier entries below are historical.
+The neutral homepage hero is alina-portrait-editorial.webp, occurring once only. The relocated hero inside #strength uses alina-training-editorial.webp. About has no photograph. No new media was generated for the brand-homepage refinement. Current space photos: studio-space-retouched.webp (960×1280, 208,776 bytes), studio-equipment-retouched.webp (960×1280, 218,528 bytes), breathing-clinic-retouched.webp (1280×960, 190,534 bytes). Exact prompts and generated PNG paths are in photo-cleanup-prompts.md. Only studio-space-tour.mp4 is exposed on the site; the training reel and equipment tour are archived and unlinked. Earlier entries below are historical.
 
 # Asset manifest
 

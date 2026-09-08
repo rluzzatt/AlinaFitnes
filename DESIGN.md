@@ -1,6 +1,6 @@
 ---
 name: MamAlina Center — Signature
-description: Alina’s training and heart portraits, clear independent services and faceted brand geometry.
+description: A neutral brand portrait and two equally weighted independent service choices and faceted brand geometry.
 colors:
   paper: "#ffffff"
   ink: "#121416"
@@ -74,7 +74,7 @@ components:
 
 **Creative North Star: "Signature"**
 
-The user approved `.impeccable/mocks/comp-C.png` on 2026-09-07, then supplied phone screenshots rejecting the overlapping fitness/breathing composition and asked for stronger AI photo work. The current opening retains Signature typography, white navigation, graphite/taupe identity and real source material, but supersedes the masked-photo and intersecting-triangle layout. The latest user refinement pairs the training photograph with strength and the heart-hand portrait with breathing, names the selected service directly, and explicitly explains that the two services can be chosen independently.
+The user approved `.impeccable/mocks/comp-C.png` on 2026-09-07, then supplied phone screenshots rejecting the overlapping fitness/breathing composition and asked for stronger AI photo work. The current opening retains Signature typography, white navigation, graphite/taupe identity and real source material. The latest 2026-09-08 refinement presents MamAlina Center first, with the neutral heart-hand portrait and two equal service cards. The former strength hero is relocated to #strength; existing lower sections are preserved.
 
 The website remains Hebrew RTL and static. Strength training and the breathing clinic are independent offerings. Product truth lives in `PRODUCT.md`; the homepage's detailed arrangement and approved composition live in `.impeccable/surfaces/index-html.md`.
 
@@ -87,23 +87,23 @@ The website remains Hebrew RTL and static. Strength training and the breathing c
 
 ## Colors
 
-Taupe is the contact and brand accent. `paper` carries navigation, the service selector, introduction, personal story, testimonials and footer; `ink` carries the strength opening, strength section and contact close. `taupe-light` marks the selected service. The breathing opening uses #e7ddd4 with ink text, while `breathing-surface` distinguishes its detailed service section. `taupe-dark` supplies readable brand text, selected borders and hover states; `line` separates stories.
+Taupe is the contact and brand accent. The neutral brand opening uses #e7ddd4 with ink text. `paper` carries navigation, both equal service cards, introduction, personal story, testimonials and footer; `ink` carries the relocated strength hero, strength section and contact close. Both service-card CTAs use the same ink background and paper text. `breathing-surface` distinguishes the existing detailed clinic section. `taupe-dark` supplies readable brand text and hover states; `line` supplies identical card borders and story separators.
 
-The CSS custom properties in `styles.css` are the implementation source of truth. The hero defines local `--hero-surface` and `--hero-text` tokens according to the selected service.
+The CSS custom properties in `styles.css` are the implementation source of truth. The shared hero defines local `--hero-surface` and `--hero-text` tokens; homepage-hero supplies the neutral beige variant, with no service state.
 
 ## Typography
 
 All fonts are self-hosted under `assets/fonts/`, with OFL licenses. Anton provides the tall Latin wordmarks. `Noto Display` is the static condensed 900-weight Noto Sans Hebrew file; `Noto Hebrew` is the variable body family. All use `font-display: swap`.
 
-The main title names the service directly: אימוני כוח / עם אלינה, or נשימה / וריברסינג. It uses clamp(54px, 6.4vw, 92px), becoming clamp(42px, 11.5vw, 60px) on phones. The former opening MAMALINA strip and combined breathing/lifting slogan are removed. Anton remains in the decorative closing wordmark. Body copy uses normal-width Hebrew, and headings retain balanced wrapping with -0.025em tracking.
+The homepage title is כוח לגוף. / מרחב לנשימה. The relocated strength hero retains אימוני כוח / עם אלינה as an H2 using the same hero-title class. Display sizes remain clamp(54px, 6.4vw, 92px), becoming clamp(42px, 11.5vw, 60px) on phones. Anton remains in the decorative closing wordmark. Body copy uses normal-width Hebrew, and headings retain balanced wrapping with -0.025em tracking.
 
 ## Layout
 
 The header is sticky at 94px, then 82px below 1100px, 76px below 800px and 74px below 600px. Navigation becomes a keyboard-accessible disclosure below 800px. Page gutters use the token above and become 24px on phones, 20px at the smallest breakpoint.
 
-The service selector sits directly below the header at every width. It has two equal columns, an 8px gap, rectangular bordered controls at least 54px tall, and a taupe selected state. Labels use normal-width Noto Hebrew, 18px on desktop and 15–18px on phones, with 1.5 line height. It has its own stacking context and no decorative element covers its hit area.
+The homepage has no selector or service state. Immediately after the neutral hero, two equally weighted cards link directly to #strength and #breath. Both use the same service-card class, typography, paper surface, line border, padding and button-dark action. Grid rows are equal height; above 800px there are two equal columns, and below they stack. CTA icons point left in RTL.
 
-The opening is a two-column portrait and message composition capped at 1440px. Strength uses alina-training-editorial.webp on graphite; breathing uses alina-portrait-editorial.webp on warm paper. Only the selected photograph is exposed. At 800px and below, the image and message stack in normal flow. The image is square on phones, with a 600px height cap on tablets and a crop that keeps Alina’s head and heart gesture visible. Title, description and action never overlap the photo. The old photographic mask and intersecting planes remain retired.
+The neutral opening reuses the two-column hero-stage capped at 1440px, with the brand message first in RTL and alina-portrait-editorial.webp beside it on warm beige. At 800px and below the message and photo stack in that order. The preserved strength hero uses the same layout and title class on graphite at the beginning of #strength, with alina-training-editorial.webp and its existing action. The old tabs, mode code, photographic mask and intersecting planes are removed.
 
 The page continues through a white introduction headed מצאו את המרחב שלכם, with concise descriptions of each service and an explicit statement that no combination is required. The faceted logo has MamAlina Center centered beneath it; on phones this lockup follows the copy. Then come Alina’s story, independent program sections, testimonials and contact. The full-width training reel is removed. Desktop sections alternate two columns, while phones stack. Section spacing and the existing responsive navigation/contact bar remain unchanged.
 
@@ -117,15 +117,15 @@ Controls and major surfaces are rectangular. Faceted SVG linework belongs to the
 
 ## Components
 
-- **Coach and spaces:** the existing AI-edited training image belongs to the strength tab; the heart-hand portrait belongs to breathing and appears only once. About is text-only, with its heading beside the copy on desktop and above it on phones. Three new built-in Imagegen retouches clean studio floors, equipment marks and incidental clinic clutter, retaining the real spaces and materials. Current space images end in -retouched.webp. Originals and earlier derivatives remain separate. Exact prompts and output paths are in `.impeccable/photo-cleanup-prompts.md`; the earlier portrait prompt remains in editorial-photo-prompts.md.
+- **Coach and spaces:** the existing AI-edited training image belongs to the relocated strength hero; the heart-hand portrait is the neutral brand hero and appears only once. About is text-only, with its heading beside the copy on desktop and above it on phones. Three new built-in Imagegen retouches clean studio floors, equipment marks and incidental clinic clutter, retaining the real spaces and materials. Current space images end in -retouched.webp. Originals and earlier derivatives remain separate. Exact prompts and output paths are in `.impeccable/photo-cleanup-prompts.md`; the earlier portrait prompt remains in editorial-photo-prompts.md.
 
 - **Brand:** the faithfully traced `mamalina-mark.svg` with the exact live name MamAlina Center. The original supplied `mamalina-center-logo.jpg` remains the authority.
 - **Contact controls:** rectangular anchors with a directional or WhatsApp SVG icon. All WhatsApp URLs go directly to `https://wa.me/972532831333`, with no prefilled text. Telephone links use `tel:+972532831333`.
-- **Service rail:** native links to the two service sections without JavaScript. Enhancement supplies button semantics, pressed state, pointer/Space activation, matching hero copy and a polite status announcement. Both service sections remain independently readable.
+- **Service choices:** two identical service-card articles with equal grid sizing, shared type and button-dark CTAs. Native links navigate to the existing sections. No service is selected or visually promoted.
 - **Navigation:** supports initial focus, Escape, leaving the menu with Tab, outside clicks and recovery when resized to desktop. A skip link reaches the main content.
 - **Video:** only the 24-second מרחב האימון tour remains on the page. The user-requested removals are רגע מתוך האימון and הציוד בסטודיו; their files remain archived and are not requested or linked by the page. The single tour is centered in a column up to 800px, loads on activation, keeps native controls and a direct-file fallback, contains the entire portrait frame, and pauses offscreen or when the page becomes hidden. No autoplay.
 - **Breathing artwork:** geometric scale and rotation only while visible and the page is active. Pause/resume and live reduced-motion preference changes are supported.
-- **Mobile contact bar:** appears after the opening contact action has passed; hides while an inline WhatsApp action or the final contact section is visible, or the menu is open. Bottom padding includes the safe area.
+- **Mobile contact bar:** appears after both opening service choices have passed; hides while an inline WhatsApp action or the final contact section is visible, or the menu is open. Bottom padding includes the safe area.
 
 Focus uses a 3px current-color outline with 6px offset. State transitions use `cubic-bezier(.16,1,.3,1)`, generally 0.2–0.9s. Reduced motion removes meaningful animation and smooth scrolling. Content and direct actions remain available without JavaScript.
 
@@ -140,4 +140,4 @@ Focus uses a 3px current-color outline with 6px offset. State transitions use `c
 - Don't reintroduce the superseded overlapping hero planes or unrequested card patterns.
 - Don't autoplay video or require motion to understand the page.
 
-The original independent review remains historical. The latest image-placement refinement is `.impeccable/service-photo-review.md`; the broader refinement check is `.impeccable/welcome-review.md`, covering the revised opening, independent service copy, stacked logo, one remaining film and three photo retouches. These are desktop Chromium checks, not a physical-phone or Safari test.
+The original independent review remains historical. The latest brand-opening refinement is `.impeccable/brand-home-review.md`; the previous image-placement refinement is `.impeccable/service-photo-review.md`; the broader refinement check is `.impeccable/welcome-review.md`, covering the revised opening, independent service copy, stacked logo, one remaining film and three photo retouches. These are desktop Chromium checks, not a physical-phone or Safari test.

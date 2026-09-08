@@ -1305,49 +1305,17 @@ h3 {
   color: #727577;
 }
 
-/* Two complete service views; all copy stays in the document flow. */
+/* Shared hero composition for the brand opening and strength section. */
 .hero {
   --hero-surface: var(--ink);
   --hero-text: var(--paper);
   background: var(--hero-surface);
   color: var(--hero-text);
 }
-.hero[data-mode="breath"] {
+.homepage-hero {
   --hero-surface: #e7ddd4;
   --hero-text: var(--ink);
 }
-.mode-switch {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-  padding: 10px var(--gutter);
-  background: var(--paper);
-  color: var(--ink);
-}
-.mode-option {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  min-height: 54px;
-  padding: 12px 16px;
-  border: 1px solid var(--line);
-  font-family: "Noto Hebrew", sans-serif;
-  font-size: 18px;
-  font-weight: 750;
-  line-height: 1.5;
-  text-align: center;
-  transition: background 160ms, border-color 160ms;
-}
-.mode-option.is-active {
-  color: var(--ink);
-  background: var(--taupe-light);
-  border-color: var(--taupe-dark);
-}
-.mode-option:hover { border-color: var(--taupe-dark); }
-.mode-option:focus-visible { outline-offset: -5px; }
 .hero-stage {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1382,12 +1350,12 @@ h3 {
   line-height: 1.7;
   margin: 0 0 24px;
 }
-.hero h1 {
+.hero .hero-title {
   font-size: clamp(54px, 6.4vw, 92px);
   line-height: 1.06;
   margin: 0 0 28px;
 }
-.hero h1 span { display: block; }
+.hero .hero-title span { display: block; }
 .hero-contact { flex-shrink: 0; text-align: right; }
 .hero-contact p {
   font-size: 18px;
@@ -1395,11 +1363,34 @@ h3 {
   font-weight: 500;
   margin: 0 0 28px;
 }
-.hero[data-mode="breath"] .hero-contact .button {
-  background: var(--ink);
-  color: var(--paper);
+.homepage-hero .hero-contact p { margin-bottom: 0; }
+.service-hero { grid-column: 1 / -1; min-width: 0; }
+.service-choices {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 24px;
+  max-width: 1440px;
+  margin: auto;
+  padding-block: 48px;
 }
-.hero[data-mode="breath"] .hero-contact .button:hover { background: var(--taupe-dark); }
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  padding: clamp(24px, 3vw, 40px);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+}
+.service-card h2 { font-size: clamp(32px, 3.6vw, 52px); }
+.service-card p { font-size: 17px; line-height: 1.7; margin: 0; }
+.service-card .button { width: 100%; margin-top: auto; padding-inline: 20px; gap: 16px; }
+.service-card .button:focus-visible { outline-color: var(--ink); }
+@media (min-width: 801px) {
+  .service-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 .intro-brand {
   width: 100%;
   margin: 0;
@@ -1428,12 +1419,10 @@ h3 {
   .hero-contact { width: 100%; }
 }
 @media (max-width: 600px) {
-  .mode-switch { padding: 10px 16px; gap: 8px; }
-  .mode-option { padding: 12px 8px; font-size: clamp(15px, 4.1vw, 18px); }
   .hero-photo { object-position: center 20%; }
   .hero-message { display: block; padding: 28px 24px 32px; }
   .hero-location { font-size: 13px; margin-bottom: 16px; }
-  .hero h1 { max-width: none; font-size: clamp(42px, 11.5vw, 60px); margin: 0 0 20px; }
+  .hero .hero-title { max-width: none; font-size: clamp(42px, 11.5vw, 60px); margin: 0 0 20px; }
   .hero-contact p { font-size: 16px; margin-bottom: 20px; }
   .hero-contact .button { width: 100%; min-height: 54px; font-size: 14px; }
   .intro-brand figcaption { font-size: 36px; }

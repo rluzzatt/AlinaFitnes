@@ -50,77 +50,6 @@ mobileNavigation.addEventListener("change", () => {
   }
 });
 
-// The anchors remain service links without JavaScript; enhancement changes the opening's mode.
-const hero = document.querySelector(".hero");
-const modeOptions = [...document.querySelectorAll("[data-mode-option]")];
-const modeCopy = {
-  strength: {
-    title: ["אימוני כוח", "עם אלינה."],
-    description: ["סטודיו לנשים ולגברים.", "אימונים שמותאמים לרמה ולמטרות שלכם."],
-    action: "לתיאום אימון כוח",
-    status: "תצוגת אימוני כוח",
-  },
-  breath: {
-    title: ["נשימה", "וריברסינג."],
-    description: ["קליניקה למפגשי נשימה אישיים.", "מקום לעצור ולהתמקד בעצמכם, בקצב שלכם."],
-    action: "נדבר על מפגש נשימה",
-    status: "תצוגת נשימה וריברסינג",
-  },
-};
-const setMode = (mode, announce = true) => {
-  const copy = modeCopy[mode];
-  if (!copy) return;
-  hero.dataset.mode = mode;
-  hero.querySelectorAll("[data-hero-image]").forEach((image) => {
-    image.hidden = image.dataset.heroImage !== mode;
-  });
-  hero
-    .querySelectorAll("h1 span")
-    .forEach((span, index) => (span.textContent = copy.title[index]));
-  const descriptor = hero.querySelector(".hero-contact p");
-  descriptor.replaceChildren(
-    ...copy.description.flatMap((line, index) =>
-      index
-        ? [document.createElement("br"), document.createTextNode(line)]
-        : [document.createTextNode(line)],
-    ),
-  );
-  hero.querySelector("[data-primary-contact]").firstChild.textContent =
-    copy.action;
-  modeOptions.forEach((option) => {
-    const selected = option.dataset.modeOption === mode;
-    option.classList.toggle("is-active", selected);
-    option.setAttribute("aria-pressed", String(selected));
-  });
-  if (announce)
-    document.querySelector("[data-mode-status]").textContent = copy.status;
-};
-modeOptions.forEach((option) => {
-  option.setAttribute("role", "button");
-  option.setAttribute("aria-controls", "hero-stage");
-  option.addEventListener("click", (event) => {
-    event.preventDefault();
-    setMode(option.dataset.modeOption);
-  });
-  option.addEventListener("keydown", (event) => {
-    if (event.key === " ") {
-      event.preventDefault();
-      option.click();
-    }
-  });
-});
-document
-  .querySelectorAll("[data-mode-link]")
-  .forEach((link) =>
-    link.addEventListener("click", () => setMode(link.dataset.modeLink)),
-  );
-const syncHashMode = () => {
-  if (location.hash === "#breath" || location.hash === "#strength")
-    setMode(location.hash.slice(1), false);
-};
-setMode(location.hash === "#breath" ? "breath" : "strength", false);
-window.addEventListener("hashchange", syncHashMode);
-
 // Each film loads on request. Play one at a time and retain native controls.
 const videos = [...document.querySelectorAll("[data-video]")];
 const videoObserver = "IntersectionObserver" in window
@@ -197,7 +126,7 @@ syncBreath();
 
 // A discreet contact bar appears only after the opening and while no inline contact action is visible.
 const mobileContact = document.querySelector("[data-mobile-contact]");
-const heroContact = hero.querySelector("[data-primary-contact]");
+const homepageOpening = document.querySelector(".service-choices");
 const contactSection = document.querySelector("#contact");
 const contactLinks = [
   ...document.querySelectorAll('main a[href^="https://wa.me/"]'),
@@ -212,7 +141,7 @@ function updateContactBar() {
   mobileContact.hidden =
     !mobileViewport.matches ||
     !nav.hidden ||
-    heroContact.getBoundingClientRect().bottom > headerBottom ||
+    homepageOpening.getBoundingClientRect().bottom > headerBottom ||
     contactSection.getBoundingClientRect().top < innerHeight ||
     inlineVisible;
 }
