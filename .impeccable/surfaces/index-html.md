@@ -21,7 +21,7 @@ Strength remains a substantial black section with the barbell photo and current 
 
 The beige breathwork section retains מרחב לנשום and its release/shifting-pace idea. Copy explains personal attention, slowing down, breath and emotional/mental process adapted to the person and age; adults, children and babies may be served. No medical claims or promises. The clinic photograph and existing breathing animation remain.
 
-The three original quotes follow both service experiences, under מה מרגישים כשעובדים אחרת, with small plain service labels. Do not invent endorsements. Final headline: מתחילים בשיעור אחד. Supporting copy: בלי התחייבות ובלי יותר מדי דיבורים. / שלחו לי הודעה ונקבע שיעור ניסיון. All conversion buttons use לשיעור ניסיון; keep exploration labels unchanged. WhatsApp, telephone, Instagram and logo remain. Current location appears once in contact only.
+The three original quotes follow both service experiences, under מה מרגישים כשעובדים אחרת, with small plain service labels. Do not invent endorsements. Final headline: רוצים לנסות? Supporting copy: כוח, נשימה או פשוט לא בטוחים מה מתאים — שלחו הודעה. Strength buttons use לשיעור ניסיון, breathwork uses למפגש נשימה, and general buttons use שלחו לי הודעה. Keep exploration labels unchanged. WhatsApp, telephone, Instagram and logo remain. Current location appears once in contact only.
 
 ## Rhythm and implementation
 
@@ -29,4 +29,6 @@ Reuse existing components, palette, Noto fonts, rectangular actions, spacing and
 
 Hero gains only מקום אישי ומדויק להתחזק, לנשום ולעבוד בקצב שלכם. beneath its existing supporting copy. Mobile header starts unchanged at 74/76px, compacts to 64px after scrolling, with usable touch targets and reduced-motion support. The 48px delayed WhatsApp bar remains. About's mobile heading-to-body gap is 28px.
 
-Latest verification: conversion-review.md and ignored .qa/conversion-* evidence. Older briefs/reviews do not override this direction.
+Latest correction preserves distinct service worlds. The barbell introduction stays dark with its exact heading/copy. The following explanation is white with dark text and begins לומדים לעבוד נכון. as the primary heading, followed by the smaller מגלים כמה אתם חזקים. Remove only the duplicated אימוני כוח. heading. Do not globally reduce type or alter the compact header behavior.
+
+Latest verification: rhythm-review.md and ignored .qa/rhythm-* evidence. Older briefs/reviews do not override this direction.

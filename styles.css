@@ -604,8 +604,20 @@ h3 {
   background: var(--ink);
   color: white;
 }
+.program-strength > .program-copy {
+  background: var(--paper);
+  color: var(--ink);
+  align-self: stretch;
+  max-width: none;
+}
+.program-strength > .program-copy h2 {
+  margin-bottom: 12px;
+}
 .program-strength .program-copy > p:not(.large-copy) {
-  color: #ddd8d4;
+  color: var(--muted);
+}
+.program-strength .program-points li {
+  border-color: var(--line);
 }
 .program-photo {
   margin: 0;
