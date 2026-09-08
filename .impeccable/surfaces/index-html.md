@@ -11,7 +11,7 @@ Latest user direction, 2026-09-08: preserve the intentionally long homepage, sec
 
 ## Opening and Alina
 
-Keep the neutral portrait and headline כוח לגוף. / מרחב לנשימה. Supporting text: MamAlina Center / אימוני כוח ומפגשי נשימה וריברסינג. The brand has no repeated location or adult-gender qualifier. The two illustrated service cards retain exact text/images, equal dimensions, 8:5 ratios and dark CTAs. Two desktop columns, stacked on phones. Phone internal padding and gap are 20px; the 8:7 phone portrait is retained.
+Keep the neutral portrait and headline כוח לגוף. / מרחב לנשימה. Supporting text: MamAlina Center / אימוני כוח ומפגשי נשימה וריברסינג. The brand has no repeated location or adult-gender qualifier. The two offerings retain exact text/images and equal importance, with open editorial layout rather than boxed cards. Existing photos use full 4:3 framing, without internal padding; titles and descriptions lead to underlined text links with left arrows. Two desktop columns, stacked on phones with 72px separation. The 8:7 phone hero portrait is retained.
 
 אני אלינה follows prominently. Preserve her own concepts of אמונות מגבילות, טמפלטים ישנים and אוטומט, her interest in people and their discoveries, and the two distinct ways she works. Keep כאן לא מקטינים את עצמכם. / כאן בונים כוח אמיתי. Do not replace the voice with generic wellness copy.
 
@@ -31,4 +31,4 @@ Hero gains only מקום אישי ומדויק להתחזק, לנשום ולעב
 
 Latest correction preserves distinct service worlds. The barbell introduction stays dark with its exact heading/copy. The following explanation is white with dark text and begins לומדים לעבוד נכון. as the primary heading, followed by the smaller מגלים כמה אתם חזקים. Remove only the duplicated אימוני כוח. heading. Do not globally reduce type or alter the compact header behavior.
 
-Latest verification: rhythm-review.md and ignored .qa/rhythm-* evidence. Older briefs/reviews do not override this direction.
+Latest verification: offerings-review.md and ignored .qa/offerings-* evidence. Only the offerings section changed in this pass. Older briefs/reviews do not override this direction.
