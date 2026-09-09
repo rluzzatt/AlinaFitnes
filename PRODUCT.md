@@ -4,60 +4,24 @@
 
 ## Platform
 
-web
+Static Hebrew RTL website on GitHub Pages: https://rluzzatt.github.io/AlinaFitnes/.
 
-## Users
+## Users and purpose
 
-The existing site addresses Hebrew-speaking women and men considering strength training in Kfar Szold, including beginners and experienced trainees. It separately addresses people interested in Alina's breathing and rebirthing work; the user clarified that this may include adults, children and babies, with individually adapted work and no medical claims. These audiences are inferred from the existing business copy; the current task changes the presentation rather than the underlying services.
-
-## Product Purpose
-
-Introduce MamAlina and Alina, explain the two services, and let visitors contact the business directly through WhatsApp or telephone. Instagram provides another route to the coach's existing content.
+Introduce MamAlina and Alina, explain two independent offerings and enable direct contact. Strength addresses people seeking technique, progression and personal adaptation. Breathwork/Rebirthing may be relevant to adults, children and babies; work is individually adapted. Do not add medical claims, frame the center as adult-gender-only, or imply both services are mandatory together.
 
 ## Positioning
 
-An individual coach's studio, with attention to technique, appropriate pacing, and personal adaptation. Strength training and the breathing clinic are distinct offerings; do not present them as a mandatory combined treatment or package.
+BODY + BREATH: active/physical/precise and quiet/intimate/spacious worlds connected by Alina's personal approach. Preserve her language about limiting beliefs, old templates and autopilot. Current direction refactors the long editorial story while preserving the existing visual identity; it is not authorization for generic fitness/wellness design.
 
-## Operating Context
+## Contact
 
-Static Hebrew RTL website at https://rluzzatt.github.io/AlinaFitnes/. Contact is through +972 53-283-1333. Instagram: https://www.instagram.com/mamalina_2412/.
+WhatsApp direct to +972532831333, without prefilled messages. Instagram: https://www.instagram.com/mamalinacenter?stkn=MXZxc2xxeHppMnA3ZA==. Current location Kfar Szold appears in the contact area only. No booking backend, pricing, timetable or membership checkout is implemented.
 
-## Capabilities and Constraints
+## Evidence and constraints
 
-- Existing stack: HTML, CSS, vanilla JavaScript, and local assets; preserve GitHub Pages compatibility.
-- WhatsApp links remain direct, without prefilled messages.
-- No booking backend, published prices, class timetable, or membership checkout exists.
-- The user requested a complete makeover and rethinking, explicitly asking for a different, impressive result inspired by leading workout websites.
-- Prior task authorization to commit and push the finished work to GitHub persists.
-- The user explicitly approved the Signature composition on 2026-09-07. The latest homepage is brand-first with two exactly equal service choices, without a selected service or tabs. The barbell hero belongs inside the existing strength section. The latest top/intro refinement adds equal 8:5 card photographs, reduces the phone portrait height, removes the repeated service introduction, and uses the exact new Alina body copy. Header, sticky WhatsApp CTA/JavaScript and all lower service sections are preserved.
-
-## Brand Commitments
-
-- Use the newly supplied MamAlina Center logo and name, preserving Alina's identity. The supplied logo is a taupe faceted heart/monogram on white, with the exact lettering "MamAlina Center".
-- Hebrew remains the primary language.
-- The user has explicitly superseded the previous visual direction. The tan palette, split-screen layout, typography, and existing design rules are not binding on this redesign.
-- The user requested inspiration from leading fitness sites, not a copy of a particular brand.
-
-## Evidence on Hand
-
-- Four new photographs supplied directly by Alina through the user on 2026-09-07: her smiling heart-hand portrait, two views of the training studio, and the wood-lined breathing clinic. Their unmodified project copies are `alina-portrait-heart.jpg`, `studio-training-space.jpg`, `studio-strength-equipment.jpg`, and `breathing-clinic.jpg` under `assets/images/`. Use them for the coach introduction and service environments.
-
-- Latest explicit refinement: use the welcoming heart-hand portrait for a neutral brand homepage with two equal service cards, and relocate the existing barbell hero into the strength section; keep About text-only; remove the combined breathing/lifting slogan; explain both services clearly and independently before the About section; put the business name below the introduction logo; remove the training reel and equipment tour from the page. Only the 24-second studio-space-tour.mp4 remains. Three new -retouched.webp space photos clean floors, equipment marks and incidental clutter. Preserve the actual facility, Alina’s identity, original source media and all existing factual content after the introduction.
-
-- Existing service descriptions and three attributed testimonials in index.html. Preserve supplied content without adding new claims; their provenance has not been independently verified.
-- Local training and running photography under assets/images/, including Alina's face and actual training environment.
-- Local reel under assets/videos/alina-andi-reel.mp4; inspect its content before using it.
-- A new authoritative logo was supplied during the redesign: `.codex-remote-attachments/01a077db-d19c-7c83-a954-e72b150ef7c6/83ae871a-515d-485d-9239-78a62afda7a4/1-Photo-1.jpg`. Copy it into project assets before consuming it. Supersedes the old MamAlina Instagram logo.
-- No verified prices, certifications, client counts, performance statistics, or awards were supplied.
-
-## Latest Homepage Direction — 2026-09-08
-
-Intentionally preserve the long-scroll experience. Each section adds a reason to understand or choose the center: brand, Alina, technique/confidence, real studio, age-inclusive breathwork, existing proof, direct conversion. Keep all major sections, current photographs, video, routes and animations. Use location only in contact, and preserve Alina’s distinctive language. Secondary headings and the mobile WhatsApp footprint are slightly quieter; service choices remain equal.
-
-## Product Principles
-
-- Make the service and next action immediately understandable.
-- Keep the coach and real work central.
-- Present strength and breathing as independent choices.
-- Do not invent business evidence to support the design.
-- Keep navigation and contact usable on phones, with keyboard access and reduced-motion support.
+- User supplied Alina's heart-hand portrait, two training-space views and one wooden clinic viewpoint. Originals and edited versions remain in assets/images. Do not invent new premises or show people receiving breathwork. The existing barbell photograph belongs to Strength.
+- The only active video is the24-second studio-space-tour.mp4. Training reel/equipment tour remain archived and unlinked by request.
+- Four real client quotes supplied by the user, all Strength: הגר שמיר בוכריץ, נועה בנישו, לילך דושי, איילה לפידות. Preserve exact shortened website versions. The prior three quotes were fake placeholders and must not return.
+- Reuse static HTML/CSS/JavaScript, self-hosted fonts, current header/logo and black/white/beige palette. No cards, new brand colors or generic imagery. Long scroll is intentional.
+- Current hierarchy and design constraints live in DESIGN.md and .impeccable/surfaces/index-html.md. The2026-09-09 BODY + BREATH request supersedes older local layout choices. Existing commit/push/publish authorization persists.

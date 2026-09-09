@@ -72,75 +72,43 @@ components:
 
 ## Overview
 
-**Creative North Star: "Signature"**
+BODY + BREATH: two distinct worlds connected by Alina. The 2026-09-09 hierarchy supersedes earlier local layout directions while preserving the warm beige/white/ink palette, existing real photography, Hebrew RTL and bold editorial identity. Keep the intentionally long scroll. Detailed arrangement lives in .impeccable/surfaces/index-html.md; product facts in PRODUCT.md.
 
-The user approved `.impeccable/mocks/comp-C.png` on 2026-09-07, then supplied phone screenshots rejecting the overlapping fitness/breathing composition and asked for stronger AI photo work. The current opening retains Signature typography, white navigation, graphite/taupe identity and real source material. The latest 2026-09-08 refinement preserves the intentionally long brand journey: neutral hero, equal service worlds, Alina’s voice, deeper strength explanation, real studio experience, age-inclusive breathwork, late proof and final conversion. No major section is removed.
+## Colors and type
 
-The website remains Hebrew RTL and static. Strength training and the breathing clinic are independent offerings. Product truth lives in `PRODUCT.md`; the homepage's detailed arrangement and approved composition live in `.impeccable/surfaces/index-html.md`.
+Use existing CSS tokens only. The brand opening is warm neutral beige; Alina, service choices and proof use white; Strength opens in ink with taupe lines; Breath opens and continues in warm beige. Stronger white/black contrast belongs deeper inside Strength. No cards, shadows, gradients or arbitrary decorative dividers.
 
-**Key Characteristics:**
+Self-hosted Noto Display carries heavy Hebrew headings; Noto Hebrew carries body and labels; Anton carries Latin wordmarks. Main title remains כוח לגוף. / מרחב לנשימה. Both chapter headings share 40–72px scale, line-height 1.1. All three normal testimonials use 18px / 400 / 1.85; names 13px bold and service labels 12px muted regular. Only Ayala's short quote uses the 32–52px display scale.
 
-- AI editorial edits of supplied Alina photographs, with semantic text in its own space.
-- White, graphite and logo-derived taupe fields.
-- Heavy compressed display type and sharp rectangular actions.
-- Faceted geometry, deliberate changes of scale and generous section spacing.
+## Story architecture
 
-## Colors
+1. Brand introduction: typography and current supporting copy, no photograph.
+2. Two equal worlds: shared abstract line family, title, exact short description and text link. Two desktop columns, stacked mobile. No preview photos or cards.
+3. Alina: the existing heart-hand portrait appears once, immediately with אני אלינה. and her exact personal copy on white. The short כוח אמיתי statement is a modest body pull quote, not a dark manifesto.
+4. Strength: shared chapter opening → lifting photograph → detailed approach/principles/CTA → paired training-space gallery and original studio video.
+5. Breath: shared chapter opening → wooden-room photograph → detailed process/principles/CTA → closer room detail and quiet flowing-line closing. No person receiving treatment.
+6. Real Strength testimonials, then existing dark contact/footer with cropped MAMALINA wordmark.
 
-Taupe is the contact and brand accent. The neutral brand opening uses #e7ddd4 with ink text. `paper` carries navigation, both equal service cards, introduction, personal story, testimonials and footer; `ink` carries the relocated strength hero, strength section and contact close. Both service-card CTAs use the same ink background and paper text. `breathing-surface` distinguishes the existing detailed clinic section. `taupe-dark` supplies readable brand text and hover states; `line` supplies identical card borders and story separators.
+## Shared chapter system
 
-The CSS custom properties in `styles.css` are the implementation source of truth. The shared hero defines local `--hero-surface` and `--hero-text` tokens; homepage-hero supplies the neutral beige variant, with no service state.
+Both service openings use chapter-opening: illustration → category → headline → support, followed by chapter-photo and program-copy. Strength category is אימוני כוח, headline לומדים לעבוד נכון. / מגלים כמה אתם חזקים.; brand name is not used as its eyebrow. Breath category is נשימה וריברסינג, headline מרחב לנשום., support לפעמים החוזק מתחיל דווקא בשחרור. Do not repeat these headings in detailed content.
 
-## Typography
+The three angular paths and three flowing paths are defined once as SVG symbols lines-strength and lines-breath. The same family appears in the early choices and chapter entrances; the existing breath close reuses its curves. These are thin abstract fragments, not logos or literal fitness/wellness icons. Dark Strength uses existing taupe strokes; light contexts use taupe-dark.
 
-All fonts are self-hosted under `assets/fonts/`, with OFL licenses. Anton provides the tall Latin wordmarks. `Noto Display` is the static condensed 900-weight Noto Sans Hebrew file; `Noto Hebrew` is the variable body family. All use `font-display: swap`.
+## Photography and layout
 
-The homepage title is כוח לגוף. / מרחב לנשימה. The relocated strength hero retains אימוני כוח / עם אלינה as an H2 using the same hero-title class. Display sizes remain clamp(54px, 6.4vw, 92px), becoming clamp(42px, 11.5vw, 60px) on phones. Service headings use 40–64px and testimonial heading 36–56px to create a secondary scale. Anton remains in the decorative closing wordmark. Body copy uses normal-width Hebrew, and headings retain balanced wrapping with -0.025em tracking.
+Every photo belongs to its content. Heart portrait belongs to About. Squat/lifting image belongs once to Strength. Studio photos remain a paired unit; one 24-second tour remains. Wide wooden room belongs to Breath; closer seating detail is its atmosphere. Available clinic images are edits of one camera viewpoint, not distinct photographed angles. Original files remain in assets.
 
-## Layout
+Chapter openings/photos span the page. Photography frames share 16:10 desktop and 4:3 phone behavior; photographs retain their original files. About uses portrait/copy columns on desktop and portrait → copy on phones. Reuse existing gutters: 24px phone, 20px smallest, fluid desktop. Long-form sections retain generous padding; avoid percentages for stacked row gaps.
 
-The header starts at 94px, then 82px below 1100px, 76px below 800px and 74px below 600px. On mobile it becomes 64px after 100px of scrolling, restoring near the top (24px threshold). Logo and icon sizes transition subtly; touch targets remain at least 44px. The initial mobile header is already below the requested approximate 75–85px compact target, so 64px provides an actual reduction. Navigation becomes a keyboard-accessible disclosure below 800px. Page gutters use the token above and become 24px on phones, 20px at the smallest breakpoint.
+## Behavior and actions
 
-The homepage has no selector or service state. Immediately after the neutral hero, two equally weighted cards link directly to #strength and #breath. Both use the same service-card class, typography, paper surface, line border, padding and button-dark action. Grid rows are equal height; above 800px there are two equal columns, and below they stack. CTA icons point left in RTL. Both cards use the same 8:5 image frame, spacing and object-fit: the existing training and retouched clinic photographs. Their CTA text is גלו את אימוני הכוח and גלו את עולם הנשימה. Phone internal padding and gap are 20px.
+Header identity/structure unchanged. Initial heights 94/82/76/74px by breakpoint; mobile compacts to64px after100px scroll and restores near24px. Existing accessible disclosure menu, Escape, focus behavior and skip link remain.
 
-The neutral opening reuses the two-column hero-stage capped at 1440px, with the brand message first in RTL and alina-portrait-editorial.webp beside it on warm beige. At 800px and below the message and photo stack in that order. At 600px and below, only the homepage portrait is reduced to an 8:7 frame, with a 30% vertical focal position. The preserved strength hero uses the same layout and title class on graphite at the beginning of #strength, with alina-training-editorial.webp and its existing action. The old tabs, mode code, photographic mask and intersecting planes are removed.
+Exploration: גלו את אימוני הכוח / גלו את עולם הנשימה are underlined text links to #strength/#breath. Conversion: Strength לשיעור ניסיון; Breath למפגש נשימה; general שלחו לי הודעה. WhatsApp opens directly at https://wa.me/972532831333. Instagram retains the supplied mamalinacenter URL. Location stays in contact only.
 
-Immediately after the two illustrated service cards comes the existing אני אלינה section, with its prominent opening line and the user-supplied four-paragraph personal introduction. The redundant מצאו את המרחב שלכם section, its duplicate links and logo lockup are removed. Then come the independent program sections, testimonials and contact. The full-width training reel is removed. Desktop sections alternate two columns, while phones stack. Section spacing and the existing responsive navigation/contact bar remain unchanged.
+Sticky WhatsApp remains44px before safe-area padding, appears after choices, and hides near inline/final actions or open menu. Video loads on activation and pauses offscreen. Breath motion remains optional, pauses when offscreen/hidden, and respects reduced-motion. No JS changes were required by this refactor.
 
-## Elevation & Depth
+## Evidence
 
-The interface has no shadow system. Depth comes from editorial photographic lighting, scale and contrasting solid surfaces. Sticky navigation and the mobile contact bar use solid backgrounds and restrained separators. No hero text is placed over a photograph or clipped by a polygon.
-
-## Shapes
-
-Controls and major surfaces are rectangular. Faceted SVG linework belongs to the supplied logo and breathing motif. The circular video play control is a purposeful exception. Keep icon paths in one consistent 1.6px stroke system. Do not add rounded card shells or decorative glow.
-
-## Components
-
-- **Coach and spaces:** the existing AI-edited training image belongs to the relocated strength hero; the heart-hand portrait is the neutral brand hero and appears only once. About is text-only, with its heading beside the copy on desktop and above it on phones. Three new built-in Imagegen retouches clean studio floors, equipment marks and incidental clinic clutter, retaining the real spaces and materials. Current space images end in -retouched.webp. Originals and earlier derivatives remain separate. Exact prompts and output paths are in `.impeccable/photo-cleanup-prompts.md`; the earlier portrait prompt remains in editorial-photo-prompts.md.
-
-- **Brand:** the faithfully traced `mamalina-mark.svg` with the exact live name MamAlina Center. The original supplied `mamalina-center-logo.jpg` remains the authority.
-- **Contact controls:** rectangular anchors with a directional or WhatsApp SVG icon. Strength uses לשיעור ניסיון; breathwork uses למפגש נשימה; general links use שלחו לי הודעה. Service-card exploration wording remains unchanged. Final invitation: רוצים לנסות? / כוח, נשימה או פשוט לא בטוחים מה מתאים — שלחו הודעה. All WhatsApp URLs go directly to `https://wa.me/972532831333`, with no prefilled text. Telephone links use `tel:+972532831333`.
-- **Strength rhythm:** the existing barbell introduction stays dark. The following explanation is white with dark typography: לומדים לעבוד נכון. is the primary heading, מגלים כמה אתם חזקים. is the smaller supporting statement. Keep the paired studio images, dark studio video moment and warm beige breathwork area. Do not repeat the strength introduction or make the whole journey black.
-- **Service choices:** two equal editorial teasers without borders, inner padding, backgrounds or card treatment. Photos use a restrained 16:10 crop, smaller 32–44px titles and 48px spacing so the later chapters carry more weight. Descriptions and underlined text links with left arrows remain; internal exploration is not styled as a conversion button. Native links navigate to existing sections. No service is selected or visually promoted.
-- **Navigation:** supports initial focus, Escape, leaving the menu with Tab, outside clicks and recovery when resized to desktop. A skip link reaches the main content.
-- **Video:** only the 24-second מרחב האימון tour remains on the page. The user-requested removals are רגע מתוך האימון and הציוד בסטודיו; their files remain archived and are not requested or linked by the page. The single tour is centered in a column up to 800px, loads on activation, keeps native controls and a direct-file fallback, contains the entire portrait frame, and pauses offscreen or when the page becomes hidden. No autoplay.
-- **Three-line language:** exactly three thin angular paths in the dark Strength opening; three open curved paths at the Breath closing. Existing taupe strokes, rare appearances, no literal icons or new logo. The repeated decorative heart/diamond has been removed. Breath uses a slow scale cycle only while visible and the page is active; no rotation. Pause/resume and live reduced-motion preference changes remain supported.
-- **Breath photography:** available clinic assets are edits of the same viewpoint. Preview uses the editorial variant, main gateway the retouched wide room, and closing the enhanced variant with a closer seating crop. Do not present these as independently photographed angles. No people receiving treatment. The closing photograph and spacious three-line moment span both desktop columns and stack on mobile.
-- **About and proof:** original About copy remains verbatim; larger opening and closing paragraphs establish cadence around the smaller explanatory paragraphs. Real testimonial text remains exact, with an explicit אימוני כוח label before the editorial heading and each client's own service label.
-- **Mobile contact bar:** appears after both opening service choices have passed; hides while an inline WhatsApp action or the final contact section is visible, or the menu is open. The mobile bar is 44px before safe-area padding, with 13px text and 20px icon; delayed/suppressed display behavior is preserved.
-
-Focus uses a 3px current-color outline with 6px offset. State transitions use `cubic-bezier(.16,1,.3,1)`, generally 0.2–0.9s. Reduced motion removes meaningful animation and smooth scrolling. Content and direct actions remain available without JavaScript.
-
-## Do's and Don'ts
-
-- Do retain original media alongside user-requested AI derivatives, preserving identity and the actual studio. Never reuse the retired original mask with an edited photograph.
-- Do keep strength and breathing as separate choices.
-- Do retain Hebrew RTL semantics, real contact details and supplied factual content.
-- Do keep live UI text and controls outside raster assets.
-- Do keep title and contact copy in normal flow, inspect both service views and preserve steady geometry while switching.
-- Don't substitute the generated mockup's face, gym, claims or text for real business evidence.
-- Don't reintroduce the superseded overlapping hero planes or unrequested card patterns.
-- Don't autoplay video or require motion to understand the page.
-
-The original independent review remains historical. The latest narrative/pacing refinement is `.impeccable/journey-review.md`; the previous top/intro refinement is `.impeccable/intro-cards-review.md`; the previous brand-opening refinement is `.impeccable/brand-home-review.md`; the previous image-placement refinement is `.impeccable/service-photo-review.md`; the broader refinement check is `.impeccable/welcome-review.md`, covering the revised opening, independent service copy, stacked logo, one remaining film and three photo retouches. These are desktop Chromium checks, not a physical-phone or Safari test.
+Real user-supplied testimonials only: הגר שמיר בוכריץ, נועה בנישו, לילך דושי, איילה לפידות. All relate to Strength. Never restore earlier placeholders or invent Breath testimonials. No copy rewritten except hierarchy-required headline placement. Current verification: .impeccable/body-breath-review.md. Older dated reviews are historical, not current layout instructions.

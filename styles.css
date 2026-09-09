@@ -549,50 +549,20 @@ h3 {
   font-weight: 400;
   white-space: nowrap;
 }
-.about-intro {
+.about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-  background: var(--ink);
-  color: var(--paper);
-}
-.about-body {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   background: var(--paper);
-  padding-block: 60px;
+  align-items: start;
 }
-.about-copy {
-  max-width: 700px;
-  margin-inline: auto;
-}
-.about-intro > h2 {
-  margin: 0;
-}
-.about-copy p {
-  font-size: 17px;
-  line-height: 1.9;
-}
-.about-copy > p:first-child {
-  font-size: clamp(20px, 2vw, 24px);
-  line-height: 1.65;
-  margin-bottom: 28px;
-}
-.about-copy > p:last-of-type {
-  font-size: clamp(22px, 2.2vw, 28px);
-  line-height: 1.5;
-  font-weight: 600;
-  margin-block: 28px;
-  max-width: 34ch;
-}
-.about-intro .large-copy {
-  font-size: 25px;
-  font-weight: 600;
-  line-height: 1.5;
-  margin: 0;
-}
-.about-copy .button {
-  margin-top: 12px;
-}
+.about-portrait { margin: 0; overflow: hidden; }
+.about-photo { display: block; width: 100%; height: auto; }
+.about-copy { width: 100%; max-width: 760px; margin-inline: auto; }
+.about-copy h2 { font-size: clamp(40px, 4.5vw, 64px); margin-bottom: 28px; }
+.about-copy p { font-size: 17px; line-height: 1.85; }
+.about-copy .about-lead { font-size: 20px; line-height: 1.65; }
+.about-copy .about-note { font-size: 18px; font-weight: 600; line-height: 1.65; margin-block: 28px; }
+.about-copy .button { margin-top: 8px; }
 .program {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -603,17 +573,18 @@ h3 {
   align-self: center;
   max-width: 750px;
 }
-.program h2 {
-  font-size: clamp(40px, 4.5vw, 64px);
-  margin-bottom: 24px;
+.chapter-opening {
+  grid-column: 1 / -1;
+  padding-block: 80px;
+  direction: rtl;
 }
-.program .large-copy {
-  font-size: clamp(24px, 2.5vw, 34px);
-  line-height: 1.35;
-  font-weight: 650;
-  margin-bottom: 25px;
-}
-.program-copy > p:not(.large-copy) {
+.chapter-opening .chapter-lines { display: block; width: min(100%, clamp(260px, 32vw, 420px)); aspect-ratio: 1.8; margin-bottom: 32px; }
+.chapter-opening h2 { font-size: clamp(40px, 5vw, 72px); line-height: 1.1; margin-bottom: 24px; max-width: 20ch; }
+.chapter-support { font-size: clamp(18px, 2vw, 22px); line-height: 1.65; max-width: 40ch; margin-bottom: 0; }
+.program-strength .chapter-opening .chapter-lines { stroke: var(--taupe); }
+.chapter-photo { grid-column: 1 / -1; position: relative; width: 100%; margin: 0; aspect-ratio: 16 / 10; max-height: 760px; overflow: hidden; }
+.chapter-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.program-copy > p {
   font-size: 17px;
   line-height: 1.9;
   max-width: 50ch;
@@ -628,10 +599,7 @@ h3 {
   align-self: stretch;
   max-width: none;
 }
-.program-strength > .program-copy h2 {
-  margin-bottom: 12px;
-}
-.program-strength .program-copy > p:not(.large-copy) {
+.program-strength .program-copy > p {
   color: var(--muted);
 }
 .program-strength .program-points li {
@@ -686,23 +654,8 @@ h3 {
   transform: rotate(45deg);
   margin-inline-end: 15px;
 }
-.program-breath {
-  background: #d4c8be;
-  direction: ltr;
-}
-.program-breath > .program-copy {
-  direction: rtl;
-  grid-column: 2;
-  grid-row: 2;
-}
-.breath-intro {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  direction: rtl;
-  padding-block: 60px;
-}
-.breath-intro .large-copy { margin-bottom: 0; }
-.breath-category,
+.program-breath { background: #d4c8be; direction: rtl; }
+.program-breath > .program-copy { grid-column: 1 / -1; max-width: 800px; width: 100%; justify-self: center; }
 .section-category {
   font-size: 15px;
   font-weight: 650;
@@ -718,7 +671,6 @@ h3 {
 .breath-art {
   position: relative;
   grid-column: 1 / -1;
-  grid-row: 3;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
@@ -740,23 +692,7 @@ h3 {
   transform: scale(1.45);
   transform-origin: 35% 45%;
 }
-.clinic-photo {
-  position: relative;
-  grid-column: 1;
-  grid-row: 2;
-  width: 100%;
-  min-height: 350px;
-  margin: 0;
-  overflow: hidden;
-}
-.clinic-photo img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+
 .breath-moment {
   display: flex;
   flex-direction: column;
@@ -790,16 +726,7 @@ h3 {
   stroke-width: 1;
 }
 .chapter-lines path { vector-effect: non-scaling-stroke; }
-.service-hero .hero-message { position: relative; isolation: isolate; overflow: hidden; }
-.strength-lines {
-  position: absolute;
-  width: clamp(220px, 30vw, 430px);
-  inset-inline-end: -70px;
-  bottom: -60px;
-  z-index: -1;
-  stroke: var(--taupe);
-  opacity: 0.35;
-}
+
 .breath-geometry > svg {
   position: absolute;
   inset: 0;
@@ -850,17 +777,10 @@ h3 {
 .testimonials h2 {
   font-size: clamp(36px, 4vw, 56px);
 }
-.story {
-  margin: 0;
-}
-.story p {
-  font-size: 17px;
-  line-height: 1.85;
-}
-.story footer {
-  font-size: 13px;
-  font-weight: 750;
-}
+.stories { display: grid; gap: 40px; }
+.story { margin: 0; }
+.story p { font-size: 18px; font-weight: 400; line-height: 1.85; margin-bottom: 20px; }
+.story footer { font-size: 13px; font-weight: 750; }
 .story-service {
   display: inline-block;
   margin-inline-start: 12px;
@@ -868,27 +788,11 @@ h3 {
   font-size: 12px;
   font-weight: 400;
 }
-.story-featured {
-  padding-bottom: 40px;
-  margin-bottom: 35px;
-  border-bottom: 1px solid var(--line);
-}
-.story-featured p {
-  font-size: clamp(25px, 2.3vw, 34px);
-  font-weight: 500;
-  line-height: 1.55;
-}
-.story-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 45px;
-}
-.story-pull {
-  margin-top: 48px;
-}
+.story-pull { margin-top: 16px; }
 .story-pull p {
   font-family: "Noto Display", sans-serif;
-  font-size: clamp(28px, 3vw, 40px);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
   line-height: 1.35;
   margin-bottom: 16px;
 }
@@ -1040,14 +944,8 @@ h3 {
   .section {
     padding: 75px var(--gutter);
   }
-  .about-intro {
-    gap: 40px;
-  }
   .about-copy p {
     font-size: 15px;
-  }
-  .about-intro .large-copy {
-    font-size: 22px;
   }
   .program {
     min-height: 650px;
@@ -1055,7 +953,7 @@ h3 {
   .program-copy {
     padding: 65px var(--gutter);
   }
-  .program-copy > p:not(.large-copy) {
+  .program-copy > p {
     font-size: 15px;
   }
   .breath-art {
@@ -1063,12 +961,6 @@ h3 {
   }
   .testimonials {
     gap: 7%;
-  }
-  .story-pair {
-    gap: 28px;
-  }
-  .story-pair p {
-    font-size: 15px;
   }
   .contact {
     padding-bottom: 170px;
@@ -1083,17 +975,8 @@ h3 {
   }
 }
 @media (max-width: 800px) {
-  .about-intro {
-    gap: 40px;
-  }
-  .about-intro > h2 {
-    font-size: 50px;
-  }
   .program-copy {
     padding: 55px 30px;
-  }
-  .program-copy .large-copy {
-    font-size: 25px;
   }
   .program-points {
     font-size: 13px;
@@ -1167,19 +1050,11 @@ h3 {
     width: 34px;
     height: 34px;
   }
-  .about-intro {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .about-intro > h2 {
-    font-size: 54px;
-  }
-  .about-copy p {
-    font-size: 16px;
-  }
-  .about-intro .large-copy {
-    font-size: 24px;
-  }
+  .about { grid-template-columns: minmax(0, 1fr); }
+  .about-portrait { aspect-ratio: 4 / 5; }
+  .about-photo { height: 100%; object-fit: cover; object-position: center 35%; }
+  .chapter-opening { padding-block: 60px; }
+  .chapter-photo { aspect-ratio: 4 / 3; }
   .program {
     grid-template-columns: 1fr;
     min-height: 0;
@@ -1188,10 +1063,7 @@ h3 {
     padding: 60px 24px;
     max-width: none;
   }
-  .program-copy .large-copy {
-    font-size: 28px;
-  }
-  .program-copy > p:not(.large-copy) {
+  .program-copy > p {
     font-size: 16px;
   }
   .program-points {
@@ -1210,20 +1082,10 @@ h3 {
   .program-breath {
     direction: rtl;
   }
-  .program-breath > .program-copy {
-    grid-column: 1;
-    grid-row: 3;
-    padding-top: 36px;
-  }
   .breath-art {
     grid-column: 1;
-    grid-row: 4;
     grid-template-columns: minmax(0, 1fr);
     padding: 0;
-  }
-  .clinic-photo {
-    min-height: 0;
-    aspect-ratio: 4 / 3;
   }
   .breath-moment {
     gap: 20px;
@@ -1244,20 +1106,6 @@ h3 {
   }
   .testimonials h2 br {
     display: block;
-  }
-  .story-featured {
-    padding-bottom: 30px;
-    margin-bottom: 30px;
-  }
-  .story-featured p {
-    font-size: 26px;
-  }
-  .story-pair {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .story-pair p {
-    font-size: 17px;
   }
   .contact {
     grid-template-columns: 1fr;
@@ -1338,71 +1186,14 @@ h3 {
   color: #727577;
 }
 
-/* Shared hero composition for the brand opening and strength section. */
-.hero {
-  --hero-surface: var(--ink);
-  --hero-text: var(--paper);
-  background: var(--hero-surface);
-  color: var(--hero-text);
-}
-.homepage-hero {
-  --hero-surface: #e7ddd4;
-  --hero-text: var(--ink);
-}
-.hero-stage {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 1440px;
-  margin: auto;
-}
-.hero-visual { min-width: 0; }
-.hero-picture {
-  position: relative;
-  height: 100%;
-  min-height: clamp(500px, 48vw, 680px);
-  overflow: hidden;
-}
-.hero-photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
-}
-.hero-message {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  min-width: 0;
-  padding: 48px clamp(28px, 4.5vw, 72px);
-}
-.hero-location {
-  font-size: 15px;
-  line-height: 1.7;
-  margin: 0 0 24px;
-}
-.hero .hero-title {
-  font-size: var(--hero-heading-size, clamp(54px, 6.4vw, 92px));
-  line-height: 1.06;
-  margin: 0 0 28px;
-}
+/* Brand introduction precedes illustrated choices and Alina's portrait. */
+.hero { background: #e7ddd4; color: var(--ink); }
+.hero-stage { max-width: 1100px; margin-inline: auto; }
+.hero-message { padding: 72px var(--gutter); }
+.hero .hero-title { font-size: clamp(48px, 7vw, 92px); line-height: 1.06; margin-bottom: 28px; }
 .hero .hero-title span { display: block; }
-.hero-contact { flex-shrink: 0; text-align: right; }
-.hero-contact p {
-  font-size: 18px;
-  line-height: 1.5;
-  font-weight: 500;
-  margin: 0 0 28px;
-}
-.homepage-hero .hero-contact p { margin-bottom: 0; }
-.homepage-hero .hero-contact .hero-support {
-  margin-top: 12px;
-  max-width: 32ch;
-  line-height: 1.65;
-}
-.service-hero { --hero-heading-size: clamp(40px, 4.5vw, 64px); grid-column: 1 / -1; min-width: 0; }
+.hero-contact p { font-size: 18px; line-height: 1.65; margin: 0; }
+.hero-contact .hero-support { margin-top: 12px; max-width: 32ch; }
 .service-choices {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -1412,23 +1203,16 @@ h3 {
   margin: auto;
   padding-block: 48px;
 }
-.service-card {
+.world-preview {
   display: flex;
   flex-direction: column;
   gap: 12px;
   min-width: 0;
   color: var(--ink);
 }
-.service-card h2 { font-size: clamp(32px, 3vw, 44px); }
-.service-card-image {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: center 40%;
-  margin-bottom: 12px;
-}
-.service-card p { font-size: 17px; line-height: 1.7; margin: 0; }
+.world-preview h2 { font-size: clamp(32px, 3vw, 44px); }
+.world-preview .chapter-lines { width: min(100%, 200px); height: 112px; margin-bottom: 12px; }
+.world-preview p { font-size: 17px; line-height: 1.7; margin: 0; }
 .service-link {
   display: inline-flex;
   align-items: center;
@@ -1449,21 +1233,8 @@ h3 {
   .service-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .studio-film-grid { grid-template-columns: minmax(0, 1fr); max-width: 800px; margin-inline: auto; }
-@media (max-width: 800px) {
-  .hero-stage { grid-template-columns: minmax(0, 1fr); }
-  .service-hero .hero-message { order: -1; }
-  .hero-picture { height: auto; min-height: 0; aspect-ratio: 1; max-height: 600px; }
-  .hero-photo { object-position: center 30%; }
-  .hero-message { padding: 36px var(--gutter) 40px; }
-  .hero-contact { width: 100%; }
-}
 @media (max-width: 600px) {
-  .hero-photo { object-position: center 20%; }
-  .homepage-hero .hero-picture { aspect-ratio: 8 / 7; }
-  .homepage-hero .hero-photo { object-position: center 30%; }
-  .hero-message { display: block; padding: 28px 24px 32px; }
-  .hero-location { font-size: 13px; margin-bottom: 16px; }
-  .hero .hero-title { max-width: none; font-size: var(--hero-heading-size, clamp(42px, 11.5vw, 60px)); margin: 0 0 20px; }
-  .hero-contact p { font-size: 16px; margin-bottom: 20px; }
-  .hero-contact .button { width: 100%; min-height: 54px; font-size: 14px; }
+  .hero-message { padding: 56px 24px; }
+  .hero .hero-title { font-size: clamp(42px, 11.5vw, 60px); margin-bottom: 24px; }
+  .hero-contact p { font-size: 16px; }
 }

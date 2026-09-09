@@ -127,7 +127,7 @@
   ],
   "narrative": {
     "northStar": "Signature",
-    "overview": "Intentionally long brand journey: neutral portrait, equal service cards, Alina’s own voice, technique and confidence, studio gallery/video, age-inclusive breathwork, late testimonials and final CTA. Retain all sections/media/routes; reduce repeated copy, repeated location labels and secondary heading/sticky-bar dominance.",
+    "overview": "BODY + BREATH: typographic brand introduction, two illustrated worlds without photos/cards, heart portrait and personal Alina introduction, matching illustrated service openings followed by their own photographs/details/principles/CTAs, unified real Strength testimonials, dark contact. Preserve long scroll, current identity and contextual actions.",
     "keyCharacteristics": [
       "Editorial AI edits of supplied Alina photography, with semantic text in its own space.",
       "White, graphite and logo-derived taupe fields.",
@@ -140,7 +140,7 @@
       "Do keep strength and breathing as separate choices.",
       "Do retain Hebrew RTL semantics, real contact details and supplied factual content.",
       "Do keep live UI text and controls outside raster assets.",
-      "Keep title and contact copy in normal flow and inspect both service views for overlap and steady switching."
+      "Use the same illustration/category/headline/support opening for both service chapters, then their own photography and detailed content."
     ],
     "donts": [
       "Don't substitute the generated mockup's face, gym, claims or text for real business evidence.",

@@ -1,0 +1,13 @@
+# BODY + BREATH hierarchy refactor — 2026-09-09
+
+Implemented the user's coherent long-scroll structure. Brand opening is typographic, followed by equally weighted illustrated world choices with the exact text links; photographs no longer appear in these choices. The existing heart portrait moves once into About, immediately before/beside the light personal introduction. All personal paragraphs remain exact. The former full-width black manifesto becomes a modest body pull quote.
+
+Strength and Breath now share chapter-opening and chapter-photo structures: illustration → category → heading → support → photograph → detailed copy/principles/CTA. The three-line families are defined once as SVG symbols and reused. Strength's category is אימוני כוח and its single main heading is לומדים לעבוד נכון. / מגלים כמה אתם חזקים.; removed the old brand-name eyebrow, redundant hero title and duplicated detailed heading. Existing support is retained in the opening, with one contextual CTA after principles. Strength remains dark/white and physical; Breath stays warm beige and quiet, with its room and atmospheric closing. Studio photographs remain a paired unit; video remains original and opt-in.
+
+Three normal real testimonials use identical 18px, weight400, line-height1.85 and consistent40px spacing; names13px bold and labels12px muted/regular. No featured-quote override, paired-column type override, cards or separators. Ayala's short32–52px pull quote is the only scale exception. Every quote and name preserved.
+
+Removed retired hero/card/manifesto/quote-style rules rather than appending competing CSS. Header, final CTA, footer, Instagram, supplied media files, 44px sticky WhatsApp and all JavaScript remain unchanged. No new photos, claims, colors or icons; no tabs or new routes.
+
+Verification: Chromium at320/393/600/800/844/1440; page remains roughly8,100–9,460px. No text/horizontal overflow; choices equal size; opening DOM grammar and computed heading styles identical across services; photographs follow openings and precede detail; normal testimonial computed styles identical, pull quote larger. Main-content axe at393/1440 clear. Service navigation, video play/offscreen pause, optional motion/pause, reduced motion, 44px sticky bar and64px compact header passed. Exact real testimonial content and unchanged header/contact/footer/studio media verified against afbcc82. Full desktop scroll and mobile chapters inspected. Physical phone/Safari not tested.
+
+Evidence: ignored .qa/body-breath-check.cjs, body-breath-report.json and screenshots. Current surface brief, DESIGN.md and PRODUCT.md replace stale layout guidance from prior passes.

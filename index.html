@@ -47,21 +47,26 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20260908-art-direction" />
+    <link rel="stylesheet" href="./styles.css?v=20260909-body-breath" />
   </head>
   <body>
-    <!-- THESIS: MamAlina Center first, followed by two equally weighted independent service choices.
-  OWN-WORLD: White, graphite, logo taupe; compressed athletic type, faceted seams and rectangular controls.
-  STORY: Recognize Alina, discover two independent services, start a direct conversation.
-  FIRST VIEWPORT: Unchanged navigation, neutral brand headline and Alina's welcoming portrait; two equal service cards immediately follow.
-  FORM: Kinetic sports broadcasting, seventh grounded direction, seed 398670b6; Signature comp-C approved 2026-09-07.
-  FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->
+    <!-- BODY + BREATH: illustrated choices, Alina, then two sibling service chapters. -->
     <svg
       class="icon-definitions"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
       <defs>
+        <symbol id="lines-strength" viewBox="0 0 360 200">
+          <path d="M-20 185 130 25 195 190" />
+          <path d="M45 220 185 55 255 210" />
+          <path d="M110 240 240 90 320 230" />
+        </symbol>
+        <symbol id="lines-breath" viewBox="0 0 360 200">
+          <path d="M-20 150 C90 155 100 30 210 35 S310 55 385 5" />
+          <path d="M-20 175 C105 175 125 70 220 75 S315 100 385 45" />
+          <path d="M-20 200 C130 205 145 115 235 120 S325 150 385 90" />
+        </symbol>
         <symbol id="icon-arrow" viewBox="0 0 24 24">
           <path d="M20 12H4m6-6-6 6 6 6" />
         </symbol>
@@ -153,37 +158,29 @@
               <p class="hero-support">מקום אישי ומדויק להתחזק, לנשום ולעבוד בקצב שלכם.</p>
             </div>
           </div>
-          <div class="hero-visual">
-            <div class="hero-picture">
-              <img class="hero-photo" src="./assets/images/alina-portrait-editorial.webp" alt="אלינה מחייכת ויוצרת לב עם הידיים" width="960" height="1280" fetchpriority="high" />
-            </div>
-          </div>
         </div>
       </section>
       <section class="service-choices section" aria-label="בחרו את המרחב שלכם">
-        <article class="service-card" aria-labelledby="strength-card-title">
-          <img class="service-card-image" src="./assets/images/alina-training-editorial.webp" alt="אלינה באימון כוח עם מוט ומשקולות" width="1400" height="1050" loading="lazy" decoding="async" />
+        <article class="world-preview" aria-labelledby="strength-card-title">
+          <svg class="chapter-lines" viewBox="0 0 360 200" aria-hidden="true"><use href="#lines-strength" /></svg>
           <h2 id="strength-card-title">אימוני כוח</h2>
           <p>בונים כוח, לומדים טכניקה ומתקדמים בקצב שלכם.</p>
           <a class="service-link" href="#strength">גלו את אימוני הכוח<svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
         </article>
-        <article class="service-card" aria-labelledby="breath-card-title">
-          <img class="service-card-image" src="./assets/images/breathing-clinic-editorial.webp" alt="קליניקת הנשימה של אלינה עם כורסאות ומזרן למפגש אישי" width="1280" height="960" loading="lazy" decoding="async" />
+        <article class="world-preview" aria-labelledby="breath-card-title">
+          <svg class="chapter-lines" viewBox="0 0 360 200" aria-hidden="true"><use href="#lines-breath" /></svg>
           <h2 id="breath-card-title">נשימה וריברסינג</h2>
           <p>עוצרים, נושמים ויוצרים מרחב לעבודה פנימית.</p>
           <a class="service-link" href="#breath">גלו את עולם הנשימה<svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
         </article>
       </section>
       <section class="about" id="about" aria-labelledby="about-title">
-        <div class="about-intro section">
+        <figure class="about-portrait">
+          <img class="about-photo" src="./assets/images/alina-portrait-editorial.webp" alt="אלינה מחייכת ויוצרת לב עם הידיים" width="960" height="1280" fetchpriority="high" />
+        </figure>
+        <div class="about-copy section">
           <h2 id="about-title">אני אלינה.</h2>
-          <p class="large-copy">
-            כאן לא מקטינים את עצמכם.<br />כאן בונים כוח אמיתי.
-          </p>
-        </div>
-        <div class="about-body section">
-        <div class="about-copy">
-          <p>
+          <p class="about-lead">
             אני אוהבת לעבוד עם אנשים. לראות אותם לומדים משהו חדש על עצמם, מעיזים, מתקדמים, ולפעמים פשוט מצליחים לעצור ולהקשיב.
           </p>
           <p>
@@ -195,6 +192,7 @@
           <p>
             בשתי הדרכים אני רוצה לפנות מקום לגרסה חזקה, חופשית ומדויקת יותר של עצמנו.
           </p>
+          <p class="about-note">כאן לא מקטינים את עצמכם.<br />כאן בונים כוח אמיתי.</p>
           <a
             class="button button-taupe"
             href="https://wa.me/972532831333"
@@ -204,38 +202,22 @@
               <use href="#icon-arrow" /></svg
           ></a>
         </div>
-        </div>
       </section>
       <section
         class="program program-strength"
         id="strength"
-        aria-labelledby="strength-hero-title"
+        aria-labelledby="strength-title"
       >
-        <div class="hero service-hero" aria-labelledby="strength-hero-title">
-          <div class="hero-stage">
-            <div class="hero-visual">
-              <div class="hero-picture">
-                <img class="hero-photo" src="./assets/images/alina-training-editorial.webp" alt="אלינה באימון כוח עם מוט ומשקולות" width="1400" height="1050" loading="lazy" decoding="async" />
-              </div>
-            </div>
-            <div class="hero-message">
-              <p class="hero-location"><bdi lang="en">MamAlina Center</bdi></p>
-              <svg class="chapter-lines strength-lines" viewBox="0 0 300 200" aria-hidden="true">
-                <path d="M-30 180 125 20 195 190" />
-                <path d="M30 220 170 55 240 200" />
-                <path d="M95 230 215 90 285 220" />
-              </svg>
-              <h2 class="hero-title" id="strength-hero-title"><span>אימוני כוח</span><span>עם אלינה.</span></h2>
-              <div class="hero-contact">
-                <p>לא רק להרים יותר — להבין איך אתם זזים.<br />דיוק בתנועה וביטחון שנבנה עם התרגול.</p>
-                <a class="button button-taupe" href="https://wa.me/972532831333" target="_blank" rel="noreferrer" data-primary-contact>לשיעור ניסיון<svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
-              </div>
-            </div>
-          </div>
+        <div class="chapter-opening section">
+          <svg class="chapter-lines" viewBox="0 0 360 200" aria-hidden="true"><use href="#lines-strength" /></svg>
+          <p class="section-category">אימוני כוח</p>
+          <h2 id="strength-title">לומדים לעבוד נכון.<br />מגלים כמה אתם חזקים.</h2>
+          <p class="chapter-support">לא רק להרים יותר — להבין איך אתם זזים.<br />דיוק בתנועה וביטחון שנבנה עם התרגול.</p>
         </div>
+        <figure class="chapter-photo">
+          <img src="./assets/images/alina-training-editorial.webp" alt="אלינה באימון כוח עם מוט ומשקולות" width="1400" height="1050" loading="lazy" decoding="async" />
+        </figure>
         <div class="program-copy">
-          <h2 id="strength-title">לומדים לעבוד נכון.</h2>
-          <p class="large-copy">מגלים כמה אתם חזקים.</p>
           <p>
             המשקל הוא רק חלק מהאימון. אני מסתכלת על התנועה, מדייקת את הטכניקה ומתאימה את העבודה למי שמולי. לומדים איך לבצע כל תרגיל, מה לשים לב אליו ואיך להתקדם בלי לוותר על הדיוק.
           </p>
@@ -305,12 +287,13 @@
         id="breath"
         aria-labelledby="breath-title"
       >
-        <div class="breath-intro section">
-          <p class="breath-category">נשימה וריברסינג</p>
+        <div class="chapter-opening section">
+          <svg class="chapter-lines" viewBox="0 0 360 200" aria-hidden="true"><use href="#lines-breath" /></svg>
+          <p class="section-category">נשימה וריברסינג</p>
           <h2 id="breath-title">מרחב לנשום.</h2>
-          <p class="large-copy">לפעמים החוזק מתחיל<br />דווקא בשחרור.</p>
+          <p class="chapter-support">לפעמים החוזק מתחיל דווקא בשחרור.</p>
         </div>
-        <figure class="clinic-photo">
+        <figure class="chapter-photo">
           <img
             src="./assets/images/breathing-clinic-retouched.webp"
             alt="קליניקת הנשימה של אלינה: חדר עץ עם כורסאות ומזרן למפגש אישי"
@@ -347,11 +330,7 @@
           </figure>
           <div class="breath-moment">
             <div class="breath-geometry" aria-hidden="true">
-              <svg class="chapter-lines" viewBox="0 0 360 200">
-                <path d="M-20 150 C90 155 100 30 210 35 S310 55 385 5" />
-                <path d="M-20 175 C105 175 125 70 220 75 S315 100 385 45" />
-                <path d="M-20 200 C130 205 145 115 235 120 S325 150 385 90" />
-              </svg>
+              <svg class="chapter-lines" viewBox="0 0 360 200" aria-hidden="true"><use href="#lines-breath" /></svg>
             </div>
             <div class="breath-caption">
               <span class="breath-word" aria-hidden="true">פשוט. לנשום.</span>
@@ -380,13 +359,12 @@
           <h2 id="testimonials-title">מה מרגישים<br />כשעובדים אחרת.</h2>
         </div>
         <div class="stories">
-          <blockquote class="story story-featured">
+          <blockquote class="story">
             <p>
               “אלינה שמה עליי פרוז'קטור והזכירה לי שזה הזמן לבחור גם בעצמי. האתגר הפיזי והמנטלי, יחד עם תחושת ההצלחה אחרי כל אימון, גורמים לי לחזור שוב ושוב. היא רואה את מי שעומדת מולה ומזכירה לה כמה היא מסוגלת.”
             </p>
             <footer>הגר שמיר בוכריץ <span class="story-service">אימוני כוח</span></footer>
           </blockquote>
-          <div class="story-pair">
             <blockquote class="story">
               <p>
                 “אלינה היא פצצת אנרגיה, עם המון ידע ותשוקה למה שהיא עושה. היא מאתגרת אותנו בכל אימון, ולא פעם אני מסיימת ואומרת לעצמי: וואלה, לא האמנתי שאצליח לעשות את זה. אני מרגישה שאני מתחזקת ומשתפרת מאימון לאימון.”
@@ -399,7 +377,6 @@
               </p>
               <footer>לילך דושי <span class="story-service">אימוני כוח</span></footer>
             </blockquote>
-          </div>
           <blockquote class="story story-pull">
             <p>“שינית לי את החיים.”</p>
             <footer>איילה לפידות <span class="story-service">אימוני כוח</span></footer>
