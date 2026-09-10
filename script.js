@@ -130,7 +130,9 @@ const homepageOpening = document.querySelector(".service-choices");
 const contactGuardElements = [
   ...new Set([
     ...document.querySelectorAll('main a[href^="https://wa.me/"]'),
-    ...document.querySelectorAll("[data-film], [data-motion-toggle], #contact, .site-footer"),
+    ...document.querySelectorAll(
+      "[data-film], [data-testimonial-track], [data-motion-toggle], #contact, .site-footer",
+    ),
   ]),
 ];
 const activeContactGuards = new Set();

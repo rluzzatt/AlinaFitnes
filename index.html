@@ -47,7 +47,7 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20260910-refinement" />
+    <link rel="stylesheet" href="./styles.css?v=20260910-editorial-final" />
   </head>
   <body>
     <!-- BODY + BREATH: illustrated choices, Alina, then two sibling service chapters. -->
@@ -151,6 +151,12 @@
     <main id="main" tabindex="-1">
       <section class="hero homepage-hero" id="top" aria-labelledby="hero-title">
         <div class="hero-stage">
+          <svg class="hero-lines hero-lines-strength chapter-lines" viewBox="0 0 360 200" aria-hidden="true">
+            <use href="#lines-strength" />
+          </svg>
+          <svg class="hero-lines hero-lines-breath chapter-lines" viewBox="0 0 360 200" aria-hidden="true">
+            <use href="#lines-breath" />
+          </svg>
           <div class="hero-message">
             <h1 class="hero-title" id="hero-title"><span>כוח לגוף.</span><span>מרחב לנשימה.</span></h1>
             <div class="hero-contact">
@@ -242,31 +248,9 @@
               <use href="#icon-arrow" /></svg
           ></a>
         </div>
-        <div class="program-photo studio-photos">
-          <figure>
-            <img
-              src="./assets/images/studio-equipment-retouched.webp"
-              alt="משקולות, ארגזי קפיצה ומכשירי אימון בסטודיו של אלינה"
-              width="960"
-              height="1280"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-          <figure>
-            <img
-              src="./assets/images/studio-space-retouched.webp"
-              alt="מרחב האימון המקורה עם רצפת המזרנים בסטודיו"
-              width="960"
-              height="1280"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-        </div>
         <div class="studio-films" aria-labelledby="studio-films-title">
-          <h3 id="studio-films-title">מבט לתוך הסטודיו.</h3>
-          <p class="studio-intro">אחרי שפוגשים את הדרך, אפשר להכיר גם את המקום. בסיור הקצר רואים את מרחב האימון כפי שהוא — הציוד, רצפת האימון והפינות שביניהם. כך תוכלו לדמיין את עצמכם מגיעים לכאן.</p>
+          <h3 id="studio-films-title">רוצים לראות איפה מתאמנים?</h3>
+          <p class="studio-intro">הצצה של 24 שניות למרחב האימון.</p>
           <div class="studio-film-grid">
             <figure class="training-film studio-film" data-film>
               <div class="film-cover" data-film-cover>
@@ -285,6 +269,45 @@
 
           </div>
         </div>
+        <section
+          class="testimonials section"
+          id="testimonials"
+          aria-labelledby="testimonials-title"
+        >
+          <div class="testimonials-heading">
+            <h2 id="testimonials-title">מה אומרים מי שמתאמנים איתי.</h2>
+          </div>
+          <div
+            class="testimonial-track"
+            data-testimonial-track
+            role="region"
+            aria-label="עדויות מאימוני הכוח"
+            tabindex="0"
+          >
+            <blockquote class="story">
+              <p>
+                “אלינה שמה עליי פרוז'קטור והזכירה לי שזה הזמן לבחור גם בעצמי. האתגר הפיזי והמנטלי, יחד עם תחושת ההצלחה אחרי כל אימון, גורמים לי לחזור שוב ושוב. היא רואה את מי שעומדת מולה ומזכירה לה כמה היא מסוגלת.”
+              </p>
+              <footer><strong>הגר שמיר בוכריץ</strong><span class="story-service">אימוני כוח</span></footer>
+            </blockquote>
+            <blockquote class="story">
+              <p>
+                “אלינה היא פצצת אנרגיה, עם המון ידע ותשוקה למה שהיא עושה. היא מאתגרת אותנו בכל אימון, ולא פעם אני מסיימת ואומרת לעצמי: וואלה, לא האמנתי שאצליח לעשות את זה. אני מרגישה שאני מתחזקת ומשתפרת מאימון לאימון.”
+              </p>
+              <footer><strong>נועה בנישו</strong><span class="story-service">אימוני כוח</span></footer>
+            </blockquote>
+            <blockquote class="story">
+              <p>
+                “אלינה, האימונים אצלך שינו לי את החיים. לא האמנתי שאצליח להתמיד באימוני כוח שלוש פעמים בשבוע — והיום זה כבר חלק מהשגרה שלי. אני מרגישה חזקה ובריאה יותר, והגוף שלי נראה ומרגיש טוב יותר.”
+              </p>
+              <footer><strong>לילך דושי</strong><span class="story-service">אימוני כוח</span></footer>
+            </blockquote>
+          </div>
+          <blockquote class="story story-pull">
+            <p>“שינית לי את החיים.”</p>
+            <footer><strong>איילה לפידות</strong></footer>
+          </blockquote>
+        </section>
       </section>
       <section
         class="program program-breath"
@@ -329,9 +352,6 @@
           ></a>
         </div>
         <div class="breath-art" data-breath-art>
-          <figure class="breath-detail">
-            <img src="./assets/images/breathing-clinic-enhanced.webp" alt="פינת הישיבה האינטימית בחדר הנשימה מעץ" width="1280" height="960" loading="lazy" decoding="async" />
-          </figure>
           <div class="breath-moment">
             <div class="breath-geometry" aria-hidden="true">
               <svg class="chapter-lines" viewBox="0 0 360 200" aria-hidden="true"><use href="#lines-breath" /></svg>
@@ -354,47 +374,12 @@
         </div>
       </section>
       <section
-        class="testimonials section"
-        id="testimonials"
-        aria-labelledby="testimonials-title"
-      >
-        <div class="testimonials-heading">
-          <svg class="chapter-lines testimonials-lines" viewBox="0 0 360 200" aria-hidden="true"><use href="#lines-strength" /></svg>
-          <p class="section-category">אימוני כוח</p>
-          <h2 id="testimonials-title">מה אומרים מי שמתאמנים איתי.</h2>
-        </div>
-        <div class="stories">
-          <blockquote class="story">
-            <p>
-              “אלינה שמה עליי פרוז'קטור והזכירה לי שזה הזמן לבחור גם בעצמי. האתגר הפיזי והמנטלי, יחד עם תחושת ההצלחה אחרי כל אימון, גורמים לי לחזור שוב ושוב. היא רואה את מי שעומדת מולה ומזכירה לה כמה היא מסוגלת.”
-            </p>
-            <footer>הגר שמיר בוכריץ</footer>
-          </blockquote>
-          <blockquote class="story">
-            <p>
-              “אלינה היא פצצת אנרגיה, עם המון ידע ותשוקה למה שהיא עושה. היא מאתגרת אותנו בכל אימון, ולא פעם אני מסיימת ואומרת לעצמי: וואלה, לא האמנתי שאצליח לעשות את זה. אני מרגישה שאני מתחזקת ומשתפרת מאימון לאימון.”
-            </p>
-            <footer>נועה בנישו</footer>
-          </blockquote>
-          <blockquote class="story">
-            <p>
-              “אלינה, האימונים אצלך שינו לי את החיים. לא האמנתי שאצליח להתמיד באימוני כוח שלוש פעמים בשבוע — והיום זה כבר חלק מהשגרה שלי. אני מרגישה חזקה ובריאה יותר, והגוף שלי נראה ומרגיש טוב יותר.”
-            </p>
-            <footer>לילך דושי</footer>
-          </blockquote>
-          <blockquote class="story story-pull">
-            <p>“שינית לי את החיים.”</p>
-            <footer>איילה לפידות</footer>
-          </blockquote>
-        </div>
-      </section>
-      <section
         class="contact section"
         id="contact"
         aria-labelledby="contact-title"
       >
         <div class="contact-copy">
-          <h2 id="contact-title">רוצים לנסות?</h2>
+          <h2 id="contact-title">רוצים להתחיל?</h2>
           <p>
             <span>כוח, נשימה או פשוט לא בטוחים מה מתאים?</span>
             <span>שלחו לי הודעה. אשאל אתכם כמה שאלות קצרות,</span>
@@ -464,6 +449,6 @@
         >בוואטסאפ<svg class="icon" aria-hidden="true">
           <use href="#icon-whatsapp" /></svg></span
     ></a>
-    <script src="./script.js?v=20260910-refinement" defer></script>
+    <script src="./script.js?v=20260910-editorial-final" defer></script>
   </body>
 </html>

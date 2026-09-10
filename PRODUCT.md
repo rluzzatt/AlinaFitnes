@@ -20,8 +20,8 @@ WhatsApp direct to +972532831333, without prefilled messages. The final conversi
 
 ## Evidence and constraints
 
-- User supplied Alina's heart-hand portrait, two training-space views and one wooden clinic viewpoint. Originals and edited versions remain in assets/images. Do not invent new premises or show people receiving breathwork. The existing barbell photograph belongs to Strength.
+- User supplied Alina's heart-hand portrait, two training-space views and one wooden clinic viewpoint. Originals and edited versions remain in assets/images, but the static studio views are intentionally unlinked and only one room photograph appears on the page. Do not invent new premises or show people receiving breathwork. The existing barbell photograph belongs to Strength.
 - The only active video is the24-second studio-space-tour.mp4. Training reel/equipment tour remain archived and unlinked by request.
 - Four real client quotes supplied by the user, all Strength: הגר שמיר בוכריץ, נועה בנישו, לילך דושי, איילה לפידות. Preserve exact shortened website versions. The prior three quotes were fake placeholders and must not return.
 - Reuse static HTML/CSS/JavaScript, self-hosted fonts, current header/logo and black/white/beige palette. No cards, new brand colors or generic imagery. Long scroll is intentional.
-- Current hierarchy and design constraints live in DESIGN.md and .impeccable/surfaces/index-html.md. The2026-09-09 BODY + BREATH request supersedes older local layout choices. Existing commit/push/publish authorization persists.
+- Current hierarchy and design constraints live in DESIGN.md and .impeccable/surfaces/index-html.md. The 2026-09-10 final editorial UX pass supersedes older local layout choices. Existing commit/push/publish authorization persists.
