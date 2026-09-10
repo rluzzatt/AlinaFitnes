@@ -84,7 +84,7 @@ Self-hosted Noto Display carries heavy Hebrew headings; Noto Hebrew carries body
 ## Story architecture
 
 1. Brand introduction: typography and current supporting copy, no photograph. Large cropped fragments of the angular and flowing line families enter from opposite edges and stay behind the headline.
-2. Two equal worlds: shared abstract line family, title, exact short description and text link. Two desktop columns, stacked mobile. No preview photos or cards.
+2. Two equal worlds: the Hero line families become small identifying signatures beside the exact title, description and text link. Strength stays compact/right-grounded; Breath is slightly more open and offset. Two desktop columns, stacked mobile. No preview photos or cards.
 3. Alina: the existing heart-hand portrait appears once, immediately with אני אלינה. and her exact personal copy on white. The short כוח אמיתי statement is a modest body pull quote, not a dark manifesto.
 4. Strength: shared chapter opening → lifting photograph → detailed approach/principles/CTA → compact studio-video moment → three real horizontal-swipe testimonials on phones → standalone Ayala pull quote.
 5. Breath: clear warm-beige reset → shared chapter opening → one wooden-room photograph → detailed process/principles/CTA → quiet flowing-line closing. No person receiving treatment.
@@ -94,7 +94,7 @@ Self-hosted Noto Display carries heavy Hebrew headings; Noto Hebrew carries body
 
 Both service openings use chapter-opening: illustration → category → headline → support, followed by chapter-photo and program-copy. Strength category is אימוני כוח, headline לומדים לעבוד נכון. / מגלים כמה אתם חזקים.; brand name is not used as its eyebrow. Breath category is נשימה וריברסינג, headline מרחב לנשום., support לפעמים החוזק מתחיל דווקא בשחרור. Do not repeat these headings in detailed content.
 
-The three angular paths and three flowing paths are defined once as SVG symbols lines-strength and lines-breath. Large cropped fragments appear together in the Hero, then the early choices explain each language; chapter entrances and the breath close reuse them contextually. These are thin abstract fragments, not logos or literal fitness/wellness icons. Dark Strength uses existing taupe strokes; light contexts use taupe-dark.
+The three angular paths and three flowing paths are defined once as SVG symbols lines-strength and lines-breath. Large cropped fragments appear together in the Hero, with the lower flowing fragment lifted into the composition while remaining clear of the copy. The early choices then decode each language using much smaller, asymmetrically placed signatures; chapter entrances and the breath close reuse them contextually. These are thin abstract fragments, not logos or literal fitness/wellness icons. Dark Strength uses existing taupe strokes; light contexts use taupe-dark.
 
 ## Photography and layout
 
