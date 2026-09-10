@@ -78,7 +78,7 @@ BODY + BREATH: two distinct worlds connected by Alina. The 2026-09-09 hierarchy 
 
 Use existing CSS tokens only. The brand opening is warm neutral beige; Alina, service choices and proof use white; Strength opens in ink with taupe lines; Breath opens and continues in warm beige. Stronger white/black contrast belongs deeper inside Strength. No cards, shadows, gradients or arbitrary decorative dividers.
 
-Self-hosted Noto Display carries heavy Hebrew headings; Noto Hebrew carries body and labels; Anton carries Latin wordmarks. Main title remains כוח לגוף. / מרחב לנשימה. Both chapter headings share 40–72px scale, line-height 1.1. All three normal testimonials use 18px / 400 / 1.85; names 13px bold and service labels 12px muted regular. Only Ayala's short quote uses the 32–52px display scale.
+Self-hosted Noto Display carries heavy Hebrew headings; Noto Hebrew carries body and labels; Anton carries Latin wordmarks. Main title remains כוח לגוף. / מרחב לנשימה. Both chapter headings share 40–72px scale, line-height 1.1. All three normal testimonials use 18px / 400 / 1.85 with names at 13px bold. Only Ayala's short quote uses the 32–52px display scale.
 
 ## Story architecture
 
@@ -87,7 +87,7 @@ Self-hosted Noto Display carries heavy Hebrew headings; Noto Hebrew carries body
 3. Alina: the existing heart-hand portrait appears once, immediately with אני אלינה. and her exact personal copy on white. The short כוח אמיתי statement is a modest body pull quote, not a dark manifesto.
 4. Strength: shared chapter opening → lifting photograph → detailed approach/principles/CTA → paired training-space gallery and original studio video.
 5. Breath: shared chapter opening → wooden-room photograph → detailed process/principles/CTA → closer room detail and quiet flowing-line closing. No person receiving treatment.
-6. Real Strength testimonials, then existing dark contact/footer with cropped MAMALINA wordmark.
+6. Real Strength testimonials, explicitly reintroduced with the Strength line motif and label, then existing dark contact/footer with cropped MAMALINA wordmark.
 
 ## Shared chapter system
 
@@ -105,9 +105,9 @@ Chapter openings/photos span the page. Photography frames share 16:10 desktop an
 
 Header identity/structure unchanged. Initial heights 94/82/76/74px by breakpoint; mobile compacts to64px after100px scroll and restores near24px. Existing accessible disclosure menu, Escape, focus behavior and skip link remain.
 
-Exploration: גלו את אימוני הכוח / גלו את עולם הנשימה are underlined text links to #strength/#breath. Conversion: Strength לשיעור ניסיון; Breath למפגש נשימה; general שלחו לי הודעה. WhatsApp opens directly at https://wa.me/972532831333. Instagram retains the supplied mamalinacenter URL. Location stays in contact only.
+Exploration: גלו את אימוני הכוח / גלו את עולם הנשימה are underlined text links to #strength/#breath. Conversion: Strength לשיעור ניסיון; Breath למפגש נשימה; general שלחו לי הודעה. The final conversion copy explains in Alina's first-person voice that she will ask a few short questions and they will decide together what fits. WhatsApp opens directly at https://wa.me/972532831333. Instagram retains the supplied mamalinacenter URL. Location stays in contact only.
 
-Sticky WhatsApp remains44px before safe-area padding, appears after choices, and hides near inline/final actions or open menu. Video loads on activation and pauses offscreen. Breath motion remains optional, pauses when offscreen/hidden, and respects reduced-motion. No JS changes were required by this refactor.
+Sticky WhatsApp remains at least 44px before safe-area padding, appears after choices, and uses IntersectionObserver guards to yield to contextual CTAs, the studio film, the breath motion control, final conversion and footer. It hides immediately for interaction safety and returns smoothly after a short delay; the menu and mobile safe area remain respected. Video loads on activation and pauses offscreen. Breath motion remains optional, pauses when offscreen/hidden, and respects reduced-motion.
 
 ## Evidence
 

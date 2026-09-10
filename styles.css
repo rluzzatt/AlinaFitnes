@@ -589,6 +589,27 @@ h3 {
   line-height: 1.9;
   max-width: 50ch;
 }
+.program-copy > .program-format {
+  max-width: 46ch;
+  margin-bottom: 32px;
+  font-size: 20px;
+  line-height: 1.65;
+}
+.program-format strong,
+.program-format span {
+  display: block;
+}
+.program-format strong {
+  color: var(--ink);
+  font-weight: 750;
+}
+.program-format span {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.8;
+}
 .program-strength {
   background: var(--ink);
   color: white;
@@ -653,6 +674,13 @@ h3 {
   border: 1px solid var(--taupe);
   transform: rotate(45deg);
   margin-inline-end: 15px;
+}
+.program-count {
+  display: inline-block;
+  font-size: 1.22em;
+  font-weight: 850;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
 }
 .program-breath { background: #d4c8be; direction: rtl; }
 .program-breath > .program-copy { grid-column: 1 / -1; max-width: 800px; width: 100%; justify-self: center; }
@@ -776,18 +804,19 @@ h3 {
 }
 .testimonials h2 {
   font-size: clamp(36px, 4vw, 56px);
+  max-width: 12ch;
+}
+.testimonials-heading { align-self: start; }
+.testimonials-lines {
+  width: min(100%, 220px);
+  aspect-ratio: 1.8;
+  margin-bottom: 28px;
+  stroke: var(--taupe-dark);
 }
 .stories { display: grid; gap: 40px; }
 .story { margin: 0; }
 .story p { font-size: 18px; font-weight: 400; line-height: 1.85; margin-bottom: 20px; }
 .story footer { font-size: 13px; font-weight: 750; }
-.story-service {
-  display: inline-block;
-  margin-inline-start: 12px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 400;
-}
 .story-pull { margin-top: 16px; }
 .story-pull p {
   font-family: "Noto Display", sans-serif;
@@ -817,6 +846,7 @@ h3 {
   line-height: 1.8;
   color: #ddd8d4;
 }
+.contact-copy p span { display: block; }
 .contact-actions {
   align-self: center;
   justify-self: start;
@@ -922,6 +952,18 @@ h3 {
   border-top: 1px solid #ffffff40;
   font-size: 13px;
   font-weight: 650;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(100% + env(safe-area-inset-bottom)));
+  visibility: hidden;
+  transition: none;
+}
+.mobile-contact-bar.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  visibility: visible;
+  transition: transform 0.26s var(--ease), opacity 0.18s ease;
 }
 .mobile-contact-bar > span:last-child {
   display: flex;
@@ -930,6 +972,9 @@ h3 {
   color: #d4c8be;
 }
 .mobile-contact-bar .icon { width: 20px; height: 20px; }
+@media (min-width: 601px) {
+  .mobile-contact-bar { display: none; }
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1025,6 +1070,9 @@ h3 {
   .section {
     padding: 60px 24px;
   }
+  html {
+    scroll-padding-bottom: calc(64px + env(safe-area-inset-bottom));
+  }
   .film-cover {
     height: 310px;
   }
@@ -1053,6 +1101,9 @@ h3 {
   .about { grid-template-columns: minmax(0, 1fr); }
   .about-portrait { aspect-ratio: 4 / 5; }
   .about-photo { height: 100%; object-fit: cover; object-position: center 35%; }
+  .about-copy p { font-size: 16px; line-height: 1.85; }
+  .about-copy .about-lead { font-size: 19px; line-height: 1.7; }
+  .about-copy .about-note { margin-block: 32px; }
   .chapter-opening { padding-block: 60px; }
   .chapter-photo { aspect-ratio: 4 / 3; }
   .program {
@@ -1065,6 +1116,16 @@ h3 {
   }
   .program-copy > p {
     font-size: 16px;
+  }
+  .program-copy > .program-format {
+    margin-bottom: 30px;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+  .program-format span {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 1.8;
   }
   .program-points {
     font-size: 14px;
@@ -1107,10 +1168,29 @@ h3 {
   .testimonials h2 br {
     display: block;
   }
+  .testimonials-lines {
+    width: 170px;
+    margin-bottom: 24px;
+  }
+  .stories { gap: 32px; }
+  .story + .story {
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  .story p {
+    margin-bottom: 14px;
+    font-size: 17px;
+    line-height: 1.82;
+  }
+  .story-pull { margin-top: 8px; }
+  .story-pull p {
+    font-size: clamp(34px, 11vw, 48px);
+    line-height: 1.28;
+  }
   .contact {
     grid-template-columns: 1fr;
     gap: 28px;
-    padding-bottom: 130px;
+    padding-bottom: calc(130px + env(safe-area-inset-bottom));
   }
   .contact h2 {
     font-size: 76px;
@@ -1134,7 +1214,7 @@ h3 {
     bottom: -0.12em;
   }
   .site-footer {
-    padding: 32px 22px 90px;
+    padding: 32px 22px calc(90px + env(safe-area-inset-bottom));
     gap: 20px;
   }
   .site-footer .brand img {

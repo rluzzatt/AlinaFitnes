@@ -8,7 +8,7 @@ Static Hebrew RTL website on GitHub Pages: https://rluzzatt.github.io/AlinaFitne
 
 ## Users and purpose
 
-Introduce MamAlina and Alina, explain two independent offerings and enable direct contact. Strength addresses people seeking technique, progression and personal adaptation. Breathwork/Rebirthing may be relevant to adults, children and babies; work is individually adapted. Do not add medical claims, frame the center as adult-gender-only, or imply both services are mandatory together.
+Introduce MamAlina and Alina, explain two independent offerings and enable direct contact. Strength addresses people seeking technique, progression and personal adaptation; sessions take place in very small groups of no more than five participants so the work can remain personal and technically precise. Breathwork/Rebirthing may be relevant to adults, children and babies; work is individually adapted. Do not add medical claims, frame the center as adult-gender-only, or imply both services are mandatory together.
 
 ## Positioning
 
@@ -16,7 +16,7 @@ BODY + BREATH: active/physical/precise and quiet/intimate/spacious worlds connec
 
 ## Contact
 
-WhatsApp direct to +972532831333, without prefilled messages. Instagram: https://www.instagram.com/mamalinacenter?stkn=MXZxc2xxeHppMnA3ZA==. Current location Kfar Szold appears in the contact area only. No booking backend, pricing, timetable or membership checkout is implemented.
+WhatsApp direct to +972532831333, without prefilled messages. The final conversion copy sets the expectation that Alina will ask a few short questions and decide together with the visitor what fits; do not turn this into a form, booking flow or formal consultation. Instagram: https://www.instagram.com/mamalinacenter?stkn=MXZxc2xxeHppMnA3ZA==. Current location Kfar Szold appears in the contact area only. No booking backend, pricing, timetable or membership checkout is implemented.
 
 ## Evidence and constraints
 

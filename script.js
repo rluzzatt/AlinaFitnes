@@ -124,27 +124,86 @@ if ("IntersectionObserver" in window)
   ).observe(breathArt);
 syncBreath();
 
-// A discreet contact bar appears only after the opening and while no inline contact action is visible.
+// A discreet contact bar appears after the opening and yields to nearby controls.
 const mobileContact = document.querySelector("[data-mobile-contact]");
 const homepageOpening = document.querySelector(".service-choices");
-const contactSection = document.querySelector("#contact");
-const contactLinks = [
-  ...document.querySelectorAll('main a[href^="https://wa.me/"]'),
+const contactGuardElements = [
+  ...new Set([
+    ...document.querySelectorAll('main a[href^="https://wa.me/"]'),
+    ...document.querySelectorAll("[data-film], [data-motion-toggle], #contact, .site-footer"),
+  ]),
 ];
+const activeContactGuards = new Set();
+const supportsContactObserver = "IntersectionObserver" in window;
+let homepageOpeningPassed = false;
+let contactRevealTimer = 0;
+
+function contactBarShouldShow() {
+  return (
+    mobileViewport.matches &&
+    nav.hidden &&
+    homepageOpeningPassed &&
+    activeContactGuards.size === 0
+  );
+}
+
+function setContactBarVisibility(visible) {
+  mobileContact.classList.toggle("is-visible", visible);
+  mobileContact.setAttribute("aria-hidden", String(!visible));
+  mobileContact.tabIndex = visible ? 0 : -1;
+}
+
 function updateContactBar() {
   if (!mobileContact) return;
-  const headerBottom = header.getBoundingClientRect().bottom;
-  const inlineVisible = contactLinks.some((link) => {
-    const rect = link.getBoundingClientRect();
-    return rect.top < innerHeight && rect.bottom > headerBottom;
-  });
-  mobileContact.hidden =
-    !mobileViewport.matches ||
-    !nav.hidden ||
-    homepageOpening.getBoundingClientRect().bottom > headerBottom ||
-    contactSection.getBoundingClientRect().top < innerHeight ||
-    inlineVisible;
+  clearTimeout(contactRevealTimer);
+  if (!contactBarShouldShow()) {
+    setContactBarVisibility(false);
+    return;
+  }
+  if (mobileContact.classList.contains("is-visible")) return;
+  contactRevealTimer = window.setTimeout(() => {
+    if (contactBarShouldShow()) setContactBarVisibility(true);
+  }, 140);
 }
+
+function updateContactFallback() {
+  const headerBottom = header.getBoundingClientRect().bottom;
+  homepageOpeningPassed =
+    homepageOpening.getBoundingClientRect().bottom <= headerBottom;
+  activeContactGuards.clear();
+  contactGuardElements.forEach((element) => {
+    const rect = element.getBoundingClientRect();
+    if (rect.top < innerHeight && rect.bottom > innerHeight * 0.52)
+      activeContactGuards.add(element);
+  });
+}
+
+if (supportsContactObserver) {
+  new IntersectionObserver(
+    ([entry]) => {
+      const rootTop = entry.rootBounds?.top ?? 0;
+      homepageOpeningPassed =
+        !entry.isIntersecting && entry.boundingClientRect.bottom <= rootTop;
+      updateContactBar();
+    },
+    { rootMargin: "-64px 0px 0px 0px", threshold: 0 },
+  ).observe(homepageOpening);
+
+  const contactGuardObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) activeContactGuards.add(entry.target);
+        else activeContactGuards.delete(entry.target);
+      });
+      updateContactBar();
+    },
+    { rootMargin: "-52% 0px 0px 0px", threshold: 0.01 },
+  );
+  contactGuardElements.forEach((element) => contactGuardObserver.observe(element));
+} else {
+  updateContactFallback();
+}
+
 let scrollQueued = false;
 function updateHeader() {
   const root = document.documentElement;
@@ -157,6 +216,7 @@ const queueContactUpdate = () => {
   scrollQueued = true;
   requestAnimationFrame(() => {
     updateHeader();
+    if (!supportsContactObserver) updateContactFallback();
     updateContactBar();
     scrollQueued = false;
   });
