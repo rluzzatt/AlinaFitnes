@@ -4,7 +4,7 @@
 
 ## Platform
 
-Static Hebrew RTL website on GitHub Pages: https://rluzzatt.github.io/AlinaFitnes/.
+Static Hebrew RTL website on GitHub Pages: https://www.mamalinacenter.co.il/.
 
 ## Users and purpose
 

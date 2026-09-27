@@ -2,7 +2,7 @@
 
 אתר בעברית עבור MamAlina Center בכפר סאלד: אימוני כוח וקליניקה נפרדת לנשימה עם אלינה. עיצוב Signature אושר ב־7 בספטמבר 2026.
 
-[האתר החי](https://rluzzatt.github.io/AlinaFitnes/)
+[האתר החי](https://www.mamalinacenter.co.il/)
 
 ## פיתוח מקומי
 
