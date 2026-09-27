@@ -48,6 +48,22 @@
       crossorigin
     />
     <link rel="stylesheet" href="./styles.css?v=20260910-opening-refinement" />
+    <!-- Google Analytics 4: aggregate traffic and on-site conversion events. -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-D9SR7EMEPB"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-D9SR7EMEPB", {
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+      });
+    </script>
   </head>
   <body>
     <!-- BODY + BREATH: illustrated choices, Alina, then two sibling service chapters. -->
@@ -452,6 +468,6 @@
         >בוואטסאפ<svg class="icon" aria-hidden="true">
           <use href="#icon-whatsapp" /></svg></span
     ></a>
-    <script src="./script.js?v=20260910-editorial-final" defer></script>
+    <script src="./script.js?v=20260927-analytics" defer></script>
   </body>
 </html>

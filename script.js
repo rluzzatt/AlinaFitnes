@@ -5,6 +5,49 @@ const mobileNavigation = matchMedia("(max-width: 800px)");
 const mobileViewport = matchMedia("(max-width: 600px)");
 const motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
 
+// Keep analytics event names stable so Alina can compare engagement over time.
+const trackAnalytics = (eventName, parameters = {}) => {
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", eventName, parameters);
+};
+
+const linkLocation = (link) => {
+  if (link.matches("[data-mobile-contact]")) return "mobile_sticky";
+  if (link.closest(".site-header")) return "header";
+  if (link.closest(".service-choices")) return "service_selector";
+  if (link.closest("#strength")) return "strength_section";
+  if (link.closest("#breath")) return "breath_section";
+  if (link.closest("#contact")) return "contact_section";
+  if (link.closest(".site-footer")) return "footer";
+  return "page";
+};
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[href]");
+  if (!link) return;
+
+  const href = link.getAttribute("href") || "";
+  const location = linkLocation(link);
+  let contactMethod = "";
+  if (href.startsWith("https://wa.me/")) contactMethod = "whatsapp";
+  else if (href.startsWith("tel:")) contactMethod = "phone";
+  else if (href.includes("instagram.com/")) contactMethod = "instagram";
+
+  if (contactMethod) {
+    trackAnalytics("contact_click", {
+      contact_method: contactMethod,
+      link_location: location,
+    });
+  }
+
+  if (href === "#strength" || href === "#breath") {
+    trackAnalytics("service_interest", {
+      service_name: href.slice(1),
+      link_location: location,
+    });
+  }
+});
+
 // Disclosure navigation keeps keyboard focus predictable on small screens.
 navToggle.hidden = false;
 const setNav = (open, restoreFocus = false) => {
@@ -52,6 +95,7 @@ mobileNavigation.addEventListener("change", () => {
 
 // Each film loads on request. Play one at a time and retain native controls.
 const videos = [...document.querySelectorAll("[data-video]")];
+const startedVideos = new WeakSet();
 const videoObserver = "IntersectionObserver" in window
   ? new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -81,6 +125,13 @@ document.querySelectorAll("[data-film]").forEach((film) => {
   video.querySelector("source")?.addEventListener("error", showError);
   video.addEventListener("play", () => {
     videos.forEach((other) => { if (other !== video) other.pause(); });
+    if (!startedVideos.has(video)) {
+      startedVideos.add(video);
+      trackAnalytics("video_start", { video_title: video.getAttribute("aria-label") });
+    }
+  });
+  video.addEventListener("ended", () => {
+    trackAnalytics("video_complete", { video_title: video.getAttribute("aria-label") });
   });
   videoObserver?.observe(video);
 });
