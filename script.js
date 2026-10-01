@@ -17,6 +17,7 @@ const linkLocation = (link) => {
   if (link.closest(".service-choices")) return "service_selector";
   if (link.closest("#strength")) return "strength_section";
   if (link.closest("#breath")) return "breath_section";
+  if (link.closest("#children-breath")) return "children_breath_section";
   if (link.closest("#contact")) return "contact_section";
   if (link.closest(".site-footer")) return "footer";
   return "page";
@@ -44,6 +45,15 @@ document.addEventListener("click", (event) => {
     trackAnalytics("service_interest", {
       service_name: href.slice(1),
       link_location: location,
+    });
+  }
+});
+
+document.querySelector(".children-breath-details").addEventListener("toggle", (event) => {
+  if (event.target.open) {
+    trackAnalytics("service_interest", {
+      service_name: "children_breath",
+      link_location: "children_breath_section",
     });
   }
 });
@@ -182,7 +192,7 @@ const contactGuardElements = [
   ...new Set([
     ...document.querySelectorAll('main a[href^="https://wa.me/"]'),
     ...document.querySelectorAll(
-      "[data-film], [data-testimonial-track], [data-motion-toggle], #contact, .site-footer",
+      "[data-film], [data-testimonial-track], [data-motion-toggle], .children-breath-details, #contact, .site-footer",
     ),
   ]),
 ];

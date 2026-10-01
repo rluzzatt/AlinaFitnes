@@ -73,26 +73,27 @@ components:
 
 ## Overview
 
-BODY + BREATH: two distinct worlds connected by Alina. The 2026-09-09 hierarchy supersedes earlier local layout directions while preserving the warm beige/white/ink palette, existing real photography, Hebrew RTL and bold editorial identity. Keep the intentionally long scroll. Detailed arrangement lives in .impeccable/surfaces/index-html.md; product facts in PRODUCT.md.
+BODY + BREATH: two worlds within one MamAlina Center, connected by Alina. The 2026-10-01 client PDF supersedes earlier exact wording while retaining the existing editorial hierarchy, warm beige/white/ink palette, real photography, Hebrew RTL and bold identity. Keep the intentionally long scroll. Detailed arrangement lives in .impeccable/surfaces/index-html.md; product facts in PRODUCT.md.
 
 ## Colors and type
 
 Use existing CSS tokens only. The brand opening is warm neutral beige; Alina, service choices and proof use white; Strength opens in ink with taupe lines; Breath opens and continues in warm beige. Stronger white/black contrast belongs deeper inside Strength. No cards, shadows, gradients or arbitrary decorative dividers.
 
-Self-hosted Noto Display carries heavy Hebrew headings; Noto Hebrew carries body and labels; Anton carries Latin wordmarks. Main title remains כוח לגוף. / מרחב לנשימה. Both chapter headings share 40–72px scale, line-height 1.1. All three normal testimonials use 18px / 400 / 1.85 with names at 13px bold. Only Ayala's short quote uses the 32–52px display scale.
+Self-hosted Noto Display carries heavy Hebrew headings; Noto Hebrew carries body and labels; Anton carries Latin wordmarks. Main title is הגוף מתחזק. / הנשימה משחררת. / החיים משתנים. The three-line Hero uses 36–56px mobile and up to 92px desktop; its illustrations stay clear of the longer headline. Both chapter headings share 40–72px scale, line-height 1.1. The children specialty uses 36–64px. All three normal testimonials use 18px / 400 / 1.85 with names at 13px bold. Only Ayala's short quote uses the 32–52px display scale.
 
 ## Story architecture
 
 1. Brand introduction: typography and current supporting copy, no photograph. Large cropped fragments of the angular and flowing line families enter from opposite edges and stay behind the headline.
 2. Two equal worlds: the Hero line families become small identifying signatures beside the exact title, description and text link. Strength stays compact/right-grounded; Breath is slightly more open and offset. Two desktop columns, stacked mobile. No preview photos or cards.
-3. Alina: the existing heart-hand portrait appears once, immediately with אני אלינה. and her exact personal copy on white. The short כוח אמיתי statement is a modest body pull quote, not a dark manifesto.
+3. Alina: the existing heart-hand portrait appears once, immediately with אני אלינה. and her supplied personal copy on white. The closing three-line statement is a modest body pull quote, not a dark manifesto.
 4. Strength: shared chapter opening → lifting photograph → detailed approach/principles/CTA → compact studio-video moment → three real horizontal-swipe testimonials on phones → standalone Ayala pull quote.
 5. Breath: clear warm-beige reset → shared chapter opening → one wooden-room photograph → detailed process/principles/CTA → quiet flowing-line closing. No person receiving treatment.
-6. Existing dark contact/footer with cropped MAMALINA wordmark.
+6. Independent white children-and-babies specialty: flowing signature, heading and three introductory paragraphs; a native read-more disclosure reveals the remaining supplied copy. No stock or invented treatment photograph.
+7. Existing dark contact/footer with Alina's warmer invitation and personal signoff, cropped MAMALINA wordmark and the brand line נשימה לחיים מאוזנים יותר.
 
 ## Shared chapter system
 
-Both service openings use chapter-opening: illustration → category → headline → support, followed by chapter-photo and program-copy. Strength category is אימוני כוח, headline לומדים לעבוד נכון. / מגלים כמה אתם חזקים.; brand name is not used as its eyebrow. Breath category is נשימה וריברסינג, headline מרחב לנשום., support לפעמים החוזק מתחיל דווקא בשחרור. Do not repeat these headings in detailed content.
+Both service openings use chapter-opening: illustration → category → headline, followed by chapter-photo and program-copy. Strength category is אימוני כוח, headline לא רק להרים יותר. / לגלות כמה אתם מסוגלים.; brand name is not used as its eyebrow. Breath category is נשימה וריברסינג, headline מרחב לנשום. / מקום לריפוי., support לפעמים הדרך לריפוי מתחילה בנשימה אחת. Do not repeat these headings in detailed content. Strength now has four supplied scan rows; Breath has three. Preserve the client PDF's first-person paragraphs verbatim.
 
 The three angular paths and three flowing paths are defined once as SVG symbols lines-strength and lines-breath. Large cropped fragments appear together in the Hero, with the lower flowing fragment lifted into the composition while remaining clear of the copy. The early choices then decode each language using much smaller, asymmetrically placed signatures; chapter entrances and the breath close reuse them contextually. These are thin abstract fragments, not logos or literal fitness/wellness icons. Dark Strength uses existing taupe strokes; light contexts use taupe-dark.
 
@@ -108,7 +109,7 @@ Header identity/structure unchanged. Initial heights 94/82/76/74px by breakpoint
 
 Exploration: גלו את אימוני הכוח / גלו את עולם הנשימה are underlined text links to #strength/#breath. Conversion: Strength לשיעור ניסיון; Breath למפגש נשימה; general שלחו לי הודעה. The final conversion copy explains in Alina's first-person voice that she will ask a few short questions and they will decide together what fits. WhatsApp opens directly at https://wa.me/972532831333. Instagram retains the supplied mamalinacenter URL. Location stays in contact only.
 
-Sticky WhatsApp remains at least 44px before safe-area padding, appears after choices, and uses IntersectionObserver guards to yield to contextual CTAs, the studio film, the testimonial swipe, the breath motion control, final conversion and footer. It hides immediately for interaction safety and returns smoothly after a short delay; the menu and mobile safe area remain respected. Video loads on activation and pauses offscreen. Breath motion remains optional, pauses when offscreen/hidden, and respects reduced-motion.
+Sticky WhatsApp remains at least 44px before safe-area padding, appears after choices, and uses IntersectionObserver guards to yield to contextual CTAs, the studio film, the testimonial swipe, the breath motion control, the children's read-more disclosure, final conversion and footer. It hides immediately for interaction safety and returns smoothly after a short delay; the menu and mobile safe area remain respected. Video loads on activation and pauses offscreen. Breath motion remains optional, pauses when offscreen/hidden, and respects reduced-motion. The children's disclosure is keyboard-operable and works without JavaScript; opening it tracks service_interest with children_breath.
 
 ## Evidence
 
