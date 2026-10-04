@@ -103,7 +103,7 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20261001-alina-brief" />
+    <link rel="stylesheet" href="./styles.css?v=20261004-retreat-live" />
     <!-- Google Analytics 4: aggregate traffic and on-site conversion events. -->
     <script
       async
@@ -541,6 +541,59 @@
         >בוואטסאפ<svg class="icon" aria-hidden="true">
           <use href="#icon-whatsapp" /></svg></span
     ></a>
-    <script src="./script.js?v=20261001-alina-brief" defer></script>
+    <button class="retreat-preview-launcher" type="button" data-retreat-open hidden>
+      ריטריט חצי יום · 10.11
+    </button>
+    <dialog class="retreat-popup" aria-labelledby="retreat-title" data-retreat-dialog>
+      <form method="dialog" class="retreat-close-form">
+        <button class="retreat-close" type="submit" aria-label="סגירת חלון הריטריט" autofocus>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18" />
+          </svg>
+        </button>
+      </form>
+      <div class="retreat-layout">
+        <div class="retreat-content">
+          <h2 id="retreat-title" tabindex="-1">ריטריט חצי יום<span>7 הצ׳אקרות</span></h2>
+          <p class="retreat-tagline">איזון · נשימה · חיים חדשים</p>
+          <p class="retreat-intro">כמה שעות לעצור את הרעש שבחוץ ולהפנות את המבט פנימה.</p>
+          <p class="retreat-description">שבע הצ׳אקרות, עבודה אישית, נשימה וריברסינג — עם כלים לתרגול גם בבית.</p>
+          <p class="retreat-audience">לנשים ולגברים. אין צורך בניסיון קודם.</p>
+          <dl class="retreat-details">
+            <div><dt>מתי</dt><dd><time datetime="2026-11-10">10 בנובמבר 2026</time></dd></div>
+            <div><dt>איפה</dt><dd>קיבוץ כפר סאלד</dd></div>
+            <div><dt>שעות</dt><dd>מתחילים ב־<bdi>09:30</bdi><small>סיום בסביבות <bdi>16:00–16:15</bdi></small></dd></div>
+            <div><dt>עלות</dt><dd><bdi>550 ₪</bdi> למשתתף</dd></div>
+          </dl>
+          <p class="retreat-included">כולל בראנץ׳, כיבוד, חוברת עבודה ותרגול להמשך בבית.</p>
+          <div class="retreat-actions">
+            <a class="retreat-register" href="https://docs.google.com/forms/d/e/1FAIpQLSdUUdqfFcUwMWgfEqvrENKaGlDnFgoiTwOiqnSZwWCSqltu6w/viewform?usp=header" target="_blank" rel="noopener noreferrer" aria-describedby="retreat-registration-note" data-retreat-registration>
+              אני רוצה להירשם לריטריט
+            </a>
+            <p id="retreat-registration-note" class="retreat-registration-note">מלאו ושלחו את הטופס, ואז חזרו לכאן לתשלום.</p>
+            <label class="retreat-confirmation">
+              <input type="checkbox" data-retreat-confirmed disabled aria-describedby="retreat-payment-note" />
+              <span>מילאתי ושלחתי את טופס ההרשמה</span>
+            </label>
+            <p id="retreat-payment-note" class="retreat-payment-note" aria-live="polite">פתחו את טופס ההרשמה כדי להמשיך.</p>
+            <div class="retreat-payments" role="group" aria-label="תשלום עבור הריטריט">
+              <a data-retreat-payment-url="https://links.payboxapp.com/9V7gTexrX6b" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־PayBox — נפתח בחלון חדש">
+                <span>לתשלום ב־<bdi lang="en">PayBox</bdi></span>
+                <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
+              </a>
+              <a data-retreat-payment-url="https://www.bitpay.co.il/app/share-info?i=BnGEWhSy&amp;j=true" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־bit — נפתח בחלון חדש">
+                <span>לתשלום ב־<bdi lang="en">bit</bdi></span>
+                <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <figure class="retreat-portrait">
+          <img src="./assets/images/alina-portrait-editorial.webp" alt="אלינה מחייכת ויוצרת לב עם הידיים" width="960" height="1280" loading="lazy" />
+          <figcaption>עם אלינה · <bdi lang="en">MamAlina Center</bdi></figcaption>
+        </figure>
+      </div>
+    </dialog>
+    <script src="./script.js?v=20261004-retreat-live" defer></script>
   </body>
 </html>

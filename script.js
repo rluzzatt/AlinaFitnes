@@ -205,6 +205,7 @@ function contactBarShouldShow() {
   return (
     mobileViewport.matches &&
     nav.hidden &&
+    !document.body.classList.contains("retreat-open") &&
     homepageOpeningPassed &&
     activeContactGuards.size === 0
   );
@@ -315,4 +316,98 @@ if ("IntersectionObserver" in window) {
   sectionLinks.forEach((link) =>
     navObserver.observe(document.getElementById(link.hash.slice(1))),
   );
+}
+
+// Workshop publication approved by the user after reviewing the local registration flow.
+const retreatPublished = true;
+const retreatRegistrationUrl = document.querySelector("[data-retreat-registration]")?.getAttribute("href") || "";
+const retreatLocalPreview = ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname);
+const retreatDialog = document.querySelector("[data-retreat-dialog]");
+const retreatLauncher = document.querySelector("[data-retreat-open]");
+const retreatSessionKey = "mamalina-retreat-2026-11-10-seen";
+let retreatReturnFocus = null;
+
+if (retreatDialog && (retreatLocalPreview || (retreatPublished && retreatRegistrationUrl))) {
+  retreatLauncher.hidden = false;
+
+  // Google Forms does not notify this static page on submit. The guest confirms submission.
+  const registrationLink = document.querySelector("[data-retreat-registration]");
+  const registrationConfirmed = document.querySelector("[data-retreat-confirmed]");
+  const paymentNote = document.querySelector("#retreat-payment-note");
+  const paymentLinks = [...document.querySelectorAll("[data-retreat-payment-url]")];
+  const openedKey = "mamalina-retreat-2026-11-10-form-opened";
+  const confirmedKey = "mamalina-retreat-2026-11-10-self-confirmed";
+  let registrationOpened = false;
+  try {
+    registrationOpened = sessionStorage.getItem(openedKey) === "1";
+    registrationConfirmed.checked = registrationOpened && sessionStorage.getItem(confirmedKey) === "1";
+  } catch { /* Keep the current page usable when storage is unavailable. */ }
+
+  const syncRetreatPayments = () => {
+    registrationConfirmed.disabled = !registrationOpened;
+    const unlocked = registrationOpened && registrationConfirmed.checked;
+    paymentLinks.forEach((link) => {
+      if (unlocked) link.href = link.dataset.retreatPaymentUrl;
+      else link.removeAttribute("href");
+      link.setAttribute("aria-disabled", String(!unlocked));
+      link.tabIndex = unlocked ? 0 : -1;
+    });
+    paymentNote.textContent = unlocked
+      ? "אפשר לבחור את אמצעי התשלום המתאים לכם."
+      : registrationOpened
+        ? "לאחר שליחת הטופס, סמנו את האישור כדי להמשיך לתשלום."
+        : "פתחו את טופס ההרשמה כדי להמשיך.";
+  };
+  registrationLink.addEventListener("click", () => {
+    registrationOpened = true;
+    try { sessionStorage.setItem(openedKey, "1"); } catch { /* No storage is required to proceed. */ }
+    syncRetreatPayments();
+  });
+  registrationConfirmed.addEventListener("change", () => {
+    try { sessionStorage.setItem(confirmedKey, String(registrationConfirmed.checked ? "1" : "0")); } catch { /* Keep the choice for this page only. */ }
+    syncRetreatPayments();
+  });
+  syncRetreatPayments();
+
+  const openRetreat = () => {
+    if (retreatDialog.open) return;
+    retreatReturnFocus = document.activeElement;
+    if (!nav.hidden) setNav(false);
+    videos.forEach((video) => video.pause());
+    document.body.classList.add("retreat-open");
+    retreatDialog.showModal();
+    retreatDialog.scrollTop = 0;
+    updateContactBar();
+    try { sessionStorage.setItem(retreatSessionKey, "1"); } catch { /* Preview also works without storage. */ }
+  };
+
+  retreatLauncher.addEventListener("click", openRetreat);
+  retreatDialog.addEventListener("close", () => {
+    document.body.classList.remove("retreat-open");
+    updateContactBar();
+    const target = retreatReturnFocus instanceof HTMLElement && retreatReturnFocus !== document.body
+      ? retreatReturnFocus
+      : retreatLauncher;
+    // Wait until the browser removes modal inertness and restores launcher visibility.
+    requestAnimationFrame(() => target.focus({ preventScroll: true }));
+  });
+  // Dismiss only when both ends of a pointer gesture are outside the dialog.
+  let retreatPointerStartedOutside = false;
+  const outsideRetreat = (event) => {
+    const rect = retreatDialog.getBoundingClientRect();
+    return event.clientX < rect.left || event.clientX > rect.right ||
+      event.clientY < rect.top || event.clientY > rect.bottom;
+  };
+  retreatDialog.addEventListener("pointerdown", (event) => {
+    retreatPointerStartedOutside = outsideRetreat(event);
+  });
+  retreatDialog.addEventListener("click", (event) => {
+    if (retreatPointerStartedOutside && outsideRetreat(event)) retreatDialog.close();
+    retreatPointerStartedOutside = false;
+  });
+
+  let retreatSeen = false;
+  try { retreatSeen = sessionStorage.getItem(retreatSessionKey) === "1"; } catch { /* Use the default when storage is unavailable. */ }
+  const forceRetreatPreview = retreatLocalPreview && new URLSearchParams(location.search).get("retreat") === "preview";
+  if (!retreatSeen || forceRetreatPreview) openRetreat();
 }
