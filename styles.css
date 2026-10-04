@@ -1439,6 +1439,7 @@ body.retreat-open {
   color: var(--ink);
   overflow: auto;
   overscroll-behavior: contain;
+  scroll-padding-top: 68px;
   scrollbar-color: var(--taupe-dark) var(--retreat-surface);
   scrollbar-width: thin;
 }
@@ -1448,13 +1449,14 @@ body.retreat-open {
 .retreat-close-form {
   position: sticky;
   top: 0;
-  height: 0;
+  height: 56px;
   margin: 0;
+  background: var(--retreat-surface);
   z-index: 2;
 }
 .retreat-close {
   position: absolute;
-  top: 12px;
+  top: 6px;
   inset-inline-start: 12px;
   display: grid;
   place-items: center;
@@ -1481,7 +1483,7 @@ body.retreat-open {
   grid-template-columns: minmax(0, 1.42fr) minmax(0, 1fr);
 }
 .retreat-content {
-  padding: 64px 40px 36px;
+  padding: 20px 40px 36px;
 }
 .retreat-content h2 {
   font-size: clamp(38px, 4.4vw, 58px);
@@ -1538,6 +1540,88 @@ body.retreat-open {
   margin-bottom: 24px;
   font-size: 14px;
   line-height: 1.75;
+}
+.retreat-full-description {
+  margin-bottom: 24px;
+}
+.retreat-full-description summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  padding-block: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+.retreat-full-description summary::-webkit-details-marker {
+  display: none;
+}
+.retreat-full-description summary span {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.retreat-full-description summary:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+.retreat-full-description summary .icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+.retreat-full-description[open] summary .icon {
+  transform: rotate(180deg);
+}
+.retreat-story {
+  padding-top: 20px;
+  font-size: 16px;
+  line-height: 1.85;
+}
+.retreat-story section + section {
+  margin-top: 40px;
+}
+.retreat-story h3 {
+  margin-bottom: 16px;
+  font-size: clamp(24px, 2.6vw, 30px);
+  line-height: 1.25;
+}
+.retreat-story h4 {
+  margin: 24px 0 12px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.retreat-story p {
+  margin-bottom: 16px;
+}
+.retreat-story section > :last-child {
+  margin-bottom: 0;
+}
+.retreat-story-tagline,
+.retreat-story-signoff {
+  font-weight: 700;
+}
+.retreat-schedule {
+  margin: 0;
+}
+.retreat-schedule > div {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 12px;
+  padding-block: 12px;
+}
+.retreat-schedule dt {
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.retreat-schedule dd {
+  margin: 0;
+}
+.retreat-schedule small {
+  display: block;
+  font-size: 14px;
 }
 .retreat-register {
   display: flex;
@@ -1621,7 +1705,10 @@ body.retreat-open {
   height: 18px;
 }
 .retreat-portrait {
-  position: relative;
+  position: sticky;
+  top: 56px;
+  align-self: start;
+  height: min(900px, calc(100dvh - 104px));
   min-width: 0;
   margin: 0;
   background: var(--taupe-light);
@@ -1672,6 +1759,8 @@ body.retreat-open {
     grid-template-columns: minmax(0, 1fr);
   }
   .retreat-portrait {
+    position: relative;
+    top: auto;
     grid-row: 1;
     height: 260px;
   }
@@ -1706,6 +1795,10 @@ body.retreat-open {
   }
   .retreat-details dd {
     font-size: 14px;
+  }
+  .retreat-schedule > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
   }
   .retreat-payments a {
     padding-inline: 12px;
