@@ -635,7 +635,7 @@
             </div>
           </details>
           <div class="retreat-actions">
-            <a class="retreat-register" href="https://docs.google.com/forms/d/e/1FAIpQLSdUUdqfFcUwMWgfEqvrENKaGlDnFgoiTwOiqnSZwWCSqltu6w/viewform?usp=header" target="_blank" rel="noopener noreferrer" aria-describedby="retreat-registration-note" data-retreat-registration>
+            <a class="retreat-register" href="https://docs.google.com/forms/d/e/1FAIpQLSdUUdqfFcUwMWgfEqvrENKaGlDnFgoiTwOiqnSZwWCSqltu6w/viewform?usp=header" target="_blank" rel="noopener noreferrer" aria-describedby="retreat-registration-note" data-retreat-registration data-retreat-analytics-event="retreat_form_click">
               כן, אני רוצה לשמור את המקום שלי
             </a>
             <p id="retreat-registration-note" class="retreat-registration-note">מלאו ושלחו את הטופס, ואז חזרו לכאן לתשלום.</p>
@@ -645,11 +645,11 @@
             </label>
             <p id="retreat-payment-note" class="retreat-payment-note" aria-live="polite">פתחו את טופס ההרשמה כדי להמשיך.</p>
             <div class="retreat-payments" role="group" aria-label="תשלום עבור הריטריט">
-              <a data-retreat-payment-url="https://links.payboxapp.com/9V7gTexrX6b" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־PayBox — נפתח בחלון חדש">
+              <a data-retreat-payment-url="https://links.payboxapp.com/9V7gTexrX6b" data-retreat-analytics-event="retreat_paybox_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־PayBox — נפתח בחלון חדש">
                 <span>לתשלום ב־<bdi lang="en">PayBox</bdi></span>
                 <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
               </a>
-              <a data-retreat-payment-url="https://www.bitpay.co.il/app/share-info?i=BnGEWhSy&amp;j=true" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־bit — נפתח בחלון חדש">
+              <a data-retreat-payment-url="https://www.bitpay.co.il/app/share-info?i=BnGEWhSy&amp;j=true" data-retreat-analytics-event="retreat_bit_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־bit — נפתח בחלון חדש">
                 <span>לתשלום ב־<bdi lang="en">bit</bdi></span>
                 <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
               </a>
@@ -662,6 +662,6 @@
         </figure>
       </div>
     </dialog>
-    <script src="./script.js?v=20261004-retreat-description" defer></script>
+    <script src="./script.js?v=20261014-retreat-analytics" defer></script>
   </body>
 </html>

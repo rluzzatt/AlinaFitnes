@@ -12,6 +12,7 @@ const trackAnalytics = (eventName, parameters = {}) => {
 };
 
 const linkLocation = (link) => {
+  if (link.closest("[data-retreat-dialog]")) return "retreat_dialog";
   if (link.matches("[data-mobile-contact]")) return "mobile_sticky";
   if (link.closest(".site-header")) return "header";
   if (link.closest(".service-choices")) return "service_selector";
@@ -29,6 +30,15 @@ document.addEventListener("click", (event) => {
 
   const href = link.getAttribute("href") || "";
   const location = linkLocation(link);
+  const retreatEvent = link.dataset.retreatAnalyticsEvent;
+  if (retreatEvent && link.getAttribute("aria-disabled") !== "true") {
+    trackAnalytics(retreatEvent, {
+      retreat_id: "seven_chakras_2026_11_10",
+      link_location: location,
+      link_url: link.href,
+    });
+  }
+
   let contactMethod = "";
   if (href.startsWith("https://wa.me/")) contactMethod = "whatsapp";
   else if (href.startsWith("tel:")) contactMethod = "phone";
