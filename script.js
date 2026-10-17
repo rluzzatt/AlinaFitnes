@@ -417,7 +417,7 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
     }
 
     const payload = new FormData(retreatRegistrationForm);
-    ["email", "city"].forEach((field) => {
+    ["email", "city", "age"].forEach((field) => {
       const value = String(payload.get(field) || "").trim();
       if (value) payload.set(field, value);
       else payload.delete(field);

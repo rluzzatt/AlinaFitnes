@@ -20,6 +20,10 @@ WhatsApp direct to +972532831333, without prefilled messages. The final invitati
 
 ## Evidence and constraints
 
+- Latest publication authorization (2026-10-17): after local review of the five-field form and star labels, the user explicitly asked to publish. Scope: name/mobile/email required with asterisks, age/city optional without extra label text, and a shared required-field explanation. Supersedes the local-review hold below. Participant confirmation emails remain separate, unconfigured work.
+
+- Latest agreed local form revision (2026-10-17): full name, mobile and email required; age and city optional. Age uses a positive whole number, with no date of birth or invented eligibility age limit. Empty age is omitted from intake. Participant confirmation email remains unconfigured; requiring email does not imply one is sent. Show this revision locally before publication.
+
 - Subsequent explicit approval on 2026-10-17 covers three popup changes: automatically open on each load/reload, add a full-width opener below the header retaining the floating opener, and remove the promotional clubhouse description while keeping the venue/parking facts. The native registration form is separate pending work and is not included in this release.
 
 - Latest popup behavior request (2026-10-17): open the retreat dialog on every page load/reload, including the same browser session. Preserve the visible launcher after dismissal so guests can reopen without reloading. This supersedes the earlier once-per-session rule. Approved and published in a0e2f6e; the native form remains separate pending work.
