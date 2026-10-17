@@ -103,7 +103,7 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20261004-retreat-description" />
+    <link rel="stylesheet" href="./styles.css?v=20261017-retreat-signup" />
     <!-- Google Analytics 4: aggregate traffic and on-site conversion events. -->
     <script
       async
@@ -551,21 +551,56 @@
             <path d="m6 6 12 12M18 6 6 18" />
           </svg>
         </button>
+        <a class="retreat-quick-register" href="#retreat-registration" data-retreat-analytics-event="retreat_signup_nav_click">הרשמה ותשלום</a>
+        <a class="retreat-quick-whatsapp" href="https://wa.me/972532831333" target="_blank" rel="noopener noreferrer" aria-label="שיחה עם אלינה בוואטסאפ — נפתח בחלון חדש" data-retreat-analytics-event="retreat_whatsapp_click">
+          <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp" /></svg>
+          וואטסאפ
+        </a>
       </form>
       <div class="retreat-layout">
         <div class="retreat-content">
-          <h2 id="retreat-title" tabindex="-1">יום ריטריט<span>7 הצ׳אקרות</span></h2>
+          <h2 id="retreat-title" tabindex="-1">יום לעצמכם בצפון<span>נשימה · 7 הצ׳אקרות</span></h2>
           <p class="retreat-tagline">איזון · נשימה · חיים חדשים</p>
-          <p class="retreat-intro">כמה שעות לעצור את הרעש שבחוץ ולהפנות את המבט פנימה.</p>
+          <p class="retreat-intro">יוצאים מהשגרה ליום בכפר סאלד, למרגלות הגולן. זמן לנשום, להקשיב לעצמכם ולחשוב מה תרצו לקחת לשנת 2027.</p>
           <p class="retreat-description">שבע הצ׳אקרות, עבודה אישית, נשימה וריברסינג — עם כלים לתרגול גם בבית.</p>
-          <p class="retreat-audience">לנשים ולגברים. אין צורך בניסיון קודם.</p>
+          <p class="retreat-description">ניפגש במועדון המשופץ של קיבוץ כפר סאלד — מרחב חם ומזמין בגליל העליון, מוקף דשא וצמחייה.</p>
+          <p class="retreat-audience">בהנחיית אלינה פאן, מטפלת בנשימה ובריברסינג.<br />לנשים ולגברים. אין צורך בניסיון קודם.</p>
           <dl class="retreat-details">
             <div><dt>מתי</dt><dd><time datetime="2026-11-10">10 בנובמבר 2026</time></dd></div>
-            <div><dt>איפה</dt><dd>קיבוץ כפר סאלד</dd></div>
+            <div><dt>איפה</dt><dd>מועדון קיבוץ כפר סאלד<small>חניה בשפע</small></dd></div>
             <div><dt>שעות</dt><dd>מתחילים ב־<bdi>09:30</bdi><small>סיום בסביבות <bdi>16:00–16:15</bdi></small></dd></div>
             <div><dt>עלות</dt><dd><bdi>550 ₪</bdi> למשתתף</dd></div>
           </dl>
           <p class="retreat-included">כולל בראנץ׳, כיבוד, חוברת עבודה ותרגול להמשך בבית.</p>
+          <section class="retreat-actions" id="retreat-registration" tabindex="-1" aria-labelledby="retreat-registration-title">
+            <h3 id="retreat-registration-title">הרשמה לריטריט</h3>
+            <p class="retreat-steps-intro">שני שלבים: שולחים את טופס ההרשמה, ואז משלמים <bdi>550 ₪</bdi>.</p>
+            <a class="retreat-register" href="https://docs.google.com/forms/d/e/1FAIpQLSdUUdqfFcUwMWgfEqvrENKaGlDnFgoiTwOiqnSZwWCSqltu6w/viewform?usp=header" target="_blank" rel="noopener noreferrer" aria-describedby="retreat-registration-note" data-retreat-registration data-retreat-analytics-event="retreat_form_click">
+              1. מילוי טופס ההרשמה
+            </a>
+            <p id="retreat-registration-note" class="retreat-registration-note">הטופס נפתח בחלון חדש. מלאו ושלחו אותו, ואז חזרו לכאן לתשלום.</p>
+            <h4 class="retreat-payment-heading">2. תשלום — <bdi>550 ₪</bdi></h4>
+            <label class="retreat-confirmation">
+              <input type="checkbox" data-retreat-confirmed disabled aria-describedby="retreat-payment-note" />
+              <span>מילאתי ושלחתי את טופס ההרשמה — להמשך לתשלום</span>
+            </label>
+            <p id="retreat-payment-note" class="retreat-payment-note" aria-live="polite">אפשרויות התשלום ייפתחו אחרי פתיחת הטופס ואישור ששלחתם אותו.</p>
+            <div class="retreat-payments" role="group" aria-label="תשלום עבור הריטריט">
+              <a data-retreat-payment-url="https://links.payboxapp.com/9V7gTexrX6b" data-retreat-analytics-event="retreat_paybox_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־PayBox — נפתח בחלון חדש">
+                <span>לתשלום ב־<bdi lang="en">PayBox</bdi></span>
+                <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
+              </a>
+              <a data-retreat-payment-url="https://www.bitpay.co.il/app/share-info?i=BnGEWhSy&amp;j=true" data-retreat-analytics-event="retreat_bit_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־bit — נפתח בחלון חדש">
+                <span>לתשלום ב־<bdi lang="en">bit</bdi></span>
+                <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
+              </a>
+            </div>
+            <p class="retreat-payment-completion">לאחר הבחירה, השלימו את התשלום באפליקציה.</p>
+            <a class="retreat-help" href="https://wa.me/972532831333" target="_blank" rel="noopener noreferrer" data-retreat-analytics-event="retreat_whatsapp_click">
+              <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp" /></svg>
+              שאלות או עזרה בהרשמה? דברו עם אלינה
+            </a>
+          </section>
           <details class="retreat-full-description">
             <summary>
               <span>לתיאור המלא ולוח הזמנים</span>
@@ -634,27 +669,7 @@
               </section>
             </div>
           </details>
-          <div class="retreat-actions">
-            <a class="retreat-register" href="https://docs.google.com/forms/d/e/1FAIpQLSdUUdqfFcUwMWgfEqvrENKaGlDnFgoiTwOiqnSZwWCSqltu6w/viewform?usp=header" target="_blank" rel="noopener noreferrer" aria-describedby="retreat-registration-note" data-retreat-registration data-retreat-analytics-event="retreat_form_click">
-              כן, אני רוצה לשמור את המקום שלי
-            </a>
-            <p id="retreat-registration-note" class="retreat-registration-note">מלאו ושלחו את הטופס, ואז חזרו לכאן לתשלום.</p>
-            <label class="retreat-confirmation">
-              <input type="checkbox" data-retreat-confirmed disabled aria-describedby="retreat-payment-note" />
-              <span>מילאתי ושלחתי את טופס ההרשמה</span>
-            </label>
-            <p id="retreat-payment-note" class="retreat-payment-note" aria-live="polite">פתחו את טופס ההרשמה כדי להמשיך.</p>
-            <div class="retreat-payments" role="group" aria-label="תשלום עבור הריטריט">
-              <a data-retreat-payment-url="https://links.payboxapp.com/9V7gTexrX6b" data-retreat-analytics-event="retreat_paybox_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־PayBox — נפתח בחלון חדש">
-                <span>לתשלום ב־<bdi lang="en">PayBox</bdi></span>
-                <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
-              </a>
-              <a data-retreat-payment-url="https://www.bitpay.co.il/app/share-info?i=BnGEWhSy&amp;j=true" data-retreat-analytics-event="retreat_bit_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־bit — נפתח בחלון חדש">
-                <span>לתשלום ב־<bdi lang="en">bit</bdi></span>
-                <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
-              </a>
-            </div>
-          </div>
+
         </div>
         <figure class="retreat-portrait">
           <img src="./assets/images/alina-portrait-editorial.webp" alt="אלינה מחייכת ויוצרת לב עם הידיים" width="960" height="1280" loading="lazy" />
@@ -662,6 +677,6 @@
         </figure>
       </div>
     </dialog>
-    <script src="./script.js?v=20261014-retreat-analytics" defer></script>
+    <script src="./script.js?v=20261017-retreat-signup" defer></script>
   </body>
 </html>

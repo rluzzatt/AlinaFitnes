@@ -366,7 +366,7 @@ if (retreatDialog && (retreatLocalPreview || (retreatPublished && retreatRegistr
       ? "אפשר לבחור את אמצעי התשלום המתאים לכם."
       : registrationOpened
         ? "לאחר שליחת הטופס, סמנו את האישור כדי להמשיך לתשלום."
-        : "פתחו את טופס ההרשמה כדי להמשיך.";
+        : "אפשרויות התשלום ייפתחו אחרי פתיחת הטופס ואישור ששלחתם אותו.";
   };
   registrationLink.addEventListener("click", () => {
     registrationOpened = true;
@@ -387,6 +387,7 @@ if (retreatDialog && (retreatLocalPreview || (retreatPublished && retreatRegistr
     document.body.classList.add("retreat-open");
     retreatDialog.showModal();
     retreatDialog.scrollTop = 0;
+    trackAnalytics("retreat_view", { retreat_id: "seven_chakras_2026_11_10" });
     updateContactBar();
     try { sessionStorage.setItem(retreatSessionKey, "1"); } catch { /* Preview also works without storage. */ }
   };

@@ -113,4 +113,6 @@ Sticky WhatsApp remains at least 44px before safe-area padding, appears after ch
 
 ## Evidence
 
+The 2026-10-17 retreat revision keeps the portrait, warm surface and long supplied story. The invitation now leads with יום לעצמכם בצפון and a smaller breath/chakra subtitle. A sticky 56px toolbar contains close, registration anchor and direct WhatsApp; all controls have at least 44px targets. The two-step Form/payment section precedes the full-story disclosure, with readable helper copy and a second WhatsApp invitation. Existing self-confirmation behavior remains explicit. The user reviewed the local preview and explicitly approved publication on 2026-10-17.
+
 Real user-supplied testimonials only: הגר שמיר בוכריץ, נועה בנישו, לילך דושי, איילה לפידות. All relate to Strength and now complete that chapter before Breath begins. On phones the three long quotes use an RTL scroll-snap track with one dominant quote and a next-quote peek; Ayala remains outside it. Never restore earlier placeholders or invent Breath testimonials. Older dated reviews are historical, not current layout instructions.

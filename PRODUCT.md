@@ -20,6 +20,10 @@ WhatsApp direct to +972532831333, without prefilled messages. The final invitati
 
 ## Evidence and constraints
 
+- Current authorization (2026-10-17): the user reviewed the local retreat preview, then explicitly approved publishing it (מאושר! תעלה ללייב). Commit, push and publish this reviewed retreat revision; this supersedes the local-review hold for these changes.
+- User-confirmed retreat venue (2026-10-17): the renovated kibbutz clubhouse in Kfar Szold, a warm and welcoming space surrounded by lawns and vegetation in the Upper Galilee, with ample parking. No street address was supplied. Shared transport is unconfirmed. Alina is an experienced breathwork therapist; no publishable breathwork participant testimonials are available. Do not invent credentials, years of practice, testimonials, a nature excursion or transport services.
+- The October 17 local retreat refinement adds a persistent registration shortcut and direct WhatsApp contact within the dialog, introduces the retreat as a day for yourself in the north, and makes the two-step Form/payment sequence explicit before the long description. Form submission remains self-declared, and payment clicks are not verified purchases. Keep all five story sections and ten schedule rows intact.
+
 - User supplied Alina's heart-hand portrait, two training-space views and one wooden clinic viewpoint. Originals and edited versions remain in assets/images, but the static studio views are intentionally unlinked and only one room photograph appears on the page. Do not invent new premises or show people receiving breathwork. The existing barbell photograph belongs to Strength.
 - The only active video is the24-second studio-space-tour.mp4. Training reel/equipment tour remain archived and unlinked by request.
 - Four real client quotes supplied by the user, all Strength: הגר שמיר בוכריץ, נועה בנישו, לילך דושי, איילה לפידות. Preserve exact shortened website versions. The prior three quotes were fake placeholders and must not return.

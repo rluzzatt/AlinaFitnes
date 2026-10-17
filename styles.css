@@ -1449,11 +1449,33 @@ body.retreat-open {
 .retreat-close-form {
   position: sticky;
   top: 0;
-  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 56px;
+  padding: 6px 12px;
+  padding-inline-start: 68px;
   margin: 0;
   background: var(--retreat-surface);
   z-index: 2;
 }
+.retreat-close-form a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.retreat-quick-register {
+  background: var(--ink);
+  color: var(--paper);
+}
+.retreat-quick-register:hover { background: var(--taupe-dark); }
+.retreat-quick-whatsapp { text-decoration: underline; text-underline-offset: 4px; }
+.retreat-quick-whatsapp .icon { width: 20px; height: 20px; }
 .retreat-close {
   position: absolute;
   top: 6px;
@@ -1491,6 +1513,9 @@ body.retreat-open {
 }
 .retreat-content h2 span {
   display: block;
+  margin-top: 8px;
+  font-size: 0.65em;
+  line-height: 1.25;
   color: var(--taupe-dark);
 }
 .retreat-tagline {
@@ -1635,6 +1660,12 @@ body.retreat-open {
   color: var(--paper);
   font-weight: 700;
 }
+.retreat-actions { margin-block: 28px 24px; scroll-margin-top: 12px; }
+.retreat-actions h3 { margin-bottom: 8px; font-size: 26px; line-height: 1.3; }
+.retreat-steps-intro { margin-bottom: 16px; font-size: 15px; line-height: 1.7; }
+.retreat-payment-heading { margin: 24px 0 8px; font-size: 18px; }
+.retreat-actions:focus { outline: none; }
+.retreat-actions:focus-visible { outline: 3px solid var(--ink); outline-offset: 6px; }
 .retreat-register:disabled {
   background: transparent;
   color: var(--muted);
@@ -1645,7 +1676,7 @@ body.retreat-open {
 }
 .retreat-registration-note {
   margin: 6px 0 18px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   text-align: center;
 }
@@ -1653,6 +1684,8 @@ body.retreat-open {
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  min-height: 44px;
+  padding-block: 10px;
   font-size: 14px;
   cursor: pointer;
 }
@@ -1667,11 +1700,26 @@ body.retreat-open {
   color: var(--muted);
   cursor: default;
 }
+.retreat-confirmation input:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 .retreat-payment-note {
   margin: 6px 0 16px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
 }
+.retreat-payment-completion { margin-top: 10px; font-size: 14px; color: var(--muted); }
+.retreat-help {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  margin-top: 16px;
+  padding-block: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.retreat-help .icon { flex: none; width: 22px; height: 22px; }
 .retreat-payments {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1751,6 +1799,9 @@ body.retreat-open {
   bottom: calc(80px + env(safe-area-inset-bottom));
 }
 @media (max-width: 700px) {
+  .retreat-close-form { gap: 4px; padding-inline-end: 6px; padding-inline-start: 58px; }
+  .retreat-close { inset-inline-start: 6px; }
+  .retreat-close-form a { padding-inline: 8px; font-size: 13px; gap: 5px; }
   .retreat-popup {
     width: calc(100vw - 24px);
     max-height: calc(100dvh - 24px);
