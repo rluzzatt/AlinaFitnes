@@ -103,7 +103,7 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20261017-retreat-signup" />
+    <link rel="stylesheet" href="./styles.css?v=20261017-retreat-openers" />
     <!-- Google Analytics 4: aggregate traffic and on-site conversion events. -->
     <script
       async
@@ -220,6 +220,10 @@
         ><a href="#contact">צור קשר</a>
       </nav>
     </header>
+    <button class="retreat-top-launcher" type="button" data-retreat-open aria-haspopup="dialog" aria-controls="retreat-dialog" hidden>
+      <span>ריטריט יום בצפון · <bdi>10.11</bdi></span>
+      <span class="retreat-top-action">לפרטים ולהרשמה<svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg></span>
+    </button>
     <main id="main" tabindex="-1">
       <section class="hero homepage-hero" id="top" aria-labelledby="hero-title">
         <div class="hero-stage">
@@ -541,10 +545,10 @@
         >בוואטסאפ<svg class="icon" aria-hidden="true">
           <use href="#icon-whatsapp" /></svg></span
     ></a>
-    <button class="retreat-preview-launcher" type="button" data-retreat-open hidden>
+    <button class="retreat-preview-launcher" type="button" data-retreat-open aria-haspopup="dialog" aria-controls="retreat-dialog" hidden>
       יום ריטריט · 10.11
     </button>
-    <dialog class="retreat-popup" aria-labelledby="retreat-title" data-retreat-dialog>
+    <dialog class="retreat-popup" id="retreat-dialog" aria-labelledby="retreat-title" data-retreat-dialog>
       <form method="dialog" class="retreat-close-form">
         <button class="retreat-close" type="submit" aria-label="סגירת חלון הריטריט" autofocus>
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -563,7 +567,6 @@
           <p class="retreat-tagline">איזון · נשימה · חיים חדשים</p>
           <p class="retreat-intro">יוצאים מהשגרה ליום בכפר סאלד, למרגלות הגולן. זמן לנשום, להקשיב לעצמכם ולחשוב מה תרצו לקחת לשנת 2027.</p>
           <p class="retreat-description">שבע הצ׳אקרות, עבודה אישית, נשימה וריברסינג — עם כלים לתרגול גם בבית.</p>
-          <p class="retreat-description">ניפגש במועדון המשופץ של קיבוץ כפר סאלד — מרחב חם ומזמין בגליל העליון, מוקף דשא וצמחייה.</p>
           <p class="retreat-audience">בהנחיית אלינה פאן, מטפלת בנשימה ובריברסינג.<br />לנשים ולגברים. אין צורך בניסיון קודם.</p>
           <dl class="retreat-details">
             <div><dt>מתי</dt><dd><time datetime="2026-11-10">10 בנובמבר 2026</time></dd></div>
@@ -677,6 +680,6 @@
         </figure>
       </div>
     </dialog>
-    <script src="./script.js?v=20261017-retreat-signup" defer></script>
+    <script src="./script.js?v=20261017-retreat-openers" defer></script>
   </body>
 </html>

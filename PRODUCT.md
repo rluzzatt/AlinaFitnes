@@ -20,6 +20,8 @@ WhatsApp direct to +972532831333, without prefilled messages. The final invitati
 
 ## Evidence and constraints
 
+- Subsequent explicit approval on 2026-10-17 covers three popup changes: automatically open on each load/reload, add a full-width opener below the header retaining the floating opener, and remove the promotional clubhouse description while keeping the venue/parking facts. The native registration form is separate pending work and is not included in this release.
+
 - Current authorization (2026-10-17): the user reviewed the local retreat preview, then explicitly approved publishing it (מאושר! תעלה ללייב). Commit, push and publish this reviewed retreat revision; this supersedes the local-review hold for these changes.
 - User-confirmed retreat venue (2026-10-17): the renovated kibbutz clubhouse in Kfar Szold, a warm and welcoming space surrounded by lawns and vegetation in the Upper Galilee, with ample parking. No street address was supplied. Shared transport is unconfirmed. Alina is an experienced breathwork therapist; no publishable breathwork participant testimonials are available. Do not invent credentials, years of practice, testimonials, a nature excursion or transport services.
 - The October 17 local retreat refinement adds a persistent registration shortcut and direct WhatsApp contact within the dialog, introduces the retreat as a day for yourself in the north, and makes the two-step Form/payment sequence explicit before the long description. Form submission remains self-declared, and payment clicks are not verified purchases. Keep all five story sections and ten schedule rows intact.

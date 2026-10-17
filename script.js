@@ -333,12 +333,12 @@ const retreatPublished = true;
 const retreatRegistrationUrl = document.querySelector("[data-retreat-registration]")?.getAttribute("href") || "";
 const retreatLocalPreview = ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname);
 const retreatDialog = document.querySelector("[data-retreat-dialog]");
-const retreatLauncher = document.querySelector("[data-retreat-open]");
-const retreatSessionKey = "mamalina-retreat-2026-11-10-seen";
+const retreatLauncher = document.querySelector(".retreat-preview-launcher");
+const retreatLaunchers = [...document.querySelectorAll("[data-retreat-open]")];
 let retreatReturnFocus = null;
 
 if (retreatDialog && (retreatLocalPreview || (retreatPublished && retreatRegistrationUrl))) {
-  retreatLauncher.hidden = false;
+  retreatLaunchers.forEach((button) => { button.hidden = false; });
 
   // Google Forms does not notify this static page on submit. The guest confirms submission.
   const registrationLink = document.querySelector("[data-retreat-registration]");
@@ -389,10 +389,9 @@ if (retreatDialog && (retreatLocalPreview || (retreatPublished && retreatRegistr
     retreatDialog.scrollTop = 0;
     trackAnalytics("retreat_view", { retreat_id: "seven_chakras_2026_11_10" });
     updateContactBar();
-    try { sessionStorage.setItem(retreatSessionKey, "1"); } catch { /* Preview also works without storage. */ }
   };
 
-  retreatLauncher.addEventListener("click", openRetreat);
+  retreatLaunchers.forEach((button) => button.addEventListener("click", openRetreat));
   retreatDialog.addEventListener("close", () => {
     document.body.classList.remove("retreat-open");
     updateContactBar();
@@ -417,8 +416,6 @@ if (retreatDialog && (retreatLocalPreview || (retreatPublished && retreatRegistr
     retreatPointerStartedOutside = false;
   });
 
-  let retreatSeen = false;
-  try { retreatSeen = sessionStorage.getItem(retreatSessionKey) === "1"; } catch { /* Use the default when storage is unavailable. */ }
-  const forceRetreatPreview = retreatLocalPreview && new URLSearchParams(location.search).get("retreat") === "preview";
-  if (!retreatSeen || forceRetreatPreview) openRetreat();
+  // Keep the event discoverable on every page load, including reloads in the same tab.
+  openRetreat();
 }
