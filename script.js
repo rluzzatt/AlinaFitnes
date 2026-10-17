@@ -426,6 +426,10 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
     payload.set("registration_id", registrationId);
     payload.set("amount_ils", "550");
     // Do not send personal information to analytics or put it in a URL.
+    if (!localTest) trackAnalytics("retreat_registration_submit", {
+      retreat_id: "seven_chakras_2026_11_10",
+      link_location: "retreat_dialog",
+    });
     submitting = true;
     fields.disabled = true;
     retreatRegistrationForm.setAttribute("aria-busy", "true");
@@ -446,7 +450,10 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
       formStatus.textContent = "";
       showRetreatPayments(true);
       success.focus();
-      if (!localTest) trackAnalytics("retreat_registration_received", { retreat_id: "seven_chakras_2026_11_10" });
+      if (!localTest) trackAnalytics("retreat_registration_received", {
+        retreat_id: "seven_chakras_2026_11_10",
+        link_location: "retreat_dialog",
+      });
     } catch {
       formStatus.textContent = "לא התקבל אישור שהפרטים נקלטו. הפרטים נשארו בטופס; אפשר לנסות שוב או לפנות לאלינה בוואטסאפ לעזרה.";
       formStatus.focus();
@@ -483,6 +490,7 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
   };
 
   retreatLaunchers.forEach((button) => button.addEventListener("click", openRetreat));
+  retreatDialog.querySelector("[data-retreat-close]").addEventListener("click", () => retreatDialog.close());
   retreatDialog.addEventListener("close", () => {
     document.body.classList.remove("retreat-open");
     updateContactBar();

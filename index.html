@@ -549,8 +549,8 @@
       יום ריטריט · 10.11
     </button>
     <dialog class="retreat-popup" id="retreat-dialog" aria-labelledby="retreat-title" data-retreat-dialog>
-      <form method="dialog" class="retreat-close-form">
-        <button class="retreat-close" type="submit" aria-label="סגירת חלון הריטריט" autofocus>
+      <div class="retreat-close-form">
+        <button class="retreat-close" type="button" data-retreat-close aria-label="סגירת חלון הריטריט" autofocus>
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="m6 6 12 12M18 6 6 18" />
           </svg>
@@ -560,7 +560,7 @@
           <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp" /></svg>
           וואטסאפ
         </a>
-      </form>
+      </div>
       <div class="retreat-layout">
         <div class="retreat-content">
           <h2 id="retreat-title" tabindex="-1">יום לעצמכם בצפון<span>נשימה · 7 הצ׳אקרות</span></h2>
@@ -579,7 +579,7 @@
             <h3 id="retreat-registration-title">הרשמה לריטריט</h3>
             <p class="retreat-steps-intro">משאירים פרטים כאן וממשיכים לתשלום <bdi>550 ₪</bdi> ב־<bdi lang="en">bit</bdi> או ב־<bdi lang="en">PayBox</bdi>.</p>
             <p class="retreat-form-preview" data-retreat-form-preview hidden>תצוגה מקומית לבדיקה. חיבור קבלת ההרשמות עדיין בהכנה; הפרטים לא יישלחו.</p>
-            <form class="retreat-form" method="post" data-retreat-registration-form data-registration-endpoint="https://formspree.io/f/xqpenkdp" aria-describedby="retreat-required-note retreat-privacy-note">
+            <form id="retreat-registration-form" class="retreat-form" method="post" data-retreat-registration-form data-registration-endpoint="https://formspree.io/f/xqpenkdp" aria-describedby="retreat-required-note retreat-privacy-note">
               <fieldset data-retreat-fields disabled>
                 <legend class="sr-only">פרטים להרשמה לריטריט</legend>
                 <p class="retreat-required-note" id="retreat-required-note">* שדה חובה</p>
@@ -711,6 +711,6 @@
         </figure>
       </div>
     </dialog>
-    <script src="./script.js?v=20261017-retreat-fields" defer></script>
+    <script src="./script.js?v=20261017-retreat-analytics" defer></script>
   </body>
 </html>
