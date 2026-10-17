@@ -7,6 +7,7 @@ const motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
 
 // Keep analytics event names stable so Alina can compare engagement over time.
 const trackAnalytics = (eventName, parameters = {}) => {
+  if (["localhost", "127.0.0.1", "[::1]"].includes(location.hostname)) return;
   if (typeof window.gtag !== "function") return;
   window.gtag("event", eventName, parameters);
 };
@@ -330,54 +331,144 @@ if ("IntersectionObserver" in window) {
 
 // Workshop publication approved by the user after reviewing the local registration flow.
 const retreatPublished = true;
-const retreatRegistrationUrl = document.querySelector("[data-retreat-registration]")?.getAttribute("href") || "";
+const retreatRegistrationForm = document.querySelector("[data-retreat-registration-form]");
 const retreatLocalPreview = ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname);
 const retreatDialog = document.querySelector("[data-retreat-dialog]");
 const retreatLauncher = document.querySelector(".retreat-preview-launcher");
 const retreatLaunchers = [...document.querySelectorAll("[data-retreat-open]")];
 let retreatReturnFocus = null;
 
-if (retreatDialog && (retreatLocalPreview || (retreatPublished && retreatRegistrationUrl))) {
+if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatPublished)) {
   retreatLaunchers.forEach((button) => { button.hidden = false; });
 
-  // Google Forms does not notify this static page on submit. The guest confirms submission.
-  const registrationLink = document.querySelector("[data-retreat-registration]");
-  const registrationConfirmed = document.querySelector("[data-retreat-confirmed]");
-  const paymentNote = document.querySelector("#retreat-payment-note");
+  // Only a successful registration-service response unlocks payment. No personal data is persisted locally.
+  const fields = retreatRegistrationForm.querySelector("[data-retreat-fields]");
+  const submitButton = retreatRegistrationForm.querySelector("[data-retreat-submit]");
+  const formStatus = retreatRegistrationForm.querySelector("[data-retreat-form-status]");
+  const success = retreatDialog.querySelector("[data-retreat-registration-success]");
+  const paymentStage = retreatDialog.querySelector("[data-retreat-payment-stage]");
+  const previewNote = retreatDialog.querySelector("[data-retreat-form-preview]");
+  const nameInput = retreatRegistrationForm.elements.namedItem("full_name");
+  const phoneInput = retreatRegistrationForm.elements.namedItem("phone");
+  const phoneError = retreatRegistrationForm.querySelector("[data-retreat-phone-error]");
   const paymentLinks = [...document.querySelectorAll("[data-retreat-payment-url]")];
-  const openedKey = "mamalina-retreat-2026-11-10-form-opened";
-  const confirmedKey = "mamalina-retreat-2026-11-10-self-confirmed";
-  let registrationOpened = false;
-  try {
-    registrationOpened = sessionStorage.getItem(openedKey) === "1";
-    registrationConfirmed.checked = registrationOpened && sessionStorage.getItem(confirmedKey) === "1";
-  } catch { /* Keep the current page usable when storage is unavailable. */ }
+  const endpoint = (retreatRegistrationForm.dataset.registrationEndpoint || "").trim();
+  const localTest = retreatLocalPreview && /^\/\.qa\/registration-test\/(success|reject|invalid|delay)$/.test(endpoint);
+  const configured = /^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(endpoint) || localTest;
+  const previewOnly = retreatLocalPreview && !localTest;
+  const receiptKey = "mamalina-retreat-2026-11-10-received-v1";
+  let submitting = false;
+  let registrationId = crypto.randomUUID();
+  formStatus.tabIndex = -1;
+  fields.disabled = !configured && !retreatLocalPreview;
+  previewNote.hidden = !retreatLocalPreview;
+  if (localTest) previewNote.textContent = "תצוגת בדיקה מקומית בלבד. הפרטים אינם נשלחים לאלינה ולא מתבצעת הרשמה אמיתית.";
+  else if (previewOnly) previewNote.textContent = "תצוגה מקומית לבדיקה בלבד. להרשמה יש להשתמש בטופס באתר החי.";
+  if (!configured && !retreatLocalPreview) {
+    formStatus.textContent = "ההרשמה בטופס אינה זמינה כרגע. אפשר לפנות לאלינה בוואטסאפ שבהמשך.";
+  }
 
-  const syncRetreatPayments = () => {
-    registrationConfirmed.disabled = !registrationOpened;
-    const unlocked = registrationOpened && registrationConfirmed.checked;
+  const showRetreatPayments = (unlocked) => {
+    retreatRegistrationForm.hidden = unlocked;
+    success.hidden = !unlocked;
+    paymentStage.hidden = !unlocked;
     paymentLinks.forEach((link) => {
       if (unlocked) link.href = link.dataset.retreatPaymentUrl;
       else link.removeAttribute("href");
       link.setAttribute("aria-disabled", String(!unlocked));
       link.tabIndex = unlocked ? 0 : -1;
     });
-    paymentNote.textContent = unlocked
-      ? "אפשר לבחור את אמצעי התשלום המתאים לכם."
-      : registrationOpened
-        ? "לאחר שליחת הטופס, סמנו את האישור כדי להמשיך לתשלום."
-        : "אפשרויות התשלום ייפתחו אחרי פתיחת הטופס ואישור ששלחתם אותו.";
   };
-  registrationLink.addEventListener("click", () => {
-    registrationOpened = true;
-    try { sessionStorage.setItem(openedKey, "1"); } catch { /* No storage is required to proceed. */ }
-    syncRetreatPayments();
+  if (localTest) {
+    success.querySelector("h4").textContent = "בדיקת הטופס הושלמה. לא בוצעה הרשמה אמיתית.";
+  }
+  let restoredReceipt = false;
+  if (configured && !previewOnly) {
+    try {
+      const receipt = JSON.parse(sessionStorage.getItem(receiptKey) || "null");
+      restoredReceipt = receipt?.endpoint === endpoint && typeof receipt.registrationId === "string";
+    } catch { /* Submission and payment also work without session storage. */ }
+  }
+  showRetreatPayments(restoredReceipt);
+
+  [nameInput, phoneInput].forEach((input) => input.addEventListener("input", () => {
+    input.setCustomValidity("");
+    input.removeAttribute("aria-invalid");
+    if (input === phoneInput) phoneError.hidden = true;
+  }));
+
+  retreatRegistrationForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (submitting) return;
+    nameInput.value = nameInput.value.trim();
+    phoneInput.value = phoneInput.value.trim();
+    if (!nameInput.value) nameInput.setCustomValidity("הזינו שם מלא.");
+    const phoneDigits = phoneInput.value.replace(/\D/g, "");
+    if (!/^[+\d\s().-]+$/.test(phoneInput.value) || phoneDigits.length < 8 || phoneDigits.length > 15) {
+      phoneInput.setCustomValidity("הזינו מספר טלפון תקין, כולל קידומת.");
+      phoneInput.setAttribute("aria-invalid", "true");
+      phoneError.hidden = false;
+    }
+    if (!retreatRegistrationForm.reportValidity()) return;
+    if (!configured || previewOnly) {
+      formStatus.textContent = "זו תצוגה מקומית בלבד. הפרטים לא נשלחו; להרשמה יש לפתוח את האתר החי.";
+      formStatus.focus();
+      return;
+    }
+
+    const payload = new FormData(retreatRegistrationForm);
+    ["email", "city"].forEach((field) => {
+      const value = String(payload.get(field) || "").trim();
+      if (value) payload.set(field, value);
+      else payload.delete(field);
+    });
+    payload.set("retreat", "7 הצ׳אקרות | 10.11.2026 | כפר סאלד");
+    payload.set("registration_id", registrationId);
+    payload.set("amount_ils", "550");
+    // Do not send personal information to analytics or put it in a URL.
+    submitting = true;
+    fields.disabled = true;
+    retreatRegistrationForm.setAttribute("aria-busy", "true");
+    submitButton.textContent = "שולחים את הפרטים…";
+    formStatus.textContent = "ממתינים לאישור קבלת הפרטים…";
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST", body: payload, headers: { Accept: "application/json" }, signal: controller.signal,
+      });
+      const result = await response.json();
+      if (!response.ok || result.ok !== true) throw new Error("Registration was not acknowledged");
+      try {
+        sessionStorage.setItem(receiptKey, JSON.stringify({ endpoint, registrationId }));
+      } catch { /* Keep the successful registration usable without storage. */ }
+      retreatRegistrationForm.reset();
+      formStatus.textContent = "";
+      showRetreatPayments(true);
+      success.focus();
+      if (!localTest) trackAnalytics("retreat_registration_received", { retreat_id: "seven_chakras_2026_11_10" });
+    } catch {
+      formStatus.textContent = "לא התקבל אישור שהפרטים נקלטו. הפרטים נשארו בטופס; אפשר לנסות שוב או לפנות לאלינה בוואטסאפ לעזרה.";
+      formStatus.focus();
+    } finally {
+      clearTimeout(timeout);
+      submitting = false;
+      fields.disabled = false;
+      retreatRegistrationForm.removeAttribute("aria-busy");
+      submitButton.textContent = "שליחת פרטים והמשך לתשלום";
+    }
   });
-  registrationConfirmed.addEventListener("change", () => {
-    try { sessionStorage.setItem(confirmedKey, String(registrationConfirmed.checked ? "1" : "0")); } catch { /* Keep the choice for this page only. */ }
-    syncRetreatPayments();
+
+  retreatDialog.querySelector("[data-retreat-add-person]").addEventListener("click", () => {
+    try { sessionStorage.removeItem(receiptKey); } catch { /* No storage is required to restart. */ }
+    registrationId = crypto.randomUUID();
+    retreatRegistrationForm.reset();
+    formStatus.textContent = "";
+    phoneError.hidden = true;
+    [nameInput, phoneInput].forEach((input) => { input.setCustomValidity(""); input.removeAttribute("aria-invalid"); });
+    showRetreatPayments(false);
+    nameInput.focus();
   });
-  syncRetreatPayments();
 
   const openRetreat = () => {
     if (retreatDialog.open) return;

@@ -103,7 +103,7 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20261017-retreat-openers" />
+    <link rel="stylesheet" href="./styles.css?v=20261017-retreat-registration" />
     <!-- Google Analytics 4: aggregate traffic and on-site conversion events. -->
     <script
       async
@@ -577,17 +577,41 @@
           <p class="retreat-included">כולל בראנץ׳, כיבוד, חוברת עבודה ותרגול להמשך בבית.</p>
           <section class="retreat-actions" id="retreat-registration" tabindex="-1" aria-labelledby="retreat-registration-title">
             <h3 id="retreat-registration-title">הרשמה לריטריט</h3>
-            <p class="retreat-steps-intro">שני שלבים: שולחים את טופס ההרשמה, ואז משלמים <bdi>550 ₪</bdi>.</p>
-            <a class="retreat-register" href="https://docs.google.com/forms/d/e/1FAIpQLSdUUdqfFcUwMWgfEqvrENKaGlDnFgoiTwOiqnSZwWCSqltu6w/viewform?usp=header" target="_blank" rel="noopener noreferrer" aria-describedby="retreat-registration-note" data-retreat-registration data-retreat-analytics-event="retreat_form_click">
-              1. מילוי טופס ההרשמה
-            </a>
-            <p id="retreat-registration-note" class="retreat-registration-note">הטופס נפתח בחלון חדש. מלאו ושלחו אותו, ואז חזרו לכאן לתשלום.</p>
-            <h4 class="retreat-payment-heading">2. תשלום — <bdi>550 ₪</bdi></h4>
-            <label class="retreat-confirmation">
-              <input type="checkbox" data-retreat-confirmed disabled aria-describedby="retreat-payment-note" />
-              <span>מילאתי ושלחתי את טופס ההרשמה — להמשך לתשלום</span>
-            </label>
-            <p id="retreat-payment-note" class="retreat-payment-note" aria-live="polite">אפשרויות התשלום ייפתחו אחרי פתיחת הטופס ואישור ששלחתם אותו.</p>
+            <p class="retreat-steps-intro">משאירים פרטים כאן וממשיכים לתשלום <bdi>550 ₪</bdi> ב־<bdi lang="en">bit</bdi> או ב־<bdi lang="en">PayBox</bdi>.</p>
+            <p class="retreat-form-preview" data-retreat-form-preview hidden>תצוגה מקומית לבדיקה. חיבור קבלת ההרשמות עדיין בהכנה; הפרטים לא יישלחו.</p>
+            <form class="retreat-form" method="post" data-retreat-registration-form data-registration-endpoint="https://formspree.io/f/xqpenkdp" aria-describedby="retreat-privacy-note">
+              <fieldset data-retreat-fields disabled>
+                <legend class="sr-only">פרטים להרשמה לריטריט</legend>
+                <div class="retreat-form-fields">
+                  <div class="retreat-field">
+                    <label for="retreat-name">שם מלא <span>(חובה)</span></label>
+                    <input id="retreat-name" name="full_name" autocomplete="name" required maxlength="100" />
+                  </div>
+                  <div class="retreat-field">
+                    <label for="retreat-phone">טלפון נייד <span>(חובה)</span></label>
+                    <input id="retreat-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required maxlength="25" aria-describedby="retreat-phone-error" />
+                    <span id="retreat-phone-error" class="retreat-field-error" data-retreat-phone-error hidden>הזינו מספר טלפון תקין, כולל קידומת.</span>
+                  </div>
+                  <div class="retreat-field">
+                    <label for="retreat-email">אימייל <span>(לא חובה)</span></label>
+                    <input id="retreat-email" name="email" type="email" autocomplete="email" dir="ltr" maxlength="254" />
+                  </div>
+                  <div class="retreat-field">
+                    <label for="retreat-city">מאיפה מגיעים? <span>(לא חובה)</span></label>
+                    <input id="retreat-city" name="city" autocomplete="address-level2" maxlength="100" />
+                  </div>
+                </div>
+                <p id="retreat-privacy-note" class="retreat-privacy-note">הפרטים יישמרו בשירות <bdi lang="en">Formspree</bdi> ויועברו לאלינה לצורך ההרשמה ויצירת קשר בנוגע לריטריט. <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">מדיניות הפרטיות של השירות</a>.</p>
+                <button class="retreat-register" type="submit" data-retreat-submit>שליחת פרטים והמשך לתשלום</button>
+              </fieldset>
+              <p class="retreat-form-status" role="status" aria-live="polite" aria-atomic="true" data-retreat-form-status></p>
+            </form>
+            <noscript><p>כדי למלא את הטופס יש להפעיל JavaScript בדפדפן. אפשר גם לפנות לאלינה בוואטסאפ לעזרה בהרשמה.</p></noscript>
+            <div class="retreat-registration-success" data-retreat-registration-success tabindex="-1" hidden>
+              <h4>הפרטים התקבלו. ממשיכים לתשלום.</h4>
+              <p>להשלמת ההרשמה, בחרו אמצעי תשלום והעבירו <bdi>550 ₪</bdi> עבור משתתף.</p>
+            </div>
+            <div class="retreat-payment-stage" data-retreat-payment-stage hidden>
             <div class="retreat-payments" role="group" aria-label="תשלום עבור הריטריט">
               <a data-retreat-payment-url="https://links.payboxapp.com/9V7gTexrX6b" data-retreat-analytics-event="retreat_paybox_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־PayBox — נפתח בחלון חדש">
                 <span>לתשלום ב־<bdi lang="en">PayBox</bdi></span>
@@ -598,7 +622,9 @@
                 <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
               </a>
             </div>
-            <p class="retreat-payment-completion">לאחר הבחירה, השלימו את התשלום באפליקציה.</p>
+            <p class="retreat-payment-completion">השלימו את ההעברה באפליקציה. לשאלות או לבדיקת ההרשמה, אפשר לפנות לאלינה בוואטסאפ.</p>
+            <button class="retreat-add-person" type="button" data-retreat-add-person>הרשמה לאדם נוסף</button>
+            </div>
             <a class="retreat-help" href="https://wa.me/972532831333" target="_blank" rel="noopener noreferrer" data-retreat-analytics-event="retreat_whatsapp_click">
               <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp" /></svg>
               שאלות או עזרה בהרשמה? דברו עם אלינה
@@ -680,6 +706,6 @@
         </figure>
       </div>
     </dialog>
-    <script src="./script.js?v=20261017-retreat-openers" defer></script>
+    <script src="./script.js?v=20261017-retreat-registration" defer></script>
   </body>
 </html>
