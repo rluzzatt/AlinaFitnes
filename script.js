@@ -425,6 +425,8 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
     payload.set("retreat", "7 הצ׳אקרות | 10.11.2026 | כפר סאלד");
     payload.set("registration_id", registrationId);
     payload.set("amount_ils", "550");
+    payload.set("payment_status", "pending_verification");
+    Object.entries(window.retreatMeasurement?.source() || {}).forEach(([key, value]) => payload.set(key, value));
     // Do not send personal information to analytics or put it in a URL.
     if (!localTest) trackAnalytics("retreat_registration_submit", {
       retreat_id: "seven_chakras_2026_11_10",
@@ -450,6 +452,9 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
       formStatus.textContent = "";
       showRetreatPayments(true);
       success.focus();
+      if (!localTest) {
+        try { window.retreatMeasurement?.received(registrationId); } catch { /* Tracking must never change registration success. */ }
+      }
       if (!localTest) trackAnalytics("retreat_registration_received", {
         retreat_id: "seven_chakras_2026_11_10",
         link_location: "retreat_dialog",
@@ -484,6 +489,7 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
     videos.forEach((video) => video.pause());
     document.body.classList.add("retreat-open");
     retreatDialog.showModal();
+    try { window.retreatMeasurement?.start(); } catch { /* The retreat also works when tracking is blocked. */ }
     retreatDialog.scrollTop = 0;
     trackAnalytics("retreat_view", { retreat_id: "seven_chakras_2026_11_10" });
     updateContactBar();
