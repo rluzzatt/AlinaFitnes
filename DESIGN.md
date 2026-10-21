@@ -113,6 +113,10 @@ Sticky WhatsApp remains at least 44px before safe-area padding, appears after ch
 
 ## Evidence
 
+The user approved publishing the payment-submit refinement on 2026-10-21 after reviewing the final shortened wording. This supersedes the local-only release boundary in its preparation record below.
+
+Local payment-submit refinement, 2026-10-21, pending user review: replace the initial standalone submit with two full-width native submit buttons for bit and PayBox. At the user's latest refinement, remove redundant pre-submit paragraphs about unsent details and completing the transfer. Keep the introductory price and “המקום יאושר לאחר קבלת התשלום.” Show completion instructions after intake. Use the existing ink/white buttons and 16px labels, with the method kept together on a separate line on phones. Success follows acknowledged intake, indicates pending payment verification and retains the selected payment link. Preserve the surrounding form, popup, portrait and brand. No live release yet.
+
 The subsequent user-approved popup release adds a full-width taupe-light opener below the existing header, with a single row on desktop and two text rows on phones. Both openers target the same dialog and restore focus. The popup opens on every page load/reload. The user also approved removing the promotional clubhouse paragraph, keeping the concise venue and parking details. This release retains the existing Google Form registration flow.
 
 The subsequent local request adds a full-width retreat opener immediately below the existing sticky header. Use the existing taupe-light surface and ink text, square edges, one row on desktop and two text rows on phones. Preserve the header itself and the bottom floating button. Both native buttons expose dialog semantics and restore focus after dismissal. The dialog now opens on each page load/reload at the user's request.

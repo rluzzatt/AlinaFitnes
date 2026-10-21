@@ -20,6 +20,10 @@ WhatsApp direct to +972532831333, without prefilled messages. The final invitati
 
 ## Evidence and constraints
 
+- Publication authorized on 2026-10-21 after local review: “כן, בוא ניישם את זה” approves the payment-submit flow and shortened copy described below, replacing that entry's local-only hold. Preserve pending payment verification; no actual test payment or new production registration is authorized by this release.
+
+- Local preview, 2026-10-21, not published: choosing bit or PayBox submits the form; there is no earlier standalone intake button. The user removed the redundant pre-submit explanation and transfer warning; retain the introductory price and “המקום יאושר לאחר קבלת התשלום.” Put transfer-completion instructions after intake. The destination opens only after acknowledged intake, with a visible recovery link if popups are blocked. `payment_method` and `registration_stage=payment_method_selected` record intent; `payment_status=pending_verification` and manual verification remain. No Purchase or automatic payment claim. Local previews simulate the flow without external submissions/payment windows. Show locally before publication.
+
 - Latest publication authorization (2026-10-17): after local review of the five-field form and star labels, the user explicitly asked to publish. Scope: name/mobile/email required with asterisks, age/city optional without extra label text, and a shared required-field explanation. Supersedes the local-review hold below. Participant confirmation emails remain separate, unconfigured work.
 
 - Latest agreed local form revision (2026-10-17): full name, mobile and email required; age and city optional. Age uses a positive whole number, with no date of birth or invented eligibility age limit. Empty age is omitted from intake. Participant confirmation email remains unconfigured; requiring email does not imply one is sent. Show this revision locally before publication.

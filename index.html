@@ -103,7 +103,7 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20261017-retreat-field-labels" />
+    <link rel="stylesheet" href="./styles.css?v=20261021-payment-submit" />
     <!-- Google Analytics 4: aggregate traffic and on-site conversion events. -->
     <script
       async
@@ -577,7 +577,7 @@
           <p class="retreat-included">כולל בראנץ׳, כיבוד, חוברת עבודה ותרגול להמשך בבית.</p>
           <section class="retreat-actions" id="retreat-registration" tabindex="-1" aria-labelledby="retreat-registration-title">
             <h3 id="retreat-registration-title">הרשמה לריטריט</h3>
-            <p class="retreat-steps-intro">משאירים פרטים כאן וממשיכים לתשלום <bdi>550 ₪</bdi> ב־<bdi lang="en">bit</bdi> או ב־<bdi lang="en">PayBox</bdi>.</p>
+            <p class="retreat-steps-intro">ממלאים פרטים ובוחרים איך לשלם <bdi>550 ₪</bdi>. המקום יאושר לאחר קבלת התשלום.</p>
             <p class="retreat-form-preview" data-retreat-form-preview hidden>תצוגה מקומית לבדיקה. חיבור קבלת ההרשמות עדיין בהכנה; הפרטים לא יישלחו.</p>
             <form id="retreat-registration-form" class="retreat-form" method="post" data-retreat-registration-form data-registration-endpoint="https://formspree.io/f/xqpenkdp" aria-describedby="retreat-required-note retreat-privacy-note">
               <fieldset data-retreat-fields disabled>
@@ -608,27 +608,30 @@
                 </div>
                 <p id="retreat-privacy-note" class="retreat-privacy-note">הפרטים יישמרו בשירות <bdi lang="en">Formspree</bdi> ויועברו לאלינה לצורך ההרשמה ויצירת קשר בנוגע לריטריט. <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">מדיניות הפרטיות של השירות</a>.</p>
                 <p class="retreat-privacy-note">ביקורים והרשמות נמדדים גם באמצעות <bdi lang="en">Meta</bdi> לצורך מדידת הפרסום. שדות הטופס אינם נכללים באירועי המדידה שאנו שולחים. <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">מדיניות הפרטיות של Meta</a>.</p>
-                <button class="retreat-register" type="submit" data-retreat-submit>שליחת פרטים והמשך לתשלום</button>
+                <div class="retreat-payment-submit" role="group" aria-label="שליחת פרטים ובחירת אמצעי תשלום">
+                  <button class="retreat-register" type="submit" data-retreat-submit data-retreat-payment-method="bit">שליחת פרטים ומעבר לתשלום <span class="retreat-payment-method">ב־<bdi lang="en">bit</bdi></span></button>
+                  <button class="retreat-register" type="submit" data-retreat-submit data-retreat-payment-method="paybox">שליחת פרטים ומעבר לתשלום <span class="retreat-payment-method">ב־<bdi lang="en">PayBox</bdi></span></button>
+                </div>
               </fieldset>
               <p class="retreat-form-status" role="status" aria-live="polite" aria-atomic="true" data-retreat-form-status></p>
             </form>
             <noscript><p>כדי למלא את הטופס יש להפעיל JavaScript בדפדפן. אפשר גם לפנות לאלינה בוואטסאפ לעזרה בהרשמה.</p></noscript>
             <div class="retreat-registration-success" data-retreat-registration-success tabindex="-1" hidden>
-              <h4>הפרטים התקבלו. ממשיכים לתשלום.</h4>
-              <p>להשלמת ההרשמה, בחרו אמצעי תשלום והעבירו <bdi>550 ₪</bdi> עבור משתתף.</p>
+              <h4>הפרטים נשלחו. עכשיו משלימים את התשלום.</h4>
+              <p>יש להשלים העברה של <bdi>550 ₪</bdi> באפליקציה. המקום יאושר לאחר קבלת התשלום.</p>
             </div>
             <div class="retreat-payment-stage" data-retreat-payment-stage hidden>
             <div class="retreat-payments" role="group" aria-label="תשלום עבור הריטריט">
-              <a data-retreat-payment-url="https://links.payboxapp.com/9V7gTexrX6b" data-retreat-analytics-event="retreat_paybox_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־PayBox — נפתח בחלון חדש">
+              <a data-retreat-payment-method="paybox" data-retreat-payment-url="https://links.payboxapp.com/9V7gTexrX6b" data-retreat-analytics-event="retreat_paybox_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־PayBox — נפתח בחלון חדש">
                 <span>לתשלום ב־<bdi lang="en">PayBox</bdi></span>
                 <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
               </a>
-              <a data-retreat-payment-url="https://www.bitpay.co.il/app/share-info?i=BnGEWhSy&amp;j=true" data-retreat-analytics-event="retreat_bit_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־bit — נפתח בחלון חדש">
+              <a data-retreat-payment-method="bit" data-retreat-payment-url="https://www.bitpay.co.il/app/share-info?i=BnGEWhSy&amp;j=true" data-retreat-analytics-event="retreat_bit_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־bit — נפתח בחלון חדש">
                 <span>לתשלום ב־<bdi lang="en">bit</bdi></span>
                 <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
               </a>
             </div>
-            <p class="retreat-payment-completion">השלימו את ההעברה באפליקציה. לשאלות או לבדיקת ההרשמה, אפשר לפנות לאלינה בוואטסאפ.</p>
+            <p class="retreat-payment-completion" data-retreat-payment-guidance>אם האפליקציה לא נפתחה, לחצו על קישור התשלום. אם כבר שילמתם, אין צורך לשלם שוב. המקום יאושר לאחר קבלת התשלום.</p>
             <button class="retreat-add-person" type="button" data-retreat-add-person>הרשמה לאדם נוסף</button>
             </div>
             <a class="retreat-help" href="https://wa.me/972532831333" target="_blank" rel="noopener noreferrer" data-retreat-analytics-event="retreat_whatsapp_click">
@@ -713,6 +716,6 @@
       </div>
     </dialog>
     <script src="./retreat-measurement.js?v=20261018" defer></script>
-    <script src="./script.js?v=20261018-retreat-measurement" defer></script>
+    <script src="./script.js?v=20261021-payment-copy" defer></script>
   </body>
 </html>

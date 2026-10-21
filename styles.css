@@ -1727,6 +1727,12 @@ body.retreat-open {
 .retreat-registration-success { scroll-margin-top: 80px; }
 .retreat-registration-success h4 { margin-bottom: 10px; font-size: 22px; line-height: 1.4; }
 .retreat-registration-success p { margin-bottom: 20px; font-size: 16px; line-height: 1.75; }
+.retreat-payment-submit { display: grid; gap: 12px; }
+.retreat-payment-submit .retreat-register { display: block; width: 100%; min-height: 52px; margin: 0; padding: 14px 16px; line-height: 1.5; }
+.retreat-payment-method { white-space: nowrap; }
+@media (max-width: 700px) {
+  .retreat-payment-method { display: block; }
+}
 .retreat-add-person {
   min-height: 44px;
   margin-top: 14px;

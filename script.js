@@ -341,12 +341,15 @@ let retreatReturnFocus = null;
 if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatPublished)) {
   retreatLaunchers.forEach((button) => { button.hidden = false; });
 
-  // Only a successful registration-service response unlocks payment. No personal data is persisted locally.
+  // Registration is submitted only by choosing a payment method. This is payment intent, not proof of payment.
+  // Personal fields stay in this page until submission; only receipt metadata is stored in the session.
   const fields = retreatRegistrationForm.querySelector("[data-retreat-fields]");
-  const submitButton = retreatRegistrationForm.querySelector("[data-retreat-submit]");
+  const submitButtons = [...retreatRegistrationForm.querySelectorAll("[data-retreat-submit]")];
+  const submitLabels = new Map(submitButtons.map((button) => [button, button.innerHTML]));
   const formStatus = retreatRegistrationForm.querySelector("[data-retreat-form-status]");
   const success = retreatDialog.querySelector("[data-retreat-registration-success]");
   const paymentStage = retreatDialog.querySelector("[data-retreat-payment-stage]");
+  const paymentGuidance = retreatDialog.querySelector("[data-retreat-payment-guidance]");
   const previewNote = retreatDialog.querySelector("[data-retreat-form-preview]");
   const nameInput = retreatRegistrationForm.elements.namedItem("full_name");
   const phoneInput = retreatRegistrationForm.elements.namedItem("phone");
@@ -363,33 +366,41 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
   fields.disabled = !configured && !retreatLocalPreview;
   previewNote.hidden = !retreatLocalPreview;
   if (localTest) previewNote.textContent = "תצוגת בדיקה מקומית בלבד. הפרטים אינם נשלחים לאלינה ולא מתבצעת הרשמה אמיתית.";
-  else if (previewOnly) previewNote.textContent = "תצוגה מקומית לבדיקה בלבד. להרשמה יש להשתמש בטופס באתר החי.";
+  else if (previewOnly) previewNote.textContent = "תצוגה מקומית בלבד: אפשר לנסות את הכפתורים. הפרטים לא יישלחו לאלינה ואפליקציות התשלום לא ייפתחו.";
   if (!configured && !retreatLocalPreview) {
     formStatus.textContent = "ההרשמה בטופס אינה זמינה כרגע. אפשר לפנות לאלינה בוואטסאפ שבהמשך.";
   }
 
-  const showRetreatPayments = (unlocked) => {
+  const showRetreatPayments = (unlocked, method = null) => {
     retreatRegistrationForm.hidden = unlocked;
     success.hidden = !unlocked;
     paymentStage.hidden = !unlocked;
     paymentLinks.forEach((link) => {
-      if (unlocked) link.href = link.dataset.retreatPaymentUrl;
+      link.hidden = unlocked && method !== null && link.dataset.retreatPaymentMethod !== method;
+      if (unlocked) link.href = retreatLocalPreview ? "#retreat-registration" : link.dataset.retreatPaymentUrl;
       else link.removeAttribute("href");
       link.setAttribute("aria-disabled", String(!unlocked));
       link.tabIndex = unlocked ? 0 : -1;
     });
+    if (retreatLocalPreview) paymentGuidance.textContent = "זו הדמיה מקומית בלבד: לא נשלחו פרטים, לא נפתחו אפליקציות ולא בוצע תשלום.";
   };
-  if (localTest) {
+  if (retreatLocalPreview) {
     success.querySelector("h4").textContent = "בדיקת הטופס הושלמה. לא בוצעה הרשמה אמיתית.";
+    success.querySelector("p").textContent = "באתר החי הפרטים יישלחו לאלינה והמעבר יהיה לאמצעי התשלום שנבחר. המקום יאושר לאחר קבלת התשלום.";
   }
   let restoredReceipt = false;
+  let restoredMethod = null;
   if (configured && !previewOnly) {
     try {
       const receipt = JSON.parse(sessionStorage.getItem(receiptKey) || "null");
       restoredReceipt = receipt?.endpoint === endpoint && typeof receipt.registrationId === "string";
+      if (restoredReceipt && ["bit", "paybox"].includes(receipt.paymentMethod)) restoredMethod = receipt.paymentMethod;
     } catch { /* Submission and payment also work without session storage. */ }
   }
-  showRetreatPayments(restoredReceipt);
+  showRetreatPayments(restoredReceipt, restoredMethod);
+  paymentLinks.forEach((link) => link.addEventListener("click", (event) => {
+    if (retreatLocalPreview || link.getAttribute("aria-disabled") === "true") event.preventDefault();
+  }));
 
   [nameInput, phoneInput].forEach((input) => input.addEventListener("input", () => {
     input.setCustomValidity("");
@@ -400,6 +411,9 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
   retreatRegistrationForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (submitting) return;
+    const method = event.submitter?.dataset.retreatPaymentMethod;
+    const paymentLink = paymentLinks.find((link) => link.dataset.retreatPaymentMethod === method);
+    if (!paymentLink) return;
     nameInput.value = nameInput.value.trim();
     phoneInput.value = phoneInput.value.trim();
     if (!nameInput.value) nameInput.setCustomValidity("הזינו שם מלא.");
@@ -410,8 +424,8 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
       phoneError.hidden = false;
     }
     if (!retreatRegistrationForm.reportValidity()) return;
-    if (!configured || previewOnly) {
-      formStatus.textContent = "זו תצוגה מקומית בלבד. הפרטים לא נשלחו; להרשמה יש לפתוח את האתר החי.";
+    if (!configured && !previewOnly) {
+      formStatus.textContent = "הפרטים לא נשלחו. ההרשמה אינה זמינה כרגע; אפשר לפנות לאלינה בוואטסאפ.";
       formStatus.focus();
       return;
     }
@@ -426,40 +440,69 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
     payload.set("registration_id", registrationId);
     payload.set("amount_ils", "550");
     payload.set("payment_status", "pending_verification");
+    payload.set("payment_method", method);
+    payload.set("registration_stage", "payment_method_selected");
+    // Selecting a payment destination does not verify that its page/app opened or money was transferred.
     Object.entries(window.retreatMeasurement?.source() || {}).forEach(([key, value]) => payload.set(key, value));
     // Do not send personal information to analytics or put it in a URL.
-    if (!localTest) trackAnalytics("retreat_registration_submit", {
+    if (!retreatLocalPreview) trackAnalytics("retreat_registration_submit", {
       retreat_id: "seven_chakras_2026_11_10",
       link_location: "retreat_dialog",
     });
     submitting = true;
     fields.disabled = true;
     retreatRegistrationForm.setAttribute("aria-busy", "true");
-    submitButton.textContent = "שולחים את הפרטים…";
+    submitButtons.forEach((button) => { button.textContent = "שולחים את הפרטים…"; });
     formStatus.textContent = "ממתינים לאישור קבלת הפרטים…";
+    // Reserve a window during the click so a later asynchronous response won't trigger popup blocking.
+    // If blocked, the acknowledged state retains a normal payment link. Local previews never open payment.
+    let paymentWindow = null;
+    if (!retreatLocalPreview) {
+      try {
+        paymentWindow = window.open("about:blank", "_blank");
+        if (paymentWindow) {
+          paymentWindow.opener = null;
+          if (paymentWindow.document?.body) {
+            paymentWindow.document.title = "מעבר לתשלום | MamAlina Center";
+            paymentWindow.document.documentElement.lang = "he";
+            paymentWindow.document.documentElement.dir = "rtl";
+            paymentWindow.document.body.textContent = "רגע, מעבירים אתכם לתשלום… השאירו את החלון הזה פתוח.";
+          }
+        }
+      } catch { /* The payment link remains available after receipt. */ }
+    }
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 15000);
     try {
-      const response = await fetch(endpoint, {
-        method: "POST", body: payload, headers: { Accept: "application/json" }, signal: controller.signal,
-      });
-      const result = await response.json();
-      if (!response.ok || result.ok !== true) throw new Error("Registration was not acknowledged");
-      try {
-        sessionStorage.setItem(receiptKey, JSON.stringify({ endpoint, registrationId }));
-      } catch { /* Keep the successful registration usable without storage. */ }
+      if (!previewOnly) {
+        const response = await fetch(endpoint, {
+          method: "POST", body: payload, headers: { Accept: "application/json" }, signal: controller.signal,
+        });
+        const result = await response.json();
+        if (!response.ok || result.ok !== true) throw new Error("Registration was not acknowledged");
+        try {
+          sessionStorage.setItem(receiptKey, JSON.stringify({ endpoint, registrationId, paymentMethod: method }));
+        } catch { /* Keep the successful registration usable without storage. */ }
+      }
       retreatRegistrationForm.reset();
       formStatus.textContent = "";
-      showRetreatPayments(true);
+      showRetreatPayments(true, method);
       success.focus();
-      if (!localTest) {
+      if (!retreatLocalPreview) {
         try { window.retreatMeasurement?.received(registrationId); } catch { /* Tracking must never change registration success. */ }
       }
-      if (!localTest) trackAnalytics("retreat_registration_received", {
+      if (!retreatLocalPreview) trackAnalytics("retreat_registration_received", {
         retreat_id: "seven_chakras_2026_11_10",
         link_location: "retreat_dialog",
       });
+      if (paymentWindow && !paymentWindow.closed) {
+        try { paymentWindow.location.replace(paymentLink.dataset.retreatPaymentUrl); }
+        catch { /* A visible payment link offers recovery without another form submission. */ }
+      }
     } catch {
+      try {
+        if (paymentWindow && !paymentWindow.closed && paymentWindow.location.href === "about:blank") paymentWindow.close();
+      } catch { /* Never close a window the visitor has navigated elsewhere. */ }
       formStatus.textContent = "לא התקבל אישור שהפרטים נקלטו. הפרטים נשארו בטופס; אפשר לנסות שוב או לפנות לאלינה בוואטסאפ לעזרה.";
       formStatus.focus();
     } finally {
@@ -467,7 +510,7 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
       submitting = false;
       fields.disabled = false;
       retreatRegistrationForm.removeAttribute("aria-busy");
-      submitButton.textContent = "שליחת פרטים והמשך לתשלום";
+      submitButtons.forEach((button) => { button.innerHTML = submitLabels.get(button); });
     }
   });
 
