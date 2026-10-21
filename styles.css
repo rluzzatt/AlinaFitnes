@@ -1718,8 +1718,22 @@ body.retreat-open {
 .retreat-register:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 .retreat-field input[aria-invalid="true"] { border: 2px solid var(--ink); }
 .retreat-field-error { display: block; margin-top: 6px; font-size: 14px; font-weight: 700; }
-.retreat-privacy-note { margin: 18px 0; color: var(--muted); font-size: 14px; line-height: 1.75; }
-.retreat-privacy-note a { text-decoration: underline; text-underline-offset: 3px; }
+.retreat-privacy { margin-block: 18px 14px; color: var(--muted); font-size: 14px; line-height: 1.75; }
+.retreat-privacy-note { margin: 0; }
+.retreat-privacy a { text-decoration: underline; text-underline-offset: 3px; }
+.retreat-privacy-details summary {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+  padding-block: 9px;
+  color: var(--ink);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.retreat-privacy-details summary:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.retreat-privacy-content { padding-bottom: 8px; }
+.retreat-privacy-content p { margin-block: 0 12px; }
 .retreat-form-preview { margin-bottom: 20px; font-size: 14px; font-weight: 700; line-height: 1.75; }
 .retreat-form-status { margin-top: 14px; font-size: 14px; line-height: 1.75; }
 .retreat-form-status:empty { display: none; }

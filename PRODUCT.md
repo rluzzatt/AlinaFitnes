@@ -20,6 +20,10 @@ WhatsApp direct to +972532831333, without prefilled messages. The final invitati
 
 ## Evidence and constraints
 
+- Privacy presentation publication authorized on 2026-10-21: after reviewing the final sentence without Alina's name, the user said “יופי, בוא נעלה ללייב”. This supersedes the privacy preview's local-only hold below. Alina's identity remains in the expanded disclosure; data/payment/measurement behavior is unchanged.
+
+- Local privacy-copy preview, 2026-10-21, not published: replace two long visible notices with a short readable notice and a native “פרטיות ושימוש במידע” disclosure. Keep Formspree storage/intake purpose and Meta ad measurement visible; at the user's latest request, Alina's name appears only in the expanded privacy information. Move supporting details, policy links and contact for access/correction into the closed disclosure. Preserve data collection, payment and measurement behavior. Show before publication; the earlier payment-release approval does not cover this new revision.
+
 - Publication authorized on 2026-10-21 after local review: “כן, בוא ניישם את זה” approves the payment-submit flow and shortened copy described below, replacing that entry's local-only hold. Preserve pending payment verification; no actual test payment or new production registration is authorized by this release.
 
 - Local preview, 2026-10-21, not published: choosing bit or PayBox submits the form; there is no earlier standalone intake button. The user removed the redundant pre-submit explanation and transfer warning; retain the introductory price and “המקום יאושר לאחר קבלת התשלום.” Put transfer-completion instructions after intake. The destination opens only after acknowledged intake, with a visible recovery link if popups are blocked. `payment_method` and `registration_stage=payment_method_selected` record intent; `payment_status=pending_verification` and manual verification remain. No Purchase or automatic payment claim. Local previews simulate the flow without external submissions/payment windows. Show locally before publication.

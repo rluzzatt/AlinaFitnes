@@ -103,7 +103,7 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20261021-payment-submit" />
+    <link rel="stylesheet" href="./styles.css?v=20261021-privacy-disclosure" />
     <!-- Google Analytics 4: aggregate traffic and on-site conversion events. -->
     <script
       async
@@ -606,8 +606,18 @@
                     <input id="retreat-city" name="city" autocomplete="address-level2" maxlength="100" />
                   </div>
                 </div>
-                <p id="retreat-privacy-note" class="retreat-privacy-note">הפרטים יישמרו בשירות <bdi lang="en">Formspree</bdi> ויועברו לאלינה לצורך ההרשמה ויצירת קשר בנוגע לריטריט. <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">מדיניות הפרטיות של השירות</a>.</p>
-                <p class="retreat-privacy-note">ביקורים והרשמות נמדדים גם באמצעות <bdi lang="en">Meta</bdi> לצורך מדידת הפרסום. שדות הטופס אינם נכללים באירועי המדידה שאנו שולחים. <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">מדיניות הפרטיות של Meta</a>.</p>
+                <div class="retreat-privacy">
+                  <p id="retreat-privacy-note" class="retreat-privacy-note">הפרטים יישמרו ב־<bdi lang="en">Formspree</bdi> לצורך ההרשמה. האתר משתמש ב־<bdi lang="en">Meta</bdi> למדידת הפרסום.</p>
+                  <details class="retreat-privacy-details">
+                    <summary>פרטיות ושימוש במידע</summary>
+                    <div class="retreat-privacy-content">
+                      <p>מסירת הפרטים היא לבחירתכם. שדות החובה דרושים להשלמת ההרשמה בטופס; גיל ועיר הם לבחירתכם. אפשר לפנות לאלינה גם בוואטסאפ.</p>
+                      <p>אלינה פאן, <bdi lang="en">MamAlina Center</bdi>, משתמשת בפרטים לניהול ההרשמה ויצירת קשר בנוגע לריטריט. הפרטים נשמרים בשירות <bdi lang="en">Formspree</bdi> ומועברים לאלינה. <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">מדיניות הפרטיות של Formspree</a>.</p>
+                      <p>ביקורים והרשמות נמדדים גם באמצעות <bdi lang="en">Meta</bdi> לצורך מדידת הפרסום. כלי המדידה מקבלים נתוני ביקור ואירועים מהדפדפן; שדות הטופס אינם נכללים באירועי המדידה שאנו שולחים. <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">מדיניות הפרטיות של Meta</a>.</p>
+                      <p>אפשר לפנות לאלינה כדי לבקש לעיין בפרטים שנמסרו או לתקן אותם: <a href="https://wa.me/972532831333" target="_blank" rel="noopener noreferrer">יצירת קשר בוואטסאפ</a>.</p>
+                    </div>
+                  </details>
+                </div>
                 <div class="retreat-payment-submit" role="group" aria-label="שליחת פרטים ובחירת אמצעי תשלום">
                   <button class="retreat-register" type="submit" data-retreat-submit data-retreat-payment-method="bit">שליחת פרטים ומעבר לתשלום <span class="retreat-payment-method">ב־<bdi lang="en">bit</bdi></span></button>
                   <button class="retreat-register" type="submit" data-retreat-submit data-retreat-payment-method="paybox">שליחת פרטים ומעבר לתשלום <span class="retreat-payment-method">ב־<bdi lang="en">PayBox</bdi></span></button>

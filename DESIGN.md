@@ -113,6 +113,10 @@ Sticky WhatsApp remains at least 44px before safe-area padding, appears after ch
 
 ## Evidence
 
+The user approved publishing the final compact privacy notice and native disclosure on 2026-10-21 with “יופי, בוא נעלה ללייב”, after omitting Alina's name from the visible sentence. This supersedes the privacy refinement's local-only boundary below.
+
+Local privacy refinement, 2026-10-21, pending review: one concise visible notice and native details/summary labelled “פרטיות ושימוש במידע”, closed initially. Retain readable 14px type, existing ink/muted/taupe palette, underlined summary with 44px minimum target and keyboard focus. Expanded details remain in the normal flow above the payment buttons. Do not replace the notice with illegible text or inaccessible hidden content. Payment and tracking behavior stay unchanged. Not published.
+
 The user approved publishing the payment-submit refinement on 2026-10-21 after reviewing the final shortened wording. This supersedes the local-only release boundary in its preparation record below.
 
 Local payment-submit refinement, 2026-10-21, pending user review: replace the initial standalone submit with two full-width native submit buttons for bit and PayBox. At the user's latest refinement, remove redundant pre-submit paragraphs about unsent details and completing the transfer. Keep the introductory price and “המקום יאושר לאחר קבלת התשלום.” Show completion instructions after intake. Use the existing ink/white buttons and 16px labels, with the method kept together on a separate line on phones. Success follows acknowledged intake, indicates pending payment verification and retains the selected payment link. Preserve the surrounding form, popup, portrait and brand. No live release yet.
