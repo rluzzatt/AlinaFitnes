@@ -103,7 +103,7 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20261021-privacy-disclosure" />
+    <link rel="stylesheet" href="./styles.css?v=20261023-personal-bit" />
     <!-- Google Analytics 4: aggregate traffic and on-site conversion events. -->
     <script
       async
@@ -619,7 +619,8 @@
                   </details>
                 </div>
                 <div class="retreat-payment-submit" role="group" aria-label="שליחת פרטים ובחירת אמצעי תשלום">
-                  <button class="retreat-register" type="submit" data-retreat-submit data-retreat-payment-method="bit">שליחת פרטים ומעבר לתשלום <span class="retreat-payment-method">ב־<bdi lang="en">bit</bdi></span></button>
+                  <button class="retreat-register" type="submit" data-retreat-submit data-retreat-payment-method="bit" aria-describedby="retreat-bit-note">שליחת פרטים ומעבר לתשלום <span class="retreat-payment-method">ב־<bdi lang="en">bit</bdi></span></button>
+                  <p class="retreat-bit-note" id="retreat-bit-note">באפליקציית <bdi lang="en">bit</bdi> יש להזין <bdi>550 ₪</bdi> ולהשלים את ההעברה.</p>
                   <button class="retreat-register" type="submit" data-retreat-submit data-retreat-payment-method="paybox">שליחת פרטים ומעבר לתשלום <span class="retreat-payment-method">ב־<bdi lang="en">PayBox</bdi></span></button>
                 </div>
               </fieldset>
@@ -636,8 +637,8 @@
                 <span>לתשלום ב־<bdi lang="en">PayBox</bdi></span>
                 <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
               </a>
-              <a data-retreat-payment-method="bit" data-retreat-payment-url="https://www.bitpay.co.il/app/share-info?i=BnGEWhSy&amp;j=true" data-retreat-analytics-event="retreat_bit_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="תשלום ב־bit — נפתח בחלון חדש">
-                <span>לתשלום ב־<bdi lang="en">bit</bdi></span>
+              <a data-retreat-payment-method="bit" data-retreat-payment-url="https://www.bitpay.co.il/app/me/647A5A59-F122-C5B7-98C2-20B4B25EDD24B114" data-retreat-analytics-event="retreat_bit_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="לתשלום 550 ₪ ב־bit — נפתח בחלון חדש">
+                <span>לתשלום <bdi>550 ₪</bdi> ב־<bdi lang="en">bit</bdi></span>
                 <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
               </a>
             </div>
@@ -726,6 +727,6 @@
       </div>
     </dialog>
     <script src="./retreat-measurement.js?v=20261018" defer></script>
-    <script src="./script.js?v=20261021-payment-copy" defer></script>
+    <script src="./script.js?v=20261023-personal-bit" defer></script>
   </body>
 </html>

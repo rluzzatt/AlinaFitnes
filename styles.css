@@ -1744,6 +1744,7 @@ body.retreat-open {
 .retreat-payment-submit { display: grid; gap: 12px; }
 .retreat-payment-submit .retreat-register { display: block; width: 100%; min-height: 52px; margin: 0; padding: 14px 16px; line-height: 1.5; }
 .retreat-payment-method { white-space: nowrap; }
+.retreat-bit-note { margin: -6px 0 2px; color: var(--muted); font-size: 14px; line-height: 1.7; }
 @media (max-width: 700px) {
   .retreat-payment-method { display: block; }
 }

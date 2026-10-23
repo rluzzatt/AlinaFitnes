@@ -348,6 +348,8 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
   const submitLabels = new Map(submitButtons.map((button) => [button, button.innerHTML]));
   const formStatus = retreatRegistrationForm.querySelector("[data-retreat-form-status]");
   const success = retreatDialog.querySelector("[data-retreat-registration-success]");
+  const paymentInstructions = success.querySelector("p");
+  const defaultPaymentInstructions = paymentInstructions.textContent;
   const paymentStage = retreatDialog.querySelector("[data-retreat-payment-stage]");
   const paymentGuidance = retreatDialog.querySelector("[data-retreat-payment-guidance]");
   const previewNote = retreatDialog.querySelector("[data-retreat-form-preview]");
@@ -375,6 +377,11 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
     retreatRegistrationForm.hidden = unlocked;
     success.hidden = !unlocked;
     paymentStage.hidden = !unlocked;
+    paymentInstructions.textContent = method === "bit"
+      ? `${retreatLocalPreview ? "באתר החי: " : ""}באפליקציית bit יש להזין 550 ₪ ולהשלים את ההעברה. המקום יאושר לאחר קבלת התשלום.`
+      : retreatLocalPreview
+        ? "באתר החי הפרטים יישלחו לאלינה והמעבר יהיה לאמצעי התשלום שנבחר. המקום יאושר לאחר קבלת התשלום."
+        : defaultPaymentInstructions;
     paymentLinks.forEach((link) => {
       link.hidden = unlocked && method !== null && link.dataset.retreatPaymentMethod !== method;
       if (unlocked) link.href = retreatLocalPreview ? "#retreat-registration" : link.dataset.retreatPaymentUrl;
@@ -386,7 +393,6 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
   };
   if (retreatLocalPreview) {
     success.querySelector("h4").textContent = "בדיקת הטופס הושלמה. לא בוצעה הרשמה אמיתית.";
-    success.querySelector("p").textContent = "באתר החי הפרטים יישלחו לאלינה והמעבר יהיה לאמצעי התשלום שנבחר. המקום יאושר לאחר קבלת התשלום.";
   }
   let restoredReceipt = false;
   let restoredMethod = null;
