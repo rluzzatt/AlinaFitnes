@@ -113,6 +113,8 @@ Sticky WhatsApp remains at least 44px before safe-area padding, appears after ch
 
 ## Evidence
 
+23 October 2026 full-description refinement: the retreat's existing “לתיאור המלא ולוח הזמנים” native disclosure starts expanded, at the user's request. Keep its typography, spacing, keyboard toggle and all five reading sections / ten schedule rows. Other disclosures retain their existing initial states. The user reviewed the local preview and explicitly approved publication with “מאשרת להעלות ללייב”.
+
 23 October 2026 bit refinement: preserve the retreat's existing form, warm surface and square controls. Restore the original explicit intake/payment submit labels after the user noticed their shortening: שליחת פרטים ומעבר לתשלום ב־bit / PayBox. A 14px instruction associated with the bit submit button explains entering 550 ILS in the personal-transfer app; the acknowledged state repeats that instruction only for bit. The PayBox destination remains the same. Desktop and 393×852 phone views pass scoped visual review with no horizontal overflow and 54/78px submit targets. After seeing the final local revision, the user approved publication. See `.impeccable/retreat-personal-bit-review-2026-10-23.md`.
 
 The user approved publishing the final compact privacy notice and native disclosure on 2026-10-21 with “יופי, בוא נעלה ללייב”, after omitting Alina's name from the visible sentence. This supersedes the privacy refinement's local-only boundary below.

@@ -20,6 +20,8 @@ WhatsApp direct to +972532831333, without prefilled messages. The final invitati
 
 ## Evidence and constraints
 
+- Retreat-description publication authorized, 2026-10-23: after seeing the local desktop/phone preview, the user said “מאשרת להעלות ללייב”. Publish the native “לתיאור המלא ולוח הזמנים” disclosure's initially open state, preserving the existing copy, form and other disclosures. This supersedes this refinement's local-only hold; it does not authorize a production registration or payment.
+
 - Personal bit revision, 2026-10-23: the user supplied Alina's permanent personal QR and confirmed on a phone that it opens an individual transfer with the amount initially zero. Use the decoded personal bit URL and a short instruction to enter 550 ILS in bit. After the user noticed the shortened labels, their original submit wording was restored: שליחת פרטים ומעבר לתשלום ב־bit / PayBox. Keep intake before opening payment, pending verification and the existing PayBox destination. After seeing this final local revision, the user approved publication with ״מאושר״. That approval supersedes this revision's local-only hold; it does not authorize a payment or production test submission.
 
 - Privacy presentation publication authorized on 2026-10-21: after reviewing the final sentence without Alina's name, the user said “יופי, בוא נעלה ללייב”. This supersedes the privacy preview's local-only hold below. Alina's identity remains in the expanded disclosure; data/payment/measurement behavior is unchanged.
