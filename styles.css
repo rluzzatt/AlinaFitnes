@@ -1694,6 +1694,13 @@ body.retreat-open {
 .retreat-actions:focus { outline: none; }
 .retreat-actions:focus-visible { outline: 3px solid var(--ink); outline-offset: 6px; }
 .retreat-form fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.retreat-form .retreat-price-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 22px; }
+.retreat-price-options legend { margin-bottom: 10px; padding: 0; font-size: 16px; font-weight: 700; }
+.retreat-price-option { display: flex; align-items: center; gap: 10px; min-height: 76px; padding: 12px; border: 1px solid var(--taupe-dark); font-size: 14px; line-height: 1.6; cursor: pointer; }
+.retreat-price-option:has(:checked) { background: var(--paper); }
+.retreat-price-option input { flex: none; width: 20px; height: 20px; margin: 0; accent-color: var(--ink); }
+.retreat-price-option input:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.retreat-price-option strong { display: block; font-size: 17px; }
 .retreat-form-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 16px; }
 .retreat-required-note { margin: 0 0 14px; font-size: 14px; color: var(--muted); }
 .retreat-field { min-width: 0; }
@@ -1747,6 +1754,9 @@ body.retreat-open {
 .retreat-bit-note { margin: -6px 0 2px; color: var(--muted); font-size: 14px; line-height: 1.7; }
 @media (max-width: 700px) {
   .retreat-payment-method { display: block; }
+}
+@media (max-width: 380px) {
+  .retreat-form .retreat-price-options { grid-template-columns: minmax(0, 1fr); }
 }
 .retreat-add-person {
   min-height: 44px;

@@ -103,7 +103,7 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="./styles.css?v=20261023-personal-bit" />
+    <link rel="stylesheet" href="./styles.css?v=20261030-local-rate" />
     <!-- Google Analytics 4: aggregate traffic and on-site conversion events. -->
     <script
       async
@@ -572,16 +572,27 @@
             <div><dt>מתי</dt><dd><time datetime="2026-11-10">10 בנובמבר 2026</time></dd></div>
             <div><dt>איפה</dt><dd>מועדון קיבוץ כפר סאלד<small>חניה בשפע</small></dd></div>
             <div><dt>שעות</dt><dd>מתחילים ב־<bdi>09:30</bdi><small>סיום בסביבות <bdi>16:00–16:15</bdi></small></dd></div>
-            <div><dt>עלות</dt><dd><bdi>550 ₪</bdi> למשתתף</dd></div>
+            <div><dt>עלות</dt><dd><bdi>550 ₪</bdi> למשתתף<small><bdi>450 ₪</bdi> לתושבי הגליל העליון</small></dd></div>
           </dl>
           <p class="retreat-included">כולל בראנץ׳, כיבוד, חוברת עבודה ותרגול להמשך בבית.</p>
           <section class="retreat-actions" id="retreat-registration" tabindex="-1" aria-labelledby="retreat-registration-title">
             <h3 id="retreat-registration-title">הרשמה לריטריט</h3>
-            <p class="retreat-steps-intro">ממלאים פרטים ובוחרים איך לשלם <bdi>550 ₪</bdi>. המקום יאושר לאחר קבלת התשלום.</p>
+            <p class="retreat-steps-intro">ממלאים פרטים ובוחרים איך לשלם. המקום יאושר לאחר קבלת התשלום.</p>
             <p class="retreat-form-preview" data-retreat-form-preview hidden>תצוגה מקומית לבדיקה. חיבור קבלת ההרשמות עדיין בהכנה; הפרטים לא יישלחו.</p>
             <form id="retreat-registration-form" class="retreat-form" method="post" data-retreat-registration-form data-registration-endpoint="https://formspree.io/f/xqpenkdp" aria-describedby="retreat-required-note retreat-privacy-note">
               <fieldset data-retreat-fields disabled>
                 <legend class="sr-only">פרטים להרשמה לריטריט</legend>
+                <fieldset class="retreat-price-options">
+                  <legend>מחיר ההשתתפות</legend>
+                  <label class="retreat-price-option">
+                    <input type="radio" name="price_type" value="standard" checked />
+                    <span>מחיר רגיל<strong><bdi>550 ₪</bdi></strong></span>
+                  </label>
+                  <label class="retreat-price-option">
+                    <input type="radio" name="price_type" value="upper_galilee" />
+                    <span>תושבי הגליל העליון<strong><bdi>450 ₪</bdi></strong></span>
+                  </label>
+                </fieldset>
                 <p class="retreat-required-note" id="retreat-required-note">* שדה חובה</p>
                 <div class="retreat-form-fields">
                   <div class="retreat-field">
@@ -619,9 +630,9 @@
                   </details>
                 </div>
                 <div class="retreat-payment-submit" role="group" aria-label="שליחת פרטים ובחירת אמצעי תשלום">
-                  <button class="retreat-register" type="submit" data-retreat-submit data-retreat-payment-method="bit" aria-describedby="retreat-bit-note">שליחת פרטים ומעבר לתשלום <span class="retreat-payment-method">ב־<bdi lang="en">bit</bdi></span></button>
-                  <p class="retreat-bit-note" id="retreat-bit-note">באפליקציית <bdi lang="en">bit</bdi> יש להזין <bdi>550 ₪</bdi> ולהשלים את ההעברה.</p>
-                  <button class="retreat-register" type="submit" data-retreat-submit data-retreat-payment-method="paybox">שליחת פרטים ומעבר לתשלום <span class="retreat-payment-method">ב־<bdi lang="en">PayBox</bdi></span></button>
+                  <button class="retreat-register" type="submit" data-retreat-submit data-retreat-payment-method="bit" aria-describedby="retreat-bit-note">שליחת פרטים ומעבר לתשלום <span class="retreat-payment-method"><bdi data-retreat-submit-amount>550 ₪</bdi> ב־<bdi lang="en">bit</bdi></span></button>
+                  <p class="retreat-bit-note" id="retreat-bit-note">באפליקציית <bdi lang="en">bit</bdi> יש להזין <bdi data-retreat-bit-amount>550 ₪</bdi> ולהשלים את ההעברה.</p>
+                  <button class="retreat-register" type="submit" data-retreat-submit data-retreat-payment-method="paybox">שליחת פרטים ומעבר לתשלום <span class="retreat-payment-method"><bdi data-retreat-submit-amount>550 ₪</bdi> ב־<bdi lang="en">PayBox</bdi></span></button>
                 </div>
               </fieldset>
               <p class="retreat-form-status" role="status" aria-live="polite" aria-atomic="true" data-retreat-form-status></p>
@@ -638,7 +649,7 @@
                 <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
               </a>
               <a data-retreat-payment-method="bit" data-retreat-payment-url="https://www.bitpay.co.il/app/me/647A5A59-F122-C5B7-98C2-20B4B25EDD24B114" data-retreat-analytics-event="retreat_bit_click" role="link" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer" aria-label="לתשלום 550 ₪ ב־bit — נפתח בחלון חדש">
-                <span>לתשלום <bdi>550 ₪</bdi> ב־<bdi lang="en">bit</bdi></span>
+                <span>לתשלום <bdi data-retreat-payment-amount>550 ₪</bdi> ב־<bdi lang="en">bit</bdi></span>
                 <svg class="icon" aria-hidden="true"><use href="#icon-arrow" /></svg>
               </a>
             </div>
@@ -664,7 +675,7 @@
                 <p>אבל לדעת שאנחנו רוצים שינוי — זה לא תמיד מספיק.<br />צריך להבין מה מנהל אותנו, לקבל כלים חדשים ובעיקר להתחיל לתרגל אותם.</p>
                 <p>יצרתי את הריטריט הזה כדי לתת לכם כמה שעות לעצור את הרעש שבחוץ ולהפנות את המבט פנימה.</p>
                 <p>יום שמשלב ידע, מודעות, שבע הצ׳אקרות, עבודה אישית, נשימה וריברסינג — ובעיקר הרבה פרקטיקה שאפשר לקחת אל החיים עצמם.</p>
-                <p><bdi>10.11</bdi> | קיבוץ כפר סאלד | <bdi>09:30–16:00/16:15</bdi><br />עלות השתתפות: <bdi>550 ₪</bdi></p>
+                <p><bdi>10.11</bdi> | קיבוץ כפר סאלד | <bdi>09:30–16:00/16:15</bdi><br />עלות השתתפות: <bdi>550 ₪</bdi> · <bdi>450 ₪</bdi> לתושבי הגליל העליון</p>
               </section>
               <section aria-labelledby="retreat-story-why">
                 <h3 id="retreat-story-why">למה בכלל נולד הריטריט הזה?</h3>
@@ -711,7 +722,7 @@
                 <p>וזה בדיוק המרחב שאני רוצה ליצור עבורכם בריטריט הזה.</p>
                 <p>אם משהו בתוככם כבר יודע שהגיע הזמן — אני מזמינה אתכם להגיע.</p>
                 <p>לא צריך להגיע “מוכנים”.<br />לא צריך ניסיון קודם בריברסינג או בעולם הצ׳אקרות.<br />רק רצון אמיתי לפגוש את עצמכם ולפתוח דלת לשינוי שאתם כבר מייחלים לו.</p>
-                <p>10 בנובמבר | קיבוץ כפר סאלד<br /><bdi>09:30–16:00/16:15</bdi><br /><bdi>550 ₪</bdi> למשתתף</p>
+                <p>10 בנובמבר | קיבוץ כפר סאלד<br /><bdi>09:30–16:00/16:15</bdi><br /><bdi>550 ₪</bdi> למשתתף · <bdi>450 ₪</bdi> לתושבי הגליל העליון</p>
                 <p>המחיר כולל את הריטריט המלא, בראנץ׳, כיבוד, חוברת עבודה ותרגול להמשך בבית.</p>
                 <p class="retreat-story-signoff">האגדה שלי מתחילה כאן. ומה איתך?</p>
                 <p><bdi lang="en">MamAlina Center</bdi><br />נשימה לחיים מאוזנים יותר.</p>
@@ -727,6 +738,6 @@
       </div>
     </dialog>
     <script src="./retreat-measurement.js?v=20261018" defer></script>
-    <script src="./script.js?v=20261023-personal-bit" defer></script>
+    <script src="./script.js?v=20261030-local-rate-bit-preview" defer></script>
   </body>
 </html>

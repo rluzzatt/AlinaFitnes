@@ -349,63 +349,99 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
   const formStatus = retreatRegistrationForm.querySelector("[data-retreat-form-status]");
   const success = retreatDialog.querySelector("[data-retreat-registration-success]");
   const paymentInstructions = success.querySelector("p");
-  const defaultPaymentInstructions = paymentInstructions.textContent;
   const paymentStage = retreatDialog.querySelector("[data-retreat-payment-stage]");
   const paymentGuidance = retreatDialog.querySelector("[data-retreat-payment-guidance]");
   const previewNote = retreatDialog.querySelector("[data-retreat-form-preview]");
   const nameInput = retreatRegistrationForm.elements.namedItem("full_name");
   const phoneInput = retreatRegistrationForm.elements.namedItem("phone");
   const phoneError = retreatRegistrationForm.querySelector("[data-retreat-phone-error]");
+  const priceChoices = [...retreatRegistrationForm.querySelectorAll('[name="price_type"]')];
+  const bitAmount = retreatRegistrationForm.querySelector("[data-retreat-bit-amount]");
   const paymentLinks = [...document.querySelectorAll("[data-retreat-payment-url]")];
   const endpoint = (retreatRegistrationForm.dataset.registrationEndpoint || "").trim();
   const localTest = retreatLocalPreview && /^\/\.qa\/registration-test\/(success|reject|invalid|delay)$/.test(endpoint);
   const configured = /^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(endpoint) || localTest;
   const previewOnly = retreatLocalPreview && !localTest;
   const receiptKey = "mamalina-retreat-2026-11-10-received-v1";
+  // Rates describe the visitor's choice, not verified residency or payment.
+  // Until the existing PayBox group's 450 ILS option is confirmed, the local rate uses personal bit only.
+  const prices = {
+    standard: { amount: 550, methods: ["bit", "paybox"] },
+    upper_galilee: { amount: 450, methods: ["bit"] },
+  };
+  const getPrice = (type) => Object.hasOwn(prices, type) ? prices[type] : null;
   let submitting = false;
   let registrationId = crypto.randomUUID();
   formStatus.tabIndex = -1;
   fields.disabled = !configured && !retreatLocalPreview;
   previewNote.hidden = !retreatLocalPreview;
   if (localTest) previewNote.textContent = "תצוגת בדיקה מקומית בלבד. הפרטים אינם נשלחים לאלינה ולא מתבצעת הרשמה אמיתית.";
-  else if (previewOnly) previewNote.textContent = "תצוגה מקומית בלבד: אפשר לנסות את הכפתורים. הפרטים לא יישלחו לאלינה ואפליקציות התשלום לא ייפתחו.";
+  else if (previewOnly) previewNote.textContent = "תצוגה מקומית: הפרטים לא יישלחו לאלינה. לאחר בדיקת הטופס אפשר לפתוח את קישור ה־bit האישי.";
   if (!configured && !retreatLocalPreview) {
     formStatus.textContent = "ההרשמה בטופס אינה זמינה כרגע. אפשר לפנות לאלינה בוואטסאפ שבהמשך.";
   }
 
-  const showRetreatPayments = (unlocked, method = null) => {
+  const selectedPriceType = () => retreatRegistrationForm.elements.namedItem("price_type").value;
+  const updatePriceChoice = () => {
+    const price = getPrice(selectedPriceType());
+    submitButtons.forEach((button) => {
+      button.hidden = !price?.methods.includes(button.dataset.retreatPaymentMethod);
+      const amount = button.querySelector("[data-retreat-submit-amount]");
+      if (amount) amount.textContent = `${price?.amount ?? prices.standard.amount} ₪`;
+    });
+    bitAmount.textContent = `${price?.amount ?? prices.standard.amount} ₪`;
+  };
+  priceChoices.forEach((choice) => choice.addEventListener("change", updatePriceChoice));
+  updatePriceChoice();
+
+  const showRetreatPayments = (unlocked, method = null, priceType = "standard") => {
+    const price = getPrice(priceType) || prices.standard;
     retreatRegistrationForm.hidden = unlocked;
     success.hidden = !unlocked;
     paymentStage.hidden = !unlocked;
     paymentInstructions.textContent = method === "bit"
-      ? `${retreatLocalPreview ? "באתר החי: " : ""}באפליקציית bit יש להזין 550 ₪ ולהשלים את ההעברה. המקום יאושר לאחר קבלת התשלום.`
+      ? `באפליקציית bit יש להזין ${price.amount} ₪ ולהשלים את ההעברה. המקום יאושר לאחר קבלת התשלום.`
       : retreatLocalPreview
         ? "באתר החי הפרטים יישלחו לאלינה והמעבר יהיה לאמצעי התשלום שנבחר. המקום יאושר לאחר קבלת התשלום."
-        : defaultPaymentInstructions;
+        : `יש להשלים העברה של ${price.amount} ₪ באפליקציה. המקום יאושר לאחר קבלת התשלום.`;
     paymentLinks.forEach((link) => {
+      const amountLabel = link.querySelector("[data-retreat-payment-amount]");
+      if (amountLabel) amountLabel.textContent = `${price.amount} ₪`;
+      if (link.dataset.retreatPaymentMethod === "bit") link.setAttribute("aria-label", `לתשלום ${price.amount} ₪ ב־bit — נפתח בחלון חדש`);
       link.hidden = unlocked && method !== null && link.dataset.retreatPaymentMethod !== method;
-      if (unlocked) link.href = retreatLocalPreview ? "#retreat-registration" : link.dataset.retreatPaymentUrl;
+      if (unlocked) link.href = retreatLocalPreview && link.dataset.retreatPaymentMethod !== "bit"
+        ? "#retreat-registration" : link.dataset.retreatPaymentUrl;
       else link.removeAttribute("href");
       link.setAttribute("aria-disabled", String(!unlocked));
       link.tabIndex = unlocked ? 0 : -1;
     });
-    if (retreatLocalPreview) paymentGuidance.textContent = "זו הדמיה מקומית בלבד: לא נשלחו פרטים, לא נפתחו אפליקציות ולא בוצע תשלום.";
+    if (retreatLocalPreview) paymentGuidance.textContent = "בדיקה מקומית: הפרטים לא נשלחו. קישור bit פותח העברה אישית לאלינה; את הסכום מזינים באפליקציה.";
   };
   if (retreatLocalPreview) {
     success.querySelector("h4").textContent = "בדיקת הטופס הושלמה. לא בוצעה הרשמה אמיתית.";
   }
   let restoredReceipt = false;
   let restoredMethod = null;
+  let restoredPriceType = "standard";
   if (configured && !previewOnly) {
     try {
       const receipt = JSON.parse(sessionStorage.getItem(receiptKey) || "null");
-      restoredReceipt = receipt?.endpoint === endpoint && typeof receipt.registrationId === "string";
-      if (restoredReceipt && ["bit", "paybox"].includes(receipt.paymentMethod)) restoredMethod = receipt.paymentMethod;
+      // Receipts from before the local offer used the standard 550 ILS rate.
+      const priceType = receipt?.priceType ?? "standard";
+      const price = getPrice(priceType);
+      restoredReceipt = receipt?.endpoint === endpoint && typeof receipt.registrationId === "string"
+        && Boolean(price?.methods.includes(receipt.paymentMethod))
+        && (receipt.amount === undefined || receipt.amount === price.amount);
+      if (restoredReceipt) {
+        restoredMethod = receipt.paymentMethod;
+        restoredPriceType = priceType;
+      }
     } catch { /* Submission and payment also work without session storage. */ }
   }
-  showRetreatPayments(restoredReceipt, restoredMethod);
+  showRetreatPayments(restoredReceipt, restoredMethod, restoredPriceType);
   paymentLinks.forEach((link) => link.addEventListener("click", (event) => {
-    if (retreatLocalPreview || link.getAttribute("aria-disabled") === "true") event.preventDefault();
+    if ((retreatLocalPreview && link.dataset.retreatPaymentMethod !== "bit")
+      || link.getAttribute("aria-disabled") === "true") event.preventDefault();
   }));
 
   [nameInput, phoneInput].forEach((input) => input.addEventListener("input", () => {
@@ -418,8 +454,10 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
     event.preventDefault();
     if (submitting) return;
     const method = event.submitter?.dataset.retreatPaymentMethod;
+    const priceType = selectedPriceType();
+    const price = getPrice(priceType);
     const paymentLink = paymentLinks.find((link) => link.dataset.retreatPaymentMethod === method);
-    if (!paymentLink) return;
+    if (!paymentLink || !price?.methods.includes(method)) return;
     nameInput.value = nameInput.value.trim();
     phoneInput.value = phoneInput.value.trim();
     if (!nameInput.value) nameInput.setCustomValidity("הזינו שם מלא.");
@@ -444,7 +482,8 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
     });
     payload.set("retreat", "7 הצ׳אקרות | 10.11.2026 | כפר סאלד");
     payload.set("registration_id", registrationId);
-    payload.set("amount_ils", "550");
+    payload.set("amount_ils", String(price.amount));
+    payload.set("price_type", priceType);
     payload.set("payment_status", "pending_verification");
     payload.set("payment_method", method);
     payload.set("registration_stage", "payment_method_selected");
@@ -487,12 +526,12 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
         const result = await response.json();
         if (!response.ok || result.ok !== true) throw new Error("Registration was not acknowledged");
         try {
-          sessionStorage.setItem(receiptKey, JSON.stringify({ endpoint, registrationId, paymentMethod: method }));
+          sessionStorage.setItem(receiptKey, JSON.stringify({ endpoint, registrationId, paymentMethod: method, priceType, amount: price.amount }));
         } catch { /* Keep the successful registration usable without storage. */ }
       }
       retreatRegistrationForm.reset();
       formStatus.textContent = "";
-      showRetreatPayments(true, method);
+      showRetreatPayments(true, method, priceType);
       success.focus();
       if (!retreatLocalPreview) {
         try { window.retreatMeasurement?.received(registrationId); } catch { /* Tracking must never change registration success. */ }
@@ -517,6 +556,7 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
       fields.disabled = false;
       retreatRegistrationForm.removeAttribute("aria-busy");
       submitButtons.forEach((button) => { button.innerHTML = submitLabels.get(button); });
+      updatePriceChoice();
     }
   });
 
@@ -524,6 +564,7 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
     try { sessionStorage.removeItem(receiptKey); } catch { /* No storage is required to restart. */ }
     registrationId = crypto.randomUUID();
     retreatRegistrationForm.reset();
+    updatePriceChoice();
     formStatus.textContent = "";
     phoneError.hidden = true;
     [nameInput, phoneInput].forEach((input) => { input.setCustomValidity(""); input.removeAttribute("aria-invalid"); });
