@@ -364,19 +364,22 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
   const previewOnly = retreatLocalPreview && !localTest;
   const receiptKey = "mamalina-retreat-2026-11-10-received-v1";
   // Rates describe the visitor's choice, not verified residency or payment.
-  // Until the existing PayBox group's 450 ILS option is confirmed, the local rate uses personal bit only.
+  // Both methods support both rates; PayBox uses a separate user-supplied link for the resident rate.
   const prices = {
     standard: { amount: 550, methods: ["bit", "paybox"] },
-    upper_galilee: { amount: 450, methods: ["bit"] },
+    upper_galilee: { amount: 450, methods: ["bit", "paybox"] },
   };
   const getPrice = (type) => Object.hasOwn(prices, type) ? prices[type] : null;
+  const paymentDestination = (link, priceType) => priceType === "upper_galilee"
+    ? link.dataset.retreatLocalPaymentUrl || link.dataset.retreatPaymentUrl
+    : link.dataset.retreatPaymentUrl;
   let submitting = false;
   let registrationId = crypto.randomUUID();
   formStatus.tabIndex = -1;
   fields.disabled = !configured && !retreatLocalPreview;
   previewNote.hidden = !retreatLocalPreview;
   if (localTest) previewNote.textContent = "תצוגת בדיקה מקומית בלבד. הפרטים אינם נשלחים לאלינה ולא מתבצעת הרשמה אמיתית.";
-  else if (previewOnly) previewNote.textContent = "תצוגה מקומית: הפרטים לא יישלחו לאלינה. לאחר בדיקת הטופס אפשר לפתוח את קישור ה־bit האישי.";
+  else if (previewOnly) previewNote.textContent = "תצוגה מקומית: הפרטים לא יישלחו לאלינה. לאחר בדיקת הטופס אפשר לפתוח את קישור התשלום שנבחר.";
   if (!configured && !retreatLocalPreview) {
     formStatus.textContent = "ההרשמה בטופס אינה זמינה כרגע. אפשר לפנות לאלינה בוואטסאפ שבהמשך.";
   }
@@ -401,21 +404,21 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
     paymentStage.hidden = !unlocked;
     paymentInstructions.textContent = method === "bit"
       ? `באפליקציית bit יש להזין ${price.amount} ₪ ולהשלים את ההעברה. המקום יאושר לאחר קבלת התשלום.`
-      : retreatLocalPreview
-        ? "באתר החי הפרטים יישלחו לאלינה והמעבר יהיה לאמצעי התשלום שנבחר. המקום יאושר לאחר קבלת התשלום."
-        : `יש להשלים העברה של ${price.amount} ₪ באפליקציה. המקום יאושר לאחר קבלת התשלום.`;
+      : `יש להשלים העברה של ${price.amount} ₪ באפליקציה. המקום יאושר לאחר קבלת התשלום.`;
     paymentLinks.forEach((link) => {
       const amountLabel = link.querySelector("[data-retreat-payment-amount]");
       if (amountLabel) amountLabel.textContent = `${price.amount} ₪`;
-      if (link.dataset.retreatPaymentMethod === "bit") link.setAttribute("aria-label", `לתשלום ${price.amount} ₪ ב־bit — נפתח בחלון חדש`);
+      const methodLabel = link.dataset.retreatPaymentMethod === "bit" ? "bit" : "PayBox";
+      link.setAttribute("aria-label", `לתשלום ${price.amount} ₪ ב־${methodLabel} — נפתח בחלון חדש`);
       link.hidden = unlocked && method !== null && link.dataset.retreatPaymentMethod !== method;
-      if (unlocked) link.href = retreatLocalPreview && link.dataset.retreatPaymentMethod !== "bit"
-        ? "#retreat-registration" : link.dataset.retreatPaymentUrl;
+      if (unlocked) link.href = paymentDestination(link, priceType);
       else link.removeAttribute("href");
       link.setAttribute("aria-disabled", String(!unlocked));
       link.tabIndex = unlocked ? 0 : -1;
     });
-    if (retreatLocalPreview) paymentGuidance.textContent = "בדיקה מקומית: הפרטים לא נשלחו. קישור bit פותח העברה אישית לאלינה; את הסכום מזינים באפליקציה.";
+    if (retreatLocalPreview) paymentGuidance.textContent = method === "bit"
+      ? "בדיקה מקומית: הפרטים לא נשלחו. קישור bit פותח העברה אישית לאלינה; את הסכום מזינים באפליקציה."
+      : "בדיקה מקומית: הפרטים לא נשלחו. קישור PayBox מתאים למחיר שנבחר; יש להשלים את התשלום באפליקציה.";
   };
   if (retreatLocalPreview) {
     success.querySelector("h4").textContent = "בדיקת הטופס הושלמה. לא בוצעה הרשמה אמיתית.";
@@ -440,8 +443,7 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
   }
   showRetreatPayments(restoredReceipt, restoredMethod, restoredPriceType);
   paymentLinks.forEach((link) => link.addEventListener("click", (event) => {
-    if ((retreatLocalPreview && link.dataset.retreatPaymentMethod !== "bit")
-      || link.getAttribute("aria-disabled") === "true") event.preventDefault();
+    if (link.getAttribute("aria-disabled") === "true") event.preventDefault();
   }));
 
   [nameInput, phoneInput].forEach((input) => input.addEventListener("input", () => {
@@ -458,6 +460,9 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
     const price = getPrice(priceType);
     const paymentLink = paymentLinks.find((link) => link.dataset.retreatPaymentMethod === method);
     if (!paymentLink || !price?.methods.includes(method)) return;
+    // Capture the selected destination before reset or any asynchronous work.
+    const paymentUrl = paymentDestination(paymentLink, priceType);
+    if (!paymentUrl) return;
     nameInput.value = nameInput.value.trim();
     phoneInput.value = phoneInput.value.trim();
     if (!nameInput.value) nameInput.setCustomValidity("הזינו שם מלא.");
@@ -541,7 +546,7 @@ if (retreatDialog && retreatRegistrationForm && (retreatLocalPreview || retreatP
         link_location: "retreat_dialog",
       });
       if (paymentWindow && !paymentWindow.closed) {
-        try { paymentWindow.location.replace(paymentLink.dataset.retreatPaymentUrl); }
+        try { paymentWindow.location.replace(paymentUrl); }
         catch { /* A visible payment link offers recovery without another form submission. */ }
       }
     } catch {

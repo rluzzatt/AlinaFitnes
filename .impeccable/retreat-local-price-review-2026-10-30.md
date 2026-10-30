@@ -1,5 +1,13 @@
 # Upper Galilee price — local preparation, 30 October 2026
 
+## PayBox continuation — ship
+
+The user supplied a separate 450 ILS PayBox link while continuing her approved live-site update. Both rates now offer both existing method buttons. The 450 route uses the new link, the 550 route keeps its old link, and bit remains the personal transfer. The asynchronous payment destination is captured before form reset; acknowledged links and receipt refresh retain the chosen price and destination. Earlier discounted-PayBox holds below are superseded.
+
+20 isolated actual-code cases pass, including exact URL routing, form reset, refreshed acknowledgements, popup blocking, both methods/rates and legacy 550 receipts. Current IAB visual review at 1440×1000 and 393×852 shows both 450 submit buttons, correct amount labels and no horizontal overflow. Phone controls are 78px high. The first phone capture preceded settled viewport rendering; it was replaced after DOM dimensions confirmed 393×852. Current evidence: `C:/Users/dushi/Documents/Marketing/output/mamalina-paybox450-local-desktop-2026-10-30.png` and `mamalina-paybox450-local-mobile-2026-10-30.png`.
+
+The new PayBox landing page names the retreat and requires the phone app. The 450 amount is based on the user's supplied link, not an inspection inside the physical app. No production registration, payment or group setting change was performed.
+
 ## Current verdict — ship the user-approved scope
 
 The user explicitly requested publication after the personal bit preview fix. Standard 550 ILS remains available via both existing methods; resident 450 ILS is available via personal bit. Discounted PayBox awaits configuration evidence and is not part of this release. This verdict supersedes the preparation-stage publication holds below.
