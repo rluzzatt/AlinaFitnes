@@ -7,8 +7,8 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 44px;
   align-items: center;
   gap: 20px;
   min-height: var(--header-height);
@@ -16,7 +16,11 @@
   background: var(--paper);
   border-bottom: 1px solid var(--line);
 }
-.abundance-brand { display: inline-flex; align-items: center; gap: 12px; flex: none; }
+.abundance-brand { display: inline-flex; align-items: center; gap: 12px; justify-self: start; }
+.abundance-close { display: inline-flex; justify-content: center; align-items: center; width: 44px; min-height: 44px; color: var(--ink); }
+.abundance-close:hover { background: var(--event-surface); }
+.abundance-close:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.abundance-register-short { display: none; }
 .abundance-brand img { width: 50px; height: 46px; }
 .abundance-brand > span { font-size: 23px; font-weight: 750; line-height: .95; }
 .abundance-brand small { font-size: 14px; font-weight: 500; letter-spacing: .12em; }
@@ -95,7 +99,7 @@
 .abundance-footer > a:last-child { text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 800px) {
   .abundance-page { --header-height: 76px; --gutter: 24px; }
-  .abundance-header { gap: 12px; padding-block: 12px; }
+  .abundance-header { gap: 10px; padding-block: 12px; }
   .abundance-brand { gap: 8px; }
   .abundance-brand img { width: 38px; height: 38px; }
   .abundance-brand > span { font-size: 20px; }
@@ -118,10 +122,15 @@
   .abundance-signup-action { width: 100%; max-width: none; justify-self: stretch; }
   .abundance-footer { flex-direction: column; align-items: flex-start; gap: 14px; padding-block: 26px; }
 }
+@media (max-width: 600px) {
+  .abundance-register-full { display: none; }
+  .abundance-register-short { display: inline; }
+}
 @media (max-width: 380px) {
   .abundance-page { --gutter: 18px; }
   .abundance-brand img { width: 32px; height: 32px; }
   .abundance-brand > span { font-size: 18px; }
+  .abundance-header { gap: 8px; }
   .abundance-header-register { gap: 6px; padding-inline: 10px; font-size: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -1,5 +1,7 @@
 # Abundance 2027 — local source review, 19 November 2026
 
+Header continuation: after publication the user asked about an X to reach the main site. Added a native homepage anchor with a 44px target and accessible label, plus a compact visible registration label at narrow widths. Source checks confirm the relative homepage destination, unchanged WhatsApp URLs and updated CSS cache version. The detector still reports 18 font-ramp advisories only. This is not a new visual pass; browser captures remain unavailable.
+
 Status: source checks complete; desktop and phone visual captures remain unavailable. After receiving the local preview link and this limitation, the user explicitly authorized publication with “תעלה לאוויר” on 19 November 2026. This authorization supersedes the local-only hold but is not a visual ship verdict. This record is source-review evidence, not deployment evidence. The finish review requested recapture because neither current desktop nor phone captures were available. Another browser-access attempt before publication returned `GetCursorPos: Access denied`; no visual verification is claimed.
 
 ## Scope and evidence checked
