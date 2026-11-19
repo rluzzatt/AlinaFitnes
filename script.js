@@ -207,6 +207,7 @@ function contactBarShouldShow() {
   return (
     mobileViewport.matches &&
     nav.hidden &&
+    !document.body.classList.contains("abundance-open") &&
     homepageOpeningPassed &&
     activeContactGuards.size === 0
   );
@@ -291,6 +292,7 @@ window.addEventListener("resize", queueContactUpdate);
 window.addEventListener("load", queueContactUpdate);
 window.addEventListener("pageshow", queueContactUpdate);
 document.fonts.ready.then(updateContactBar);
+document.addEventListener("abundance:change", updateContactBar);
 updateHeader();
 updateContactBar();
 
