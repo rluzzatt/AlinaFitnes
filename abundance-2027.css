@@ -1,0 +1,129 @@
+.abundance-page {
+  --event-surface: #e7ddd4;
+  --header-height: 84px;
+  font-size: 17px;
+}
+.abundance-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  min-height: var(--header-height);
+  padding: 14px var(--gutter);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.abundance-brand { display: inline-flex; align-items: center; gap: 12px; flex: none; }
+.abundance-brand img { width: 50px; height: 46px; }
+.abundance-brand > span { font-size: 23px; font-weight: 750; line-height: .95; }
+.abundance-brand small { font-size: 14px; font-weight: 500; letter-spacing: .12em; }
+.abundance-header-register,
+.abundance-register {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 14px 24px;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 750;
+  line-height: 1.5;
+  text-align: center;
+}
+.abundance-header-register { min-height: 46px; padding: 10px 18px; font-size: 15px; }
+.abundance-header-register:hover,
+.abundance-register:hover { background: var(--taupe-dark); }
+.abundance-header-register:focus-visible,
+.abundance-register:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.abundance-hero { background: var(--event-surface); }
+.abundance-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 88px);
+  max-width: 1370px;
+  margin-inline: auto;
+  padding: 54px var(--gutter) 62px;
+}
+.abundance-invitation { min-width: 0; max-width: 580px; }
+.abundance-invitation h1 { font-size: clamp(52px, 5.5vw, 80px); line-height: 1.04; }
+.abundance-invitation h1 > span { display: block; }
+.abundance-year { display: block; margin-top: 10px; font-family: Anton, sans-serif; font-size: 88px; line-height: 1.05; font-weight: 400; color: var(--taupe-dark); }
+.abundance-lead { max-width: 34ch; margin-block: 26px 8px; font-size: 21px; line-height: 1.6; }
+.abundance-host { margin-bottom: 24px; font-size: 16px; color: var(--muted); }
+.abundance-facts { margin: 0 0 23px; display: grid; gap: 8px; }
+.abundance-facts > div { display: grid; grid-template-columns: 52px minmax(0,1fr); gap: 16px; }
+.abundance-facts dt { font-size: 15px; color: var(--muted); }
+.abundance-facts dd { margin: 0; font-size: 17px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.abundance-free { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 18px; }
+.abundance-free strong { font-size: 24px; }
+.abundance-free span { font-size: 14px; }
+.abundance-invitation > .abundance-register { min-width: 270px; }
+.abundance-register-note { max-width: 48ch; margin: 12px 0 0; font-size: 14px; line-height: 1.8; color: var(--muted); }
+.abundance-poster { width: 100%; max-width: 440px; margin: 0; justify-self: end; }
+.abundance-poster img { width: 100%; height: auto; }
+.abundance-story {
+  display: grid;
+  grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);
+  gap: clamp(36px, 6vw, 88px);
+  max-width: 1370px;
+  margin-inline: auto;
+  padding: 94px var(--gutter);
+}
+.abundance-story h2 { font-size: clamp(38px, 4.2vw, 58px); line-height: 1.12; }
+.abundance-story-copy { max-width: 58ch; font-size: 19px; line-height: 1.9; }
+.abundance-story-copy p:last-child { margin-bottom: 0; }
+.abundance-signup {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  align-items: center;
+  gap: 40px;
+  padding: 60px max(var(--gutter), calc((100vw - 1210px) / 2));
+  background: var(--event-surface);
+}
+.abundance-signup h2 { margin-bottom: 20px; font-size: clamp(36px, 3.8vw, 52px); }
+.abundance-signup p { margin: 0; line-height: 1.8; }
+.abundance-signup-action { justify-self: end; max-width: 400px; }
+.abundance-signup-action > a { width: 100%; }
+.abundance-signup-action > p { margin-top: 12px; font-size: 14px; color: var(--muted); }
+.abundance-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 28px var(--gutter); font-size: 14px; }
+.abundance-footer > a:first-child { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.abundance-footer > a:last-child { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 800px) {
+  .abundance-page { --header-height: 76px; --gutter: 24px; }
+  .abundance-header { gap: 12px; padding-block: 12px; }
+  .abundance-brand { gap: 8px; }
+  .abundance-brand img { width: 38px; height: 38px; }
+  .abundance-brand > span { font-size: 20px; }
+  .abundance-brand small { font-size: 12px; }
+  .abundance-header-register { padding: 10px 12px; font-size: 14px; gap: 8px; }
+  .abundance-header-register .icon { width: 21px; height: 21px; }
+  .abundance-hero-inner { grid-template-columns: minmax(0,1fr); gap: 40px; padding-block: 36px 40px; }
+  .abundance-invitation { width: 100%; max-width: 600px; margin-inline: auto; }
+  .abundance-invitation h1 { font-size: clamp(44px, 11.5vw, 68px); }
+  .abundance-year { margin-top: 10px; font-size: 72px; }
+  .abundance-lead { margin-top: 23px; font-size: 19px; }
+  .abundance-host { margin-bottom: 22px; }
+  .abundance-invitation > .abundance-register { width: 100%; min-width: 0; }
+  .abundance-poster { justify-self: center; max-width: 440px; }
+  .abundance-story { grid-template-columns: minmax(0,1fr); gap: 26px; padding-block: 52px; }
+  .abundance-story h2 { font-size: 38px; }
+  .abundance-story-copy { font-size: 17px; }
+  .abundance-signup { grid-template-columns: minmax(0,1fr); gap: 26px; padding: 42px var(--gutter); }
+  .abundance-signup h2 { font-size: 36px; }
+  .abundance-signup-action { width: 100%; max-width: none; justify-self: stretch; }
+  .abundance-footer { flex-direction: column; align-items: flex-start; gap: 14px; padding-block: 26px; }
+}
+@media (max-width: 380px) {
+  .abundance-page { --gutter: 18px; }
+  .abundance-brand img { width: 32px; height: 32px; }
+  .abundance-brand > span { font-size: 18px; }
+  .abundance-header-register { gap: 6px; padding-inline: 10px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .abundance-page { scroll-behavior: auto; }
+}
